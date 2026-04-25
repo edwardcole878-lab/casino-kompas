@@ -91,6 +91,9 @@
   --shadow-elegant: 0 10px 30px -10px oklch(0.28 0.09 265 / 0.18);
   --shadow-gold: 0 10px 30px -10px oklch(0.78 0.14 80 / 0.45);
   --shadow-card: 0 1px 3px oklch(0.28 0.09 265 / 0.06), 0 4px 16px -4px oklch(0.28 0.09 265 / 0.08);
+  --shadow-lift: 0 20px 40px -16px oklch(0.28 0.09 265 / 0.22), 0 8px 16px -8px oklch(0.28 0.09 265 / 0.12);
+  --gradient-cta: linear-gradient(135deg, oklch(0.84 0.15 88), oklch(0.74 0.17 68));
+  --gradient-bonus: linear-gradient(135deg, oklch(0.96 0.06 85), oklch(0.92 0.1 80));
 }
 
 .dark {
@@ -138,7 +141,12 @@
   .gradient-hero { background-image: var(--gradient-hero); }
   .gradient-gold { background-image: var(--gradient-gold); }
   .gradient-card { background-image: var(--gradient-card); }
+  .gradient-cta { background-image: var(--gradient-cta); }
+  .gradient-bonus { background-image: var(--gradient-bonus); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-lift { box-shadow: var(--shadow-lift); }
+  .hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+  .hover-lift:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
 }
