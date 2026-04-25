@@ -8,7 +8,6 @@ import {
   Globe2,
   Star,
   Check,
-  X,
   Gamepad2,
   Dices,
   Coins,
@@ -190,7 +189,7 @@ function BuitenlandseCasinoPage() {
               <div className="flex items-center gap-5">
                 <div className="grid h-20 w-20 place-items-center rounded-2xl gradient-gold text-gold-foreground shadow-gold">
                   <div className="text-center leading-none">
-                    <div className="text-2xl font-black">8.5</div>
+                    <div className="text-2xl font-black">10</div>
                     <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wider opacity-80">/ 10</div>
                   </div>
                 </div>
@@ -362,6 +361,35 @@ function BuitenlandseCasinoPage() {
           </div>
         </section>
 
+        {/* Inline CTA #1 */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-gold/40 gradient-bonus p-5 shadow-glow-gold md:p-6">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/25 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl gradient-gold text-gold-foreground shadow-gold">
+                  <Gift className="h-6 w-6" />
+                </span>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-gold-foreground/70">
+                    Welkomstbonus actief
+                  </div>
+                  <div className="text-lg font-black md:text-xl">300% tot €3.250 + 225 Free Spins</div>
+                </div>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
+              >
+                <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
+                  Claim Bonus <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Stortingen & uitbetalingen */}
         <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
           <div className="rounded-2xl border bg-card p-6 shadow-soft">
@@ -460,16 +488,47 @@ function BuitenlandseCasinoPage() {
           </div>
         </section>
 
-        {/* Pros / Cons */}
-        <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft">
+        {/* Inline CTA #2 */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border bg-card p-6 shadow-card md:p-7">
+            <div className="pointer-events-none absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-trust/15 text-trust">
+                  <Zap className="h-6 w-6" />
+                </span>
+                <div>
+                  <div className="text-base font-extrabold md:text-lg">
+                    Klaar om te starten bij Betory?
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Snelle registratie · Crypto stortingen · Direct spelen
+                  </div>
+                </div>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
+              >
+                <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
+                  Speel bij Betory <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Voordelen */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft md:p-8">
             <div className="flex items-center gap-2">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-success text-success-foreground">
                 <Check className="h-5 w-5" />
               </span>
               <h3 className="text-xl font-extrabold text-success">👍 Voordelen</h3>
             </div>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 grid gap-2.5 text-sm sm:grid-cols-2">
               {[
                 "Groot spelaanbod",
                 "Moderne interface",
@@ -479,26 +538,6 @@ function BuitenlandseCasinoPage() {
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2 font-medium">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border-2 border-destructive/20 bg-destructive/5 p-6 shadow-soft">
-            <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-destructive text-destructive-foreground">
-                <X className="h-5 w-5" />
-              </span>
-              <h3 className="text-xl font-extrabold text-destructive">👎 Nadelen</h3>
-            </div>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              {[
-                "Geen iDEAL ondersteuning",
-                "Geen Nederlandse licentie",
-                "Crypto-only focus kan beperkend zijn voor beginners",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 font-medium">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
                   <span>{b}</span>
                 </li>
               ))}
