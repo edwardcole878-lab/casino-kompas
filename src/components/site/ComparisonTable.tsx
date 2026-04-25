@@ -11,7 +11,7 @@ export function ComparisonTable({
   featureFirst?: boolean;
 }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {casinos.map((c, i) => (
         <CasinoCard key={c.slug} casino={c} cta={primaryCta} featured={featureFirst && i === 0} />
       ))}
