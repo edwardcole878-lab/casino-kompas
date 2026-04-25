@@ -10,7 +10,6 @@ import { Rating } from "@/components/site/Rating";
 import { CasinoBadge } from "@/components/site/Badge";
 import { PaymentIcons } from "@/components/site/PaymentIcons";
 import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
-import { TrustStrip } from "@/components/site/TrustStrip";
 import { Button } from "@/components/ui/button";
 import { Check, X, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
@@ -114,7 +113,6 @@ function ReviewPage() {
           </div>
         </section>
 
-        <div className="mt-8"><TrustStrip /></div>
 
         {/* Editorial intro */}
         <section className="mt-10 prose prose-neutral max-w-none">
