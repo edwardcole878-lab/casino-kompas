@@ -9,6 +9,8 @@ import { CasinoLogo } from "@/components/site/CasinoLogo";
 import { Rating } from "@/components/site/Rating";
 import { CasinoBadge } from "@/components/site/Badge";
 import { PaymentIcons } from "@/components/site/PaymentIcons";
+import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
+import { TrustStrip } from "@/components/site/TrustStrip";
 import { Button } from "@/components/ui/button";
 import { Check, X, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
@@ -63,7 +65,7 @@ function ReviewPage() {
 
   return (
     <Layout>
-      <div className="container mx-auto max-w-5xl px-4 py-8 md:py-12">
+      <div className="container mx-auto max-w-5xl px-4 py-8 pb-24 md:pb-12 md:py-12">
         <Breadcrumbs items={[
           { to: "/beste-online-casinos", label: "Casino's" },
           { label: casino.name },
@@ -111,6 +113,8 @@ function ReviewPage() {
             <p className="mt-1 text-base font-medium">{casino.verdict}</p>
           </div>
         </section>
+
+        <div className="mt-8"><TrustStrip /></div>
 
         {/* Editorial intro */}
         <section className="mt-10 prose prose-neutral max-w-none">
@@ -231,6 +235,7 @@ function ReviewPage() {
           { to: "/ideal-casinos", label: "iDEAL casino's" },
         ]} />
       </div>
+      <StickyMobileCTA slug={casino.slug} bonus={casino.bonusHeadline} />
     </Layout>
   );
 }
