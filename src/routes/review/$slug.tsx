@@ -11,7 +11,7 @@ import { CasinoBadge } from "@/components/site/Badge";
 import { PaymentIcons } from "@/components/site/PaymentIcons";
 import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
-import { Check, X, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/review/$slug")({
