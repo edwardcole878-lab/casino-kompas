@@ -30,6 +30,7 @@ import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
 import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
 import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
 
 const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
   id: '/welkomstbonus-casino',
@@ -137,6 +138,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviewSlugRoute = ReviewSlugRouteImport.update({
+  id: '/review/$slug',
+  path: '/review/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -160,6 +166,7 @@ export interface FileRoutesByFullPath {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/review/$slug': typeof ReviewSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -183,6 +190,7 @@ export interface FileRoutesByTo {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/review/$slug': typeof ReviewSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/review/$slug': typeof ReviewSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/review/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/review/$slug'
   id:
     | '__root__'
     | '/'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/review/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -302,6 +314,7 @@ export interface RootRouteChildren {
   SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   VerantwoordSpelenRoute: typeof VerantwoordSpelenRoute
   WelkomstbonusCasinoRoute: typeof WelkomstbonusCasinoRoute
+  ReviewSlugRoute: typeof ReviewSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -453,6 +466,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/review/$slug': {
+      id: '/review/$slug'
+      path: '/review/$slug'
+      fullPath: '/review/$slug'
+      preLoaderRoute: typeof ReviewSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -478,6 +498,7 @@ const rootRouteChildren: RootRouteChildren = {
   SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   VerantwoordSpelenRoute: VerantwoordSpelenRoute,
   WelkomstbonusCasinoRoute: WelkomstbonusCasinoRoute,
+  ReviewSlugRoute: ReviewSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
