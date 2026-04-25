@@ -11,6 +11,7 @@ import { AuthorByline } from "@/components/site/AuthorByline";
 import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
 import { CasinoLogo } from "@/components/site/CasinoLogo";
 import { Rating } from "@/components/site/Rating";
+import { CategoryLists } from "@/components/site/CategoryLists";
 import { casinos } from "@/data/casinos";
 import { ArrowRight, Gift, ShieldCheck as ShieldIcon, PlayCircle, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -177,20 +178,36 @@ function Index() {
           <TrustNotice />
         </div>
 
-        {/* RELATED LINKS — kept at bottom (post-content), top duplicate removed */}
-        <div className="mt-20">
-          <RelatedLinks
-            title="Verken meer categorieën"
-            links={[
-              { to: "/casino-bonussen", label: "Casino bonussen", description: "Alle types bonussen vergeleken" },
-              { to: "/ideal-casinos", label: "iDEAL casino's", description: "Snelste NL-stortmethode" },
-              { to: "/casino-spellen", label: "Casinospellen", description: "Slots, live, blackjack en meer" },
-              { to: "/nieuwe-online-casinos", label: "Nieuwe casino's", description: "Recent gelanceerd in NL" },
-              { to: "/snelle-uitbetaling-casino", label: "Snelle uitbetaling", description: "< 1 uur op je rekening" },
-              { to: "/blog", label: "Blog & gidsen", description: "Artikelen voor beginners" },
+        {/* CATEGORY LISTS — types & betaalmethoden */}
+        <section className="mt-20">
+          <h2 className="mb-6 text-2xl font-extrabold md:text-3xl">Verken meer categorieën</h2>
+          <CategoryLists
+            groups={[
+              {
+                title: "Casino types",
+                items: [
+                  { to: "/beste-online-casinos", label: "Echt Geld Casino's" },
+                  { to: "/buitenlandse-casino", label: "Casino's Zonder Registratie" },
+                  { to: "/buitenlandse-casino", label: "Casino's Zonder CRUKS" },
+                  { to: "/buitenlandse-casino", label: "Casino's Zonder Limiet" },
+                  { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling Casino's" },
+                  { to: "/buitenlandse-casino", label: "Buitenlandse Casino's" },
+                ],
+              },
+              {
+                title: "Betaalmethoden",
+                items: [
+                  { to: "/ideal-casinos", label: "iDEAL Casino's" },
+                  { to: "/ideal-casinos", label: "Revolut Casino's" },
+                  { to: "/mobiele-casinos", label: "Google Pay Casino's" },
+                  { to: "/mobiele-casinos", label: "Apple Pay Casino's" },
+                  { to: "/casino-bonussen", label: "Visa Casino's" },
+                  { to: "/casino-bonussen", label: "Mastercard Casino's" },
+                ],
+              },
             ]}
           />
-        </div>
+        </section>
       </div>
 
       {/* Sticky mobile CTA — #1 pick, dismissable */}
