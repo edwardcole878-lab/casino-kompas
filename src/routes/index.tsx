@@ -36,15 +36,15 @@ function Index() {
         meta="42 casino's getest · 380+ uur speeltijd"
       />
 
-      <div className="container mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <div className="container mx-auto max-w-[1240px] px-6 py-16 md:py-24">
         {/* Top 3 podium — primary attention zone */}
-        <section className="-mt-24 md:-mt-32 relative z-10 pt-6">
+        <section className="-mt-28 md:-mt-40 relative z-10">
           <TopThreePodium casinos={casinos} />
-          <div className="mt-6"><TrustStrip /></div>
+          <div className="mt-8"><TrustStrip /></div>
         </section>
 
         <article className="prose prose-neutral max-w-3xl">
-          <div className="mt-12">
+          <div className="mt-24">
           <PageMeta />
           </div>
           <h2 className="mt-4 text-2xl font-bold md:text-3xl">Welkom bij Nederland's eerlijkste casinovergelijker</h2>
@@ -57,12 +57,12 @@ function Index() {
           </p>
         </article>
 
-        <section className="mt-16">
-          <div className="mb-6">
+        <section className="mt-24">
+          <div className="mb-8">
             <h2 className="text-2xl font-bold md:text-3xl">Vind direct wat je zoekt</h2>
-            <p className="mt-1 text-muted-foreground">Spring naar de categorie die past bij jouw speelstijl.</p>
+            <p className="mt-2 text-muted-foreground">Spring naar de categorie die past bij jouw speelstijl.</p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Gift, label: "Top bonussen", desc: "Welkomstaanbod vergeleken", to: "/casino-bonussen", color: "from-gold/20 to-gold/5" },
               { icon: Wallet, label: "iDEAL casino's", desc: "Direct storten in NL", to: "/ideal-casinos", color: "from-trust/20 to-trust/5" },
@@ -73,7 +73,7 @@ function Index() {
               { icon: ShieldCheck, label: "Betrouwbaar", desc: "KSA & Cruks-compliant", to: "/betrouwbare-online-casinos", color: "from-trust/20 to-trust/5" },
               { icon: Award, label: "Nieuwe casino's", desc: "Recent gelanceerd", to: "/nieuwe-online-casinos", color: "from-gold/20 to-gold/5" },
             ].map(({ icon: Icon, label, desc, to, color }) => (
-              <Link key={to} to={to} className="group hover-lift relative overflow-hidden rounded-2xl border bg-card p-5 shadow-card">
+              <Link key={to} to={to} className="group hover-lift relative overflow-hidden rounded-2xl border bg-card p-5 shadow-soft">
                 <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${color} opacity-60`} />
                 <div className="relative">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-background/80 text-foreground shadow-card backdrop-blur"><Icon className="h-5 w-5" /></span>
@@ -85,18 +85,18 @@ function Index() {
           </div>
         </section>
 
-        <section id="top10" className="mt-20 scroll-mt-20">
-          <div className="mb-6 flex items-end justify-between gap-4">
+        <section id="top10" className="mt-24 scroll-mt-24">
+          <div className="mb-8 flex items-end justify-between gap-4">
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gold">De volledige ranking</div>
-              <h2 className="mt-1 text-2xl font-extrabold md:text-4xl">Top 10 online casino's Nederland</h2>
+              <h2 className="mt-1 text-3xl font-extrabold md:text-4xl">Top 10 online casino's Nederland</h2>
               <p className="mt-2 text-muted-foreground">Ranking bijgewerkt op basis van onze meest recente testronde.</p>
             </div>
           </div>
           <ComparisonTable casinos={top} />
         </section>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-24 grid gap-8 lg:grid-cols-[1fr_320px]">
           <FAQ
             items={[
               { q: "Welk online casino is in 2026 het beste in Nederland?", a: "Op basis van onze tests komt Royal Orange dit jaar als #1 uit de bus, vooral dankzij de combinatie van een sterk welkomstaanbod en lage doorzetvereisten. De ranking verandert echter periodiek — we hertesten ieder kwartaal." },
@@ -109,7 +109,7 @@ function Index() {
           <TrustNotice />
         </div>
 
-        <div className="mt-12">
+        <div className="mt-24">
           <RelatedLinks
             title="Verken meer categorieën"
             links={[
