@@ -488,6 +488,37 @@ function BuitenlandseCasinoPage() {
           </div>
         </section>
 
+        {/* Inline CTA #2 */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border bg-card p-6 shadow-card md:p-7">
+            <div className="pointer-events-none absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-trust/15 text-trust">
+                  <Zap className="h-6 w-6" />
+                </span>
+                <div>
+                  <div className="text-base font-extrabold md:text-lg">
+                    Klaar om te starten bij Betory?
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Snelle registratie · Crypto stortingen · Direct spelen
+                  </div>
+                </div>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
+              >
+                <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
+                  Speel bij Betory <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Voordelen */}
         <section className="mx-auto mt-10 max-w-4xl">
           <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft md:p-8">
