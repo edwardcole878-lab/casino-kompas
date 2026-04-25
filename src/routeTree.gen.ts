@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const BesteOnlineCasinosRoute = BesteOnlineCasinosRouteImport.update({
+  id: '/beste-online-casinos',
+  path: '/beste-online-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/beste-online-casinos': typeof BesteOnlineCasinosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/beste-online-casinos': typeof BesteOnlineCasinosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/beste-online-casinos': typeof BesteOnlineCasinosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/beste-online-casinos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/beste-online-casinos'
+  id: '__root__' | '/' | '/beste-online-casinos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BesteOnlineCasinosRoute: typeof BesteOnlineCasinosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/beste-online-casinos': {
+      id: '/beste-online-casinos'
+      path: '/beste-online-casinos'
+      fullPath: '/beste-online-casinos'
+      preLoaderRoute: typeof BesteOnlineCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BesteOnlineCasinosRoute: BesteOnlineCasinosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
