@@ -361,6 +361,35 @@ function BuitenlandseCasinoPage() {
           </div>
         </section>
 
+        {/* Inline CTA #1 */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-gold/40 gradient-bonus p-5 shadow-glow-gold md:p-6">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/25 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl gradient-gold text-gold-foreground shadow-gold">
+                  <Gift className="h-6 w-6" />
+                </span>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-gold-foreground/70">
+                    Welkomstbonus actief
+                  </div>
+                  <div className="text-lg font-black md:text-xl">300% tot €3.250 + 225 Free Spins</div>
+                </div>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
+              >
+                <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
+                  Claim Bonus <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Stortingen & uitbetalingen */}
         <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
           <div className="rounded-2xl border bg-card p-6 shadow-soft">
