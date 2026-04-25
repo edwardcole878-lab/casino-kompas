@@ -8,7 +8,6 @@ import {
   Globe2,
   Star,
   Check,
-  X,
   Gamepad2,
   Dices,
   Coins,
@@ -190,7 +189,7 @@ function BuitenlandseCasinoPage() {
               <div className="flex items-center gap-5">
                 <div className="grid h-20 w-20 place-items-center rounded-2xl gradient-gold text-gold-foreground shadow-gold">
                   <div className="text-center leading-none">
-                    <div className="text-2xl font-black">8.5</div>
+                    <div className="text-2xl font-black">10</div>
                     <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wider opacity-80">/ 10</div>
                   </div>
                 </div>
