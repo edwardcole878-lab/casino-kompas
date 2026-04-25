@@ -6,6 +6,8 @@ import { FAQ } from "@/components/site/FAQ";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
+import { TopThreePodium } from "@/components/site/TopThreePodium";
+import { TrustStrip } from "@/components/site/TrustStrip";
 import { casinos } from "@/data/casinos";
 import { Award, Wallet, ShieldCheck, Smartphone } from "lucide-react";
 
@@ -35,8 +37,16 @@ function Index() {
       />
 
       <div className="container mx-auto max-w-6xl px-4 py-12 md:py-16">
+        {/* Top 3 podium — primary attention zone */}
+        <section className="-mt-24 md:-mt-32 relative z-10 pt-6">
+          <TopThreePodium casinos={casinos} />
+          <div className="mt-6"><TrustStrip /></div>
+        </section>
+
         <article className="prose prose-neutral max-w-3xl">
+          <div className="mt-12">
           <PageMeta />
+          </div>
           <h2 className="mt-4 text-2xl font-bold md:text-3xl">Welkom bij Nederland's eerlijkste casinovergelijker</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
             De Nederlandse online casinomarkt bestaat sinds oktober 2021 — en is sindsdien explosief gegroeid. Met inmiddels meer dan 25 vergunde operators is het voor de gemiddelde speler nauwelijks nog te overzien wie nou écht een goed aanbod biedt en wie alleen op marketing leunt. Daarom doen wij het werk: elk casino in deze ranking hebben we daadwerkelijk getest met eigen geld, eigen iDEAL-stortingen en eigen uitbetalingen.
