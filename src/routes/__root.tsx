@@ -37,6 +37,12 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CasinoWijzer" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "CasinoWijzer — Vergelijk de beste online casino's van Nederland" },
+      { name: "twitter:title", content: "CasinoWijzer — Vergelijk de beste online casino's van Nederland" },
+      { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
+      { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
