@@ -9,7 +9,7 @@ import { PageMeta } from "@/components/site/PageMeta";
 import { TopThreePodium } from "@/components/site/TopThreePodium";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { casinos } from "@/data/casinos";
-import { Award, Wallet, ShieldCheck, Smartphone } from "lucide-react";
+import { Award, Wallet, ShieldCheck, Smartphone, Gift, Zap, Dice5, Coins } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,25 +57,40 @@ function Index() {
           </p>
         </article>
 
-        <div className="mt-10 grid gap-3 md:grid-cols-4">
-          {[
-            { icon: Award, label: "Top bonus", to: "/casino-bonussen" },
-            { icon: Wallet, label: "iDEAL casino's", to: "/ideal-casinos" },
-            { icon: ShieldCheck, label: "Betrouwbaar", to: "/betrouwbare-online-casinos" },
-            { icon: Smartphone, label: "Mobiel spelen", to: "/mobiele-casinos" },
-          ].map(({ icon: Icon, label, to }) => (
-            <Link key={to} to={to} className="group flex items-center gap-3 rounded-xl border bg-card p-4 shadow-card transition-shadow hover:shadow-elegant">
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent text-accent-foreground"><Icon className="h-5 w-5" /></span>
-              <span className="font-semibold group-hover:text-gold">{label}</span>
-            </Link>
-          ))}
-        </div>
+        <section className="mt-16">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold md:text-3xl">Vind direct wat je zoekt</h2>
+            <p className="mt-1 text-muted-foreground">Spring naar de categorie die past bij jouw speelstijl.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Gift, label: "Top bonussen", desc: "Welkomstaanbod vergeleken", to: "/casino-bonussen", color: "from-gold/20 to-gold/5" },
+              { icon: Wallet, label: "iDEAL casino's", desc: "Direct storten in NL", to: "/ideal-casinos", color: "from-trust/20 to-trust/5" },
+              { icon: Zap, label: "Snelle uitbetaling", desc: "Binnen 1 uur op je rekening", to: "/snelle-uitbetaling-casino", color: "from-success/20 to-success/5" },
+              { icon: Dice5, label: "Live casino", desc: "Spelen met echte dealer", to: "/live-casino", color: "from-destructive/15 to-destructive/5" },
+              { icon: Coins, label: "Online slots", desc: "Duizenden gokkasten", to: "/online-slots", color: "from-accent to-accent/30" },
+              { icon: Smartphone, label: "Mobiel casino", desc: "Spelen op je telefoon", to: "/mobiele-casinos", color: "from-primary/15 to-primary/5" },
+              { icon: ShieldCheck, label: "Betrouwbaar", desc: "KSA & Cruks-compliant", to: "/betrouwbare-online-casinos", color: "from-trust/20 to-trust/5" },
+              { icon: Award, label: "Nieuwe casino's", desc: "Recent gelanceerd", to: "/nieuwe-online-casinos", color: "from-gold/20 to-gold/5" },
+            ].map(({ icon: Icon, label, desc, to, color }) => (
+              <Link key={to} to={to} className="group hover-lift relative overflow-hidden rounded-2xl border bg-card p-5 shadow-card">
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${color} opacity-60`} />
+                <div className="relative">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-background/80 text-foreground shadow-card backdrop-blur"><Icon className="h-5 w-5" /></span>
+                  <div className="mt-4 font-bold group-hover:text-gold">{label}</div>
+                  <div className="mt-0.5 text-xs text-muted-foreground">{desc}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-        <section id="top10" className="mt-16 scroll-mt-20">
+        <section id="top10" className="mt-20 scroll-mt-20">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold md:text-3xl">Top 10 online casino's Nederland</h2>
-              <p className="mt-1 text-muted-foreground">Ranking bijgewerkt op basis van onze meest recente testronde.</p>
+              <div className="text-xs font-bold uppercase tracking-widest text-gold">De volledige ranking</div>
+              <h2 className="mt-1 text-2xl font-extrabold md:text-4xl">Top 10 online casino's Nederland</h2>
+              <p className="mt-2 text-muted-foreground">Ranking bijgewerkt op basis van onze meest recente testronde.</p>
             </div>
           </div>
           <ComparisonTable casinos={top} />
