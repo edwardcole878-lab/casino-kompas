@@ -28,7 +28,7 @@ export function FilterBar({ value, onChange }: { value: FilterState; onChange: (
     { v: 9, l: "9.0+" },
   ];
   return (
-    <div className="rounded-2xl border bg-card p-4 shadow-card">
+    <div className="rounded-2xl border bg-secondary/50 p-4 md:p-5 shadow-soft">
       <div className="flex items-center gap-2 text-sm font-semibold">
         <SlidersHorizontal className="h-4 w-4 text-gold" /> Filter resultaten
         {active && (
@@ -37,7 +37,7 @@ export function FilterBar({ value, onChange }: { value: FilterState; onChange: (
           </button>
         )}
       </div>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-3">
         <div className="flex items-center gap-1.5">
           <Star className="h-3.5 w-3.5 text-muted-foreground" />
           {ratings.map((r) => (
