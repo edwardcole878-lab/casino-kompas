@@ -5,7 +5,7 @@ import { CasinoBadge } from "./Badge";
 import { Rating } from "./Rating";
 import { PaymentIcons } from "./PaymentIcons";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, ShieldCheck, Clock, Gift, BadgeCheck, Trophy, X, CalendarCheck } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Clock, Gift, BadgeCheck, Trophy, CalendarCheck } from "lucide-react";
 
 const MONTHS_NL = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
 /** TZ-stable nl-NL short date formatter (avoids SSR/CSR hydration mismatch). */
@@ -92,30 +92,17 @@ export function CasinoCard({
             </div>
           </div>
 
-          {/* Pros / Cons */}
-          <div className="mt-4 grid gap-3 md:grid-cols-2">
-            <div className="rounded-lg border border-success/20 bg-success/5 p-3">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-success">Voordelen</div>
-              <ul className="mt-1.5 space-y-1 text-[13px]">
-                {casino.pros.slice(0, 3).map((p) => (
-                  <li key={p} className="flex items-start gap-1.5">
-                    <Check className="mt-0.5 h-3 w-3 shrink-0 text-success" />
-                    <span className="font-medium">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-lg border border-destructive/20 bg-destructive/5 p-3">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-destructive">Nadelen</div>
-              <ul className="mt-1.5 space-y-1 text-[13px]">
-                {casino.cons.slice(0, 2).map((p) => (
-                  <li key={p} className="flex items-start gap-1.5">
-                    <X className="mt-0.5 h-3 w-3 shrink-0 text-destructive" />
-                    <span className="font-medium">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Pros */}
+          <div className="mt-4 rounded-lg border border-success/20 bg-success/5 p-3">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-success">Voordelen</div>
+            <ul className="mt-1.5 grid gap-1 text-[13px] sm:grid-cols-2">
+              {casino.pros.slice(0, 4).map((p) => (
+                <li key={p} className="flex items-start gap-1.5">
+                  <Check className="mt-0.5 h-3 w-3 shrink-0 text-success" />
+                  <span className="font-medium">{p}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Standardised data block */}
