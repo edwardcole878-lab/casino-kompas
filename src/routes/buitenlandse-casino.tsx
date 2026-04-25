@@ -512,7 +512,7 @@ function BuitenlandseCasinoPage() {
                 className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
               >
                 <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
-                  Speel bij Betory <ArrowRight className="h-4 w-4" />
+                  Speel Nu <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
             </div>
