@@ -31,7 +31,7 @@ function Page() {
       }
       casinos={casinos.filter((c) => c.bonusHeadline.toLowerCase().includes("zonder") || c.angle === "low-wagering" || c.angle === "ideal-experience").slice(0, 5)}
       rankingTitle="Beste no deposit aanbiedingen"
-      primaryCta="Claim Bonus"
+      primaryCta="Speel Nu"
       faqs={[
         { q: "Is no deposit bonus echt gratis?", a: "Je hoeft inderdaad niets te storten, maar je moet meestal wel je identiteit verifiëren voor uitbetaling." },
         { q: "Hoeveel kan ik maximaal uitbetalen?", a: "Bij no deposit bonussen meestal €50-€100, ongeacht hoeveel je theoretisch wint." },

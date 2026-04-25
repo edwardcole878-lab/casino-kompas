@@ -121,7 +121,7 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                 rel="sponsored nofollow"
                 className="inline-flex shrink-0 items-center gap-1 rounded-lg gradient-cta px-3 py-2 text-xs font-extrabold text-gold-foreground shadow-gold"
               >
-                Bezoek <ExternalLink className="h-3 w-3" />
+                Speel Nu <ExternalLink className="h-3 w-3" />
               </a>
             </div>
             <dl className="mt-3 grid grid-cols-2 gap-2 rounded-lg border bg-secondary/40 p-2.5 text-[11px]">
@@ -215,7 +215,7 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                     rel="sponsored nofollow"
                     className="inline-flex items-center gap-1 rounded-lg gradient-cta px-3 py-2 text-xs font-extrabold text-gold-foreground shadow-gold"
                   >
-                    Bezoek <ExternalLink className="h-3 w-3" />
+                    Speel Nu <ExternalLink className="h-3 w-3" />
                   </a>
                 </td>
               </tr>

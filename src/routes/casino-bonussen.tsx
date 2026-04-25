@@ -34,7 +34,7 @@ function Page() {
       casinos={ordered}
       rankingTitle="Beste bonussen — gerangschikt op netto-waarde"
       rankingDescription="Berekend als (bonusbedrag / wagering) × games-coverage — hoger is beter."
-      primaryCta="Claim Bonus"
+      primaryCta="Speel Nu"
       faqs={[
         { q: "Wat is een doorzetvereiste (wagering) precies?", a: "Een vermenigvuldiger die aangeeft hoe vaak je het bonusbedrag moet inzetten voordat je winst kunt opnemen. Bij 30x wagering en €100 bonus moet je dus voor €3.000 inzetten. Lager is beter." },
         { q: "Tellen alle spellen even zwaar mee voor wagering?", a: "Nee. Slots tellen meestal 100%, blackjack vaak 5-10%, en live casino soms 0%. Lees altijd de bonusvoorwaarden voordat je begint." },

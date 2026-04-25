@@ -153,7 +153,7 @@ function BuitenlandseCasinoPage() {
                       target="_blank"
                       rel="sponsored nofollow noopener"
                     >
-                      Claim Bonus <ArrowRight className="h-5 w-5" />
+                      Speel Nu <ArrowRight className="h-5 w-5" />
                     </a>
                   </Button>
                   <div className="text-xs leading-snug text-muted-foreground">
@@ -383,7 +383,7 @@ function BuitenlandseCasinoPage() {
                 className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
               >
                 <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
-                  Claim Bonus <ArrowRight className="h-4 w-4" />
+                  Speel Nu <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
             </div>
@@ -571,7 +571,7 @@ function BuitenlandseCasinoPage() {
                   className="h-14 gradient-cta cta-glow rounded-xl px-10 text-lg font-extrabold text-gold-foreground shadow-gold"
                 >
                   <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
-                    Claim 300% tot €3.250 + 225 FS <ArrowRight className="h-5 w-5" />
+                    Speel Nu <ArrowRight className="h-5 w-5" />
                   </a>
                 </Button>
                 <div className="text-xs text-muted-foreground">

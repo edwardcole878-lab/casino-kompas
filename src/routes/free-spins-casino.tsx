@@ -31,7 +31,7 @@ function Page() {
       }
       casinos={casinos.filter((c) => c.bonusHeadline.toLowerCase().includes("spin"))}
       rankingTitle="Beste free spin aanbiedingen"
-      primaryCta="Claim Bonus"
+      primaryCta="Speel Nu"
       faqs={[
         { q: "Op welke slots krijg ik free spins?", a: "Meestal op de populairste slots zoals Book of Dead, Starburst of Big Bass Bonanza. Het casino kiest, jij niet." },
         { q: "Wat is de inzet per free spin waard?", a: "Doorgaans €0,10 tot €0,20 per spin. Tel uit wat je totaal aan inzetwaarde krijgt." },

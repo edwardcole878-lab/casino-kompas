@@ -31,7 +31,7 @@ function Page() {
       }
       casinos={casinos.filter((c) => ["best-bonus", "low-wagering", "ideal-experience"].includes(c.angle))}
       rankingTitle="Beste welkomstbonussen op eerste storting"
-      primaryCta="Claim Bonus"
+      primaryCta="Speel Nu"
       faqs={[
         { q: "Wat is een 100% welkomstbonus?", a: "Het casino verdubbelt je eerste storting tot een maximumbedrag. Stort je €100 bij 100% tot €500, dan speel je met €200." },
         { q: "Wat zijn redelijke doorzetvereisten?", a: "Onder 30x is goed, onder 20x is uitzonderlijk. Boven 40x wordt het in de praktijk lastig om winst over te houden." },
