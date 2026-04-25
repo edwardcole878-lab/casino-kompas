@@ -8,6 +8,16 @@ export type Casino = {
   rating: number; // 0-10
   bonusHeadline: string;
   bonusDetail: string;
+  /** Numeric max bonus value in EUR, used for sorting & dynamic CTA copy */
+  maxBonus: number;
+  /** Wagering / doorzetvereiste, e.g. "25x" or "n.v.t." */
+  wagering: string;
+  /** Date of last editorial test (ISO YYYY-MM-DD) */
+  lastTested: string;
+  /** Optional: bonus-specific CTA label, falls back to derived value */
+  ctaLabel?: string;
+  /** Optional: real brand logo URL — leave empty to use initials placeholder */
+  image?: string;
   benefits: string[];
   payments: PaymentMethod[];
   payoutTime: string;
