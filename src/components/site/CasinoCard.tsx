@@ -7,8 +7,12 @@ import { PaymentIcons } from "./PaymentIcons";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, ShieldCheck, Clock, Gift, BadgeCheck, Trophy, X, CalendarCheck } from "lucide-react";
 
-const dateNL = (iso: string) =>
-  new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric" });
+const MONTHS_NL = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+/** TZ-stable nl-NL short date formatter (avoids SSR/CSR hydration mismatch). */
+const dateNL = (iso: string) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTHS_NL[m - 1]} ${y}`;
+};
 
 export function CasinoCard({
   casino,
