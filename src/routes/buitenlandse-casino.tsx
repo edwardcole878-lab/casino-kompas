@@ -180,26 +180,366 @@ function BuitenlandseCasinoPage() {
           </article>
         </section>
 
-        {/* Short info section */}
-        <section className="mx-auto mt-12 max-w-3xl text-center">
-          <h2 className="text-2xl font-bold md:text-3xl">Waarom een buitenlands casino?</h2>
+        {/* ============ FULL REVIEW ============ */}
+
+        {/* Score banner */}
+        <section className="mx-auto mt-14 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border bg-card p-6 shadow-card md:p-8">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/10 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-center gap-5">
+                <div className="grid h-20 w-20 place-items-center rounded-2xl gradient-gold text-gold-foreground shadow-gold">
+                  <div className="text-center leading-none">
+                    <div className="text-2xl font-black">8.5</div>
+                    <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wider opacity-80">/ 10</div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-1 text-gold">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <h2 className="mt-1 text-xl font-extrabold md:text-2xl">Betory Casino Review 2026</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Modern crypto casino met groot spelaanbod
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-center">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-success">Kort oordeel</div>
+                <div className="mt-1 max-w-[260px] text-sm font-semibold">
+                  Sterk crypto casino met uitstekende UX en veel speelopties
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Over Betory */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="rounded-2xl border bg-card p-6 shadow-soft md:p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-trust/10 text-trust">
+                <Globe2 className="h-5 w-5" />
+              </span>
+              <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">Over Betory Casino</h2>
+            </div>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Betory Casino is een innovatief online gokplatform dat volledig is gericht op
+              cryptocurrency. Spelers kunnen eenvoudig registreren en direct beginnen met spelen
+              zonder ingewikkelde processen. Het casino richt zich op snelheid, toegankelijkheid,
+              moderne technologie en internationale spelers — en groeit daardoor snel binnen de
+              crypto-casino markt.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: Zap, label: "Snelheid" },
+                { icon: Sparkles, label: "Toegankelijkheid" },
+                { icon: TrendingUp, label: "Moderne tech" },
+                { icon: Globe2, label: "Internationaal" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2.5 rounded-xl border bg-secondary/40 px-3.5 py-3">
+                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-card text-trust shadow-soft">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm font-semibold">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Spelaanbod */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="flex items-center gap-3">
+            <span className="grid h-10 w-10 place-items-center rounded-xl gradient-gold text-gold-foreground shadow-gold">
+              <Gamepad2 className="h-5 w-5" />
+            </span>
+            <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">
+              Spelaanbod — uitgebreid en modern
+            </h2>
+          </div>
           <p className="mt-3 text-muted-foreground">
-            Buitenlandse online casino's bieden vaak hogere bonussen, een breder spelaanbod en
-            soepelere voorwaarden dan lokale aanbieders. Betory combineert een agressieve
-            welkomstbonus met een moderne speelervaring — ideaal als je op zoek bent naar maximale
-            speelwaarde voor je eerste storting.
+            Het spelaanbod van Betory Casino is indrukwekkend en zeer divers — van klassieke slots
+            tot live tafels en innovatieve crypto-spellen.
           </p>
 
-          <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="h-12 gradient-cta cta-glow rounded-xl px-6 font-extrabold text-gold-foreground shadow-gold"
-            >
-              <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
-                Speel bij Betory <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {/* Slots */}
+            <div className="rounded-2xl border bg-card p-6 shadow-soft hover-lift">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/15 text-gold">
+                <Dices className="h-5 w-5" />
+              </span>
+              <h3 className="mt-4 text-lg font-extrabold">🎰 Slots</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Duizenden slots van top providers. Van klassiekers tot moderne video slots met bonusfeatures.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-sm">
+                {["Pragmatic Play", "NetEnt", "Betsoft", "BGaming"].map((p) => (
+                  <li key={p} className="flex items-center gap-2 font-medium">
+                    <Check className="h-3.5 w-3.5 text-success" /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Live casino */}
+            <div className="rounded-2xl border bg-card p-6 shadow-soft hover-lift">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-destructive/10 text-destructive">
+                <Star className="h-5 w-5" />
+              </span>
+              <h3 className="mt-4 text-lg font-extrabold">🃏 Live Casino</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Stabiele streams en een realistische casino-ervaring met echte dealers.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-sm">
+                {["Live roulette", "Live blackjack", "Live baccarat", "Game shows"].map((p) => (
+                  <li key={p} className="flex items-center gap-2 font-medium">
+                    <Check className="h-3.5 w-3.5 text-success" /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Extra */}
+            <div className="rounded-2xl border bg-card p-6 shadow-soft hover-lift">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-trust/10 text-trust">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <h3 className="mt-4 text-lg font-extrabold">🎲 Extra Games</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Het aanbod blijft altijd dynamisch en vernieuwend dankzij innovatieve titels.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-sm">
+                {["Crash games", "Instant win games", "Crypto-gebaseerde spellen"].map((p) => (
+                  <li key={p} className="flex items-center gap-2 font-medium">
+                    <Check className="h-3.5 w-3.5 text-success" /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Bonussen */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-gold/40 gradient-bonus p-6 shadow-glow-gold md:p-8">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-gold/25 blur-3xl" />
+            <div className="relative">
+              <div className="flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-xl gradient-gold text-gold-foreground shadow-gold">
+                  <Gift className="h-5 w-5" />
+                </span>
+                <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">
+                  Bonussen & Welcome Package
+                </h2>
+              </div>
+              <p className="mt-3 text-foreground/80">
+                Betory Casino biedt aantrekkelijke promoties voor nieuwe spelers.
+              </p>
+              <div className="mt-5 grid gap-3 md:grid-cols-3">
+                {[
+                  "Tot 100% bonus op eerste storting",
+                  "Extra free spins",
+                  "Reload bonussen voor actieve spelers",
+                ].map((b) => (
+                  <div
+                    key={b}
+                    className="flex items-start gap-2.5 rounded-xl border border-gold/30 bg-card/80 p-4 backdrop-blur"
+                  >
+                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full gradient-gold text-gold-foreground">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-sm font-semibold">{b}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-foreground/70">
+                👉 Gecombineerd kan dit oplopen tot een aantrekkelijk welcome package over meerdere stortingen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Stortingen & uitbetalingen */}
+        <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border bg-card p-6 shadow-soft">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-success/15 text-success">
+                <Wallet className="h-5 w-5" />
+              </span>
+              <h3 className="text-xl font-extrabold">💰 Stortingen</h3>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Betory ondersteunt snelle en moderne crypto betaalmethoden.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm">
+              {[
+                "Bitcoin (BTC)",
+                "Ethereum (ETH)",
+                "USDT en andere crypto",
+                "Snelle verwerking",
+                "Lage kosten",
+              ].map((b) => (
+                <li key={b} className="flex items-center gap-2 font-medium">
+                  <Check className="h-3.5 w-3.5 text-success" /> {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border bg-card p-6 shadow-soft">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-trust/10 text-trust">
+                <Coins className="h-5 w-5" />
+              </span>
+              <h3 className="text-xl font-extrabold">💸 Uitbetalingen</h3>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Uitbetalingen verlopen via crypto en zijn technisch zeer snel mogelijk.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm">
+              {[
+                "Lage minimum opname",
+                "Snelle blockchain transacties",
+                "Flexibele wallets",
+                "Wereldwijd toegankelijk",
+              ].map((b) => (
+                <li key={b} className="flex items-center gap-2 font-medium">
+                  <Check className="h-3.5 w-3.5 text-success" /> {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Veiligheid + UX + Support row */}
+        <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border bg-card p-6 shadow-soft">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-trust/10 text-trust">
+              <ShieldCheck className="h-5 w-5" />
+            </span>
+            <h3 className="mt-3 text-lg font-extrabold">⚖️ Veiligheid & licentie</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Betory opereert als internationaal crypto casino met offshore licentie. Geen
+              Nederlandse KSA-vergunning, wel een internationale operatiestructuur gericht op
+              crypto gaming.
+            </p>
+          </div>
+          <div className="rounded-2xl border bg-card p-6 shadow-soft">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/15 text-gold">
+              <Smartphone className="h-5 w-5" />
+            </span>
+            <h3 className="mt-3 text-lg font-extrabold">📱 Gebruikservaring</h3>
+            <ul className="mt-3 space-y-1.5 text-sm">
+              {[
+                "Snelle laadtijden",
+                "Mobiel geoptimaliseerd",
+                "Intuïtieve navigatie",
+                "Strak dark-mode design",
+              ].map((b) => (
+                <li key={b} className="flex items-center gap-2 font-medium">
+                  <Check className="h-3.5 w-3.5 text-success" /> {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border bg-card p-6 shadow-soft">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-success/15 text-success">
+              <Headphones className="h-5 w-5" />
+            </span>
+            <h3 className="mt-3 text-lg font-extrabold">📞 Klantenservice</h3>
+            <ul className="mt-3 space-y-1.5 text-sm">
+              {["Live chat beschikbaar", "E-mail support", "Basis FAQ sectie"].map((b) => (
+                <li key={b} className="flex items-center gap-2 font-medium">
+                  <Check className="h-3.5 w-3.5 text-success" /> {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Pros / Cons */}
+        <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft">
+            <div className="flex items-center gap-2">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-success text-success-foreground">
+                <Check className="h-5 w-5" />
+              </span>
+              <h3 className="text-xl font-extrabold text-success">👍 Voordelen</h3>
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {[
+                "Groot spelaanbod",
+                "Moderne interface",
+                "Snelle crypto transacties",
+                "Innovatieve game selectie",
+                "Lage instapdrempel",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-2 font-medium">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border-2 border-destructive/20 bg-destructive/5 p-6 shadow-soft">
+            <div className="flex items-center gap-2">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-destructive text-destructive-foreground">
+                <X className="h-5 w-5" />
+              </span>
+              <h3 className="text-xl font-extrabold text-destructive">👎 Nadelen</h3>
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {[
+                "Geen iDEAL ondersteuning",
+                "Geen Nederlandse licentie",
+                "Crypto-only focus kan beperkend zijn voor beginners",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-2 font-medium">
+                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Eindconclusie + final CTA */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-card p-8 shadow-glow-gold md:p-12">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
+            <div className="pointer-events-none absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+            <div className="relative text-center">
+              <div className="mx-auto inline-flex items-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground shadow-soft">
+                <Star className="h-3.5 w-3.5 fill-gold text-gold" /> Eindconclusie
+              </div>
+              <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
+                Een modern crypto casino met sterke UX en groot spelaanbod
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+                Betory Casino blinkt vooral uit in <strong className="text-foreground">gebruiksvriendelijkheid</strong>,{" "}
+                <strong className="text-foreground">spelaanbod</strong> en een{" "}
+                <strong className="text-foreground">snelle crypto ervaring</strong>. Voor spelers
+                die actief zijn in crypto gaming is Betory een aantrekkelijke keuze binnen het
+                internationale casino landschap.
+              </p>
+              <div className="mt-7 flex flex-col items-center gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-14 gradient-cta cta-glow rounded-xl px-10 text-lg font-extrabold text-gold-foreground shadow-gold"
+                >
+                  <a href={AFFILIATE_URL} target="_blank" rel="sponsored nofollow noopener">
+                    Claim 300% tot €3.250 + 225 FS <ArrowRight className="h-5 w-5" />
+                  </a>
+                </Button>
+                <div className="text-xs text-muted-foreground">
+                  18+ · Voorwaarden gelden · Speel bewust
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
