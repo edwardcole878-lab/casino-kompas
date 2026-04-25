@@ -80,10 +80,7 @@ export function Header() {
     >
       {/* Layer 1 — Utility bar */}
       <div className={`hidden md:block border-b transition-all ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-11 opacity-100"}`} style={{ borderColor: "rgba(0,0,0,0.05)" }}>
-        <div className="container mx-auto flex h-11 max-w-[1240px] items-center justify-between gap-6 px-6">
-          <Link to="/" className="flex items-center text-sm">
-            <Logo condensed />
-          </Link>
+        <div className="container mx-auto flex h-11 max-w-[1240px] items-center justify-end gap-6 px-6">
           <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
             <Link
               to="/redactiebeleid"
@@ -97,8 +94,11 @@ export function Header() {
       </div>
 
       {/* Layer 2 — Main navigation */}
-      <div className={`container mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
-        <Link to="/" className={`flex items-center ${scrolled ? "" : "md:hidden"}`}>
+      <div className={`container relative mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
+        <Link
+          to="/"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center"
+        >
           <Logo condensed={scrolled} />
         </Link>
 
