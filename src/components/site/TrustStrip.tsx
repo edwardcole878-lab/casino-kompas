@@ -1,11 +1,11 @@
-import { ShieldCheck, Lock, BadgeCheck, Users } from "lucide-react";
+import { ShieldCheck, Lock, BadgeCheck, FlaskConical } from "lucide-react";
 
 export function TrustStrip() {
   const items = [
     { icon: ShieldCheck, label: "KSA-vergund", sub: "Kansspelautoriteit" },
     { icon: BadgeCheck, label: "Cruks-koppeling", sub: "Spelersbescherming" },
     { icon: Lock, label: "SSL-versleuteld", sub: "256-bit encryptie" },
-    { icon: Users, label: "120K+ spelers", sub: "Volgen ons advies" },
+    { icon: FlaskConical, label: "42 casino's getest", sub: "Eigen testronde 2026" },
   ];
   return (
     <div className="rounded-2xl border bg-card/60 p-4 backdrop-blur md:p-5">

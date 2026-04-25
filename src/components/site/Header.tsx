@@ -22,6 +22,7 @@ import {
   CircleDot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "./Logo";
 
 type NavLink = { to: string; label: string; desc?: string; icon?: React.ComponentType<{ className?: string }> };
 type NavGroup = { label: string; items: NavLink[] };
@@ -33,6 +34,10 @@ const groups: NavGroup[] = [
       { to: "/beste-online-casinos", label: "Top 10 Casino's", desc: "De algehele ranking", icon: Trophy },
       { to: "/nieuwe-online-casinos", label: "Nieuwe Casino's", desc: "Recent gelanceerd in NL", icon: Sparkle },
       { to: "/betrouwbare-online-casinos", label: "Betrouwbare Casino's", desc: "KSA & Cruks-compliant", icon: ShieldQuestion },
+      { to: "/online-slots", label: "Online Slots", desc: "Duizenden gokkasten", icon: Dice5 },
+      { to: "/live-casino", label: "Live Casino", desc: "Met echte dealer", icon: Tv },
+      { to: "/blackjack-online", label: "Blackjack", desc: "Strategie en tafels", icon: Spade },
+      { to: "/roulette-online", label: "Roulette", desc: "Klassiek en live", icon: CircleDot },
     ],
   },
   {
@@ -50,15 +55,6 @@ const groups: NavGroup[] = [
       { to: "/ideal-casinos", label: "iDEAL", desc: "Direct storten in NL", icon: Wallet },
       { to: "/crypto-casino", label: "Crypto", desc: "Bitcoin & altcoins", icon: Bitcoin },
       { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling", desc: "< 1 uur op je rekening", icon: Clock },
-    ],
-  },
-  {
-    label: "Spellen",
-    items: [
-      { to: "/online-slots", label: "Slots", desc: "Online gokkasten", icon: Dice5 },
-      { to: "/live-casino", label: "Live Casino", desc: "Met echte dealer", icon: Tv },
-      { to: "/blackjack-online", label: "Blackjack", desc: "Strategie en tafels", icon: Spade },
-      { to: "/roulette-online", label: "Roulette", desc: "Klassiek en live", icon: CircleDot },
     ],
   },
 ];
@@ -85,13 +81,8 @@ export function Header() {
       {/* Layer 1 — Utility bar */}
       <div className={`hidden md:block border-b transition-all ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-11 opacity-100"}`} style={{ borderColor: "rgba(0,0,0,0.05)" }}>
         <div className="container mx-auto flex h-11 max-w-[1240px] items-center justify-between gap-6 px-6">
-          <Link to="/" className="flex items-center gap-2 text-sm font-bold">
-            <span className="grid h-6 w-6 place-items-center rounded-md gradient-gold">
-              <Sparkles className="h-3.5 w-3.5 text-gold-foreground" />
-            </span>
-            <span className="text-foreground/80">
-              Casino<span className="text-gold">Wijzer</span>
-            </span>
+          <Link to="/" className="flex items-center text-sm">
+            <Logo condensed />
           </Link>
           <div className="relative max-w-md flex-1">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
@@ -102,12 +93,12 @@ export function Header() {
             />
           </div>
           <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
+            <Link
+              to="/redactiebeleid"
+              className="inline-flex items-center gap-1.5 hover:text-foreground"
+            >
               <ShieldCheck className="h-3.5 w-3.5 text-trust" />
-              10+ Gecontroleerde Casino's
-            </span>
-            <Link to="/beste-online-casinos" className="font-semibold text-foreground hover:text-gold">
-              Beste Casino's →
+              42 casino's getest · April 2026
             </Link>
           </div>
         </div>
@@ -115,16 +106,11 @@ export function Header() {
 
       {/* Layer 2 — Main navigation */}
       <div className={`container mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
-        <Link to="/" className="flex items-center gap-2 font-bold text-lg md:hidden">
-          <span className="grid h-9 w-9 place-items-center rounded-lg gradient-gold shadow-gold">
-            <Sparkles className="h-5 w-5 text-gold-foreground" />
-          </span>
-          <span>
-            Casino<span className="text-gold">Wijzer</span>
-          </span>
+        <Link to="/" className={`flex items-center ${scrolled ? "" : "md:hidden"}`}>
+          <Logo condensed={scrolled} />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className={`hidden items-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
           {groups.map((g) => (
             <div key={g.label} className="group relative">
               <button className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-accent hover:text-foreground">

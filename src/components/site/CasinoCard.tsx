@@ -5,11 +5,14 @@ import { CasinoBadge } from "./Badge";
 import { Rating } from "./Rating";
 import { PaymentIcons } from "./PaymentIcons";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, ShieldCheck, Clock, Gift, BadgeCheck, Trophy } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Clock, Gift, BadgeCheck, Trophy, X, CalendarCheck } from "lucide-react";
+
+const dateNL = (iso: string) =>
+  new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric" });
 
 export function CasinoCard({
   casino,
-  cta = "Speel Nu",
+  cta,
   secondaryCta = "Lees review",
   featured = false,
 }: {
@@ -19,6 +22,7 @@ export function CasinoCard({
   featured?: boolean;
 }) {
   const isFeatured = featured || casino.highlight;
+  const ctaLabel = cta ?? casino.ctaLabel ?? `Claim €${casino.maxBonus} Bonus`;
   return (
     <article
       className={`group relative overflow-hidden rounded-2xl border bg-card hover-lift ${
@@ -35,10 +39,22 @@ export function CasinoCard({
         {isFeatured ? <Trophy className="h-3.5 w-3.5" /> : null}
         #{casino.rank}{isFeatured ? " Beste Keuze" : ""}
       </div>
+      {/* Last tested — top right */}
+      <div className="absolute right-3 top-2 inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
+        <CalendarCheck className="h-3 w-3" /> Laatst getest: {dateNL(casino.lastTested)}
+      </div>
 
       <div className={`grid gap-4 md:gap-6 md:items-center ${isFeatured ? "md:grid-cols-[auto_1fr_280px]" : "md:grid-cols-[auto_1fr_220px]"}`}>
         <div className="flex items-center gap-4">
-          <CasinoLogo name={casino.name} brandColor={casino.brandColor} size={isFeatured ? "lg" : "md"} />
+          {casino.image ? (
+            <img
+              src={casino.image}
+              alt={`${casino.name} logo`}
+              className={`rounded-xl object-cover shadow-card ${isFeatured ? "h-16 w-16" : "h-12 w-12"}`}
+            />
+          ) : (
+            <CasinoLogo name={casino.name} brandColor={casino.brandColor} size={isFeatured ? "lg" : "md"} />
+          )}
         </div>
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
@@ -70,16 +86,55 @@ export function CasinoCard({
             </div>
           </div>
 
-          <ul className="mt-4 grid gap-1.5 text-[13px] md:grid-cols-2">
-            {casino.benefits.slice(0, isFeatured ? 4 : 3).map((b) => (
-              <li key={b} className="flex items-start gap-2">
-                <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-success/15">
-                  <Check className="h-3 w-3 text-success" />
-                </span>
-                <span className="font-medium">{b}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Pros / Cons */}
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="rounded-lg border border-success/20 bg-success/5 p-3">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-success">Voordelen</div>
+              <ul className="mt-1.5 space-y-1 text-[13px]">
+                {casino.pros.slice(0, 3).map((p) => (
+                  <li key={p} className="flex items-start gap-1.5">
+                    <Check className="mt-0.5 h-3 w-3 shrink-0 text-success" />
+                    <span className="font-medium">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-lg border border-destructive/20 bg-destructive/5 p-3">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-destructive">Nadelen</div>
+              <ul className="mt-1.5 space-y-1 text-[13px]">
+                {casino.cons.slice(0, 2).map((p) => (
+                  <li key={p} className="flex items-start gap-1.5">
+                    <X className="mt-0.5 h-3 w-3 shrink-0 text-destructive" />
+                    <span className="font-medium">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Standardised data block */}
+          <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-1.5 rounded-lg border bg-secondary/40 p-3 text-[12px] sm:grid-cols-3 md:grid-cols-5">
+            <div>
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Wagering</dt>
+              <dd className="font-bold tabular-nums">{casino.wagering}</dd>
+            </div>
+            <div>
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Max bonus</dt>
+              <dd className="font-bold tabular-nums">€{casino.maxBonus}</dd>
+            </div>
+            <div>
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Min. storting</dt>
+              <dd className="font-bold tabular-nums">{casino.minDeposit}</dd>
+            </div>
+            <div>
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Uitbetaling</dt>
+              <dd className="font-bold tabular-nums">{casino.payoutTime}</dd>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Licentie</dt>
+              <dd className="font-bold">KSA</dd>
+            </div>
+          </dl>
 
           <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t pt-3">
             <PaymentIcons methods={casino.payments} />
@@ -94,14 +149,16 @@ export function CasinoCard({
         <div className="flex flex-col gap-2.5">
           <Button asChild size="lg" className={`gradient-cta cta-glow text-gold-foreground font-extrabold shadow-gold w-full ${isFeatured ? "h-14 text-lg md:h-[56px] md:text-xl" : "h-12 text-base md:h-[52px]"}`}>
             <a href={`/go/${casino.slug}`} rel="sponsored nofollow">
-              {cta} <ArrowRight className="h-5 w-5" />
+              {ctaLabel} <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
           <Link to="/review/$slug" params={{ slug: casino.slug }} className="text-center text-[13px] font-semibold text-muted-foreground hover:text-foreground transition-colors">
             {secondaryCta} →
           </Link>
           <div className="mt-1 text-center text-[10px] leading-snug text-muted-foreground">
-            <div className="font-semibold text-success">✓ Direct toegang · binnen 1 minuut</div>
+            {isFeatured && (
+              <div className="font-semibold text-success">✓ Direct toegang · binnen 1 minuut</div>
+            )}
             <div className="mt-0.5">18+ · Voorwaarden gelden · Speel bewust</div>
           </div>
         </div>
