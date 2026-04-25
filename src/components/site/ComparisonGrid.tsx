@@ -78,8 +78,12 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                     <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-secondary text-xs font-bold text-muted-foreground">
                       {c.rank}
                     </span>
-                    {c.image ? (
-                      <img src={c.image} alt={`${c.name} logo`} className="h-9 w-9 rounded-lg object-cover" />
+                    {(c.logoUrl ?? c.image) ? (
+                      <img
+                        src={c.logoUrl ?? c.image}
+                        alt={`${c.name} logo`}
+                        className="h-9 w-9 rounded-lg bg-white object-contain p-0.5"
+                      />
                     ) : (
                       <CasinoLogo name={c.name} brandColor={c.brandColor} size="sm" />
                     )}

@@ -1,5 +1,10 @@
 export type PaymentMethod = "iDEAL" | "Bancontact" | "Visa" | "Mastercard" | "PayPal" | "Crypto" | "Trustly" | "Klarna" | "Skrill";
 
+/** Optional brand logo URLs per payment method. Drop PNGs in /public/payments/. */
+export const paymentLogoUrl: Partial<Record<PaymentMethod, string>> = {
+  // e.g. iDEAL: "/payments/ideal.svg",
+};
+
 export type Casino = {
   slug: string;
   rank: number;
@@ -16,7 +21,9 @@ export type Casino = {
   lastTested: string;
   /** Optional: bonus-specific CTA label, falls back to derived value */
   ctaLabel?: string;
-  /** Optional: real brand logo URL — leave empty to use initials placeholder */
+  /** Optional: real brand logo URL (preferred) — leave empty to use initials placeholder */
+  logoUrl?: string;
+  /** @deprecated use logoUrl */
   image?: string;
   benefits: string[];
   payments: PaymentMethod[];
@@ -49,6 +56,7 @@ export type Casino = {
 export const casinos: Casino[] = [
   {
     slug: "royal-orange",
+    logoUrl: "/logos/royal-orange.png",
     rank: 1,
     name: "Royal Orange",
     tagline: "De allround favoriet van Nederland",
@@ -77,6 +85,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "tulip-spin",
+    logoUrl: "/logos/tulip-spin.png",
     rank: 2,
     name: "Tulip Spin",
     tagline: "Razendsnelle iDEAL-uitbetalingen",
@@ -104,6 +113,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "delta-casino",
+    logoUrl: "/logos/delta-casino.png",
     rank: 3,
     name: "Delta Casino",
     tagline: "Beste mobiele casino-ervaring",
@@ -131,6 +141,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "nederzicht-casino",
+    logoUrl: "/logos/nederzicht-casino.png",
     rank: 4,
     name: "Nederzicht Casino",
     tagline: "KSA-licentie en maximale spelersbescherming",
@@ -158,6 +169,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "live-arena",
+    logoUrl: "/logos/live-arena.png",
     rank: 5,
     name: "Live Arena",
     tagline: "De grootste live casino-selectie",
@@ -184,6 +196,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "spin-paleis",
+    logoUrl: "/logos/spin-paleis.png",
     rank: 6,
     name: "Spin Paleis",
     tagline: "2.000+ slots van alle topproviders",
@@ -210,6 +223,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "diamant-club",
+    logoUrl: "/logos/diamant-club.png",
     rank: 7,
     name: "Diamant Club",
     tagline: "VIP-programma met persoonlijke manager",
@@ -236,6 +250,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "ideal-prime",
+    logoUrl: "/logos/ideal-prime.png",
     rank: 8,
     name: "iDEAL Prime",
     tagline: "Volledig geoptimaliseerd voor iDEAL-spelers",
@@ -263,6 +278,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "crypto-vault",
+    logoUrl: "/logos/crypto-vault.png",
     rank: 9,
     name: "Crypto Vault",
     tagline: "iDEAL én crypto onder één dak",
@@ -289,6 +305,7 @@ export const casinos: Casino[] = [
   },
   {
     slug: "zilveren-spin",
+    logoUrl: "/logos/zilveren-spin.png",
     rank: 10,
     name: "Zilveren Spin",
     tagline: "Bonus met de laagste doorzetvereisten",

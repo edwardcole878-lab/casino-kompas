@@ -73,8 +73,12 @@ function Index() {
                   <Trophy className="h-3.5 w-3.5" /> #1 van april 2026
                 </div>
                 <div className="mt-4 flex items-center gap-4">
-                  {number1.image ? (
-                    <img src={number1.image} alt={`${number1.name} logo`} className="h-16 w-16 rounded-xl object-cover shadow-card" />
+                  {(number1.logoUrl ?? number1.image) ? (
+                    <img
+                      src={number1.logoUrl ?? number1.image}
+                      alt={`${number1.name} logo`}
+                      className="h-16 w-16 rounded-xl bg-white object-contain p-1 shadow-card"
+                    />
                   ) : (
                     <CasinoLogo name={number1.name} brandColor={number1.brandColor} size="lg" />
                   )}
@@ -214,7 +218,7 @@ function Index() {
         slug={number1.slug}
         name={number1.name}
         brandColor={number1.brandColor}
-        image={number1.image}
+        image={number1.logoUrl ?? number1.image}
         bonus={number1.bonusHeadline}
         label="Claim →"
       />

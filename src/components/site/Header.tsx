@@ -84,14 +84,6 @@ export function Header() {
           <Link to="/" className="flex items-center text-sm">
             <Logo condensed />
           </Link>
-          <div className="relative max-w-md flex-1">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="search"
-              placeholder="Zoek casino of bonus…"
-              className="h-9 w-full rounded-xl border bg-card pl-9 pr-3 text-sm shadow-soft outline-none transition focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
-            />
-          </div>
           <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
             <Link
               to="/redactiebeleid"

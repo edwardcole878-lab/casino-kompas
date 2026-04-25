@@ -23,6 +23,7 @@ export function CasinoCard({
 }) {
   const isFeatured = featured || casino.highlight;
   const ctaLabel = cta ?? casino.ctaLabel ?? `Claim €${casino.maxBonus} Bonus`;
+  const logo = casino.logoUrl ?? casino.image;
   return (
     <article
       className={`group relative overflow-hidden rounded-2xl border bg-card hover-lift ${
@@ -46,11 +47,11 @@ export function CasinoCard({
 
       <div className={`grid gap-4 md:gap-6 md:items-center ${isFeatured ? "md:grid-cols-[auto_1fr_280px]" : "md:grid-cols-[auto_1fr_220px]"}`}>
         <div className="flex items-center gap-4">
-          {casino.image ? (
+          {logo ? (
             <img
-              src={casino.image}
+              src={logo}
               alt={`${casino.name} logo`}
-              className={`rounded-xl object-cover shadow-card ${isFeatured ? "h-16 w-16" : "h-12 w-12"}`}
+              className={`rounded-xl bg-white object-contain p-1 shadow-card ${isFeatured ? "h-16 w-16" : "h-12 w-12"}`}
             />
           ) : (
             <CasinoLogo name={casino.name} brandColor={casino.brandColor} size={isFeatured ? "lg" : "md"} />
