@@ -10,14 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WelkomstbonusCasinoRouteImport } from './routes/welkomstbonus-casino'
+import { Route as SnelleUitbetalingCasinoRouteImport } from './routes/snelle-uitbetaling-casino'
+import { Route as RouletteOnlineRouteImport } from './routes/roulette-online'
+import { Route as PaypalCasinoRouteImport } from './routes/paypal-casino'
+import { Route as OnlineSlotsRouteImport } from './routes/online-slots'
 import { Route as NoDepositBonusRouteImport } from './routes/no-deposit-bonus'
 import { Route as NieuweOnlineCasinosRouteImport } from './routes/nieuwe-online-casinos'
 import { Route as MobieleCasinosRouteImport } from './routes/mobiele-casinos'
+import { Route as LiveCasinoRouteImport } from './routes/live-casino'
 import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
 import { Route as FreeSpinsCasinoRouteImport } from './routes/free-spins-casino'
 import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
+import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
 import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
 import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
@@ -25,6 +31,26 @@ import { Route as IndexRouteImport } from './routes/index'
 const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
   id: '/welkomstbonus-casino',
   path: '/welkomstbonus-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SnelleUitbetalingCasinoRoute = SnelleUitbetalingCasinoRouteImport.update({
+  id: '/snelle-uitbetaling-casino',
+  path: '/snelle-uitbetaling-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RouletteOnlineRoute = RouletteOnlineRouteImport.update({
+  id: '/roulette-online',
+  path: '/roulette-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaypalCasinoRoute = PaypalCasinoRouteImport.update({
+  id: '/paypal-casino',
+  path: '/paypal-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnlineSlotsRoute = OnlineSlotsRouteImport.update({
+  id: '/online-slots',
+  path: '/online-slots',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NoDepositBonusRoute = NoDepositBonusRouteImport.update({
@@ -40,6 +66,11 @@ const NieuweOnlineCasinosRoute = NieuweOnlineCasinosRouteImport.update({
 const MobieleCasinosRoute = MobieleCasinosRouteImport.update({
   id: '/mobiele-casinos',
   path: '/mobiele-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveCasinoRoute = LiveCasinoRouteImport.update({
+  id: '/live-casino',
+  path: '/live-casino',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IdealCasinosRoute = IdealCasinosRouteImport.update({
@@ -67,6 +98,11 @@ const CasinoBonussenRoute = CasinoBonussenRouteImport.update({
   path: '/casino-bonussen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlackjackOnlineRoute = BlackjackOnlineRouteImport.update({
+  id: '/blackjack-online',
+  path: '/blackjack-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BetrouwbareOnlineCasinosRoute =
   BetrouwbareOnlineCasinosRouteImport.update({
     id: '/betrouwbare-online-casinos',
@@ -88,28 +124,40 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
+  '/blackjack-online': typeof BlackjackOnlineRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/live-casino': typeof LiveCasinoRoute
   '/mobiele-casinos': typeof MobieleCasinosRoute
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
+  '/online-slots': typeof OnlineSlotsRoute
+  '/paypal-casino': typeof PaypalCasinoRoute
+  '/roulette-online': typeof RouletteOnlineRoute
+  '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
+  '/blackjack-online': typeof BlackjackOnlineRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/live-casino': typeof LiveCasinoRoute
   '/mobiele-casinos': typeof MobieleCasinosRoute
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
+  '/online-slots': typeof OnlineSlotsRoute
+  '/paypal-casino': typeof PaypalCasinoRoute
+  '/roulette-online': typeof RouletteOnlineRoute
+  '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
 }
 export interface FileRoutesById {
@@ -117,14 +165,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
+  '/blackjack-online': typeof BlackjackOnlineRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/live-casino': typeof LiveCasinoRoute
   '/mobiele-casinos': typeof MobieleCasinosRoute
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
+  '/online-slots': typeof OnlineSlotsRoute
+  '/paypal-casino': typeof PaypalCasinoRoute
+  '/roulette-online': typeof RouletteOnlineRoute
+  '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
 }
 export interface FileRouteTypes {
@@ -133,42 +187,60 @@ export interface FileRouteTypes {
     | '/'
     | '/beste-online-casinos'
     | '/betrouwbare-online-casinos'
+    | '/blackjack-online'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/crypto-casino'
     | '/free-spins-casino'
     | '/ideal-casinos'
+    | '/live-casino'
     | '/mobiele-casinos'
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
+    | '/online-slots'
+    | '/paypal-casino'
+    | '/roulette-online'
+    | '/snelle-uitbetaling-casino'
     | '/welkomstbonus-casino'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/beste-online-casinos'
     | '/betrouwbare-online-casinos'
+    | '/blackjack-online'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/crypto-casino'
     | '/free-spins-casino'
     | '/ideal-casinos'
+    | '/live-casino'
     | '/mobiele-casinos'
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
+    | '/online-slots'
+    | '/paypal-casino'
+    | '/roulette-online'
+    | '/snelle-uitbetaling-casino'
     | '/welkomstbonus-casino'
   id:
     | '__root__'
     | '/'
     | '/beste-online-casinos'
     | '/betrouwbare-online-casinos'
+    | '/blackjack-online'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/crypto-casino'
     | '/free-spins-casino'
     | '/ideal-casinos'
+    | '/live-casino'
     | '/mobiele-casinos'
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
+    | '/online-slots'
+    | '/paypal-casino'
+    | '/roulette-online'
+    | '/snelle-uitbetaling-casino'
     | '/welkomstbonus-casino'
   fileRoutesById: FileRoutesById
 }
@@ -176,14 +248,20 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BesteOnlineCasinosRoute: typeof BesteOnlineCasinosRoute
   BetrouwbareOnlineCasinosRoute: typeof BetrouwbareOnlineCasinosRoute
+  BlackjackOnlineRoute: typeof BlackjackOnlineRoute
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
   CryptoCasinoRoute: typeof CryptoCasinoRoute
   FreeSpinsCasinoRoute: typeof FreeSpinsCasinoRoute
   IdealCasinosRoute: typeof IdealCasinosRoute
+  LiveCasinoRoute: typeof LiveCasinoRoute
   MobieleCasinosRoute: typeof MobieleCasinosRoute
   NieuweOnlineCasinosRoute: typeof NieuweOnlineCasinosRoute
   NoDepositBonusRoute: typeof NoDepositBonusRoute
+  OnlineSlotsRoute: typeof OnlineSlotsRoute
+  PaypalCasinoRoute: typeof PaypalCasinoRoute
+  RouletteOnlineRoute: typeof RouletteOnlineRoute
+  SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   WelkomstbonusCasinoRoute: typeof WelkomstbonusCasinoRoute
 }
 
@@ -194,6 +272,34 @@ declare module '@tanstack/react-router' {
       path: '/welkomstbonus-casino'
       fullPath: '/welkomstbonus-casino'
       preLoaderRoute: typeof WelkomstbonusCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/snelle-uitbetaling-casino': {
+      id: '/snelle-uitbetaling-casino'
+      path: '/snelle-uitbetaling-casino'
+      fullPath: '/snelle-uitbetaling-casino'
+      preLoaderRoute: typeof SnelleUitbetalingCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roulette-online': {
+      id: '/roulette-online'
+      path: '/roulette-online'
+      fullPath: '/roulette-online'
+      preLoaderRoute: typeof RouletteOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paypal-casino': {
+      id: '/paypal-casino'
+      path: '/paypal-casino'
+      fullPath: '/paypal-casino'
+      preLoaderRoute: typeof PaypalCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online-slots': {
+      id: '/online-slots'
+      path: '/online-slots'
+      fullPath: '/online-slots'
+      preLoaderRoute: typeof OnlineSlotsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/no-deposit-bonus': {
@@ -215,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/mobiele-casinos'
       fullPath: '/mobiele-casinos'
       preLoaderRoute: typeof MobieleCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-casino': {
+      id: '/live-casino'
+      path: '/live-casino'
+      fullPath: '/live-casino'
+      preLoaderRoute: typeof LiveCasinoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ideal-casinos': {
@@ -252,6 +365,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasinoBonussenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blackjack-online': {
+      id: '/blackjack-online'
+      path: '/blackjack-online'
+      fullPath: '/blackjack-online'
+      preLoaderRoute: typeof BlackjackOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/betrouwbare-online-casinos': {
       id: '/betrouwbare-online-casinos'
       path: '/betrouwbare-online-casinos'
@@ -280,14 +400,20 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BesteOnlineCasinosRoute: BesteOnlineCasinosRoute,
   BetrouwbareOnlineCasinosRoute: BetrouwbareOnlineCasinosRoute,
+  BlackjackOnlineRoute: BlackjackOnlineRoute,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
   CryptoCasinoRoute: CryptoCasinoRoute,
   FreeSpinsCasinoRoute: FreeSpinsCasinoRoute,
   IdealCasinosRoute: IdealCasinosRoute,
+  LiveCasinoRoute: LiveCasinoRoute,
   MobieleCasinosRoute: MobieleCasinosRoute,
   NieuweOnlineCasinosRoute: NieuweOnlineCasinosRoute,
   NoDepositBonusRoute: NoDepositBonusRoute,
+  OnlineSlotsRoute: OnlineSlotsRoute,
+  PaypalCasinoRoute: PaypalCasinoRoute,
+  RouletteOnlineRoute: RouletteOnlineRoute,
+  SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   WelkomstbonusCasinoRoute: WelkomstbonusCasinoRoute,
 }
 export const routeTree = rootRouteImport
