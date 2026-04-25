@@ -104,7 +104,7 @@ function Index() {
                 </div>
                 <Button asChild size="lg" className="mt-5 h-14 w-full gradient-cta cta-glow text-base font-extrabold text-gold-foreground shadow-gold md:text-lg">
                   <a href={`/go/${number1.slug}`} rel="sponsored nofollow">
-                    {number1.ctaLabel ?? `Claim €${number1.maxBonus} Bonus`} <ArrowRight className="h-5 w-5" />
+                    {number1.ctaLabel ?? "Speel Nu"} <ArrowRight className="h-5 w-5" />
                   </a>
                 </Button>
                 <div className="mt-2 text-center text-[11px] text-muted-foreground">
@@ -220,7 +220,7 @@ function Index() {
         brandColor={number1.brandColor}
         image={number1.logoUrl ?? number1.image}
         bonus={number1.bonusHeadline}
-        label="Claim →"
+        label="Speel Nu →"
       />
     </Layout>
   );

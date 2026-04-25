@@ -26,7 +26,7 @@ export function CasinoCard({
   featured?: boolean;
 }) {
   const isFeatured = featured || casino.highlight;
-  const ctaLabel = cta ?? casino.ctaLabel ?? `Claim €${casino.maxBonus} Bonus`;
+  const ctaLabel = cta ?? casino.ctaLabel ?? "Speel Nu";
   const logo = casino.logoUrl ?? casino.image;
   return (
     <article

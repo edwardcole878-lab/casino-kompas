@@ -130,7 +130,7 @@ function ReviewPage() {
             <div className="text-sm text-muted-foreground">Claim {casino.bonusHeadline}</div>
           </div>
           <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 font-bold shadow-gold">
-            <a href={`/go/${casino.slug}`} rel="sponsored nofollow">Claim Bonus <ArrowRight className="h-4 w-4" /></a>
+            <a href={`/go/${casino.slug}`} rel="sponsored nofollow">Speel Nu <ArrowRight className="h-4 w-4" /></a>
           </Button>
         </div>
 

@@ -8,7 +8,7 @@ export function StickyMobileCTA({
   name,
   brandColor,
   image,
-  label = "Claim →",
+  label = "Speel Nu →",
   bonus,
 }: {
   slug: string;
