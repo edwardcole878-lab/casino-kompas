@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NieuweOnlineCasinosRouteImport } from './routes/nieuwe-online-casinos'
 import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
 import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const NieuweOnlineCasinosRoute = NieuweOnlineCasinosRouteImport.update({
+  id: '/nieuwe-online-casinos',
+  path: '/nieuwe-online-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IdealCasinosRoute = IdealCasinosRouteImport.update({
   id: '/ideal-casinos',
   path: '/ideal-casinos',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,6 +70,7 @@ export interface FileRoutesById {
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/ideal-casinos': typeof IdealCasinosRoute
+  '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -71,6 +80,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/ideal-casinos'
+    | '/nieuwe-online-casinos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -78,6 +88,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/ideal-casinos'
+    | '/nieuwe-online-casinos'
   id:
     | '__root__'
     | '/'
@@ -85,6 +96,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/ideal-casinos'
+    | '/nieuwe-online-casinos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,10 +105,18 @@ export interface RootRouteChildren {
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
   IdealCasinosRoute: typeof IdealCasinosRoute
+  NieuweOnlineCasinosRoute: typeof NieuweOnlineCasinosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/nieuwe-online-casinos': {
+      id: '/nieuwe-online-casinos'
+      path: '/nieuwe-online-casinos'
+      fullPath: '/nieuwe-online-casinos'
+      preLoaderRoute: typeof NieuweOnlineCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ideal-casinos': {
       id: '/ideal-casinos'
       path: '/ideal-casinos'
@@ -141,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
   IdealCasinosRoute: IdealCasinosRoute,
+  NieuweOnlineCasinosRoute: NieuweOnlineCasinosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
