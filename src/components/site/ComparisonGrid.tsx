@@ -82,7 +82,7 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                       <img
                         src={c.logoUrl ?? c.image}
                         alt={`${c.name} logo`}
-                        className="h-9 w-9 rounded-lg bg-white object-contain p-0.5"
+                        className="h-9 w-9 overflow-hidden rounded-lg bg-white object-contain p-0.5 text-[0]"
                       />
                     ) : (
                       <CasinoLogo name={c.name} brandColor={c.brandColor} size="sm" />

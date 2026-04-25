@@ -51,7 +51,8 @@ export function CasinoCard({
             <img
               src={logo}
               alt={`${casino.name} logo`}
-              className={`rounded-xl bg-white object-contain p-1 shadow-card ${isFeatured ? "h-16 w-16" : "h-12 w-12"}`}
+              className={`overflow-hidden rounded-xl bg-white object-contain p-1 text-[0] shadow-card ${isFeatured ? "h-16 w-16" : "h-12 w-12"}`}
+              loading="lazy"
             />
           ) : (
             <CasinoLogo name={casino.name} brandColor={casino.brandColor} size={isFeatured ? "lg" : "md"} />
