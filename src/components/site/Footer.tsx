@@ -46,7 +46,14 @@ export function Footer() {
             <ShieldCheck className="h-4 w-4 text-trust" />
             <span>Speel verantwoord — Dit is een vergelijkingswebsite. Hulp nodig? Bel <a className="underline" href="tel:0900-2177721">Loket Kansspel</a>.</span>
           </div>
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} CasinoWijzer. Laatst bijgewerkt 2026.</p>
+          <div className="text-right">
+            <p className="text-xs font-medium text-foreground/70">
+              Laatst gecontroleerd door redactie: 18 april 2026
+            </p>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              © {new Date().getFullYear()} CasinoWijzer. Onafhankelijk vergelijkingsplatform.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
