@@ -77,7 +77,7 @@ function Index() {
                     <img
                       src={number1.logoUrl ?? number1.image}
                       alt={`${number1.name} logo`}
-                      className="h-16 w-16 rounded-xl bg-white object-contain p-1 shadow-card"
+                      className="h-16 w-16 overflow-hidden rounded-xl bg-white object-contain p-1 text-[0] shadow-card"
                     />
                   ) : (
                     <CasinoLogo name={number1.name} brandColor={number1.brandColor} size="lg" />
