@@ -1,14 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
 import { Layout } from "@/components/site/Layout";
 import { CasinoCard } from "@/components/site/CasinoCard";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
-import { HomeFilters, applyHomeFilter, type HomeFilterId } from "@/components/site/HomeFilters";
 import { FAQ } from "@/components/site/FAQ";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
-import { TrustStrip } from "@/components/site/TrustStrip";
 import { Methodology } from "@/components/site/Methodology";
 import { AuthorByline } from "@/components/site/AuthorByline";
 import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
@@ -33,9 +30,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const top = casinos.slice(0, 10);
   const number1 = casinos[0];
-  const [filter, setFilter] = useState<HomeFilterId | null>(null);
-
-  const filtered = useMemo(() => applyHomeFilter(top, filter), [top, filter]);
+  const filtered = top;
 
   return (
     <Layout>
@@ -114,13 +109,6 @@ function Index() {
             </article>
           </div>
         </div>
-
-        {/* Full-width trust strip directly under hero */}
-        <div className="border-t bg-card/40">
-          <div className="container mx-auto max-w-[1240px] px-6 py-5">
-            <TrustStrip />
-          </div>
-        </div>
       </section>
 
       <div className="container mx-auto max-w-[1240px] px-6 pb-16 md:pb-24">
@@ -158,21 +146,13 @@ function Index() {
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gold">De volledige ranking</div>
               <h2 className="mt-1 text-3xl font-extrabold md:text-4xl">Top 10 online casino's Nederland</h2>
-              <p className="mt-2 text-muted-foreground">Filter de lijst — alle kaarten en de tabel hierboven werken mee.</p>
+              <p className="mt-2 text-muted-foreground">Onze volledige ranking, getest met eigen geld.</p>
             </div>
-          </div>
-          <div className="mb-6">
-            <HomeFilters active={filter} onToggle={(id) => setFilter((f) => (f === id ? null : id))} onClear={() => setFilter(null)} />
           </div>
           <div className="space-y-5">
             {filtered.map((c, i) => (
-              <CasinoCard key={c.slug} casino={c} featured={!filter && i === 0} />
+              <CasinoCard key={c.slug} casino={c} featured={i === 0} />
             ))}
-            {filtered.length === 0 && (
-              <div className="rounded-2xl border bg-card p-8 text-center text-sm text-muted-foreground">
-                Geen casino's gevonden — pas je filter aan.
-              </div>
-            )}
           </div>
         </section>
 

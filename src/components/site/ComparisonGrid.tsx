@@ -53,40 +53,8 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
     );
   };
 
-  const MobileSortChip = ({ k, label }: { k: SortKey; label: string }) => {
-    const active = sort.key === k;
-    const Icon = active ? (sort.dir === "asc" ? ArrowUp : ArrowDown) : ArrowUpDown;
-    return (
-      <button
-        onClick={() => handleSort(k)}
-        className={`inline-flex shrink-0 items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
-          active
-            ? "border-gold bg-gold/15 text-gold-foreground"
-            : "border-border bg-card text-muted-foreground hover:text-foreground"
-        }`}
-      >
-        {label} <Icon className="h-3 w-3" />
-      </button>
-    );
-  };
-
   return (
     <div className="rounded-2xl border bg-card shadow-soft">
-      {/* Mobile sort chips (hidden on md+) */}
-      <div className="border-b p-3 md:hidden">
-        <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-          Sorteer op
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          <MobileSortChip k="rank" label="Ranking" />
-          <MobileSortChip k="rating" label="Score" />
-          <MobileSortChip k="bonus" label="Bonus" />
-          <MobileSortChip k="payout" label="Uitbet." />
-          <MobileSortChip k="wagering" label="Wagering" />
-          <MobileSortChip k="minDeposit" label="Min." />
-        </div>
-      </div>
-
       {/* Mobile stacked rows */}
       <ul className="divide-y md:hidden">
         {sorted.map((c) => (

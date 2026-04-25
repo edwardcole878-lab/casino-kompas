@@ -10,9 +10,8 @@ import { Rating } from "@/components/site/Rating";
 import { CasinoBadge } from "@/components/site/Badge";
 import { PaymentIcons } from "@/components/site/PaymentIcons";
 import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
-import { TrustStrip } from "@/components/site/TrustStrip";
 import { Button } from "@/components/ui/button";
-import { Check, X, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/review/$slug")({
@@ -114,7 +113,6 @@ function ReviewPage() {
           </div>
         </section>
 
-        <div className="mt-8"><TrustStrip /></div>
 
         {/* Editorial intro */}
         <section className="mt-10 prose prose-neutral max-w-none">
@@ -134,21 +132,13 @@ function ReviewPage() {
           </Button>
         </div>
 
-        {/* Pros & Cons */}
-        <section className="grid gap-4 md:grid-cols-2">
+        {/* Pros */}
+        <section>
           <div className="rounded-2xl border border-success/30 bg-success/5 p-6">
             <h3 className="text-lg font-bold text-success">Voordelen</h3>
             <ul className="mt-4 space-y-2">
               {casino.pros.map((p) => (
                 <li key={p} className="flex items-start gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />{p}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6">
-            <h3 className="text-lg font-bold text-destructive">Nadelen</h3>
-            <ul className="mt-4 space-y-2">
-              {casino.cons.map((p) => (
-                <li key={p} className="flex items-start gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />{p}</li>
               ))}
             </ul>
           </div>

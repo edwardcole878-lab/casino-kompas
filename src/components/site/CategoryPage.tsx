@@ -6,7 +6,6 @@ import { FAQ, type FAQItem } from "./FAQ";
 import { RelatedLinks } from "./RelatedLinks";
 import { PageMeta } from "./PageMeta";
 import { TrustNotice } from "./TrustNotice";
-import { TrustStrip } from "./TrustStrip";
 import { FilterBar, applyFilters, defaultFilterState, type FilterState } from "./FilterBar";
 import type { Casino } from "@/data/casinos";
 
@@ -49,8 +48,6 @@ export function CategoryPage({
             {intro}
           </div>
         </header>
-
-        <div className="mt-8"><TrustStrip /></div>
 
         <section className="mt-12">
           <div className="mb-5 flex items-end justify-between">
