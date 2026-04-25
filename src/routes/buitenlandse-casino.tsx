@@ -1,6 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Gift, ShieldCheck, Zap, Globe2, Star, Check } from "lucide-react";
+import {
+  ArrowRight,
+  Gift,
+  ShieldCheck,
+  Zap,
+  Globe2,
+  Star,
+  Check,
+  X,
+  Gamepad2,
+  Dices,
+  Coins,
+  Smartphone,
+  Headphones,
+  Wallet,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
 import betoryLogo from "@/assets/betory-logo.png";
 
 export const Route = createFileRoute("/buitenlandse-casino")({
