@@ -459,16 +459,16 @@ function BuitenlandseCasinoPage() {
           </div>
         </section>
 
-        {/* Pros / Cons */}
-        <section className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft">
+        {/* Voordelen */}
+        <section className="mx-auto mt-10 max-w-4xl">
+          <div className="rounded-2xl border-2 border-success/30 bg-success/5 p-6 shadow-soft md:p-8">
             <div className="flex items-center gap-2">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-success text-success-foreground">
                 <Check className="h-5 w-5" />
               </span>
               <h3 className="text-xl font-extrabold text-success">👍 Voordelen</h3>
             </div>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 grid gap-2.5 text-sm sm:grid-cols-2">
               {[
                 "Groot spelaanbod",
                 "Moderne interface",
@@ -478,26 +478,6 @@ function BuitenlandseCasinoPage() {
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2 font-medium">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border-2 border-destructive/20 bg-destructive/5 p-6 shadow-soft">
-            <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-destructive text-destructive-foreground">
-                <X className="h-5 w-5" />
-              </span>
-              <h3 className="text-xl font-extrabold text-destructive">👎 Nadelen</h3>
-            </div>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              {[
-                "Geen iDEAL ondersteuning",
-                "Geen Nederlandse licentie",
-                "Crypto-only focus kan beperkend zijn voor beginners",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 font-medium">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
                   <span>{b}</span>
                 </li>
               ))}
