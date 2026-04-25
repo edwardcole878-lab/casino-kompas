@@ -3,7 +3,6 @@ import { Layout } from "@/components/site/Layout";
 import { CasinoCard } from "@/components/site/CasinoCard";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
 import { FAQ } from "@/components/site/FAQ";
-import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { Methodology } from "@/components/site/Methodology";
