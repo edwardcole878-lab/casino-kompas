@@ -1,5 +1,10 @@
 export type PaymentMethod = "iDEAL" | "Bancontact" | "Visa" | "Mastercard" | "PayPal" | "Crypto" | "Trustly" | "Klarna" | "Skrill";
 
+/** Optional brand logo URLs per payment method. Drop PNGs in /public/payments/. */
+export const paymentLogoUrl: Partial<Record<PaymentMethod, string>> = {
+  // e.g. iDEAL: "/payments/ideal.svg",
+};
+
 export type Casino = {
   slug: string;
   rank: number;
@@ -16,7 +21,9 @@ export type Casino = {
   lastTested: string;
   /** Optional: bonus-specific CTA label, falls back to derived value */
   ctaLabel?: string;
-  /** Optional: real brand logo URL — leave empty to use initials placeholder */
+  /** Optional: real brand logo URL (preferred) — leave empty to use initials placeholder */
+  logoUrl?: string;
+  /** @deprecated use logoUrl */
   image?: string;
   benefits: string[];
   payments: PaymentMethod[];
