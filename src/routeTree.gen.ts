@@ -9,9 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
+import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
+import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
 import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const IdealCasinosRoute = IdealCasinosRouteImport.update({
+  id: '/ideal-casinos',
+  path: '/ideal-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasinoSpellenRoute = CasinoSpellenRouteImport.update({
+  id: '/casino-spellen',
+  path: '/casino-spellen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasinoBonussenRoute = CasinoBonussenRouteImport.update({
+  id: '/casino-bonussen',
+  path: '/casino-bonussen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BesteOnlineCasinosRoute = BesteOnlineCasinosRouteImport.update({
   id: '/beste-online-casinos',
   path: '/beste-online-casinos',
@@ -26,31 +44,80 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
+  '/casino-bonussen': typeof CasinoBonussenRoute
+  '/casino-spellen': typeof CasinoSpellenRoute
+  '/ideal-casinos': typeof IdealCasinosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
+  '/casino-bonussen': typeof CasinoBonussenRoute
+  '/casino-spellen': typeof CasinoSpellenRoute
+  '/ideal-casinos': typeof IdealCasinosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/beste-online-casinos': typeof BesteOnlineCasinosRoute
+  '/casino-bonussen': typeof CasinoBonussenRoute
+  '/casino-spellen': typeof CasinoSpellenRoute
+  '/ideal-casinos': typeof IdealCasinosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/beste-online-casinos'
+  fullPaths:
+    | '/'
+    | '/beste-online-casinos'
+    | '/casino-bonussen'
+    | '/casino-spellen'
+    | '/ideal-casinos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/beste-online-casinos'
-  id: '__root__' | '/' | '/beste-online-casinos'
+  to:
+    | '/'
+    | '/beste-online-casinos'
+    | '/casino-bonussen'
+    | '/casino-spellen'
+    | '/ideal-casinos'
+  id:
+    | '__root__'
+    | '/'
+    | '/beste-online-casinos'
+    | '/casino-bonussen'
+    | '/casino-spellen'
+    | '/ideal-casinos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BesteOnlineCasinosRoute: typeof BesteOnlineCasinosRoute
+  CasinoBonussenRoute: typeof CasinoBonussenRoute
+  CasinoSpellenRoute: typeof CasinoSpellenRoute
+  IdealCasinosRoute: typeof IdealCasinosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ideal-casinos': {
+      id: '/ideal-casinos'
+      path: '/ideal-casinos'
+      fullPath: '/ideal-casinos'
+      preLoaderRoute: typeof IdealCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casino-spellen': {
+      id: '/casino-spellen'
+      path: '/casino-spellen'
+      fullPath: '/casino-spellen'
+      preLoaderRoute: typeof CasinoSpellenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casino-bonussen': {
+      id: '/casino-bonussen'
+      path: '/casino-bonussen'
+      fullPath: '/casino-bonussen'
+      preLoaderRoute: typeof CasinoBonussenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/beste-online-casinos': {
       id: '/beste-online-casinos'
       path: '/beste-online-casinos'
@@ -71,6 +138,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BesteOnlineCasinosRoute: BesteOnlineCasinosRoute,
+  CasinoBonussenRoute: CasinoBonussenRoute,
+  CasinoSpellenRoute: CasinoSpellenRoute,
+  IdealCasinosRoute: IdealCasinosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
