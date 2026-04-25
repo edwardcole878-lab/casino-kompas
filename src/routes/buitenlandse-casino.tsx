@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Home, Gift, ShieldCheck, Zap, Globe2, Star, Check } from "lucide-react";
+import { ArrowRight, Gift, ShieldCheck, Zap, Globe2, Star, Check } from "lucide-react";
 import betoryLogo from "@/assets/betory-logo.png";
 
 export const Route = createFileRoute("/buitenlandse-casino")({
@@ -29,16 +29,10 @@ function BuitenlandseCasinoPage() {
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/40">
       {/* Minimal top bar — Home only, no nav */}
       <header className="border-b bg-background/80 backdrop-blur">
-        <div className="container mx-auto flex max-w-[1100px] items-center justify-between px-6 py-4">
+        <div className="container mx-auto flex max-w-[1100px] items-center justify-center px-6 py-4">
           <div className="text-sm font-bold tracking-tight text-muted-foreground">
             Buitenlands Casino
           </div>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-semibold shadow-soft hover:bg-secondary"
-          >
-            <Home className="h-4 w-4" /> Home
-          </Link>
         </div>
       </header>
 
@@ -197,11 +191,6 @@ function BuitenlandseCasinoPage() {
       <footer className="mt-16 border-t bg-background/60">
         <div className="container mx-auto max-w-[1100px] px-6 py-6 text-center text-xs text-muted-foreground">
           18+ · Speel bewust · Voorwaarden van het casino zijn van toepassing.
-          <div className="mt-2">
-            <Link to="/" className="font-semibold text-foreground hover:underline">
-              ← Terug naar home
-            </Link>
-          </div>
         </div>
       </footer>
     </div>
