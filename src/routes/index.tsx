@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { Hero } from "@/components/site/Hero";
 import { ComparisonTable } from "@/components/site/ComparisonTable";
 import { FAQ } from "@/components/site/FAQ";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
@@ -9,7 +8,8 @@ import { PageMeta } from "@/components/site/PageMeta";
 import { TopThreePodium } from "@/components/site/TopThreePodium";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { casinos } from "@/data/casinos";
-import { Award, Wallet, ShieldCheck, Smartphone, Gift, Zap, Dice5, Coins } from "lucide-react";
+import { Award, Wallet, ShieldCheck, Smartphone, Gift, Zap, Dice5, Coins, ArrowRight, ShieldCheck as ShieldIcon, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,24 +27,54 @@ function Index() {
   const top = casinos.slice(0, 10);
   return (
     <Layout>
-      <Hero
-        eyebrow="Editie 2026 — bijgewerkt deze maand"
-        title="Beste Online Casino Nederland 2026"
-        subtitle="Onafhankelijke top 10 van Nederlandse online casino's met KSA-vergunning. Vergelijk bonussen, iDEAL-uitbetalingen en spelaanbod in één overzicht."
-        primaryCta={{ label: "Bekijk top 10 casino's", to: "#top10" }}
-        secondary={{ label: "Lees onze methode", to: "/redactiebeleid" }}
-        meta="42 casino's getest · 380+ uur speeltijd"
-      />
+      {/* Section 1 — Minimal hero intro strip */}
+      <section className="relative overflow-hidden border-b bg-gradient-to-b from-background via-background to-secondary/40">
+        <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(700px_300px_at_80%_-100px,oklch(0.82_0.16_85/0.18),transparent),radial-gradient(600px_300px_at_10%_120%,oklch(0.6_0.16_245/0.12),transparent)]" />
+        <div className="container relative mx-auto max-w-[1240px] px-6 pt-10 pb-6 md:pt-14 md:pb-8 text-center">
+          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground shadow-soft backdrop-blur">
+            <ShieldIcon className="h-3.5 w-3.5 text-trust" /> Editie 2026 · onafhankelijk getest
+          </div>
+          <h1 className="mx-auto max-w-3xl text-[32px] font-extrabold leading-[1.15] tracking-tight md:text-[44px]">
+            Beste Online Casino Nederland 2026
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground md:text-lg">
+            Vergelijk direct de beste casino's en speel veilig bij top aanbieders met KSA-vergunning.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="lg" className="h-12 gradient-cta cta-glow rounded-xl px-6 text-base font-extrabold text-gold-foreground shadow-gold">
+              <a href="#top3">Vergelijk Casino's <ArrowRight className="h-4 w-4" /></a>
+            </Button>
+            <Link to="/redactiebeleid" className="text-sm font-semibold text-muted-foreground hover:text-foreground">
+              Hoe wij testen →
+            </Link>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><ShieldIcon className="h-3.5 w-3.5 text-trust" /> KSA-vergund</span>
+            <span className="inline-flex items-center gap-1.5"><TrendingUp className="h-3.5 w-3.5 text-success" /> 42 casino's getest</span>
+            <span>🇳🇱 Speciaal voor Nederland</span>
+          </div>
+        </div>
+      </section>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-16 md:py-24">
-        {/* Top 3 podium — primary attention zone */}
-        <section className="-mt-28 md:-mt-40 relative z-10">
-          <TopThreePodium casinos={casinos} />
-          <div className="mt-8"><TrustStrip /></div>
-        </section>
+      {/* Section 2 — TOP 3 Decision System (above-the-fold core) */}
+      <section id="top3" className="container mx-auto max-w-[1240px] px-6 pt-10 pb-8 md:pt-14 md:pb-10">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <div className="text-[11px] font-bold uppercase tracking-widest text-gold">Top 3 · April 2026</div>
+            <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Direct de beste keuze</h2>
+          </div>
+          <Link to="/beste-online-casinos" className="hidden text-sm font-semibold text-muted-foreground hover:text-foreground sm:inline-flex">
+            Volledige top 10 →
+          </Link>
+        </div>
+        <TopThreePodium casinos={casinos} />
+        <div className="mt-8"><TrustStrip /></div>
+      </section>
+
+      <div className="container mx-auto max-w-[1240px] px-6 pb-16 md:pb-24">
 
         <article className="prose prose-neutral max-w-3xl">
-          <div className="mt-24">
+          <div className="mt-16 md:mt-24">
           <PageMeta />
           </div>
           <h2 className="mt-4 text-2xl font-bold md:text-3xl">Welkom bij Nederland's eerlijkste casinovergelijker</h2>
