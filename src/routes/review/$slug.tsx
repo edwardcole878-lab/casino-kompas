@@ -132,21 +132,13 @@ function ReviewPage() {
           </Button>
         </div>
 
-        {/* Pros & Cons */}
-        <section className="grid gap-4 md:grid-cols-2">
+        {/* Pros */}
+        <section>
           <div className="rounded-2xl border border-success/30 bg-success/5 p-6">
             <h3 className="text-lg font-bold text-success">Voordelen</h3>
             <ul className="mt-4 space-y-2">
               {casino.pros.map((p) => (
                 <li key={p} className="flex items-start gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />{p}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6">
-            <h3 className="text-lg font-bold text-destructive">Nadelen</h3>
-            <ul className="mt-4 space-y-2">
-              {casino.cons.map((p) => (
-                <li key={p} className="flex items-start gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />{p}</li>
               ))}
             </ul>
           </div>
