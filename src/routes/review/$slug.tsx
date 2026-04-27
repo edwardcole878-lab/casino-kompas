@@ -36,7 +36,12 @@ export const Route = createFileRoute("/review/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:author", content: defaultAuthor.name },
         { name: "author", content: defaultAuthor.name },
-        ...(c.logoUrl ? [{ property: "og:image", content: c.logoUrl }] : []),
+        ...(c.logoUrl
+          ? [
+              { property: "og:image", content: `${SITE}${c.logoUrl}` },
+              { name: "twitter:image", content: `${SITE}${c.logoUrl}` },
+            ]
+          : []),
       ],
     };
   },
@@ -79,7 +84,7 @@ function ReviewPage() {
       "@type": "Organization",
       name: casino.name,
       url: `${SITE}/review/${casino.slug}`,
-      ...(casino.logoUrl ? { image: casino.logoUrl } : {}),
+      ...(casino.logoUrl ? { image: `${SITE}${casino.logoUrl}` } : {}),
     },
     reviewRating: {
       "@type": "Rating",
