@@ -31,7 +31,7 @@ export function StickyMobileCTA({
     <div className="fixed inset-x-0 bottom-0 z-30 border-t bg-background/95 p-3 shadow-elegant backdrop-blur md:hidden">
       <div className="flex items-center gap-3">
         {image ? (
-          <img src={image} alt={`${name} logo`} className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-white object-contain p-0.5 text-[0]" />
+          <img src={image} alt={`${name} logo`} width={40} height={40} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-white object-contain p-0.5 text-[0]" />
         ) : name && brandColor ? (
           <CasinoLogo name={name} brandColor={brandColor} size="sm" />
         ) : null}
