@@ -3,9 +3,25 @@ import { ChevronRight } from "lucide-react";
 
 export type Crumb = { label: string; to?: string };
 
+const SITE = "https://buitenlandsecasino.com";
+
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE + "/" },
+      ...items.map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 2,
+        name: c.label,
+        ...(c.to ? { item: SITE + c.to } : {}),
+      })),
+    ],
+  };
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
           <Link to="/" className="hover:text-foreground">Home</Link>
