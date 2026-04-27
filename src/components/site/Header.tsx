@@ -43,7 +43,7 @@ const groups: NavGroup[] = [
   {
     label: "Bonussen",
     items: [
-      { to: "/casino-bonussen", label: "Alle Bonussen", desc: "Vergelijk welkomstaanbod", icon: Gift },
+      { to: "/bonussen", label: "Alle Bonussen", desc: "Vergelijk welkomstaanbod", icon: Gift },
       { to: "/free-spins-casino", label: "Free Spins", desc: "Gratis spins zonder storting", icon: Sparkles },
       { to: "/no-deposit-bonus", label: "No Deposit", desc: "Spelen zonder storting", icon: Zap },
       { to: "/welkomstbonus-casino", label: "Welkomstbonus", desc: "Beste eerste-storting bonussen", icon: Trophy },
@@ -52,8 +52,9 @@ const groups: NavGroup[] = [
   {
     label: "Betaalmethoden",
     items: [
-      { to: "/ideal-casinos", label: "iDEAL", desc: "Direct storten in NL", icon: Wallet },
-      { to: "/crypto-casino", label: "Crypto", desc: "Bitcoin & altcoins", icon: Bitcoin },
+      { to: "/betaalmethode/ideal", label: "iDEAL", desc: "Direct storten in NL", icon: Wallet },
+      { to: "/betaalmethode/trustly", label: "Trustly", desc: "Pay-N-Play", icon: Wallet },
+      { to: "/betaalmethode/crypto", label: "Crypto", desc: "Bitcoin & altcoins", icon: Bitcoin },
       { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling", desc: "< 1 uur op je rekening", icon: Clock },
     ],
   },
