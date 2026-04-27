@@ -39,6 +39,7 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Buitenlandse Casino" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#0f1530" },
       { property: "og:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
       { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
@@ -46,6 +47,10 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "alternate icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
