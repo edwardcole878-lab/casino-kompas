@@ -6,7 +6,7 @@ export const Route = createFileRoute("/beste-online-casinos")({
   head: () => ({
     meta: [
       { title: "Beste Online Casino's Nederland 2026 — Top 10 Vergelijking" },
-      { name: "description", content: "Onze redactie heeft 42 KSA-vergunde casino's getest. Ontdek welke 10 het beste presteren op bonus, uitbetaling, support en spelaanbod." },
+      { name: "description", content: "Onze redactie heeft KSA-vergunde casino's getest. Ontdek welke het beste presteren op bonus, uitbetaling, support en spelaanbod." },
       { property: "og:title", content: "Beste Online Casino's Nederland 2026" },
       { property: "og:description", content: "Top 10 Nederlandse online casino's uitgebreid getest en vergeleken." },
     ],

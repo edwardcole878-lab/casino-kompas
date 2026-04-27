@@ -5,7 +5,7 @@ export function TrustStrip() {
     { icon: ShieldCheck, label: "KSA-vergund", sub: "Kansspelautoriteit" },
     { icon: BadgeCheck, label: "Cruks-koppeling", sub: "Spelersbescherming" },
     { icon: Lock, label: "SSL-versleuteld", sub: "256-bit encryptie" },
-    { icon: FlaskConical, label: "42 casino's getest", sub: "Eigen testronde 2026" },
+    { icon: FlaskConical, label: "Onafhankelijk getest", sub: "Eigen testronde 2026" },
   ];
   return (
     <div className="rounded-2xl border bg-card/60 p-4 backdrop-blur md:p-5">
