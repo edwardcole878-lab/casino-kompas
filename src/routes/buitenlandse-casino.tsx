@@ -100,7 +100,7 @@ function BuitenlandseCasinoPage() {
 
                 <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">Betory</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Modern buitenlands online casino met een breed spelaanbod en hoge welkomstbonus.
+                  Modern buitenlands online casino met een breed spelaanbod en een hoge welkomstbonus.
                 </p>
 
                 {/* Bonus box */}
@@ -199,16 +199,16 @@ function BuitenlandseCasinoPage() {
                       <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                     ))}
                   </div>
-                  <h2 className="mt-1 text-xl font-extrabold md:text-2xl">Betory Casino Review 2026</h2>
+                  <h2 className="mt-1 text-xl font-extrabold md:text-2xl">Betory Casino — review 2026</h2>
                   <p className="text-sm text-muted-foreground">
-                    Modern crypto casino met groot spelaanbod
+                    Modern cryptocasino met een groot spelaanbod
                   </p>
                 </div>
               </div>
               <div className="rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-center">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-success">Kort oordeel</div>
                 <div className="mt-1 max-w-[260px] text-sm font-semibold">
-                  Sterk crypto casino met uitstekende UX en veel speelopties
+                  Sterk cryptocasino met uitstekende UX en veel speelopties
                 </div>
               </div>
             </div>
@@ -225,11 +225,11 @@ function BuitenlandseCasinoPage() {
               <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">Over Betory Casino</h2>
             </div>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Betory Casino is een innovatief online gokplatform dat volledig is gericht op
-              cryptocurrency. Spelers kunnen eenvoudig registreren en direct beginnen met spelen
+              Betory Casino is een innovatief online gokplatform dat volledig gericht is op
+              cryptocurrency. Spelers kunnen eenvoudig registreren en direct beginnen met spelen,
               zonder ingewikkelde processen. Het casino richt zich op snelheid, toegankelijkheid,
               moderne technologie en internationale spelers — en groeit daardoor snel binnen de
-              crypto-casino markt.
+              cryptocasinomarkt.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -261,7 +261,7 @@ function BuitenlandseCasinoPage() {
           </div>
           <p className="mt-3 text-muted-foreground">
             Het spelaanbod van Betory Casino is indrukwekkend en zeer divers — van klassieke slots
-            tot live tafels en innovatieve crypto-spellen.
+            tot livetafels en innovatieve cryptospellen.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -272,7 +272,7 @@ function BuitenlandseCasinoPage() {
               </span>
               <h3 className="mt-4 text-lg font-extrabold">🎰 Slots</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Duizenden slots van top providers. Van klassiekers tot moderne video slots met bonusfeatures.
+                Duizenden slots van topproviders. Van klassiekers tot moderne videoslots met bonusfeatures.
               </p>
               <ul className="mt-4 space-y-1.5 text-sm">
                 {["Pragmatic Play", "NetEnt", "Betsoft", "BGaming"].map((p) => (
@@ -288,12 +288,12 @@ function BuitenlandseCasinoPage() {
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-destructive/10 text-destructive">
                 <Star className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-lg font-extrabold">🃏 Live Casino</h3>
+              <h3 className="mt-4 text-lg font-extrabold">🃏 Livecasino</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Stabiele streams en een realistische casino-ervaring met echte dealers.
               </p>
               <ul className="mt-4 space-y-1.5 text-sm">
-                {["Live roulette", "Live blackjack", "Live baccarat", "Game shows"].map((p) => (
+                {["Live roulette", "Live blackjack", "Live baccarat", "Gameshows"].map((p) => (
                   <li key={p} className="flex items-center gap-2 font-medium">
                     <Check className="h-3.5 w-3.5 text-success" /> {p}
                   </li>
@@ -306,12 +306,12 @@ function BuitenlandseCasinoPage() {
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-trust/10 text-trust">
                 <Sparkles className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-lg font-extrabold">🎲 Extra Games</h3>
+              <h3 className="mt-4 text-lg font-extrabold">🎲 Extra games</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Het aanbod blijft altijd dynamisch en vernieuwend dankzij innovatieve titels.
               </p>
               <ul className="mt-4 space-y-1.5 text-sm">
-                {["Crash games", "Instant win games", "Crypto-gebaseerde spellen"].map((p) => (
+                {["Crashgames", "Instant-wingames", "Crypto-gebaseerde spellen"].map((p) => (
                   <li key={p} className="flex items-center gap-2 font-medium">
                     <Check className="h-3.5 w-3.5 text-success" /> {p}
                   </li>
@@ -331,7 +331,7 @@ function BuitenlandseCasinoPage() {
                   <Gift className="h-5 w-5" />
                 </span>
                 <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">
-                  Bonussen & Welcome Package
+                  Bonussen & welkomstpakket
                 </h2>
               </div>
               <p className="mt-3 text-foreground/80">
@@ -341,7 +341,7 @@ function BuitenlandseCasinoPage() {
                 {[
                   "Tot 100% bonus op eerste storting",
                   "Extra free spins",
-                  "Reload bonussen voor actieve spelers",
+                  "Reloadbonussen voor actieve spelers",
                 ].map((b) => (
                   <div
                     key={b}
@@ -355,7 +355,7 @@ function BuitenlandseCasinoPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm text-foreground/70">
-                👉 Gecombineerd kan dit oplopen tot een aantrekkelijk welcome package over meerdere stortingen.
+                👉 Gecombineerd kan dit oplopen tot een aantrekkelijk welkomstpakket over meerdere stortingen.
               </p>
             </div>
           </div>
@@ -400,13 +400,13 @@ function BuitenlandseCasinoPage() {
               <h3 className="text-xl font-extrabold">💰 Stortingen</h3>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
-              Betory ondersteunt snelle en moderne crypto betaalmethoden.
+              Betory ondersteunt snelle en moderne crypto-betaalmethoden.
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               {[
                 "Bitcoin (BTC)",
                 "Ethereum (ETH)",
-                "USDT en andere crypto",
+                "USDT en andere crypto's",
                 "Snelle verwerking",
                 "Lage kosten",
               ].map((b) => (
@@ -425,12 +425,12 @@ function BuitenlandseCasinoPage() {
               <h3 className="text-xl font-extrabold">💸 Uitbetalingen</h3>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
-              Uitbetalingen verlopen via crypto en zijn technisch zeer snel mogelijk.
+              Uitbetalingen verlopen via crypto en zijn technisch gezien zeer snel.
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               {[
-                "Lage minimum opname",
-                "Snelle blockchain transacties",
+                "Lage minimumopname",
+                "Snelle blockchaintransacties",
                 "Flexibele wallets",
                 "Wereldwijd toegankelijk",
               ].map((b) => (
@@ -450,9 +450,9 @@ function BuitenlandseCasinoPage() {
             </span>
             <h3 className="mt-3 text-lg font-extrabold">⚖️ Veiligheid & licentie</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Betory opereert als internationaal crypto casino met offshore licentie. Geen
-              Nederlandse KSA-vergunning, wel een internationale operatiestructuur gericht op
-              crypto gaming.
+              Betory opereert als internationaal cryptocasino met een offshorelicentie. Geen
+              Nederlandse KSA-vergunning, maar wel een internationale operatiestructuur gericht op
+              cryptogaming.
             </p>
           </div>
           <div className="rounded-2xl border bg-card p-6 shadow-soft">
@@ -479,7 +479,7 @@ function BuitenlandseCasinoPage() {
             </span>
             <h3 className="mt-3 text-lg font-extrabold">📞 Klantenservice</h3>
             <ul className="mt-3 space-y-1.5 text-sm">
-              {["Live chat beschikbaar", "E-mail support", "Basis FAQ sectie"].map((b) => (
+              {["Livechat beschikbaar", "E-mailondersteuning", "Basis-FAQ-sectie"].map((b) => (
                 <li key={b} className="flex items-center gap-2 font-medium">
                   <Check className="h-3.5 w-3.5 text-success" /> {b}
                 </li>
@@ -502,7 +502,7 @@ function BuitenlandseCasinoPage() {
                     Klaar om te starten bij Betory?
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Snelle registratie · Crypto stortingen · Direct spelen
+                    Snelle registratie · Cryptostortingen · Direct spelen
                   </div>
                 </div>
               </div>
@@ -532,8 +532,8 @@ function BuitenlandseCasinoPage() {
               {[
                 "Groot spelaanbod",
                 "Moderne interface",
-                "Snelle crypto transacties",
-                "Innovatieve game selectie",
+                "Snelle crypto-transacties",
+                "Innovatieve gameselectie",
                 "Lage instapdrempel",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2 font-medium">
@@ -555,14 +555,14 @@ function BuitenlandseCasinoPage() {
                 <Star className="h-3.5 w-3.5 fill-gold text-gold" /> Eindconclusie
               </div>
               <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
-                Een modern crypto casino met sterke UX en groot spelaanbod
+                Een modern cryptocasino met sterke UX en een groot spelaanbod
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
                 Betory Casino blinkt vooral uit in <strong className="text-foreground">gebruiksvriendelijkheid</strong>,{" "}
                 <strong className="text-foreground">spelaanbod</strong> en een{" "}
-                <strong className="text-foreground">snelle crypto ervaring</strong>. Voor spelers
-                die actief zijn in crypto gaming is Betory een aantrekkelijke keuze binnen het
-                internationale casino landschap.
+                <strong className="text-foreground">snelle crypto-ervaring</strong>. Voor spelers
+                die actief zijn in cryptogaming is Betory een aantrekkelijke keuze binnen het
+                internationale casinolandschap.
               </p>
               <div className="mt-7 flex flex-col items-center gap-3">
                 <Button
