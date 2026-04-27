@@ -10,6 +10,7 @@ import { getBonus } from "@/data/bonuses";
 import { getCasino } from "@/data/casinos";
 import { bonusTypeTerms } from "@/data/taxonomies";
 import { jsonLdString } from "@/lib/jsonld";
+import { defaultAuthor, publisherJsonLd } from "@/data/authors";
 
 const SITE = "https://buitenlandsecasino.com";
 
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/bonus/$slug")({
         { property: "og:title", content: b.headline },
         { property: "og:description", content: b.description.slice(0, 155) },
         { property: "og:type", content: "article" },
+        { name: "author", content: defaultAuthor.name },
       ],
     };
   },
@@ -55,6 +57,9 @@ function BonusDetail() {
     url: `${SITE}/bonus/${b.slug}`,
     category: term.name,
     seller: casino ? { "@type": "Organization", name: casino.name } : undefined,
+    offeredBy: publisherJsonLd(),
+    availability: "https://schema.org/InStock",
+    validFrom: b.lastUpdated,
     priceSpecification: {
       "@type": "PriceSpecification",
       price: b.amount,
