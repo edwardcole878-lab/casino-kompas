@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "./Layout";
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { ComparisonTable } from "./ComparisonTable";
@@ -6,7 +5,6 @@ import { FAQ, type FAQItem } from "./FAQ";
 import { RelatedLinks } from "./RelatedLinks";
 import { PageMeta } from "./PageMeta";
 import { TrustNotice } from "./TrustNotice";
-import { FilterBar, applyFilters, defaultFilterState, type FilterState } from "./FilterBar";
 import type { Casino } from "@/data/casinos";
 
 export type CategoryPageProps = {
@@ -35,8 +33,6 @@ export function CategoryPage({
   faqs,
   related,
 }: CategoryPageProps) {
-  const [filters, setFilters] = useState<FilterState>(defaultFilterState);
-  const filtered = applyFilters(casinos, filters);
   return (
     <Layout>
       <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
@@ -55,16 +51,8 @@ export function CategoryPage({
               <h2 className="text-2xl font-bold md:text-3xl">{rankingTitle}</h2>
               {rankingDescription && <p className="mt-1 text-muted-foreground">{rankingDescription}</p>}
             </div>
-            <span className="text-sm text-muted-foreground">{filtered.length} casino{filtered.length === 1 ? "" : "'s"}</span>
           </div>
-          <div className="mb-4"><FilterBar value={filters} onChange={setFilters} /></div>
-          {filtered.length > 0 ? (
-            <ComparisonTable casinos={filtered} primaryCta={primaryCta} />
-          ) : (
-            <div className="rounded-2xl border bg-card p-8 text-center text-muted-foreground">
-              Geen casino's gevonden met deze filters. Probeer ze te resetten.
-            </div>
-          )}
+          <ComparisonTable casinos={casinos} primaryCta={primaryCta} />
         </section>
 
         {extraSection && <section className="mt-12">{extraSection}</section>}
