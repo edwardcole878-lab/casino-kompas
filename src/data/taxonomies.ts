@@ -216,6 +216,16 @@ export const licenceTerms: Record<Licence, Term> = {
     body: "Veel operators hebben Gibraltar als secundaire licentie naast KSA of MGA.",
     faq: [{ q: "Is Gibraltar serieus?", a: "Ja, vergelijkbaar kwaliteitsniveau met UKGC en MGA." }],
   },
+  Anjouan: {
+    slug: "anjouan", name: "Anjouan Gaming License",
+    tagline: "Internationale offshore-licentie van de Comoren",
+    intro: "De Anjouan Gaming Authority is een offshore licentieverstrekker uit het Comoren-eilandenstaat. Sinds 2024 een populair alternatief voor Curaçao bij internationale operators.",
+    body: "Anjouan-vergunde casino's accepteren Nederlandse spelers, maar zijn niet KSA-geregistreerd. Dit betekent geen Cruks-koppeling, geen verplichte NL-talige support en geen Nederlandse spelersbescherming. Speel altijd verantwoord.",
+    faq: [
+      { q: "Is een Anjouan-licentie veilig?", a: "Anjouan biedt basisregulering maar minder spelersbescherming dan KSA of MGA. Controleer altijd reviews en uitbetalingsgeschiedenis voor je stort." },
+      { q: "Mag ik bij Anjouan-casino's spelen vanuit Nederland?", a: "Technisch toegankelijk, maar buiten het KSA-systeem. Je valt niet onder Nederlandse spelersbescherming of Cruks-zelfuitsluiting." },
+    ],
+  },
 };
 
 // ── Bonus types ────────────────────────────────────────────────

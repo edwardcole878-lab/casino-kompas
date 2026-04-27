@@ -19,7 +19,7 @@ export type Provider =
   | "Push Gaming";
 
 /** Licensing authorities */
-export type Licence = "KSA" | "MGA" | "Curacao" | "UKGC" | "Gibraltar";
+export type Licence = "KSA" | "MGA" | "Curacao" | "UKGC" | "Gibraltar" | "Anjouan";
 
 /** Bonus type taxonomy */
 export type BonusType =
