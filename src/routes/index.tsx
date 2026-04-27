@@ -72,6 +72,10 @@ function Index() {
                     <img
                       src={number1.logoUrl ?? number1.image}
                       alt={`${number1.name} logo`}
+                      width={64}
+                      height={64}
+                      decoding="async"
+                      fetchPriority="high"
                       className="h-16 w-16 overflow-hidden rounded-xl bg-white object-contain p-1 text-[0] shadow-card"
                     />
                   ) : (
