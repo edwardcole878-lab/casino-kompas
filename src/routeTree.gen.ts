@@ -37,6 +37,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
 import { Route as GoSlugRouteImport } from './routes/go.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BetaalmethodeSlugRouteImport } from './routes/betaalmethode.$slug'
 
 const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
   id: '/welkomstbonus-casino',
@@ -179,6 +180,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const BetaalmethodeSlugRoute = BetaalmethodeSlugRouteImport.update({
+  id: '/betaalmethode/$slug',
+  path: '/betaalmethode/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -206,6 +212,7 @@ export interface FileRoutesByFullPath {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -236,6 +243,7 @@ export interface FileRoutesByTo {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -267,6 +275,7 @@ export interface FileRoutesById {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -299,6 +308,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -329,6 +339,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -359,6 +370,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -390,6 +402,7 @@ export interface RootRouteChildren {
   SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   VerantwoordSpelenRoute: typeof VerantwoordSpelenRoute
   WelkomstbonusCasinoRoute: typeof WelkomstbonusCasinoRoute
+  BetaalmethodeSlugRoute: typeof BetaalmethodeSlugRoute
   GoSlugRoute: typeof GoSlugRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
 }
@@ -592,6 +605,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/betaalmethode/$slug': {
+      id: '/betaalmethode/$slug'
+      path: '/betaalmethode/$slug'
+      fullPath: '/betaalmethode/$slug'
+      preLoaderRoute: typeof BetaalmethodeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -631,6 +651,7 @@ const rootRouteChildren: RootRouteChildren = {
   SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   VerantwoordSpelenRoute: VerantwoordSpelenRoute,
   WelkomstbonusCasinoRoute: WelkomstbonusCasinoRoute,
+  BetaalmethodeSlugRoute: BetaalmethodeSlugRoute,
   GoSlugRoute: GoSlugRoute,
   ReviewSlugRoute: ReviewSlugRoute,
 }
