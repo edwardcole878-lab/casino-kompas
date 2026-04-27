@@ -36,7 +36,12 @@ export const Route = createFileRoute("/review/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:author", content: defaultAuthor.name },
         { name: "author", content: defaultAuthor.name },
-        ...(c.logoUrl ? [{ property: "og:image", content: c.logoUrl }] : []),
+        ...(c.logoUrl
+          ? [
+              { property: "og:image", content: `${SITE}${c.logoUrl}` },
+              { name: "twitter:image", content: `${SITE}${c.logoUrl}` },
+            ]
+          : []),
       ],
     };
   },
@@ -79,7 +84,7 @@ function ReviewPage() {
       "@type": "Organization",
       name: casino.name,
       url: `${SITE}/review/${casino.slug}`,
-      ...(casino.logoUrl ? { image: casino.logoUrl } : {}),
+      ...(casino.logoUrl ? { image: `${SITE}${casino.logoUrl}` } : {}),
     },
     reviewRating: {
       "@type": "Rating",
@@ -104,7 +109,19 @@ function ReviewPage() {
         ]} />
 
         <header className="mt-6 grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-start">
-          <CasinoLogo name={casino.name} brandColor={casino.brandColor} size="lg" />
+          {casino.logoUrl ? (
+            <img
+              src={casino.logoUrl}
+              alt={`${casino.name} logo`}
+              width={96}
+              height={96}
+              decoding="async"
+              fetchPriority="high"
+              className="h-24 w-24 overflow-hidden rounded-2xl bg-white object-contain p-2 shadow-card"
+            />
+          ) : (
+            <CasinoLogo name={casino.name} brandColor={casino.brandColor} size="lg" />
+          )}
           <div>
             <div className="flex flex-wrap items-center gap-2">
               {casino.badges?.map((b) => <CasinoBadge key={b} variant={b} />)}
