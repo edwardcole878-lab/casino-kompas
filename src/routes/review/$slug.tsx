@@ -29,6 +29,8 @@ export const Route = createFileRoute("/review/$slug")({
         { name: "description", content: `${c.name} review: ${c.bonusHeadline}. ${c.verdict}` },
         { property: "og:title", content: `${c.name} Review — ${c.rating}/10` },
         { property: "og:description", content: c.verdict },
+        { property: "og:type", content: "article" },
+        ...(c.logoUrl ? [{ property: "og:image", content: c.logoUrl }] : []),
       ],
     };
   },
@@ -61,9 +63,29 @@ function ReviewPage() {
   const { casino } = Route.useLoaderData();
   const angle = angleHeadlines[casino.angle];
   const related = relatedCasinos(casino.slug, 3);
+  const reviewJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: casino.name,
+      ...(casino.logoUrl ? { image: casino.logoUrl } : {}),
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: casino.rating,
+      bestRating: 10,
+      worstRating: 1,
+    },
+    author: { "@type": "Organization", name: "Buitenlandse Casino" },
+    publisher: { "@type": "Organization", name: "Buitenlandse Casino" },
+    datePublished: casino.lastTested,
+    reviewBody: casino.verdict,
+  };
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }} />
       <div className="container mx-auto max-w-5xl px-4 py-8 pb-24 md:pb-12 md:py-12">
         <Breadcrumbs items={[
           { to: "/beste-online-casinos", label: "Casino's" },
