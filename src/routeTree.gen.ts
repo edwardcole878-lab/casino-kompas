@@ -29,6 +29,7 @@ import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
 import { Route as BuitenlandseCasinoRouteImport } from './routes/buitenlandse-casino'
+import { Route as BonussenRouteImport } from './routes/bonussen'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
 import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
@@ -139,6 +140,11 @@ const BuitenlandseCasinoRoute = BuitenlandseCasinoRouteImport.update({
   path: '/buitenlandse-casino',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BonussenRoute = BonussenRouteImport.update({
+  id: '/bonussen',
+  path: '/bonussen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -223,6 +230,7 @@ export interface FileRoutesByTo {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -255,6 +263,7 @@ export interface FileRoutesById {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -288,6 +297,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -319,6 +329,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -350,6 +361,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -382,6 +394,7 @@ export interface RootRouteChildren {
   BetrouwbareOnlineCasinosRoute: typeof BetrouwbareOnlineCasinosRoute
   BlackjackOnlineRoute: typeof BlackjackOnlineRoute
   BlogRoute: typeof BlogRouteWithChildren
+  BonussenRoute: typeof BonussenRoute
   BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRoute
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
@@ -549,6 +562,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BuitenlandseCasinoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bonussen': {
+      id: '/bonussen'
+      path: '/bonussen'
+      fullPath: '/bonussen'
+      preLoaderRoute: typeof BonussenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -631,6 +651,7 @@ const rootRouteChildren: RootRouteChildren = {
   BetrouwbareOnlineCasinosRoute: BetrouwbareOnlineCasinosRoute,
   BlackjackOnlineRoute: BlackjackOnlineRoute,
   BlogRoute: BlogRouteWithChildren,
+  BonussenRoute: BonussenRoute,
   BuitenlandseCasinoRoute: BuitenlandseCasinoRoute,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
