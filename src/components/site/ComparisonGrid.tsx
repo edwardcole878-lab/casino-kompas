@@ -3,12 +3,24 @@ import { Link } from "@tanstack/react-router";
 import type { Casino } from "@/data/casinos";
 import { CasinoLogo } from "./CasinoLogo";
 import { ArrowUpDown, ArrowDown, ArrowUp, ExternalLink, Gift, Clock, Wallet, Percent } from "lucide-react";
-import { payoutMinutes, wageringValue } from "./HomeFilters";
 
 type SortKey = "rank" | "rating" | "bonus" | "wagering" | "payout" | "minDeposit";
 type SortDir = "asc" | "desc";
 
 const minDepositValue = (s: string) => {
+  const m = s.match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 999;
+};
+
+const payoutMinutes = (s: string): number => {
+  const m = s.match(/(\d+)\s*min/i);
+  if (m) return parseInt(m[1], 10);
+  const h = s.match(/(\d+)\s*uur/i);
+  if (h) return parseInt(h[1], 10) * 60;
+  return 999;
+};
+
+const wageringValue = (s: string): number => {
   const m = s.match(/(\d+)/);
   return m ? parseInt(m[1], 10) : 999;
 };
