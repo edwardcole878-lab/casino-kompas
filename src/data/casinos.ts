@@ -5,6 +5,31 @@ export const paymentLogoUrl: Partial<Record<PaymentMethod, string>> = {
   // e.g. iDEAL: "/payments/ideal.svg",
 };
 
+/** Software/game providers (Mercury-style taxonomy) */
+export type Provider =
+  | "NetEnt"
+  | "Pragmatic Play"
+  | "Evolution"
+  | "Play'n GO"
+  | "Hacksaw Gaming"
+  | "Microgaming"
+  | "Yggdrasil"
+  | "Red Tiger"
+  | "Nolimit City"
+  | "Push Gaming";
+
+/** Licensing authorities */
+export type Licence = "KSA" | "MGA" | "Curacao" | "UKGC" | "Gibraltar";
+
+/** Bonus type taxonomy */
+export type BonusType =
+  | "welkomstbonus"
+  | "no-deposit"
+  | "free-spins"
+  | "cashback"
+  | "reload"
+  | "vip";
+
 export type Casino = {
   slug: string;
   rank: number;
@@ -51,6 +76,19 @@ export type Casino = {
   verdict: string;
   intro: string; // unique editorial intro
   games: { slots: number; live: number; table: number };
+  // ── Mercury-style relational taxonomy fields ──
+  /** Software/game providers */
+  providers?: Provider[];
+  /** Licensing authorities (in addition to legacy `licence` text) */
+  licences?: Licence[];
+  /** Bonus types this casino offers */
+  bonusTypes?: BonusType[];
+  /** ISO 3166-1 alpha-2 country codes where this casino is restricted */
+  restrictedCountries?: string[];
+  /** Owner / parent company */
+  owner?: string;
+  /** Affiliate redirect URL (used by /go/$slug) */
+  affiliateUrl?: string;
 };
 
 export const casinos: Casino[] = [
@@ -82,6 +120,10 @@ export const casinos: Casino[] = [
     verdict: "Royal Orange biedt het sterkste bonusaanbod van alle door ons geteste casino's, met voorwaarden die spelers daadwerkelijk kunnen waarmaken.",
     intro: "Tijdens onze test van Royal Orange viel direct op hoe transparant het welkomstaanbod werd gepresenteerd. Geen verstopte voorwaarden, geen piepkleine lettertjes — gewoon een eerlijke 100% match en 200 free spins met een doorzet die voor recreatieve spelers haalbaar is.",
     games: { slots: 1850, live: 120, table: 65 },
+    providers: ["NetEnt", "Pragmatic Play", "Evolution", "Play'n GO", "Hacksaw Gaming"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins", "reload"],
+    owner: "Orange Gaming N.V.",
   },
   {
     slug: "tulip-spin",
@@ -110,6 +152,10 @@ export const casinos: Casino[] = [
     verdict: "Voor wie waarde hecht aan snel je geld op je rekening: Tulip Spin is wat ons betreft de onbetwiste #1 op uitbetaalsnelheid.",
     intro: "We deden meerdere uitbetalingstests bij Tulip Spin op verschillende tijdstippen — inclusief zondagavond. Gemiddelde wachttijd: 27 minuten. Dat is in de Nederlandse markt vrijwel ongekend en maakt dit casino tot een no-brainer voor spelers die niet dagen willen wachten.",
     games: { slots: 1400, live: 95, table: 50 },
+    providers: ["NetEnt", "Pragmatic Play", "Evolution", "Yggdrasil"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins"],
+    owner: "Tulip Interactive B.V.",
   },
   {
     slug: "delta-casino",
@@ -138,6 +184,10 @@ export const casinos: Casino[] = [
     verdict: "Wie voornamelijk op telefoon speelt, vindt bij Delta Casino de beste ervaring in de Nederlandse markt — geen workaround via browser nodig.",
     intro: "We testten Delta Casino een week lang exclusief op mobiel. Wat opvalt: dit is geen versimpelde desktopsite, maar een echte mobile-first ervaring. Slots laden in minder dan 2 seconden en de iDEAL-flow neemt slechts vier taps.",
     games: { slots: 1600, live: 80, table: 55 },
+    providers: ["Pragmatic Play", "Play'n GO", "Microgaming", "Red Tiger"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins"],
+    owner: "Delta Group Ltd.",
   },
   {
     slug: "nederzicht-casino",
@@ -166,6 +216,10 @@ export const casinos: Casino[] = [
     verdict: "Het veiligste keuze voor spelers die zekerheid en regelgeving boven bonussen stellen.",
     intro: "Nederzicht Casino is een van de eerste operators die in 2021 een KSA-vergunning kreeg toen de Nederlandse markt opende. Tijdens onze audit zagen we waarom: spelersbeschermingstools zijn geen afterthought maar diep verweven in het platform.",
     games: { slots: 1200, live: 70, table: 45 },
+    providers: ["NetEnt", "Evolution", "Play'n GO"],
+    licences: ["KSA"],
+    bonusTypes: ["no-deposit", "welkomstbonus"],
+    owner: "Nederzicht Holding N.V.",
   },
   {
     slug: "live-arena",
@@ -193,6 +247,10 @@ export const casinos: Casino[] = [
     verdict: "Voor de live casino liefhebber simpelweg de beste keuze in Nederland.",
     intro: "Live Arena heeft een duidelijke focus: live casino. Dat zie je terug in alles, van de Nederlandstalige dealers tot de exclusieve gametafels die je elders niet vindt. We speelden meer dan 40 uur live blackjack en roulette tijdens onze test.",
     games: { slots: 900, live: 250, table: 80 },
+    providers: ["Evolution", "Pragmatic Play", "NetEnt"],
+    licences: ["KSA", "MGA"],
+    bonusTypes: ["welkomstbonus", "reload"],
+    owner: "Arena Gaming Ltd.",
   },
   {
     slug: "spin-paleis",
@@ -220,6 +278,10 @@ export const casinos: Casino[] = [
     verdict: "Slots-spelers krijgen hier meer keuze dan ze in een leven kunnen spelen.",
     intro: "Wie een specifieke slot zoekt, vindt hem waarschijnlijk bij Spin Paleis. Met 2.100+ titels van NetEnt, Pragmatic, Play'n GO, Hacksaw en tientallen andere providers is dit het Walhalla voor slots-fans.",
     games: { slots: 2100, live: 60, table: 40 },
+    providers: ["NetEnt", "Pragmatic Play", "Play'n GO", "Hacksaw Gaming", "Nolimit City", "Push Gaming", "Yggdrasil"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins", "reload"],
+    owner: "Paleis Entertainment B.V.",
   },
   {
     slug: "diamant-club",
@@ -247,6 +309,10 @@ export const casinos: Casino[] = [
     verdict: "Speel je regelmatig en met grotere bedragen? Dan loont Diamant Club zich snel via cashback en VIP-perks.",
     intro: "Loyaliteit wordt bij Diamant Club daadwerkelijk beloond. We volgden het programma drie maanden lang en zagen hoe een gemiddelde speler binnen zes weken niveau 3 bereikt — waar de echte voordelen beginnen.",
     games: { slots: 1500, live: 100, table: 60 },
+    providers: ["NetEnt", "Evolution", "Pragmatic Play", "Microgaming"],
+    licences: ["KSA", "MGA"],
+    bonusTypes: ["vip", "cashback", "reload"],
+    owner: "Diamant Group N.V.",
   },
   {
     slug: "ideal-prime",
@@ -275,6 +341,10 @@ export const casinos: Casino[] = [
     verdict: "Als iDEAL je primaire betaalmethode is, is dit casino vanaf de eerste seconde voor jou ontworpen.",
     intro: "iDEAL Prime kiest bewust voor minder is meer: alleen Nederlandse betaalmethoden, geen verwarring, geen omwegen. Het resultaat is een betaalflow die zelfs onze minst tech-savvy testpersoon binnen 30 seconden begreep.",
     games: { slots: 1100, live: 75, table: 40 },
+    providers: ["Pragmatic Play", "Play'n GO", "Hacksaw Gaming"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins"],
+    owner: "Prime Casino B.V.",
   },
   {
     slug: "crypto-vault",
@@ -302,6 +372,10 @@ export const casinos: Casino[] = [
     verdict: "Het beste van twee werelden voor wie zowel klassiek als crypto wil kunnen spelen.",
     intro: "Crypto Vault doet iets ongebruikelijks: een KSA-vergunning combineren met crypto-betalingen. We testten beide flows uitgebreid en beide werken zoals beloofd, met crypto-uitbetalingen zelfs sneller dan iDEAL.",
     games: { slots: 1300, live: 65, table: 35 },
+    providers: ["NetEnt", "Pragmatic Play", "Nolimit City", "Push Gaming"],
+    licences: ["KSA", "Curacao"],
+    bonusTypes: ["welkomstbonus", "free-spins", "cashback"],
+    owner: "Vault Digital Ltd.",
   },
   {
     slug: "zilveren-spin",
@@ -329,6 +403,10 @@ export const casinos: Casino[] = [
     verdict: "De bonus is kleiner, maar je houdt er daadwerkelijk wat aan over — een zeldzaamheid in de markt.",
     intro: "De meeste 'grote' bonussen zijn in de praktijk bijna onmogelijk om vrij te spelen. Zilveren Spin draait dat om: een bescheiden bonus met voorwaarden die je écht kunt halen. Wij rekenden het door — en de cijfers kloppen.",
     games: { slots: 850, live: 50, table: 30 },
+    providers: ["NetEnt", "Play'n GO", "Yggdrasil"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins"],
+    owner: "Zilveren B.V.",
   },
 ];
 

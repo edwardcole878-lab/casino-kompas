@@ -29,6 +29,7 @@ import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
 import { Route as BuitenlandseCasinoRouteImport } from './routes/buitenlandse-casino'
+import { Route as BonussenRouteImport } from './routes/bonussen'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
 import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
@@ -37,6 +38,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
 import { Route as GoSlugRouteImport } from './routes/go.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BetaalmethodeSlugRouteImport } from './routes/betaalmethode.$slug'
 
 const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
   id: '/welkomstbonus-casino',
@@ -138,6 +140,11 @@ const BuitenlandseCasinoRoute = BuitenlandseCasinoRouteImport.update({
   path: '/buitenlandse-casino',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BonussenRoute = BonussenRouteImport.update({
+  id: '/bonussen',
+  path: '/bonussen',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -179,6 +186,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const BetaalmethodeSlugRoute = BetaalmethodeSlugRouteImport.update({
+  id: '/betaalmethode/$slug',
+  path: '/betaalmethode/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -186,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -206,6 +219,7 @@ export interface FileRoutesByFullPath {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -216,6 +230,7 @@ export interface FileRoutesByTo {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -236,6 +251,7 @@ export interface FileRoutesByTo {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -247,6 +263,7 @@ export interface FileRoutesById {
   '/betrouwbare-online-casinos': typeof BetrouwbareOnlineCasinosRoute
   '/blackjack-online': typeof BlackjackOnlineRoute
   '/blog': typeof BlogRouteWithChildren
+  '/bonussen': typeof BonussenRoute
   '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
@@ -267,6 +284,7 @@ export interface FileRoutesById {
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
+  '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
@@ -279,6 +297,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -299,6 +318,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -309,6 +329,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -329,6 +350,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -339,6 +361,7 @@ export interface FileRouteTypes {
     | '/betrouwbare-online-casinos'
     | '/blackjack-online'
     | '/blog'
+    | '/bonussen'
     | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
@@ -359,6 +382,7 @@ export interface FileRouteTypes {
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
+    | '/betaalmethode/$slug'
     | '/blog/$slug'
     | '/go/$slug'
     | '/review/$slug'
@@ -370,6 +394,7 @@ export interface RootRouteChildren {
   BetrouwbareOnlineCasinosRoute: typeof BetrouwbareOnlineCasinosRoute
   BlackjackOnlineRoute: typeof BlackjackOnlineRoute
   BlogRoute: typeof BlogRouteWithChildren
+  BonussenRoute: typeof BonussenRoute
   BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRoute
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
@@ -390,6 +415,7 @@ export interface RootRouteChildren {
   SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   VerantwoordSpelenRoute: typeof VerantwoordSpelenRoute
   WelkomstbonusCasinoRoute: typeof WelkomstbonusCasinoRoute
+  BetaalmethodeSlugRoute: typeof BetaalmethodeSlugRoute
   GoSlugRoute: typeof GoSlugRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
 }
@@ -536,6 +562,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BuitenlandseCasinoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bonussen': {
+      id: '/bonussen'
+      path: '/bonussen'
+      fullPath: '/bonussen'
+      preLoaderRoute: typeof BonussenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -592,6 +625,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/betaalmethode/$slug': {
+      id: '/betaalmethode/$slug'
+      path: '/betaalmethode/$slug'
+      fullPath: '/betaalmethode/$slug'
+      preLoaderRoute: typeof BetaalmethodeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -611,6 +651,7 @@ const rootRouteChildren: RootRouteChildren = {
   BetrouwbareOnlineCasinosRoute: BetrouwbareOnlineCasinosRoute,
   BlackjackOnlineRoute: BlackjackOnlineRoute,
   BlogRoute: BlogRouteWithChildren,
+  BonussenRoute: BonussenRoute,
   BuitenlandseCasinoRoute: BuitenlandseCasinoRoute,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
@@ -631,6 +672,7 @@ const rootRouteChildren: RootRouteChildren = {
   SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   VerantwoordSpelenRoute: VerantwoordSpelenRoute,
   WelkomstbonusCasinoRoute: WelkomstbonusCasinoRoute,
+  BetaalmethodeSlugRoute: BetaalmethodeSlugRoute,
   GoSlugRoute: GoSlugRoute,
   ReviewSlugRoute: ReviewSlugRoute,
 }
