@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { jsonLdString } from "@/lib/jsonld";
 
 const SITE_URL = "https://buitenlandsecasino.com";
 
@@ -99,7 +100,7 @@ function RootComponent() {
       {/* React 19 hoists these to <head> on both SSR and client */}
       <link rel="canonical" href={canonical} />
       <meta property="og:url" content={canonical} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(orgJsonLd) }} />
       <Outlet />
     </>
   );
