@@ -10,7 +10,7 @@ export function AuthorByline() {
       <div className="min-w-0 text-sm">
         <div className="font-semibold">
           Geschreven door{" "}
-          <Link to="/redactiebeleid" className="text-trust underline-offset-2 hover:underline">
+          <Link to="/auteur/$slug" params={{ slug: "mark-de-vries" }} className="text-trust underline-offset-2 hover:underline">
             Mark de Vries
           </Link>
         </div>

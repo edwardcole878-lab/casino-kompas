@@ -33,7 +33,7 @@ const groups: NavGroup[] = [
     items: [
       { to: "/beste-online-casinos", label: "Top 10 Casino's", desc: "De algehele ranking", icon: Trophy },
       { to: "/nieuwe-online-casinos", label: "Nieuwe Casino's", desc: "Recent gelanceerd in NL", icon: Sparkle },
-      { to: "/betrouwbare-online-casinos", label: "Betrouwbare Casino's", desc: "KSA & Cruks-compliant", icon: ShieldQuestion },
+      { to: "/betrouwbare-online-casinos", label: "Betrouwbare Casino's", desc: "Getest op uitbetaling & support", icon: ShieldQuestion },
       { to: "/online-slots", label: "Online Slots", desc: "Duizenden gokkasten", icon: Dice5 },
       { to: "/live-casino", label: "Live Casino", desc: "Met echte dealer", icon: Tv },
       { to: "/blackjack-online", label: "Blackjack", desc: "Strategie en tafels", icon: Spade },
@@ -63,7 +63,7 @@ const groups: NavGroup[] = [
     label: "Meer",
     items: [
       { to: "/providers", label: "Game Providers", desc: "NetEnt, Pragmatic & meer", icon: Sparkles },
-      { to: "/licenties", label: "Licenties", desc: "KSA, MGA, Curaçao", icon: ShieldCheck },
+      { to: "/licenties", label: "Licenties", desc: "Anjouan, Curaçao, MGA", icon: ShieldCheck },
       { to: "/bonus-types", label: "Bonus Types", desc: "Welkomst, free spins, VIP", icon: Gift },
       { to: "/slots", label: "Slot Reviews", desc: "RTP & volatiliteit", icon: Dice5 },
     ],

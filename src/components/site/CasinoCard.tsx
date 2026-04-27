@@ -128,7 +128,7 @@ export function CasinoCard({
             </div>
             <div className="col-span-2 sm:col-span-1">
               <dt className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Licentie</dt>
-              <dd className="font-bold">KSA</dd>
+              <dd className="font-bold">{casino.licence}</dd>
             </div>
           </dl>
 
@@ -138,7 +138,7 @@ export function CasinoCard({
               <Clock className="h-3 w-3" /> {casino.payoutTime}
             </span>
             <span className="inline-flex items-center gap-1 text-[11px] font-medium text-trust">
-              <ShieldCheck className="h-3 w-3" /> KSA
+              <ShieldCheck className="h-3 w-3" /> {casino.licence}
             </span>
           </div>
         </div>

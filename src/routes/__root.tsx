@@ -32,29 +32,29 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
-      { name: "description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
+      { title: "Buitenlandse Casino's — Vergelijk Offshore Casino's voor NL Spelers" },
+      { name: "description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's (Anjouan, Curaçao, MGA), gericht op Nederlandse spelers. Bonussen, uitbetalingen en eerlijke reviews." },
       { name: "robots", content: "index,follow" },
       { name: "language", content: "nl-NL" },
-      { name: "author", content: "Redactie Buitenlandse Casino" },
+      { name: "author", content: "Redactie Buitenlandse Casino's" },
       { name: "rating", content: "adult" },
       { name: "content-rating", content: "mature" },
       { name: "audience", content: "18+" },
       { httpEquiv: "content-language", content: "nl-NL" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Buitenlandse Casino" },
+      { property: "og:site_name", content: "Buitenlandse Casino's" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0f1530" },
-      { property: "og:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
-      { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
-      { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
-      { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
+      { property: "og:title", content: "Buitenlandse Casino's — Offshore Casino's voor NL Spelers" },
+      { name: "twitter:title", content: "Buitenlandse Casino's — Offshore Casino's voor NL Spelers" },
+      { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's, gericht op Nederlandse spelers." },
+      { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's, gericht op Nederlandse spelers." },
       // Default OG/Twitter image — leaf routes can override og:image when they have a more specific visual
       { property: "og:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Buitenlandse Casino — Nederlands casino vergelijkingsplatform" },
+      { property: "og:image:alt", content: "Buitenlandse Casino's — Nederlands vergelijkingsplatform voor offshore casino's" },
       { name: "twitter:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
     ],
     links: [
@@ -65,9 +65,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
-      // hreflang — single-locale Dutch site, but make the signal explicit
-      { rel: "alternate", hrefLang: "nl-NL", href: "https://buitenlandsecasino.com" },
-      { rel: "alternate", hrefLang: "x-default", href: "https://buitenlandsecasino.com" },
+      // Single-locale Dutch site — hreflang is set via canonical-aware tags inside RootComponent.
     ],
   }),
   shellComponent: RootShell,
@@ -97,7 +95,7 @@ function RootComponent() {
     "@graph": [
       {
         "@type": "Organization",
-        name: "Buitenlandse Casino",
+        name: "Buitenlandse Casino's",
         url: SITE_URL,
         logo: {
           "@type": "ImageObject",
@@ -107,7 +105,7 @@ function RootComponent() {
       },
       {
         "@type": "WebSite",
-        name: "Buitenlandse Casino",
+        name: "Buitenlandse Casino's",
         url: SITE_URL,
         inLanguage: "nl-NL",
         potentialAction: {
