@@ -5,6 +5,7 @@ import { posts } from "@/data/blog";
 import { bonuses } from "@/data/bonuses";
 import { slots } from "@/data/slots";
 import { paymentTerms, providerTerms, licenceTerms, bonusTypeTerms } from "@/data/taxonomies";
+import { offshoreCasinos } from "@/data/offshore-casinos";
 
 const SITE = "https://buitenlandsecasino.com";
 
@@ -54,6 +55,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...Object.values(providerTerms).map((t) => ({ loc: `${SITE}/provider/${t.slug}`, lastmod: today, priority: "0.6" })),
           ...Object.values(licenceTerms).map((t) => ({ loc: `${SITE}/licentie/${t.slug}`, lastmod: today, priority: "0.6" })),
           ...Object.values(bonusTypeTerms).map((t) => ({ loc: `${SITE}/bonus-type/${t.slug}`, lastmod: today, priority: "0.7" })),
+          ...offshoreCasinos
+            .filter((c) => c.slug !== "betory")
+            .map((c) => ({
+              loc: `${SITE}/buitenlandse-casino/${c.slug}`,
+              lastmod: c.lastUpdated,
+              priority: "0.7",
+            })),
         ];
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
