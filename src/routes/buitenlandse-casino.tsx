@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import betoryLogo from "@/assets/betory-logo.png";
 import { jsonLdString } from "@/lib/jsonld";
+import { offshoreCasinos } from "@/data/offshore-casinos";
 
 const SITE_URL = "https://buitenlandsecasino.com";
 
