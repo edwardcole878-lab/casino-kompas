@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/welkomstbonus-casino")({
   head: () => ({
@@ -29,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={casinos.filter((c) => ["best-bonus", "low-wagering", "ideal-experience"].includes(c.angle))}
+      casinos={topCasinos}
       rankingTitle="Beste welkomstbonussen op eerste storting"
       primaryCta="Speel Nu"
       faqs={[

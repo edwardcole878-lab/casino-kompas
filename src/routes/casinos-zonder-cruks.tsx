@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/casinos-zonder-cruks")({
   head: () => ({
@@ -25,7 +25,7 @@ function Page() {
           <p><strong>Belangrijk:</strong> sta je in CRUKS, dan is dit register er niet voor niets. Speel dan niet bij deze casino's. Voor iedereen die bewust kiest voor een offshore platform, vergelijken we hieronder de aanbieders die wij hebben getest.</p>
         </>
       }
-      casinos={casinos}
+      casinos={topCasinos}
       rankingTitle="Onze ranking"
       rankingDescription="Geordend op gewogen score: bonus, uitbetaling, support, spelaanbod en transparantie."
       primaryCta="Speel Nu"

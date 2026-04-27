@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/casino-spellen")({
   head: () => ({
@@ -16,7 +16,6 @@ export const Route = createFileRoute("/casino-spellen")({
 
 function Page() {
   // sort by total games
-  const ordered = [...casinos].sort((a, b) => (b.games.slots + b.games.live + b.games.table) - (a.games.slots + a.games.live + a.games.table));
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Casinospellen" }]}
@@ -31,7 +30,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={ordered}
+      casinos={topCasinos}
       rankingTitle="Casino's met grootste totale spelaanbod"
       rankingDescription="Optelsom van slots, live tafels en table games."
       primaryCta="Bekijk Casino"

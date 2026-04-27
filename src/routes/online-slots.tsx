@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/online-slots")({
   head: () => ({
@@ -15,13 +15,12 @@ export const Route = createFileRoute("/online-slots")({
 });
 
 function Page() {
-  const list = casinos.sort((a, b) => b.games.slots - a.games.slots).slice(0, 6);
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Online slots — beste slot casino's" }]}
       h1="Online slots — beste slot casino's"
       intro={<><p>Slots zijn met afstand de populairste casinospellen in Nederland. Wat een goed slots-casino kenmerkt is niet alleen aantal, maar variëteit van providers, aanwezigheid van demo-modus en kwaliteit van zoekfilters.</p></>}
-      casinos={list}
+      casinos={topCasinos}
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Is dit type casino veilig?", a: "Nee, deze casino's hebben géén Nederlandse KSA-vergunning en zijn niet aangesloten op Cruks. Ze opereren onder een offshore licentie (Anjouan, Curaçao of MGA). Speel verantwoord en stel zelf limieten in." },

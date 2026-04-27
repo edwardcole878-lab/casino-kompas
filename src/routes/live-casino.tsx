@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/live-casino")({
   head: () => ({
@@ -15,13 +15,12 @@ export const Route = createFileRoute("/live-casino")({
 });
 
 function Page() {
-  const list = casinos.sort((a, b) => b.games.live - a.games.live).slice(0, 6);
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Live casino — met echte dealer" }]}
       h1="Live casino — met echte dealer"
       intro={<><p>Live casino brengt de echte casino-ervaring naar je scherm: een professionele dealer, HD-stream, en de mogelijkheid om mee te chatten met andere spelers. Wij testen op streamkwaliteit, tafelaanbod en Nederlandstaligheid.</p></>}
-      casinos={list}
+      casinos={topCasinos}
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Is dit type casino veilig?", a: "Nee, deze casino's hebben géén Nederlandse KSA-vergunning en zijn niet aangesloten op Cruks. Ze opereren onder een offshore licentie (Anjouan, Curaçao of MGA). Speel verantwoord en stel zelf limieten in." },

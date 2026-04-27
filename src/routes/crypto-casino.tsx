@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/crypto-casino")({
   head: () => ({
@@ -15,13 +15,12 @@ export const Route = createFileRoute("/crypto-casino")({
 });
 
 function Page() {
-  const list = casinos.filter((c) => c.payments.includes("Crypto"));
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Crypto casino's met iDEAL" }]}
       h1="Crypto casino's met iDEAL"
       intro={<><p>De meeste KSA-casino's accepteren geen crypto, maar enkele pioniers doen het wél — en combineren het met iDEAL voor traditionele spelers. Crypto-uitbetalingen zijn vaak nóg sneller dan iDEAL, vooral in het weekend.</p></>}
-      casinos={list}
+      casinos={topCasinos}
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Is dit type casino veilig?", a: "Nee, deze casino's hebben géén Nederlandse KSA-vergunning en zijn niet aangesloten op Cruks. Ze opereren onder een offshore licentie (Anjouan, Curaçao of MGA). Speel verantwoord en stel zelf limieten in." },

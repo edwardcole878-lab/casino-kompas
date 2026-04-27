@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/betrouwbare-online-casinos")({
   head: () => ({
@@ -15,7 +15,6 @@ export const Route = createFileRoute("/betrouwbare-online-casinos")({
 });
 
 function Page() {
-  const trust = [...casinos].sort((a, b) => (a.angle === "trust-license" ? -1 : b.angle === "trust-license" ? 1 : a.established - b.established));
   return (
     <CategoryPage
       breadcrumbs={[{ to: "/beste-online-casinos", label: "Casino's" }, { label: "Betrouwbare casino's" }]}
@@ -30,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={trust}
+      casinos={topCasinos}
       rankingTitle="Casino's met de hoogste trust-score"
       rankingDescription="Beoordeeld op licentie, transparantie, klachtafhandeling en Cruks-implementatie."
       primaryCta="Bekijk Casino"

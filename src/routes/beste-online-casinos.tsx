@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/beste-online-casinos")({
   head: () => ({
@@ -29,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={casinos}
+      casinos={topCasinos}
       rankingTitle="Top 10 — onze ranking"
       rankingDescription="Geordend op gewogen score: bonus (25%), uitbetaling (25%), support (20%), spelaanbod (20%), trust (10%)."
       primaryCta="Speel Nu"
