@@ -13,6 +13,7 @@ import { Route as WelkomstbonusCasinoRouteImport } from './routes/welkomstbonus-
 import { Route as VerantwoordSpelenRouteImport } from './routes/verantwoord-spelen'
 import { Route as SnelleUitbetalingCasinoRouteImport } from './routes/snelle-uitbetaling-casino'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as RouletteOnlineRouteImport } from './routes/roulette-online'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as RedactiebeleidRouteImport } from './routes/redactiebeleid'
@@ -54,6 +55,11 @@ const SnelleUitbetalingCasinoRoute = SnelleUitbetalingCasinoRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteDotwebmanifestRoute = SiteDotwebmanifestRouteImport.update({
+  id: '/site.webmanifest',
+  path: '/site.webmanifest',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RouletteOnlineRoute = RouletteOnlineRouteImport.update({
@@ -189,6 +195,7 @@ export interface FileRoutesByFullPath {
   '/redactiebeleid': typeof RedactiebeleidRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/roulette-online': typeof RouletteOnlineRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
@@ -217,6 +224,7 @@ export interface FileRoutesByTo {
   '/redactiebeleid': typeof RedactiebeleidRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/roulette-online': typeof RouletteOnlineRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
@@ -246,6 +254,7 @@ export interface FileRoutesById {
   '/redactiebeleid': typeof RedactiebeleidRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/roulette-online': typeof RouletteOnlineRoute
+  '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
@@ -276,6 +285,7 @@ export interface FileRouteTypes {
     | '/redactiebeleid'
     | '/robots.txt'
     | '/roulette-online'
+    | '/site.webmanifest'
     | '/sitemap.xml'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
@@ -304,6 +314,7 @@ export interface FileRouteTypes {
     | '/redactiebeleid'
     | '/robots.txt'
     | '/roulette-online'
+    | '/site.webmanifest'
     | '/sitemap.xml'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
@@ -332,6 +343,7 @@ export interface FileRouteTypes {
     | '/redactiebeleid'
     | '/robots.txt'
     | '/roulette-online'
+    | '/site.webmanifest'
     | '/sitemap.xml'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
@@ -361,6 +373,7 @@ export interface RootRouteChildren {
   RedactiebeleidRoute: typeof RedactiebeleidRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   RouletteOnlineRoute: typeof RouletteOnlineRoute
+  SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   VerantwoordSpelenRoute: typeof VerantwoordSpelenRoute
@@ -397,6 +410,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site.webmanifest': {
+      id: '/site.webmanifest'
+      path: '/site.webmanifest'
+      fullPath: '/site.webmanifest'
+      preLoaderRoute: typeof SiteDotwebmanifestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/roulette-online': {
@@ -577,6 +597,7 @@ const rootRouteChildren: RootRouteChildren = {
   RedactiebeleidRoute: RedactiebeleidRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   RouletteOnlineRoute: RouletteOnlineRoute,
+  SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   VerantwoordSpelenRoute: VerantwoordSpelenRoute,
