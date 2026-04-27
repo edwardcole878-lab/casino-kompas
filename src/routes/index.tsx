@@ -201,7 +201,6 @@ function Index() {
                 items: [
                   { to: "/ideal-casinos", label: "iDEAL Casino's" },
                   { to: "/crypto-casino", label: "Crypto Casino's" },
-                  { to: "/betaalmethode/$slug", params: { slug: "trustly" }, label: "Trustly Casino's" },
                   { to: "/betaalmethoden", label: "Alle betaalmethoden" },
                 ],
               },
