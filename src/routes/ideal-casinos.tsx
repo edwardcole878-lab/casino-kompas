@@ -26,7 +26,7 @@ function Page() {
             iDEAL is voor Nederlandse spelers vrijwel altijd de eerste keuze — en met goede reden. Een iDEAL-storting is direct geboekt, kost niets, en verloopt via je eigen bank waardoor je geen extra accountgegevens bij het casino hoeft achter te laten. Dat is een fundamenteel ander veiligheidsniveau dan een creditcard.
           </p>
           <p>
-            Wat veel mensen niet weten: niet alle KSA-vergunde casino's bieden iDEAL <em>even goed</em> aan. Sommige hebben een 1-tap flow, andere vereisen 6 stappen. Op deze pagina vergelijken we de iDEAL-implementatie zelf, niet alleen de aanwezigheid ervan.
+            Wat veel mensen niet weten: niet alle buitenlandse casino's bieden iDEAL <em>even goed</em> aan. Sommige hebben een 1-tap flow, andere vereisen 6 stappen. Op deze pagina vergelijken we de iDEAL-implementatie zelf, niet alleen de aanwezigheid ervan.
           </p>
         </>
       }

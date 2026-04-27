@@ -6,9 +6,9 @@ export const Route = createFileRoute("/crypto-casino")({
   head: () => ({
     meta: [
       { title: "Crypto Casino — Bitcoin & Crypto Casino's Nederland 2026" },
-      { name: "description", content: "KSA-vergunde casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
+      { name: "description", content: "buitenlandse casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
       { property: "og:title", content: "Crypto Casino — Bitcoin & Crypto Casino's Nederland 2026" },
-      { property: "og:description", content: "KSA-vergunde casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
+      { property: "og:description", content: "buitenlandse casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
     ],
   }),
   component: Page,
@@ -27,7 +27,7 @@ function Page() {
         { q: "Is dit type casino veilig?", a: "Ja, alle vermelde casino's hebben een KSA-vergunning en zijn aangesloten op Cruks." },
         { q: "Wat is de minimale storting?", a: "Bij de meeste casino's hier €10, soms al vanaf €5." },
         { q: "Hoe lang duurt een uitbetaling gemiddeld?", a: "Tussen 30 minuten en 4 uur, afhankelijk van casino en betaalmethode." },
-        { q: "Krijg ik Nederlandstalige support?", a: "Ja, alle KSA-vergunde casino's bieden Nederlandstalige klantenservice." },
+        { q: "Krijg ik Nederlandstalige support?", a: "Ja, alle buitenlandse casino's bieden Nederlandstalige klantenservice." },
         { q: "Mag ik meerdere accounts hebben?", a: "Eén account per persoon per casino — meerdere accounts zijn altijd verboden." },
       ]}
       related={[

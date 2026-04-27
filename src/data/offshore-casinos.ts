@@ -102,7 +102,7 @@ export const offshoreCasinos: OffshoreCasino[] = [
     support:
       "24/7 live chat (Engels) met gemiddelde wachttijd onder 2 minuten. Email-support binnen 12 uur. Geen Nederlandstalig kanaal — een minpunt voor wie liever in de eigen taal communiceert.",
     verdict:
-      "Betory levert wat het belooft: een grote bonus, snelle uitbetalingen en een breed aanbod. Wie zich niet stoort aan de afwezigheid van Nederlandse support en de hogere wagering, krijgt hier echt waar voor zijn geld. Onthoud: zonder KSA betekent geen Cruks-koppeling.",
+      "Betory levert wat het belooft: een grote bonus, snelle uitbetalingen en een breed aanbod. Wie zich niet stoort aan de afwezigheid van Nederlandse support en de hogere wagering, krijgt hier echt waar voor zijn geld. Onthoud: zonder KSA betekent geen klachtenroute.",
     providers: ["Pragmatic Play", "NetEnt", "Play'n GO", "Hacksaw Gaming", "Evolution"],
     paymentMethods: ["iDEAL", "Trustly", "Bitcoin", "Ethereum", "Visa", "Mastercard", "Skrill"],
     lastUpdated: "2026-04-01",

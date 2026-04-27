@@ -5,8 +5,8 @@ export const Route = createFileRoute("/site.webmanifest")({
     handlers: {
       GET: () => {
         const manifest = {
-          name: "Buitenlandse Casino",
-          short_name: "Buitenlandse Casino",
+          name: "Buitenlandse Casino's",
+          short_name: "Buitenlandse Casino's",
           start_url: "/",
           display: "standalone",
           background_color: "#0f1530",

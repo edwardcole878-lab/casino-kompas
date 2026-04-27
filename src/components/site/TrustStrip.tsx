@@ -3,7 +3,7 @@ import { ShieldCheck, Lock, BadgeCheck, FlaskConical } from "lucide-react";
 export function TrustStrip() {
   const items = [
     { icon: ShieldCheck, label: "KSA-vergund", sub: "Kansspelautoriteit" },
-    { icon: BadgeCheck, label: "Cruks-koppeling", sub: "Spelersbescherming" },
+    { icon: BadgeCheck, label: "klachtenroute", sub: "Spelersbescherming" },
     { icon: Lock, label: "SSL-versleuteld", sub: "256-bit encryptie" },
     { icon: FlaskConical, label: "Onafhankelijk getest", sub: "Eigen testronde 2026" },
   ];
