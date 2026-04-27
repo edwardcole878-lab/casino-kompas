@@ -45,6 +45,7 @@ import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
 import { Route as ProviderSlugRouteImport } from './routes/provider.$slug'
 import { Route as LicentieSlugRouteImport } from './routes/licentie.$slug'
 import { Route as GoSlugRouteImport } from './routes/go.$slug'
+import { Route as BuitenlandseCasinoSlugRouteImport } from './routes/buitenlandse-casino.$slug'
 import { Route as BonusSlugRouteImport } from './routes/bonus.$slug'
 import { Route as BonusTypeSlugRouteImport } from './routes/bonus-type.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -231,6 +232,11 @@ const GoSlugRoute = GoSlugRouteImport.update({
   path: '/go/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuitenlandseCasinoSlugRoute = BuitenlandseCasinoSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BuitenlandseCasinoRoute,
+} as any)
 const BonusSlugRoute = BonusSlugRouteImport.update({
   id: '/bonus/$slug',
   path: '/bonus/$slug',
@@ -261,7 +267,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
@@ -288,6 +294,7 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
+  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -303,7 +310,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
@@ -330,6 +337,7 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
+  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -346,7 +354,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/crypto-casino': typeof CryptoCasinoRoute
@@ -373,6 +381,7 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
+  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -417,6 +426,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
+    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -459,6 +469,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
+    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -501,6 +512,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
+    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -517,7 +529,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   BonusTypesRoute: typeof BonusTypesRoute
   BonussenRoute: typeof BonussenRoute
-  BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRoute
+  BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRouteWithChildren
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
   CryptoCasinoRoute: typeof CryptoCasinoRoute
@@ -804,6 +816,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/buitenlandse-casino/$slug': {
+      id: '/buitenlandse-casino/$slug'
+      path: '/$slug'
+      fullPath: '/buitenlandse-casino/$slug'
+      preLoaderRoute: typeof BuitenlandseCasinoSlugRouteImport
+      parentRoute: typeof BuitenlandseCasinoRoute
+    }
     '/bonus/$slug': {
       id: '/bonus/$slug'
       path: '/bonus/$slug'
@@ -845,6 +864,17 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface BuitenlandseCasinoRouteChildren {
+  BuitenlandseCasinoSlugRoute: typeof BuitenlandseCasinoSlugRoute
+}
+
+const BuitenlandseCasinoRouteChildren: BuitenlandseCasinoRouteChildren = {
+  BuitenlandseCasinoSlugRoute: BuitenlandseCasinoSlugRoute,
+}
+
+const BuitenlandseCasinoRouteWithChildren =
+  BuitenlandseCasinoRoute._addFileChildren(BuitenlandseCasinoRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BesteOnlineCasinosRoute: BesteOnlineCasinosRoute,
@@ -854,7 +884,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   BonusTypesRoute: BonusTypesRoute,
   BonussenRoute: BonussenRoute,
-  BuitenlandseCasinoRoute: BuitenlandseCasinoRoute,
+  BuitenlandseCasinoRoute: BuitenlandseCasinoRouteWithChildren,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
   CryptoCasinoRoute: CryptoCasinoRoute,
