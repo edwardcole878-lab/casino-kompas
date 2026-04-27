@@ -109,7 +109,19 @@ function ReviewPage() {
         ]} />
 
         <header className="mt-6 grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-start">
-          <CasinoLogo name={casino.name} brandColor={casino.brandColor} size="lg" />
+          {casino.logoUrl ? (
+            <img
+              src={casino.logoUrl}
+              alt={`${casino.name} logo`}
+              width={96}
+              height={96}
+              decoding="async"
+              fetchPriority="high"
+              className="h-24 w-24 overflow-hidden rounded-2xl bg-white object-contain p-2 shadow-card"
+            />
+          ) : (
+            <CasinoLogo name={casino.name} brandColor={casino.brandColor} size="lg" />
+          )}
           <div>
             <div className="flex flex-wrap items-center gap-2">
               {casino.badges?.map((b) => <CasinoBadge key={b} variant={b} />)}
