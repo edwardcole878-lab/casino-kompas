@@ -52,10 +52,20 @@ const groups: NavGroup[] = [
   {
     label: "Betaalmethoden",
     items: [
+      { to: "/betaalmethoden", label: "Alle betaalmethoden", desc: "Overzicht & vergelijking", icon: Wallet },
       { to: "/betaalmethode/ideal", label: "iDEAL", desc: "Direct storten in NL", icon: Wallet },
       { to: "/betaalmethode/trustly", label: "Trustly", desc: "Pay-N-Play", icon: Wallet },
       { to: "/betaalmethode/crypto", label: "Crypto", desc: "Bitcoin & altcoins", icon: Bitcoin },
       { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling", desc: "< 1 uur op je rekening", icon: Clock },
+    ],
+  },
+  {
+    label: "Meer",
+    items: [
+      { to: "/providers", label: "Game Providers", desc: "NetEnt, Pragmatic & meer", icon: Sparkles },
+      { to: "/licenties", label: "Licenties", desc: "KSA, MGA, Curaçao", icon: ShieldCheck },
+      { to: "/bonus-types", label: "Bonus Types", desc: "Welkomst, free spins, VIP", icon: Gift },
+      { to: "/slots", label: "Slot Reviews", desc: "RTP & volatiliteit", icon: Dice5 },
     ],
   },
 ];
