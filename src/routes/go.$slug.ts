@@ -6,9 +6,15 @@ export const Route = createFileRoute("/go/$slug")({
     handlers: {
       GET: ({ params }) => {
         const casino = getCasino(params.slug);
-        // Fallback target: on-site review (or homepage if unknown).
-        // When real affiliate URLs are added to the casino data, switch to that field.
-        const target = casino ? `/review/${casino.slug}` : "/";
+        // Prefer the casino's affiliate URL. Fall back to the on-site review
+        // when no affiliate link is set yet (placeholder "#" also falls back).
+        const affiliate = casino?.affiliateUrl;
+        const hasAffiliate = !!affiliate && affiliate !== "#";
+        const target = hasAffiliate
+          ? affiliate!
+          : casino
+            ? `/review/${casino.slug}`
+            : "/";
         return new Response(null, {
           status: 302,
           headers: {
