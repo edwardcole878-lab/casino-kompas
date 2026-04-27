@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
+import { jsonLdString } from "@/lib/jsonld";
 
 export type Crumb = { label: string; to?: string };
 
@@ -21,7 +22,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
   };
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
       <ol className="flex flex-wrap items-center gap-1.5">
         <li>
           <Link to="/" className="hover:text-foreground">Home</Link>
