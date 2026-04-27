@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/snelle-uitbetaling-casino")({
   head: () => ({
@@ -15,13 +15,12 @@ export const Route = createFileRoute("/snelle-uitbetaling-casino")({
 });
 
 function Page() {
-  const list = casinos.filter((c) => c.angle === "fastest-payout" || c.payoutTime.includes("min") || c.payoutTime.includes("0-")).slice(0, 6);
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Snelle uitbetaling casino's" }]}
       h1="Snelle uitbetaling casino's"
       intro={<><p>Snel je winst op je rekening is voor veel spelers het belangrijkste keuzecriterium. Wij hebben uitbetalingen van tientallen casino's gemeten — op verschillende momenten van de week — en presenteren hier de écht snelle.</p></>}
-      casinos={list}
+      casinos={topCasinos}
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Is dit type casino veilig?", a: "Nee, deze casino's hebben géén Nederlandse KSA-vergunning en zijn niet aangesloten op Cruks. Ze opereren onder een offshore licentie (Anjouan, Curaçao of MGA). Speel verantwoord en stel zelf limieten in." },

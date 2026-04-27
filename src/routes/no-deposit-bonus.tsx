@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/no-deposit-bonus")({
   head: () => ({
@@ -29,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={casinos.filter((c) => c.bonusHeadline.toLowerCase().includes("zonder") || c.angle === "low-wagering" || c.angle === "ideal-experience").slice(0, 5)}
+      casinos={topCasinos}
       rankingTitle="Beste no deposit aanbiedingen"
       primaryCta="Speel Nu"
       faqs={[

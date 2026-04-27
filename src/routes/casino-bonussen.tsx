@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/casino-bonussen")({
   head: () => ({
@@ -16,7 +16,6 @@ export const Route = createFileRoute("/casino-bonussen")({
 
 function Page() {
   // Order by bonus emphasis
-  const ordered = [...casinos].sort((a, b) => (a.angle === "best-bonus" ? -1 : b.angle === "best-bonus" ? 1 : 0));
   return (
     <CategoryPage
       breadcrumbs={[{ label: "Casino bonussen" }]}
@@ -31,7 +30,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={ordered}
+      casinos={topCasinos}
       rankingTitle="Beste bonussen — gerangschikt op netto-waarde"
       rankingDescription="Berekend als (bonusbedrag / wagering) × games-coverage — hoger is beter."
       primaryCta="Speel Nu"

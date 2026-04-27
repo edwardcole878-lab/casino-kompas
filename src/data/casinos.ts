@@ -456,3 +456,12 @@ export const casinos: Casino[] = [
 export const getCasino = (slug: string) => casinos.find((c) => c.slug === slug);
 export const relatedCasinos = (slug: string, count = 3) =>
   casinos.filter((c) => c.slug !== slug).slice(0, count);
+
+/**
+ * Canonical Top 10 casino listing.
+ * RULE: every page that shows a generic casino comparison list MUST use this
+ * export so the order and selection are identical site-wide. Only filtered
+ * taxonomy pages (provider, payment method, licence, bonus-type, single slot)
+ * may deviate, because they're inherently "casinos that support X".
+ */
+export const topCasinos = casinos.slice(0, 10);

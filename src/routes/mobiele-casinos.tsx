@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/mobiele-casinos")({
   head: () => ({
@@ -15,7 +15,6 @@ export const Route = createFileRoute("/mobiele-casinos")({
 });
 
 function Page() {
-  const mobile = [...casinos].sort((a, b) => (a.angle === "mobile-experience" ? -1 : b.angle === "mobile-experience" ? 1 : 0));
   return (
     <CategoryPage
       breadcrumbs={[{ to: "/beste-online-casinos", label: "Casino's" }, { label: "Mobiele casino's" }]}
@@ -30,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={mobile}
+      casinos={topCasinos}
       rankingTitle="Beste mobiele casino-ervaring"
       rankingDescription="Native app krijgt voorrang, gevolgd door optimale PWA-implementaties."
       primaryCta="Bekijk Casino"

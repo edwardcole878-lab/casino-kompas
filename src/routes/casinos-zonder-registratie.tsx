@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/casinos-zonder-registratie")({
   head: () => ({
@@ -25,7 +25,7 @@ function Page() {
           <p>Op deze pagina vind je <strong>buitenlandse online casino's</strong> met een snelle, vereenvoudigde registratie. Geen 20-veld formulier, wel — uiteindelijk — verificatie van je identiteit voor uitbetaling. Dat is geen bug, dat is anti-witwasregelgeving.</p>
         </>
       }
-      casinos={casinos}
+      casinos={topCasinos}
       rankingTitle="Onze ranking"
       rankingDescription="Geordend op gewogen score: bonus, uitbetaling, support, spelaanbod en transparantie."
       primaryCta="Speel Nu"

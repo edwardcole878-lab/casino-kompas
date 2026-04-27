@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/paypal-casino")({
   head: () => ({
@@ -15,13 +15,12 @@ export const Route = createFileRoute("/paypal-casino")({
 });
 
 function Page() {
-  const list = casinos.filter((c) => c.payments.includes("PayPal")).length > 0 ? casinos.filter((c) => c.payments.includes("PayPal")) : casinos.slice(0, 4);
   return (
     <CategoryPage
       breadcrumbs={[{ label: "PayPal casino's" }]}
       h1="PayPal casino's"
       intro={<><p>PayPal is in Nederland minder dominant dan iDEAL, maar voor wie al een PayPal-saldo heeft een snelle en veilige optie. Slechts een handvol casino's biedt het aan.</p></>}
-      casinos={list}
+      casinos={topCasinos}
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Is dit type casino veilig?", a: "Nee, deze casino's hebben géén Nederlandse KSA-vergunning en zijn niet aangesloten op Cruks. Ze opereren onder een offshore licentie (Anjouan, Curaçao of MGA). Speel verantwoord en stel zelf limieten in." },

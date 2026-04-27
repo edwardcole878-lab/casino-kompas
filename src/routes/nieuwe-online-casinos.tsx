@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/nieuwe-online-casinos")({
   head: () => ({
@@ -15,7 +15,6 @@ export const Route = createFileRoute("/nieuwe-online-casinos")({
 });
 
 function Page() {
-  const newer = [...casinos].sort((a, b) => b.established - a.established).slice(0, 6);
   return (
     <CategoryPage
       breadcrumbs={[{ to: "/beste-online-casinos", label: "Casino's" }, { label: "Nieuwe casino's" }]}
@@ -30,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={newer}
+      casinos={topCasinos}
       rankingTitle="Nieuwste buitenlandse casino's"
       rankingDescription="Allemaal sinds 2022 gelanceerd, allemaal door ons getest."
       primaryCta="Bekijk Casino"

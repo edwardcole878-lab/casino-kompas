@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/casinos-zonder-limiet")({
   head: () => ({
@@ -25,7 +25,7 @@ function Page() {
           <p>Dat klinkt aantrekkelijk, maar het betekent ook dat <strong>de verantwoordelijkheid bij jou ligt</strong>. Wij raden iedereen aan zelf een budget te bepalen voordat je begint, en gebruik te maken van de zelfuitsluitingstools die de meeste serieuze offshore casino's wel bieden. Sta je in CRUKS? Speel dan niet bij deze casino's.</p>
         </>
       }
-      casinos={casinos}
+      casinos={topCasinos}
       rankingTitle="Onze ranking"
       rankingDescription="Geordend op gewogen score: bonus, uitbetaling, support, spelaanbod en transparantie."
       primaryCta="Speel Nu"

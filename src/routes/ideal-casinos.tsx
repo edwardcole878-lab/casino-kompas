@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
-import { casinos } from "@/data/casinos";
+import { topCasinos } from "@/data/casinos";
 
 export const Route = createFileRoute("/ideal-casinos")({
   head: () => ({
@@ -15,7 +15,6 @@ export const Route = createFileRoute("/ideal-casinos")({
 });
 
 function Page() {
-  const ideal = casinos.filter((c) => c.payments.includes("iDEAL"));
   return (
     <CategoryPage
       breadcrumbs={[{ label: "iDEAL casino's" }]}
@@ -30,7 +29,7 @@ function Page() {
           </p>
         </>
       }
-      casinos={ideal}
+      casinos={topCasinos}
       rankingTitle="Casino's met de beste iDEAL-ervaring"
       rankingDescription="Getest op stortingsflow, uitbetalingssnelheid en absentie van extra verificatiestappen."
       primaryCta="Stort met iDEAL"
