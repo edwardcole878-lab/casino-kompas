@@ -18,10 +18,10 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "42 NL casino's getest — top 10 die overleefden | CasinoWijzer 2026" },
-      { name: "description", content: "Onafhankelijke ranking van 42 geteste Nederlandse online casino's. iDEAL-uitbetaling, bonusvoorwaarden en KSA-naleving — geen commissie-ranking." },
+      { title: "Beste Nederlandse online casino's — onze top 10 | CasinoWijzer 2026" },
+      { name: "description", content: "Onafhankelijke ranking van Nederlandse online casino's. iDEAL-uitbetaling, bonusvoorwaarden en KSA-naleving — geen commissie-ranking." },
       { property: "og:title", content: "Top 10 NL casino's die onze test overleefden — 2026" },
-      { property: "og:description", content: "42 casino's getest met eigen geld. Dit zijn de 10 die door onze redactie heen kwamen." },
+      { property: "og:description", content: "Nederlandse casino's getest met eigen geld. Dit zijn de casino's die door onze redactie heen kwamen." },
     ],
   }),
   component: Index,
@@ -45,8 +45,8 @@ function Index() {
                 Editie april 2026 · onafhankelijk getest
               </div>
               <h1 className="text-[30px] font-extrabold leading-[1.1] tracking-tight md:text-[42px] lg:text-[46px]">
-                Wij hebben 42 Nederlandse casino's getest met eigen geld.
-                <span className="text-gold"> Dit zijn de 10 die overleefden.</span>
+                Wij testen Nederlandse casino's met eigen geld.
+                <span className="text-gold"> Dit zijn de casino's die overleefden.</span>
               </h1>
               <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
                 Onafhankelijke ranking op basis van iDEAL-uitbetaaltijd, bonusvoorwaarden en

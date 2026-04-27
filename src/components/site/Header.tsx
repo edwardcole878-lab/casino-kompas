@@ -87,7 +87,7 @@ export function Header() {
               className="inline-flex items-center gap-1.5 hover:text-foreground"
             >
               <ShieldCheck className="h-3.5 w-3.5 text-trust" />
-              42 casino's getest · April 2026
+              Onafhankelijk getest · April 2026
             </Link>
           </div>
         </div>
