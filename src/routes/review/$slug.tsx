@@ -155,7 +155,7 @@ function ReviewPage() {
           </div>
           <div>
             <div className="text-xs uppercase tracking-wide text-muted-foreground">Licentie</div>
-            <div className="mt-1 font-semibold inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-trust" /> KSA</div>
+            <div className="mt-1 font-semibold inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-trust" /> {casino.licence}</div>
           </div>
           <div className="md:col-span-4 mt-2 rounded-lg bg-secondary/60 p-4">
             <div className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Eindoordeel</div>
@@ -231,7 +231,7 @@ function ReviewPage() {
         {/* FAQ */}
         <div className="mt-10">
           <FAQ items={[
-            { q: `Is ${casino.name} betrouwbaar?`, a: `Ja, ${casino.name} beschikt over een geldige vergunning van de Kansspelautoriteit (KSA) en is sinds ${casino.established} actief op de Nederlandse markt.` },
+            { q: `Is ${casino.name} betrouwbaar?`, a: `${casino.name} opereert onder een ${casino.licence}-licentie en is actief sinds ${casino.established}. Het casino heeft géén Nederlandse KSA-vergunning en is daarom niet aangesloten op Cruks. Speel altijd verantwoord en stort alleen wat je kunt missen.` },
             { q: `Wat is de bonus bij ${casino.name}?`, a: `Het welkomstaanbod is ${casino.bonusHeadline}. ${casino.bonusDetail}` },
             { q: `Hoe snel betaalt ${casino.name} uit?`, a: `Tijdens onze testen registreerden we uitbetalingen binnen ${casino.payoutTime}. Dit kan in het weekend iets langer duren.` },
             { q: `Werkt iDEAL bij ${casino.name}?`, a: casino.payments.includes("iDEAL") ? `Ja, iDEAL is beschikbaar met minimum storting ${casino.minDeposit}.` : `Nee, helaas accepteert dit casino momenteel geen iDEAL.` },
