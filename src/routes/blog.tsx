@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
+import { posts } from "@/data/blog";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -15,13 +16,6 @@ export const Route = createFileRoute("/blog")({
   component: BlogIndex,
 });
 
-const posts = [
-  { slug: "wagering-uitgelegd", title: "Wagering uitgelegd: zo bereken je de echte waarde van een bonus", excerpt: "Doorzetvereisten zijn de belangrijkste — en meest verwarrende — voorwaarde van elke casinobonus. We rekenen het uit met concrete voorbeelden." },
-  { slug: "ideal-casino-veiligheid", title: "Hoe veilig is iDEAL bij online casino's?", excerpt: "iDEAL is razend populair, maar wat gebeurt er precies tussen jouw bank en het casino? Een technische uitleg in begrijpelijke taal." },
-  { slug: "ksa-vergunning-controleren", title: "Zo controleer je in 30 seconden of een casino een KSA-vergunning heeft", excerpt: "Stap-voor-stap controleren via het officiële Kansspelautoriteit-register. Doe het altijd voordat je je eerste storting doet." },
-  { slug: "blackjack-basisstrategie", title: "Blackjack basisstrategie voor beginners", excerpt: "Met de juiste basisstrategie reduceer je het house edge tot onder 1%. We leggen uit wanneer je hit, stand of double doet." },
-];
-
 function BlogIndex() {
   return (
     <Layout>
@@ -34,11 +28,18 @@ function BlogIndex() {
         </header>
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {posts.map((p) => (
-            <article key={p.slug} className="group rounded-2xl border bg-card p-6 shadow-card transition-shadow hover:shadow-elegant">
-              <h2 className="text-xl font-bold group-hover:text-gold">{p.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
-              <div className="mt-4 text-xs font-semibold text-gold">Lees verder →</div>
-            </article>
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="group block rounded-2xl border bg-card p-6 shadow-card transition-shadow hover:shadow-elegant"
+            >
+              <article>
+                <h2 className="text-xl font-bold group-hover:text-gold">{p.title}</h2>
+                <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
+                <div className="mt-4 text-xs font-semibold text-gold">Lees verder →</div>
+              </article>
+            </Link>
           ))}
         </div>
         <div className="mt-12 rounded-2xl border bg-secondary/40 p-6">
