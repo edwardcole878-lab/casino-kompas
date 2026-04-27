@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { casinos } from "@/data/casinos";
+import { posts } from "@/data/blog";
 
 const SITE = "https://buitenlandsecasino.com";
 
@@ -36,6 +37,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = [
           ...STATIC_PATHS.map((p) => ({ loc: SITE + p, lastmod: today, priority: p === "/" ? "1.0" : "0.8" })),
           ...casinos.map((c) => ({ loc: `${SITE}/review/${c.slug}`, lastmod: c.lastTested || today, priority: "0.7" })),
+          ...posts.map((p) => ({ loc: `${SITE}/blog/${p.slug}`, lastmod: p.updatedAt, priority: "0.6" })),
         ];
         const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

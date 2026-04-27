@@ -13,6 +13,7 @@ import { StickyMobileCTA } from "@/components/site/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
+import { jsonLdString } from "@/lib/jsonld";
 
 export const Route = createFileRoute("/review/$slug")({
   loader: ({ params }) => {
@@ -85,7 +86,7 @@ function ReviewPage() {
 
   return (
     <Layout>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(reviewJsonLd) }} />
       <div className="container mx-auto max-w-5xl px-4 py-8 pb-24 md:pb-12 md:py-12">
         <Breadcrumbs items={[
           { to: "/beste-online-casinos", label: "Casino's" },

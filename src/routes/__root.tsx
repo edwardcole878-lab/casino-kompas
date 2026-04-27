@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { jsonLdString } from "@/lib/jsonld";
 
 const SITE_URL = "https://buitenlandsecasino.com";
 
@@ -31,7 +32,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
+      { title: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
       { name: "description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "robots", content: "index,follow" },
       { name: "language", content: "nl-NL" },
@@ -39,13 +40,16 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Buitenlandse Casino" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
-      { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
+      { name: "theme-color", content: "#0f1530" },
+      { property: "og:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
+      { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
@@ -96,7 +100,7 @@ function RootComponent() {
       {/* React 19 hoists these to <head> on both SSR and client */}
       <link rel="canonical" href={canonical} />
       <meta property="og:url" content={canonical} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(orgJsonLd) }} />
       <Outlet />
     </>
   );

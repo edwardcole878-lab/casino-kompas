@@ -6,6 +6,8 @@ export const Route = createFileRoute("/robots.txt")({
       GET: () => {
         const body = `User-agent: *
 Allow: /
+Disallow: /go/
+Disallow: /api/
 
 Sitemap: https://buitenlandsecasino.com/sitemap.xml
 `;
