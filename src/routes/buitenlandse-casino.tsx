@@ -582,6 +582,86 @@ function BuitenlandseCasinoPage() {
         </section>
 
         {/* Eindconclusie + final CTA */}
+        {/* ============ HUB: Andere Anjouan-vergunde buitenlandse casino's ============ */}
+        <section className="mx-auto mt-16 max-w-5xl">
+          <div className="text-center">
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground shadow-soft">
+              <Globe2 className="h-3.5 w-3.5 text-trust" /> Vergelijkbare buitenlandse casino's
+            </div>
+            <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-extrabold tracking-tight md:text-3xl">
+              Andere Anjouan-vergunde casino's voor Nederlandse spelers
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
+              Naast Betory testten we 9 andere buitenlandse online casino's met een Anjouan-licentie.
+              Allemaal accepteren ze Nederlandse spelers, bieden grote welkomstbonussen en werken met
+              moderne betaalmethoden — vaak inclusief crypto en iDEAL.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {offshoreCasinos
+              .filter((c) => c.slug !== "betory")
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  to="/buitenlandse-casino/$slug"
+                  params={{ slug: c.slug }}
+                  className="group relative overflow-hidden rounded-2xl border bg-card p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
+                >
+                  <div
+                    className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-20 blur-2xl"
+                    style={{ background: c.brandColor }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-lg font-extrabold tracking-tight">{c.name}</h3>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-bold text-gold">
+                        <Star className="h-3 w-3 fill-gold" /> {c.rating.toFixed(1)}
+                      </span>
+                    </div>
+                    <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{c.tagline}</p>
+
+                    <div className="mt-4 rounded-xl border border-gold/30 bg-gold/5 p-3">
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-gold">
+                        Welkomstbonus
+                      </div>
+                      <div className="mt-0.5 text-sm font-black leading-tight">
+                        {c.bonusHeadline}
+                      </div>
+                    </div>
+
+                    <ul className="mt-3 flex flex-wrap gap-1.5">
+                      {c.usps.slice(0, 3).map((u) => (
+                        <li
+                          key={u}
+                          className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-semibold text-muted-foreground"
+                        >
+                          {u}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-4 flex items-center justify-between border-t pt-3 text-xs">
+                      <span className="font-medium text-muted-foreground">
+                        {c.licence} · {c.payout}
+                      </span>
+                      <span className="inline-flex items-center gap-1 font-bold text-trust group-hover:gap-1.5 transition-all">
+                        Lees review <ArrowRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+          </div>
+
+          <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-muted-foreground">
+            ⚠️ Geen van deze casino's heeft een KSA-vergunning. Daardoor val je niet onder Cruks
+            zelfuitsluiting of Nederlandse spelersbescherming. Speel altijd verantwoord en alleen
+            met geld dat je kunt missen.
+          </p>
+        </section>
+
+        {/* Eindconclusie + final CTA */}
         <section className="mx-auto mt-10 max-w-4xl">
           <div className="relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-card p-8 shadow-glow-gold md:p-12">
             <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
