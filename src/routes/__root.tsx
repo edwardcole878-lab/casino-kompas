@@ -1,6 +1,8 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+
+const SITE_URL = "https://buitenlandsecasino.com";
 
 function NotFoundComponent() {
   return (
@@ -41,13 +43,12 @@ export const Route = createRootRoute({
       { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
     ],
   }),
@@ -71,5 +72,61 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const canonical = SITE_URL + (pathname === "/" ? "" : pathname.replace(/\/$/, ""));
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "Buitenlandse Casino",
+        url: SITE_URL,
+        logo: `${SITE_URL}/favicon.ico`,
+      },
+      {
+        "@type": "WebSite",
+        name: "Buitenlandse Casino",
+        url: SITE_URL,
+        inLanguage: "nl-NL",
+      },
+    ],
+  };
+  return (
+    <>
+      <HeadInjector canonical={canonical} jsonLd={orgJsonLd} />
+      <Outlet />
+    </>
+  );
+}
+
+function HeadInjector({ canonical, jsonLd }: { canonical: string; jsonLd: unknown }) {
+  // Inject canonical + og:url + JSON-LD into <head> for every route.
+  if (typeof document !== "undefined") {
+    // Client-side: keep canonical in sync on navigation.
+    const ensure = (selector: string, create: () => HTMLElement) => {
+      let el = document.head.querySelector(selector) as HTMLElement | null;
+      if (!el) { el = create(); document.head.appendChild(el); }
+      return el;
+    };
+    const link = ensure('link[rel="canonical"]', () => {
+      const l = document.createElement("link"); l.setAttribute("rel", "canonical"); return l;
+    }) as HTMLLinkElement;
+    link.href = canonical;
+    const ogUrl = ensure('meta[property="og:url"]', () => {
+      const m = document.createElement("meta"); m.setAttribute("property", "og:url"); return m;
+    }) as HTMLMetaElement;
+    ogUrl.content = canonical;
+    const ld = ensure('script[data-org-jsonld]', () => {
+      const s = document.createElement("script"); s.setAttribute("type", "application/ld+json"); s.setAttribute("data-org-jsonld", "true"); return s;
+    });
+    ld.textContent = JSON.stringify(jsonLd);
+  }
+  return (
+    <>
+      {/* SSR-rendered tags (also help crawlers without JS) */}
+      <link rel="canonical" href={canonical} />
+      <meta property="og:url" content={canonical} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    </>
+  );
 }
