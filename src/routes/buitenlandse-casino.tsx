@@ -18,6 +18,9 @@ import {
   TrendingUp,
 } from "lucide-react";
 import betoryLogo from "@/assets/betory-logo.png";
+import { jsonLdString } from "@/lib/jsonld";
+
+const SITE_URL = "https://buitenlandsecasino.com";
 
 export const Route = createFileRoute("/buitenlandse-casino")({
   head: () => ({
@@ -33,6 +36,9 @@ export const Route = createFileRoute("/buitenlandse-casino")({
         property: "og:description",
         content: "Buitenlands online casino met een welkomstbonus van 300% tot €3.250 + 225 free spins.",
       },
+      { property: "og:type", content: "article" },
+      { property: "og:image", content: `${SITE_URL}/og/betory.png` },
+      { name: "twitter:image", content: `${SITE_URL}/og/betory.png` },
     ],
   }),
   component: BuitenlandseCasinoPage,
@@ -40,9 +46,36 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 
 const AFFILIATE_URL = "https://betorytrackers.com/dzqshr42m";
 
+const reviewJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: {
+    "@type": "Organization",
+    name: "Betory Casino",
+    url: AFFILIATE_URL,
+    image: `${SITE_URL}/og/betory.png`,
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: 9.2,
+    bestRating: 10,
+    worstRating: 1,
+  },
+  author: { "@type": "Organization", name: "Buitenlandse Casino" },
+  publisher: { "@type": "Organization", name: "Buitenlandse Casino" },
+  datePublished: "2026-04-01",
+  name: "Betory Review 2026 — Buitenlands Casino met 300% tot €3.250 + 225 FS",
+  reviewBody:
+    "Betory is een buitenlands online casino met een uitzonderlijk hoog welkomstpakket: 300% tot €3.250 plus 225 free spins. Snelle uitbetalingen, brede game-selectie en 24/7 ondersteuning maken het een van de aantrekkelijkste opties buiten de KSA-vergunde markt.",
+};
+
 function BuitenlandseCasinoPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdString(reviewJsonLd) }}
+      />
       {/* Minimal top bar — Home only, no nav */}
       <header className="border-b bg-background/80 backdrop-blur">
         <div className="container mx-auto flex max-w-[1100px] items-center justify-center px-6 py-4">
