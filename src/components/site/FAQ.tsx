@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { jsonLdString } from "@/lib/jsonld";
 
 export type FAQItem = { q: string; a: string };
 
@@ -23,7 +24,7 @@ export function FAQ({ items, title = "Veelgestelde vragen" }: { items: FAQItem[]
           </AccordionItem>
         ))}
       </Accordion>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
     </section>
   );
 }
