@@ -14,6 +14,9 @@ import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, ShieldCheck, Wallet, Gamepad2, Clock } from "lucide-react";
 import { getCasino, relatedCasinos, casinos } from "@/data/casinos";
 import { jsonLdString } from "@/lib/jsonld";
+import { defaultAuthor, authorJsonLd, publisherJsonLd } from "@/data/authors";
+
+const SITE = "https://buitenlandsecasino.com";
 
 export const Route = createFileRoute("/review/$slug")({
   loader: ({ params }) => {
@@ -31,6 +34,8 @@ export const Route = createFileRoute("/review/$slug")({
         { property: "og:title", content: `${c.name} Review — ${c.rating}/10` },
         { property: "og:description", content: c.verdict },
         { property: "og:type", content: "article" },
+        { property: "article:author", content: defaultAuthor.name },
+        { name: "author", content: defaultAuthor.name },
         ...(c.logoUrl ? [{ property: "og:image", content: c.logoUrl }] : []),
       ],
     };
@@ -67,9 +72,13 @@ function ReviewPage() {
   const reviewJsonLd = {
     "@context": "https://schema.org",
     "@type": "Review",
+    name: `${casino.name} review 2026`,
+    url: `${SITE}/review/${casino.slug}`,
+    inLanguage: "nl-NL",
     itemReviewed: {
       "@type": "Organization",
       name: casino.name,
+      url: `${SITE}/review/${casino.slug}`,
       ...(casino.logoUrl ? { image: casino.logoUrl } : {}),
     },
     reviewRating: {
@@ -78,9 +87,10 @@ function ReviewPage() {
       bestRating: 10,
       worstRating: 1,
     },
-    author: { "@type": "Organization", name: "Buitenlandse Casino" },
-    publisher: { "@type": "Organization", name: "Buitenlandse Casino" },
+    author: authorJsonLd(defaultAuthor),
+    publisher: publisherJsonLd(),
     datePublished: casino.lastTested,
+    dateModified: casino.lastTested,
     reviewBody: casino.verdict,
   };
 

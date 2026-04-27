@@ -36,6 +36,11 @@ export const Route = createRootRoute({
       { name: "description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "robots", content: "index,follow" },
       { name: "language", content: "nl-NL" },
+      { name: "author", content: "Redactie Buitenlandse Casino" },
+      { name: "rating", content: "adult" },
+      { name: "content-rating", content: "mature" },
+      { name: "audience", content: "18+" },
+      { httpEquiv: "content-language", content: "nl-NL" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Buitenlandse Casino" },
@@ -45,6 +50,12 @@ export const Route = createRootRoute({
       { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk NL Online Casino's" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
+      // Default OG/Twitter image — leaf routes can override og:image when they have a more specific visual
+      { property: "og:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Buitenlandse Casino — Nederlands casino vergelijkingsplatform" },
+      { name: "twitter:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -54,6 +65,9 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
+      // hreflang — single-locale Dutch site, but make the signal explicit
+      { rel: "alternate", hrefLang: "nl-NL", href: "https://buitenlandsecasino.com" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://buitenlandsecasino.com" },
     ],
   }),
   shellComponent: RootShell,
@@ -85,13 +99,22 @@ function RootComponent() {
         "@type": "Organization",
         name: "Buitenlandse Casino",
         url: SITE_URL,
-        logo: `${SITE_URL}/favicon.ico`,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/og-default.jpg`,
+        },
+        sameAs: [],
       },
       {
         "@type": "WebSite",
         name: "Buitenlandse Casino",
         url: SITE_URL,
         inLanguage: "nl-NL",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${SITE_URL}/?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
       },
     ],
   };
@@ -99,6 +122,8 @@ function RootComponent() {
     <>
       {/* React 19 hoists these to <head> on both SSR and client */}
       <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="nl-NL" href={canonical} />
+      <link rel="alternate" hrefLang="x-default" href={canonical} />
       <meta property="og:url" content={canonical} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(orgJsonLd) }} />
       <Outlet />
