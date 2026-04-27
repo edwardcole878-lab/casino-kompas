@@ -51,7 +51,7 @@ export function Footer() {
               Laatst gecontroleerd door redactie: 18 april 2026
             </p>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              © {new Date().getFullYear()} CasinoWijzer. Onafhankelijk vergelijkingsplatform.
+              © {new Date().getFullYear()} Buitenlandse Casino. Onafhankelijk vergelijkingsplatform.
             </p>
           </div>
         </div>

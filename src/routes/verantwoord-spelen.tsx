@@ -9,7 +9,7 @@ export const Route = createFileRoute("/verantwoord-spelen")({
     meta: [
       { title: "Verantwoord Spelen — Hulp en Tools voor Nederlandse Spelers" },
       { name: "description", content: "Speel je teveel? Cruks, limieten en hulpinstanties. Alles over verantwoord gokken in Nederland." },
-      { property: "og:title", content: "Verantwoord Spelen — CasinoWijzer" },
+      { property: "og:title", content: "Verantwoord Spelen — Buitenlandse Casino" },
       { property: "og:description", content: "Hulp bij gokproblemen voor Nederlandse spelers." },
     ],
   }),
