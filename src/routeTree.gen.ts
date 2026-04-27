@@ -31,6 +31,7 @@ import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
 import { Route as FreeSpinsCasinoRouteImport } from './routes/free-spins-casino'
 import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
 import { Route as CasinosZonderRegistratieRouteImport } from './routes/casinos-zonder-registratie'
+import { Route as CasinosZonderLimietRouteImport } from './routes/casinos-zonder-limiet'
 import { Route as CasinosZonderCruksRouteImport } from './routes/casinos-zonder-cruks'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
@@ -48,7 +49,6 @@ import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
 import { Route as ProviderSlugRouteImport } from './routes/provider.$slug'
 import { Route as LicentieSlugRouteImport } from './routes/licentie.$slug'
 import { Route as GoSlugRouteImport } from './routes/go.$slug'
-import { Route as BuitenlandseCasinoSlugRouteImport } from './routes/buitenlandse-casino.$slug'
 import { Route as BonusSlugRouteImport } from './routes/bonus.$slug'
 import { Route as BonusTypeSlugRouteImport } from './routes/bonus-type.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -166,6 +166,11 @@ const CasinosZonderRegistratieRoute =
     path: '/casinos-zonder-registratie',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CasinosZonderLimietRoute = CasinosZonderLimietRouteImport.update({
+  id: '/casinos-zonder-limiet',
+  path: '/casinos-zonder-limiet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasinosZonderCruksRoute = CasinosZonderCruksRouteImport.update({
   id: '/casinos-zonder-cruks',
   path: '/casinos-zonder-cruks',
@@ -252,11 +257,6 @@ const GoSlugRoute = GoSlugRouteImport.update({
   path: '/go/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BuitenlandseCasinoSlugRoute = BuitenlandseCasinoSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BuitenlandseCasinoRoute,
-} as any)
 const BonusSlugRoute = BonusSlugRouteImport.update({
   id: '/bonus/$slug',
   path: '/bonus/$slug',
@@ -292,10 +292,11 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
+  '/casinos-zonder-limiet': typeof CasinosZonderLimietRoute
   '/casinos-zonder-registratie': typeof CasinosZonderRegistratieRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
@@ -323,7 +324,6 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
-  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -339,10 +339,11 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
+  '/casinos-zonder-limiet': typeof CasinosZonderLimietRoute
   '/casinos-zonder-registratie': typeof CasinosZonderRegistratieRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
@@ -370,7 +371,6 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
-  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -387,10 +387,11 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
-  '/buitenlandse-casino': typeof BuitenlandseCasinoRouteWithChildren
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
+  '/casinos-zonder-limiet': typeof CasinosZonderLimietRoute
   '/casinos-zonder-registratie': typeof CasinosZonderRegistratieRoute
   '/crypto-casino': typeof CryptoCasinoRoute
   '/free-spins-casino': typeof FreeSpinsCasinoRoute
@@ -418,7 +419,6 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/bonus-type/$slug': typeof BonusTypeSlugRoute
   '/bonus/$slug': typeof BonusSlugRoute
-  '/buitenlandse-casino/$slug': typeof BuitenlandseCasinoSlugRoute
   '/go/$slug': typeof GoSlugRoute
   '/licentie/$slug': typeof LicentieSlugRoute
   '/provider/$slug': typeof ProviderSlugRoute
@@ -440,6 +440,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
+    | '/casinos-zonder-limiet'
     | '/casinos-zonder-registratie'
     | '/crypto-casino'
     | '/free-spins-casino'
@@ -467,7 +468,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
-    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -487,6 +487,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
+    | '/casinos-zonder-limiet'
     | '/casinos-zonder-registratie'
     | '/crypto-casino'
     | '/free-spins-casino'
@@ -514,7 +515,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
-    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -534,6 +534,7 @@ export interface FileRouteTypes {
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
+    | '/casinos-zonder-limiet'
     | '/casinos-zonder-registratie'
     | '/crypto-casino'
     | '/free-spins-casino'
@@ -561,7 +562,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/bonus-type/$slug'
     | '/bonus/$slug'
-    | '/buitenlandse-casino/$slug'
     | '/go/$slug'
     | '/licentie/$slug'
     | '/provider/$slug'
@@ -578,10 +578,11 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   BonusTypesRoute: typeof BonusTypesRoute
   BonussenRoute: typeof BonussenRoute
-  BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRouteWithChildren
+  BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRoute
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
   CasinosZonderCruksRoute: typeof CasinosZonderCruksRoute
+  CasinosZonderLimietRoute: typeof CasinosZonderLimietRoute
   CasinosZonderRegistratieRoute: typeof CasinosZonderRegistratieRoute
   CryptoCasinoRoute: typeof CryptoCasinoRoute
   FreeSpinsCasinoRoute: typeof FreeSpinsCasinoRoute
@@ -771,6 +772,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasinosZonderRegistratieRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/casinos-zonder-limiet': {
+      id: '/casinos-zonder-limiet'
+      path: '/casinos-zonder-limiet'
+      fullPath: '/casinos-zonder-limiet'
+      preLoaderRoute: typeof CasinosZonderLimietRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/casinos-zonder-cruks': {
       id: '/casinos-zonder-cruks'
       path: '/casinos-zonder-cruks'
@@ -890,13 +898,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/buitenlandse-casino/$slug': {
-      id: '/buitenlandse-casino/$slug'
-      path: '/$slug'
-      fullPath: '/buitenlandse-casino/$slug'
-      preLoaderRoute: typeof BuitenlandseCasinoSlugRouteImport
-      parentRoute: typeof BuitenlandseCasinoRoute
-    }
     '/bonus/$slug': {
       id: '/bonus/$slug'
       path: '/bonus/$slug'
@@ -945,17 +946,6 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
-interface BuitenlandseCasinoRouteChildren {
-  BuitenlandseCasinoSlugRoute: typeof BuitenlandseCasinoSlugRoute
-}
-
-const BuitenlandseCasinoRouteChildren: BuitenlandseCasinoRouteChildren = {
-  BuitenlandseCasinoSlugRoute: BuitenlandseCasinoSlugRoute,
-}
-
-const BuitenlandseCasinoRouteWithChildren =
-  BuitenlandseCasinoRoute._addFileChildren(BuitenlandseCasinoRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BesteOnlineCasinosRoute: BesteOnlineCasinosRoute,
@@ -965,10 +955,11 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   BonusTypesRoute: BonusTypesRoute,
   BonussenRoute: BonussenRoute,
-  BuitenlandseCasinoRoute: BuitenlandseCasinoRouteWithChildren,
+  BuitenlandseCasinoRoute: BuitenlandseCasinoRoute,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
   CasinosZonderCruksRoute: CasinosZonderCruksRoute,
+  CasinosZonderLimietRoute: CasinosZonderLimietRoute,
   CasinosZonderRegistratieRoute: CasinosZonderRegistratieRoute,
   CryptoCasinoRoute: CryptoCasinoRoute,
   FreeSpinsCasinoRoute: FreeSpinsCasinoRoute,

@@ -18,10 +18,10 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Beste Online Casino's Nederland 2026 | Top 10" },
-      { name: "description", content: "Onafhankelijke ranking van Nederlandse online casino's. iDEAL-uitbetaling, bonusvoorwaarden en KSA-naleving — geen commissie-ranking." },
-      { property: "og:title", content: "Top 10 NL casino's die onze test overleefden — 2026" },
-      { property: "og:description", content: "Nederlandse casino's getest met eigen geld. Dit zijn de casino's die door onze redactie heen kwamen." },
+      { title: "Beste buitenlandse online casino's voor Nederland — top 10 van 2026 | Buitenlandse Casino's" },
+      { name: "description", content: "Onafhankelijke ranking van buitenlandse online casino's voor Nederlandse spelers. Bonusvoorwaarden, uitbetaalsnelheid en transparantie — geen commissie-ranking." },
+      { property: "og:title", content: "Top 10 buitenlandse casino's voor NL — 2026" },
+      { property: "og:description", content: "Buitenlandse casino's getest met eigen geld. Dit zijn de aanbieders die door onze redactie heen kwamen." },
     ],
   }),
   component: Index,
@@ -45,12 +45,12 @@ function Index() {
                 Editie april 2026 · onafhankelijk getest
               </div>
               <h1 className="text-[30px] font-extrabold leading-[1.1] tracking-tight md:text-[42px] lg:text-[46px]">
-                Wij testen Nederlandse casino's met eigen geld.
-                <span className="text-gold"> Dit zijn de casino's die overleefden.</span>
+                Wij testen buitenlandse online casino's voor Nederlandse spelers.
+                <span className="text-gold"> Dit zijn de casino's die onze test overleefden.</span>
               </h1>
               <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
-                Onafhankelijke ranking op basis van iDEAL-uitbetaaltijd, bonusvoorwaarden en
-                KSA-naleving — <strong className="text-foreground">geen commissie-ranking</strong>.
+                Onafhankelijke ranking op basis van uitbetaalsnelheid, bonusvoorwaarden en
+                transparantie — <strong className="text-foreground">geen commissie-ranking</strong>.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground">
                 <Link to="/redactiebeleid" className="inline-flex items-center gap-1.5 hover:text-foreground">
@@ -133,12 +133,12 @@ function Index() {
           <AuthorByline />
           <article className="prose prose-neutral mt-6 max-w-none">
             <div className="mt-2"><PageMeta /></div>
-            <h2 className="mt-4 text-2xl font-bold md:text-3xl">Welkom bij Nederland's eerlijkste casinovergelijker</h2>
+            <h2 className="mt-4 text-2xl font-bold md:text-3xl">Welkom bij dé vergelijker voor buitenlandse online casino's</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              De Nederlandse online casinomarkt bestaat sinds oktober 2021 — en is sindsdien explosief gegroeid. Met inmiddels meer dan 25 vergunde operators is het voor de gemiddelde speler nauwelijks nog te overzien wie nou écht een goed aanbod biedt en wie alleen op marketing leunt. Daarom doen wij het werk: elk casino in deze ranking hebben we daadwerkelijk getest met eigen geld, eigen iDEAL-stortingen en eigen uitbetalingen.
+              Sinds de Nederlandse markt in 2021 reguleerde, kiezen veel spelers er bewust voor om bij <strong className="text-foreground">buitenlandse online casino's</strong> te spelen — voor hogere bonussen, ruimer spelaanbod, snellere uitbetalingen of crypto-opties die op de KSA-markt niet beschikbaar zijn. Dit platform vergelijkt uitsluitend casino's met een offshore-licentie (Anjouan, Curaçao, MGA). Wij zijn geen vervanger voor KSA-vergunde aanbieders en raden spelers die in CRUKS staan af om hier te spelen — CRUKS bestaat niet voor niets.
             </p>
             <p className="mt-3 leading-relaxed text-muted-foreground">
-              Onze ranking weegt vier zaken zwaarder dan de rest: <strong className="text-foreground">snelheid van iDEAL-uitbetaling</strong>, <strong className="text-foreground">eerlijkheid van bonusvoorwaarden</strong>, <strong className="text-foreground">kwaliteit van de Nederlandstalige support</strong> en <strong className="text-foreground">naleving van Cruks en KSA-regelgeving</strong>. Geen ranking op basis van wie de hoogste commissie betaalt — onze redactionele onafhankelijkheid leggen we uit op{" "}
+              Onze ranking weegt vier zaken zwaarder dan de rest: <strong className="text-foreground">snelheid van uitbetaling</strong>, <strong className="text-foreground">eerlijkheid van bonusvoorwaarden</strong>, <strong className="text-foreground">kwaliteit van support voor Nederlandse spelers</strong> en <strong className="text-foreground">transparantie van de operator</strong>. Geen ranking op basis van wie de hoogste commissie betaalt — onze redactionele onafhankelijkheid leggen we uit op{" "}
               <Link to="/redactiebeleid" className="text-trust underline">de redactiebeleid-pagina</Link>.
             </p>
           </article>
@@ -169,13 +169,12 @@ function Index() {
         <div className="mt-20 grid gap-8 lg:grid-cols-[1fr_320px]">
           <FAQ
             items={[
-              { q: "Welk online casino is in 2026 het beste in Nederland?", a: "Op basis van onze tests komt Royal Orange dit jaar als #1 uit de bus, vooral dankzij de combinatie van een sterk welkomstaanbod en lage doorzetvereisten. De ranking verandert echter periodiek — we hertesten ieder kwartaal." },
-              { q: "Zijn online casino's legaal in Nederland?", a: "Ja, sinds oktober 2021. Alleen casino's met een vergunning van de Kansspelautoriteit (KSA) mogen Nederlandse spelers bedienen. Alle casino's in onze ranking zijn vergund." },
-              { q: "Hoe snel kan ik geld opnemen via iDEAL?", a: "Bij de besten in onze ranking, zoals Tulip Spin, ontvang je je geld binnen een uur. Andere KSA-casino's hanteren 2 tot 24 uur. We meten dit per casino opnieuw." },
-              { q: "Wat betekent KSA-vergunning?", a: "De Kansspelautoriteit (KSA) is de Nederlandse toezichthouder. Een KSA-vergunning betekent dat het casino voldoet aan eisen rond eerlijk spel, spelersbescherming, Cruks-koppeling en verantwoord spelen." },
-              { q: "Wat is Cruks en wanneer zou ik me inschrijven?", a: "Cruks is het Centraal Register Uitsluiting Kansspelen. Wie zich inschrijft, kan tijdelijk of permanent niet meer bij vergunde casino's spelen. Bedoeld voor mensen die hun speelgedrag willen onderbreken." },
-              { q: "Wat is wagering of doorzetvereiste?", a: "De doorzetvereiste (wagering) bepaalt hoe vaak je je bonusbedrag moet inzetten voordat je winst opneembaar wordt. Een wagering van 25x op een €100 bonus betekent dat je voor €2.500 moet inzetten. Hoe lager het getal, hoe eerlijker de bonus." },
-              { q: "Welke betaalmethoden zijn het snelst?", a: "iDEAL is in Nederland verreweg de snelste methode voor zowel storten als opnemen — bij de besten ontvang je je geld binnen een uur. Trustly werkt vergelijkbaar. Creditcards en Bancontact zijn meestal binnen 24 uur. Crypto kan zelfs binnen 10 minuten zijn, maar wordt door minder KSA-casino's ondersteund." },
+              { q: `Welk buitenlands casino is in 2026 het beste voor Nederlandse spelers?`, a: `Op basis van onze tests staat ${number1.name} dit jaar bovenaan dankzij ${number1.bonusHeadline} en de combinatie van crypto en iDEAL. De ranking verandert per kwartaal — we hertesten doorlopend.` },
+              { q: "Is spelen bij een buitenlands casino legaal in Nederland?", a: "Voor de speler is het niet strafbaar. De aanbieder mag zonder KSA-vergunning geen Nederlandse spelers actief werven. Spelen gebeurt op eigen verantwoordelijkheid." },
+              { q: "Wat is het verschil met een KSA-casino?", a: "KSA-casino's vallen onder Nederlands toezicht (Cruks, stortlimieten, kansspelbelasting). Buitenlandse casino's hanteren hun eigen regime — vaak hogere bonussen en snellere uitbetalingen, maar minder spelersbescherming." },
+              { q: "Wat als ik in CRUKS sta?", a: "Speel dan niet bij deze casino's. CRUKS bestaat om je te beschermen — buitenlandse casino's vallen buiten dat register." },
+              { q: "Wat is wagering of doorzetvereiste?", a: "De doorzetvereiste bepaalt hoe vaak je je bonusbedrag moet inzetten voordat winst opneembaar wordt. 30x op een €100 bonus = €3.000 inzet. Hoe lager, hoe eerlijker." },
+              { q: "Hoe verifieer ik dat een buitenlands casino betrouwbaar is?", a: "Controleer licentiehouder (Anjouan, Curaçao, MGA), eigenaar, klachtenroute, betaalmethoden en uitbetaaltrack-record. Onze reviews testen elk van deze punten." },
             ]}
           />
           <TrustNotice />
@@ -190,9 +189,9 @@ function Index() {
                 title: "Casino types",
                 items: [
                   { to: "/beste-online-casinos", label: "Echt Geld Casino's" },
-                  { to: "/buitenlandse-casino", label: "Casino's Zonder Registratie" },
-                  { to: "/buitenlandse-casino", label: "Casino's Zonder CRUKS" },
-                  { to: "/buitenlandse-casino", label: "Casino's Zonder Limiet" },
+                  { to: "/casinos-zonder-registratie", label: "Casino's Zonder Registratie" },
+                  { to: "/casinos-zonder-cruks", label: "Casino's Zonder CRUKS" },
+                  { to: "/casinos-zonder-limiet", label: "Casino's Zonder Limiet" },
                   { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling Casino's" },
                   { to: "/buitenlandse-casino", label: "Buitenlandse Casino's" },
                 ],
@@ -201,11 +200,9 @@ function Index() {
                 title: "Betaalmethoden",
                 items: [
                   { to: "/ideal-casinos", label: "iDEAL Casino's" },
-                  { to: "/ideal-casinos", label: "Revolut Casino's" },
-                  { to: "/mobiele-casinos", label: "Google Pay Casino's" },
-                  { to: "/mobiele-casinos", label: "Apple Pay Casino's" },
-                  { to: "/casino-bonussen", label: "Visa Casino's" },
-                  { to: "/casino-bonussen", label: "Mastercard Casino's" },
+                  { to: "/crypto-casino", label: "Crypto Casino's" },
+                  { to: "/betaalmethode/$slug", params: { slug: "trustly" }, label: "Trustly Casino's" },
+                  { to: "/betaalmethoden", label: "Alle betaalmethoden" },
                 ],
               },
             ]}
