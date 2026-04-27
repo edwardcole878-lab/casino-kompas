@@ -29,7 +29,7 @@ function Page() {
           <div className="rounded-2xl border bg-card p-5 shadow-card">
             <ShieldCheck className="h-8 w-8 text-trust" />
             <h3 className="mt-3 font-bold">Cruks</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Centraal Register Uitsluiting Kansspelen — zelf-uitsluiting bij alle KSA-casino's tegelijk.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Centraal Register Uitsluiting Kansspelen — zelf-uitsluiting bij alle KSA-vergunde casino's. <strong>Let op:</strong> buitenlandse casino's zijn niet aangesloten op Cruks.</p>
             <a className="mt-3 inline-block text-sm font-semibold text-trust hover:underline" href="https://cruksregister.nl" rel="noopener noreferrer" target="_blank">cruksregister.nl →</a>
           </div>
           <div className="rounded-2xl border bg-card p-5 shadow-card">
@@ -48,7 +48,7 @@ function Page() {
         <article className="prose prose-neutral mt-10 max-w-none">
           <h2 className="text-2xl font-bold">Tips voor verantwoord spelen</h2>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            <li><strong className="text-foreground">Stel limieten in</strong> — alle KSA-casino's bieden dag-, week- en maandlimieten</li>
+            <li><strong className="text-foreground">Stel zelf limieten in</strong> — bij offshore casino's moet je dit handmatig in je accountinstellingen doen</li>
             <li><strong className="text-foreground">Zie het als entertainment</strong> — niet als manier om geld te verdienen</li>
             <li><strong className="text-foreground">Speel nooit met geleend geld</strong> en niet om verliezen 'terug te halen'</li>
             <li><strong className="text-foreground">Houd pauzes</strong> en bepaal vooraf hoeveel tijd je speelt</li>
