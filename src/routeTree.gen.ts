@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WelkomstbonusCasinoRouteImport } from './routes/welkomstbonus-casino'
 import { Route as VerantwoordSpelenRouteImport } from './routes/verantwoord-spelen'
 import { Route as SnelleUitbetalingCasinoRouteImport } from './routes/snelle-uitbetaling-casino'
+import { Route as SlotsRouteImport } from './routes/slots'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
 import { Route as RouletteOnlineRouteImport } from './routes/roulette-online'
@@ -35,8 +36,13 @@ import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
 import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
 import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SlotSlugRouteImport } from './routes/slot.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
+import { Route as ProviderSlugRouteImport } from './routes/provider.$slug'
+import { Route as LicentieSlugRouteImport } from './routes/licentie.$slug'
 import { Route as GoSlugRouteImport } from './routes/go.$slug'
+import { Route as BonusSlugRouteImport } from './routes/bonus.$slug'
+import { Route as BonusTypeSlugRouteImport } from './routes/bonus-type.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as BetaalmethodeSlugRouteImport } from './routes/betaalmethode.$slug'
 
@@ -53,6 +59,11 @@ const VerantwoordSpelenRoute = VerantwoordSpelenRouteImport.update({
 const SnelleUitbetalingCasinoRoute = SnelleUitbetalingCasinoRouteImport.update({
   id: '/snelle-uitbetaling-casino',
   path: '/snelle-uitbetaling-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlotsRoute = SlotsRouteImport.update({
+  id: '/slots',
+  path: '/slots',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -171,14 +182,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SlotSlugRoute = SlotSlugRouteImport.update({
+  id: '/slot/$slug',
+  path: '/slot/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewSlugRoute = ReviewSlugRouteImport.update({
   id: '/review/$slug',
   path: '/review/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProviderSlugRoute = ProviderSlugRouteImport.update({
+  id: '/provider/$slug',
+  path: '/provider/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicentieSlugRoute = LicentieSlugRouteImport.update({
+  id: '/licentie/$slug',
+  path: '/licentie/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GoSlugRoute = GoSlugRouteImport.update({
   id: '/go/$slug',
   path: '/go/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BonusSlugRoute = BonusSlugRouteImport.update({
+  id: '/bonus/$slug',
+  path: '/bonus/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BonusTypeSlugRoute = BonusTypeSlugRouteImport.update({
+  id: '/bonus-type/$slug',
+  path: '/bonus-type/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -216,13 +252,19 @@ export interface FileRoutesByFullPath {
   '/roulette-online': typeof RouletteOnlineRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/slots': typeof SlotsRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
   '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bonus-type/$slug': typeof BonusTypeSlugRoute
+  '/bonus/$slug': typeof BonusSlugRoute
   '/go/$slug': typeof GoSlugRoute
+  '/licentie/$slug': typeof LicentieSlugRoute
+  '/provider/$slug': typeof ProviderSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
+  '/slot/$slug': typeof SlotSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -248,13 +290,19 @@ export interface FileRoutesByTo {
   '/roulette-online': typeof RouletteOnlineRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/slots': typeof SlotsRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
   '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bonus-type/$slug': typeof BonusTypeSlugRoute
+  '/bonus/$slug': typeof BonusSlugRoute
   '/go/$slug': typeof GoSlugRoute
+  '/licentie/$slug': typeof LicentieSlugRoute
+  '/provider/$slug': typeof ProviderSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
+  '/slot/$slug': typeof SlotSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -281,13 +329,19 @@ export interface FileRoutesById {
   '/roulette-online': typeof RouletteOnlineRoute
   '/site.webmanifest': typeof SiteDotwebmanifestRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/slots': typeof SlotsRoute
   '/snelle-uitbetaling-casino': typeof SnelleUitbetalingCasinoRoute
   '/verantwoord-spelen': typeof VerantwoordSpelenRoute
   '/welkomstbonus-casino': typeof WelkomstbonusCasinoRoute
   '/betaalmethode/$slug': typeof BetaalmethodeSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bonus-type/$slug': typeof BonusTypeSlugRoute
+  '/bonus/$slug': typeof BonusSlugRoute
   '/go/$slug': typeof GoSlugRoute
+  '/licentie/$slug': typeof LicentieSlugRoute
+  '/provider/$slug': typeof ProviderSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
+  '/slot/$slug': typeof SlotSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -315,13 +369,19 @@ export interface FileRouteTypes {
     | '/roulette-online'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/slots'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
     | '/betaalmethode/$slug'
     | '/blog/$slug'
+    | '/bonus-type/$slug'
+    | '/bonus/$slug'
     | '/go/$slug'
+    | '/licentie/$slug'
+    | '/provider/$slug'
     | '/review/$slug'
+    | '/slot/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -347,13 +407,19 @@ export interface FileRouteTypes {
     | '/roulette-online'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/slots'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
     | '/betaalmethode/$slug'
     | '/blog/$slug'
+    | '/bonus-type/$slug'
+    | '/bonus/$slug'
     | '/go/$slug'
+    | '/licentie/$slug'
+    | '/provider/$slug'
     | '/review/$slug'
+    | '/slot/$slug'
   id:
     | '__root__'
     | '/'
@@ -379,13 +445,19 @@ export interface FileRouteTypes {
     | '/roulette-online'
     | '/site.webmanifest'
     | '/sitemap.xml'
+    | '/slots'
     | '/snelle-uitbetaling-casino'
     | '/verantwoord-spelen'
     | '/welkomstbonus-casino'
     | '/betaalmethode/$slug'
     | '/blog/$slug'
+    | '/bonus-type/$slug'
+    | '/bonus/$slug'
     | '/go/$slug'
+    | '/licentie/$slug'
+    | '/provider/$slug'
     | '/review/$slug'
+    | '/slot/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -412,12 +484,18 @@ export interface RootRouteChildren {
   RouletteOnlineRoute: typeof RouletteOnlineRoute
   SiteDotwebmanifestRoute: typeof SiteDotwebmanifestRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SlotsRoute: typeof SlotsRoute
   SnelleUitbetalingCasinoRoute: typeof SnelleUitbetalingCasinoRoute
   VerantwoordSpelenRoute: typeof VerantwoordSpelenRoute
   WelkomstbonusCasinoRoute: typeof WelkomstbonusCasinoRoute
   BetaalmethodeSlugRoute: typeof BetaalmethodeSlugRoute
+  BonusTypeSlugRoute: typeof BonusTypeSlugRoute
+  BonusSlugRoute: typeof BonusSlugRoute
   GoSlugRoute: typeof GoSlugRoute
+  LicentieSlugRoute: typeof LicentieSlugRoute
+  ProviderSlugRoute: typeof ProviderSlugRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
+  SlotSlugRoute: typeof SlotSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -441,6 +519,13 @@ declare module '@tanstack/react-router' {
       path: '/snelle-uitbetaling-casino'
       fullPath: '/snelle-uitbetaling-casino'
       preLoaderRoute: typeof SnelleUitbetalingCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/slots': {
+      id: '/slots'
+      path: '/slots'
+      fullPath: '/slots'
+      preLoaderRoute: typeof SlotsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -604,6 +689,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/slot/$slug': {
+      id: '/slot/$slug'
+      path: '/slot/$slug'
+      fullPath: '/slot/$slug'
+      preLoaderRoute: typeof SlotSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/review/$slug': {
       id: '/review/$slug'
       path: '/review/$slug'
@@ -611,11 +703,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/provider/$slug': {
+      id: '/provider/$slug'
+      path: '/provider/$slug'
+      fullPath: '/provider/$slug'
+      preLoaderRoute: typeof ProviderSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licentie/$slug': {
+      id: '/licentie/$slug'
+      path: '/licentie/$slug'
+      fullPath: '/licentie/$slug'
+      preLoaderRoute: typeof LicentieSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/go/$slug': {
       id: '/go/$slug'
       path: '/go/$slug'
       fullPath: '/go/$slug'
       preLoaderRoute: typeof GoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bonus/$slug': {
+      id: '/bonus/$slug'
+      path: '/bonus/$slug'
+      fullPath: '/bonus/$slug'
+      preLoaderRoute: typeof BonusSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bonus-type/$slug': {
+      id: '/bonus-type/$slug'
+      path: '/bonus-type/$slug'
+      fullPath: '/bonus-type/$slug'
+      preLoaderRoute: typeof BonusTypeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -669,12 +789,18 @@ const rootRouteChildren: RootRouteChildren = {
   RouletteOnlineRoute: RouletteOnlineRoute,
   SiteDotwebmanifestRoute: SiteDotwebmanifestRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SlotsRoute: SlotsRoute,
   SnelleUitbetalingCasinoRoute: SnelleUitbetalingCasinoRoute,
   VerantwoordSpelenRoute: VerantwoordSpelenRoute,
   WelkomstbonusCasinoRoute: WelkomstbonusCasinoRoute,
   BetaalmethodeSlugRoute: BetaalmethodeSlugRoute,
+  BonusTypeSlugRoute: BonusTypeSlugRoute,
+  BonusSlugRoute: BonusSlugRoute,
   GoSlugRoute: GoSlugRoute,
+  LicentieSlugRoute: LicentieSlugRoute,
+  ProviderSlugRoute: ProviderSlugRoute,
   ReviewSlugRoute: ReviewSlugRoute,
+  SlotSlugRoute: SlotSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
