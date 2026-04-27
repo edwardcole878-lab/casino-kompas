@@ -5,6 +5,31 @@ export const paymentLogoUrl: Partial<Record<PaymentMethod, string>> = {
   // e.g. iDEAL: "/payments/ideal.svg",
 };
 
+/** Software/game providers (Mercury-style taxonomy) */
+export type Provider =
+  | "NetEnt"
+  | "Pragmatic Play"
+  | "Evolution"
+  | "Play'n GO"
+  | "Hacksaw Gaming"
+  | "Microgaming"
+  | "Yggdrasil"
+  | "Red Tiger"
+  | "Nolimit City"
+  | "Push Gaming";
+
+/** Licensing authorities */
+export type Licence = "KSA" | "MGA" | "Curacao" | "UKGC" | "Gibraltar";
+
+/** Bonus type taxonomy */
+export type BonusType =
+  | "welkomstbonus"
+  | "no-deposit"
+  | "free-spins"
+  | "cashback"
+  | "reload"
+  | "vip";
+
 export type Casino = {
   slug: string;
   rank: number;
@@ -51,6 +76,19 @@ export type Casino = {
   verdict: string;
   intro: string; // unique editorial intro
   games: { slots: number; live: number; table: number };
+  // ── Mercury-style relational taxonomy fields ──
+  /** Software/game providers */
+  providers?: Provider[];
+  /** Licensing authorities (in addition to legacy `licence` text) */
+  licences?: Licence[];
+  /** Bonus types this casino offers */
+  bonusTypes?: BonusType[];
+  /** ISO 3166-1 alpha-2 country codes where this casino is restricted */
+  restrictedCountries?: string[];
+  /** Owner / parent company */
+  owner?: string;
+  /** Affiliate redirect URL (used by /go/$slug) */
+  affiliateUrl?: string;
 };
 
 export const casinos: Casino[] = [
@@ -82,6 +120,10 @@ export const casinos: Casino[] = [
     verdict: "Royal Orange biedt het sterkste bonusaanbod van alle door ons geteste casino's, met voorwaarden die spelers daadwerkelijk kunnen waarmaken.",
     intro: "Tijdens onze test van Royal Orange viel direct op hoe transparant het welkomstaanbod werd gepresenteerd. Geen verstopte voorwaarden, geen piepkleine lettertjes — gewoon een eerlijke 100% match en 200 free spins met een doorzet die voor recreatieve spelers haalbaar is.",
     games: { slots: 1850, live: 120, table: 65 },
+    providers: ["NetEnt", "Pragmatic Play", "Evolution", "Play'n GO", "Hacksaw Gaming"],
+    licences: ["KSA"],
+    bonusTypes: ["welkomstbonus", "free-spins", "reload"],
+    owner: "Orange Gaming N.V.",
   },
   {
     slug: "tulip-spin",
