@@ -4,6 +4,9 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
 import { getPost, posts } from "@/data/blog";
 import { jsonLdString } from "@/lib/jsonld";
+import { defaultAuthor, authorJsonLd, publisherJsonLd } from "@/data/authors";
+
+const SITE = "https://buitenlandsecasino.com";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -24,6 +27,8 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "article:published_time", content: p.publishedAt },
         { property: "article:modified_time", content: p.updatedAt },
+        { property: "article:author", content: defaultAuthor.name },
+        { name: "author", content: defaultAuthor.name },
       ],
     };
   },
@@ -49,11 +54,13 @@ function BlogPostPage() {
     description: post.excerpt,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    author: { "@type": "Organization", name: "Buitenlandse Casino" },
-    publisher: { "@type": "Organization", name: "Buitenlandse Casino" },
+    author: authorJsonLd(defaultAuthor),
+    publisher: publisherJsonLd(),
+    image: [`${SITE}/og-default.jpg`],
+    inLanguage: "nl-NL",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://buitenlandsecasino.com/blog/${post.slug}`,
+      "@id": `${SITE}/blog/${post.slug}`,
     },
   };
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
