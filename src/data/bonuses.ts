@@ -214,5 +214,3 @@ export const enrichBonus = (b: Bonus) => ({
 
 /** All bonuses ordered by amount desc — used as default list ordering */
 export const allBonusesSorted = [...bonuses].sort((a, b) => b.amount - a.amount);
-
-export const _allCasinoSlugs = casinos.map((c) => c.slug);
