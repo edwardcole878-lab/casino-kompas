@@ -28,7 +28,7 @@ function BlogIndex() {
       <div className="container mx-auto max-w-4xl px-4 py-8 md:py-12">
         <Breadcrumbs items={[{ label: "Blog" }]} />
         <header className="mt-6 max-w-2xl">
-          <h1 className="text-4xl font-bold leading-tight md:text-5xl">CasinoWijzer Blog</h1>
+          <h1 className="text-4xl font-bold leading-tight md:text-5xl">Buitenlandse Casino Blog</h1>
           <p className="mt-3 text-lg text-muted-foreground">Achtergrondartikelen, strategiegidsen en nieuws over de Nederlandse online casinomarkt.</p>
           <div className="mt-3"><PageMeta /></div>
         </header>

@@ -1,6 +1,8 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+
+const SITE_URL = "https://buitenlandsecasino.com";
 
 function NotFoundComponent() {
   return (
@@ -29,25 +31,24 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CasinoWijzer — Vergelijk de beste online casino's van Nederland" },
+      { title: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
       { name: "description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "robots", content: "index,follow" },
       { name: "language", content: "nl-NL" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "CasinoWijzer" },
+      { property: "og:site_name", content: "Buitenlandse Casino" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "CasinoWijzer — Vergelijk de beste online casino's van Nederland" },
-      { name: "twitter:title", content: "CasinoWijzer — Vergelijk de beste online casino's van Nederland" },
+      { property: "og:title", content: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
+      { name: "twitter:title", content: "Buitenlandse Casino — Vergelijk de beste online casino's van Nederland" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
       { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor KSA-vergunde online casino's in Nederland. Bonussen, iDEAL, snelle uitbetalingen en eerlijke reviews." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0efd789-4c73-4b1c-9c2b-b14cd9f90e82/id-preview-c86c49a4--012a13f8-fde3-4d12-a3dd-1a54da8de2f2.lovable.app-1777101618235.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
     ],
   }),
@@ -71,5 +72,32 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const canonical = SITE_URL + (pathname === "/" ? "" : pathname.replace(/\/$/, ""));
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "Buitenlandse Casino",
+        url: SITE_URL,
+        logo: `${SITE_URL}/favicon.ico`,
+      },
+      {
+        "@type": "WebSite",
+        name: "Buitenlandse Casino",
+        url: SITE_URL,
+        inLanguage: "nl-NL",
+      },
+    ],
+  };
+  return (
+    <>
+      {/* React 19 hoists these to <head> on both SSR and client */}
+      <link rel="canonical" href={canonical} />
+      <meta property="og:url" content={canonical} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <Outlet />
+    </>
+  );
 }

@@ -18,7 +18,7 @@ export function PaymentIcons({ methods, max = 6 }: { methods: PaymentMethod[]; m
             className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2 py-0.5 text-[10px] font-semibold text-foreground/80 shadow-sm"
           >
             {logo ? (
-              <img src={logo} alt={`${m} logo`} className="h-3 w-auto object-contain" />
+              <img src={logo} alt={`${m} logo`} loading="lazy" decoding="async" className="h-3 w-auto object-contain" />
             ) : (
               <span>{m}</span>
             )}

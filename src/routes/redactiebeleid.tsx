@@ -6,9 +6,9 @@ import { PageMeta } from "@/components/site/PageMeta";
 export const Route = createFileRoute("/redactiebeleid")({
   head: () => ({
     meta: [
-      { title: "Redactiebeleid — Hoe CasinoWijzer Casino's Beoordeelt" },
+      { title: "Redactiebeleid — Hoe Buitenlandse Casino Casino's Beoordeelt" },
       { name: "description", content: "Onze testmethode, weging en redactionele onafhankelijkheid uitgelegd. Transparant over commerciële relaties." },
-      { property: "og:title", content: "Redactiebeleid — CasinoWijzer" },
+      { property: "og:title", content: "Redactiebeleid — Buitenlandse Casino" },
       { property: "og:description", content: "Hoe wij casino's testen en rangschikken." },
     ],
   }),
@@ -34,7 +34,7 @@ function Page() {
             <li><strong className="text-foreground">Trust (10%)</strong> — KSA-licentie, klachtenhistorie, transparantie</li>
           </ul>
           <h2 className="mt-8 text-2xl font-bold">Commerciële relaties</h2>
-          <p className="text-muted-foreground leading-relaxed">CasinoWijzer ontvangt commissie wanneer een speler via onze link een account aanmaakt. Deze commissie heeft <strong className="text-foreground">geen invloed op onze ranking</strong>. Casino's die slecht presteren worden niet hoger gerankt voor een hogere commissie. Sterker nog: enkele van de hoogst-betalende affiliates komen in onze top 10 helemaal niet voor.</p>
+          <p className="text-muted-foreground leading-relaxed">Buitenlandse Casino ontvangt commissie wanneer een speler via onze link een account aanmaakt. Deze commissie heeft <strong className="text-foreground">geen invloed op onze ranking</strong>. Casino's die slecht presteren worden niet hoger gerankt voor een hogere commissie. Sterker nog: enkele van de hoogst-betalende affiliates komen in onze top 10 helemaal niet voor.</p>
           <h2 className="mt-8 text-2xl font-bold">Updates en herzieningen</h2>
           <p className="text-muted-foreground leading-relaxed">Elk kwartaal hertesten we de top 15 en passen de ranking aan. Bij significante incidenten (bijv. KSA-handhaving) updaten we per direct.</p>
         </article>

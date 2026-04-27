@@ -82,6 +82,8 @@ function BuitenlandseCasinoPage() {
                     alt="Betory casino logo"
                     width={240}
                     height={240}
+                    decoding="async"
+                    fetchPriority="high"
                     className="h-44 w-44 object-contain md:h-56 md:w-56"
                   />
                 </div>
