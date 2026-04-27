@@ -17,7 +17,7 @@ export const Route = createFileRoute("/bonussen")({
   head: () => ({
     meta: [
       { title: "Beste Casino Bonussen Nederland 2026 | Vergelijk" },
-      { name: "description", content: "Vergelijk welkomstbonussen, free spins, no-deposit en cashback van alle KSA-vergunde casino's. Eerlijke wagering, transparante voorwaarden." },
+      { name: "description", content: "Vergelijk welkomstbonussen, free spins, no-deposit en cashback van alle buitenlandse casino's. Eerlijke wagering, transparante voorwaarden." },
       { property: "og:title", content: "Beste Casino Bonussen Nederland 2026" },
       { property: "og:description", content: "Vergelijk welkomstbonussen, free spins en no-deposit aanbiedingen van alle KSA-casino's." },
       { property: "og:type", content: "website" },

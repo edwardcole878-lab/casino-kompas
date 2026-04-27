@@ -18,7 +18,7 @@ export const Route = createFileRoute("/betaalmethode/$slug")({
     if (!t) return { meta: [{ title: "Betaalmethode niet gevonden" }] };
     return {
       meta: [
-        { title: `Beste ${t.name} casino's Nederland 2026 | Buitenlandse Casino` },
+        { title: `Beste ${t.name} casino's Nederland 2026 | Buitenlandse Casino's` },
         { name: "description", content: t.intro.slice(0, 155) },
         { property: "og:title", content: `${t.name} casino's — top selectie 2026` },
         { property: "og:description", content: t.intro.slice(0, 155) },

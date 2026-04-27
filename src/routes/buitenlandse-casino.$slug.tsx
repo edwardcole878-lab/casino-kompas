@@ -414,7 +414,7 @@ function OffshoreReviewPage() {
           <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">Veelgestelde vragen</h2>
           <div className="mt-5 space-y-3">
             {[
-              { q: `Is ${casino.name} legaal in Nederland?`, a: `${casino.name} beschikt over een ${casino.licence}-licentie en heeft géén Nederlandse KSA-vergunning. Het accepteert wel Nederlandse spelers, maar valt buiten de KSA-bescherming en de Cruks-koppeling.` },
+              { q: `Is ${casino.name} legaal in Nederland?`, a: `${casino.name} beschikt over een ${casino.licence}-licentie en heeft géén Nederlandse KSA-vergunning. Het accepteert wel Nederlandse spelers, maar valt buiten de KSA-bescherming en de klachtenroute.` },
               { q: `Hoe snel betaalt ${casino.name} uit?`, a: `Uitbetalingen verlopen ${casino.payout.toLowerCase()} via de meeste methodes. Crypto is doorgaans het snelst, traditionele methodes (iDEAL, kaarten) duren iets langer.` },
               { q: `Werkt iDEAL bij ${casino.name}?`, a: `Ja. ${casino.name} accepteert iDEAL (en Trustly) als betaalmethode voor Nederlandse spelers. Stortingen zijn instant; uitbetalingen via iDEAL duren typisch 12–48 uur.` },
               { q: `Wat is de wagering van de welkomstbonus?`, a: `${casino.wagering} op het bonusbedrag. Reken het altijd door: een bonus van €100 met ${casino.wagering.replace(/\D/g, "")}x wagering vereist €${parseInt(casino.wagering, 10) * 100} aan inzet voordat winst opneembaar is.` },
@@ -441,7 +441,7 @@ function OffshoreReviewPage() {
               <div className="text-sm leading-relaxed text-foreground/80">
                 <strong className="text-foreground">Belangrijk:</strong>{" "}
                 {casino.name} is geen KSA-vergund casino. Spelen bij offshore casino's gebeurt op eigen risico —
-                je hebt geen toegang tot de Nederlandse Geschillencommissie en geen Cruks-koppeling. Kies bewust en
+                je hebt geen toegang tot de Nederlandse Geschillencommissie en geen klachtenroute. Kies bewust en
                 speel alleen met geld dat je kunt missen.{" "}
                 <Link to="/verantwoord-spelen" className="text-trust underline">
                   Lees over verantwoord spelen →

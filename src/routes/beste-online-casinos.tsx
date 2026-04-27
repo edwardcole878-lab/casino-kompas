@@ -6,7 +6,7 @@ export const Route = createFileRoute("/beste-online-casinos")({
   head: () => ({
     meta: [
       { title: "Beste Online Casino's Nederland 2026 — Top 10 Vergelijking" },
-      { name: "description", content: "Onze redactie heeft KSA-vergunde casino's getest. Ontdek welke het beste presteren op bonus, uitbetaling, support en spelaanbod." },
+      { name: "description", content: "Onze redactie heeft buitenlandse casino's getest. Ontdek welke het beste presteren op bonus, uitbetaling, support en spelaanbod." },
       { property: "og:title", content: "Beste Online Casino's Nederland 2026" },
       { property: "og:description", content: "Top 10 Nederlandse online casino's uitgebreid getest en vergeleken." },
     ],
@@ -37,7 +37,7 @@ function Page() {
         { q: "Hoe kies ik het beste casino voor mij persoonlijk?", a: "Bepaal eerst wat je belangrijkst vindt: hoge bonus, snelle uitbetaling, mobiele app of live casino. Onze top 10 differentieert per categorie zodat je per voorkeur de beste keuze ziet." },
         { q: "Worden deze rankings periodiek herzien?", a: "Ja — elk kwartaal hertesten we de top 15 en herrangschikken we waar nodig. Een casino dat zes maanden geleden #2 was, kan nu lager staan als de uitbetaalsnelheid is afgenomen." },
         { q: "Krijgen jullie commissie van deze casino's?", a: "Ja, we ontvangen een vergoeding wanneer een speler via onze link een account opent. Dit beïnvloedt onze ranking niet — zie ons redactiebeleid voor de scheiding tussen commercie en redactie." },
-        { q: "Kan ik bij meerdere casino's tegelijk een bonus claimen?", a: "Ja, KSA-vergunde casino's zijn los van elkaar. Wel verstandig: stel per casino een depositlimiet in via je accountinstellingen." },
+        { q: "Kan ik bij meerdere casino's tegelijk een bonus claimen?", a: "Ja, buitenlandse casino's zijn los van elkaar. Wel verstandig: stel per casino een depositlimiet in via je accountinstellingen." },
         { q: "Wat als ik een klacht heb over een casino?", a: "Stap 1 is altijd de support van het casino zelf. Komen jullie er niet uit, dan kun je terecht bij de Kansspelautoriteit of een onafhankelijke geschillencommissie." },
       ]}
       related={[

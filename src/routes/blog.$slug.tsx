@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.post;
     if (!p) return { meta: [{ title: "Artikel niet gevonden" }] };
-    const title = `${p.title} | Buitenlandse Casino Blog`;
+    const title = `${p.title} | Buitenlandse Casino's's Blog`;
     return {
       meta: [
         { title },

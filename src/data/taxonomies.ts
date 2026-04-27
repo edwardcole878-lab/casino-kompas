@@ -39,7 +39,7 @@ export const paymentTerms: Record<PaymentMethod, Term> = {
     intro: "Bancontact wordt door veel KSA-casino's geaccepteerd en werkt vergelijkbaar met iDEAL voor Belgische en grensbewoners.",
     body: "Bancontact is een snelle bank-naar-bank betaalmethode, voornamelijk gebruikt door Belgische spelers maar ook door Nederlanders met een Bancontact-kaart.",
     faq: [
-      { q: "Werkt Bancontact bij KSA-casino's?", a: "Ja, de meeste grote KSA-vergunde casino's accepteren Bancontact." },
+      { q: "Werkt Bancontact bij KSA-casino's?", a: "Ja, de meeste grote buitenlandse casino's accepteren Bancontact." },
     ],
   },
   Trustly: {
@@ -72,7 +72,7 @@ export const paymentTerms: Record<PaymentMethod, Term> = {
     slug: "paypal",
     name: "PayPal",
     tagline: "De wereldwijde standaard voor online betalingen",
-    intro: "PayPal wordt door een beperkt aantal KSA-vergunde casino's geaccepteerd, maar groeit snel als alternatief voor iDEAL.",
+    intro: "PayPal wordt door een beperkt aantal buitenlandse casino's geaccepteerd, maar groeit snel als alternatief voor iDEAL.",
     body: "PayPal biedt extra koperbescherming en houdt je bankgegevens privé. Stortingen zijn direct, opnames doorgaans binnen 24 uur.",
     faq: [{ q: "Welke NL-casino's accepteren PayPal?", a: "Een groeiend aantal — bekijk onze actuele lijst hierboven." }],
   },
@@ -80,7 +80,7 @@ export const paymentTerms: Record<PaymentMethod, Term> = {
     slug: "crypto",
     name: "Crypto",
     tagline: "Bitcoin, Ethereum en stablecoins",
-    intro: "Crypto-betalingen zijn zeldzaam bij KSA-vergunde casino's, maar de paar die het wel aanbieden bieden snellere uitbetalingen en lagere kosten.",
+    intro: "Crypto-betalingen zijn zeldzaam bij buitenlandse casino's, maar de paar die het wel aanbieden bieden snellere uitbetalingen en lagere kosten.",
     body: "Crypto-stortingen zijn direct na bevestiging op de blockchain (10–30 minuten). Uitbetalingen zijn vaak sneller dan iDEAL, maar de waarde van je crypto kan tussen storten en opnemen veranderen.",
     faq: [{ q: "Welke crypto's worden geaccepteerd?", a: "Doorgaans BTC, ETH en USDT." }],
   },
@@ -181,8 +181,8 @@ export const licenceTerms: Record<Licence, Term> = {
   KSA: {
     slug: "ksa", name: "Kansspelautoriteit (KSA)",
     tagline: "De Nederlandse toezichthouder",
-    intro: "De KSA is de officiële Nederlandse toezichthouder voor online kansspelen. Sinds oktober 2021 mogen alleen KSA-vergunde casino's Nederlandse spelers bedienen.",
-    body: "Een KSA-vergunning vereist Cruks-koppeling, depositlimieten, NL-talige support en strikte eerlijk-spel audits. Speel nooit bij een casino zonder KSA-licentie.",
+    intro: "De KSA is de officiële Nederlandse toezichthouder voor online kansspelen. Sinds oktober 2021 mogen alleen buitenlandse casino's Nederlandse spelers bedienen.",
+    body: "Een KSA-vergunning vereist klachtenroute, depositlimieten, NL-talige support en strikte eerlijk-spel audits. Speel nooit bij een casino zonder KSA-licentie.",
     faq: [
       { q: "Hoeveel KSA-vergunningen zijn er?", a: "Per 2026 zijn er ruim 25 vergunde operators." },
       { q: "Hoe controleer ik een KSA-licentie?", a: "Op kansspelautoriteit.nl staat een actueel register van vergunninghouders." },
@@ -220,7 +220,7 @@ export const licenceTerms: Record<Licence, Term> = {
     slug: "anjouan", name: "Anjouan Gaming License",
     tagline: "Internationale offshore-licentie van de Comoren",
     intro: "De Anjouan Gaming Authority is een offshore licentieverstrekker uit het Comoren-eilandenstaat. Sinds 2024 een populair alternatief voor Curaçao bij internationale operators.",
-    body: "Anjouan-vergunde casino's accepteren Nederlandse spelers, maar zijn niet KSA-geregistreerd. Dit betekent geen Cruks-koppeling, geen verplichte NL-talige support en geen Nederlandse spelersbescherming. Speel altijd verantwoord.",
+    body: "Anjouan-vergunde casino's accepteren Nederlandse spelers, maar zijn niet KSA-geregistreerd. Dit betekent geen klachtenroute, geen verplichte NL-talige support en geen Nederlandse spelersbescherming. Speel altijd verantwoord.",
     faq: [
       { q: "Is een Anjouan-licentie veilig?", a: "Anjouan biedt basisregulering maar minder spelersbescherming dan KSA of MGA. Controleer altijd reviews en uitbetalingsgeschiedenis voor je stort." },
       { q: "Mag ik bij Anjouan-casino's spelen vanuit Nederland?", a: "Technisch toegankelijk, maar buiten het KSA-systeem. Je valt niet onder Nederlandse spelersbescherming of Cruks-zelfuitsluiting." },

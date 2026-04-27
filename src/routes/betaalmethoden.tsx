@@ -31,7 +31,7 @@ function BetaalmethodenHub() {
     <TaxonomyHub
       title="Casino's per betaalmethode"
       kicker="Betaalmethoden"
-      intro="Kies je favoriete betaalmethode en bekijk welke KSA-vergunde casino's deze ondersteunen — met snelheid, kosten en uitbetaaltijden."
+      intro="Kies je favoriete betaalmethode en bekijk welke buitenlandse casino's deze ondersteunen — met snelheid, kosten en uitbetaaltijden."
       items={items}
       pageUrl={`${SITE}/betaalmethoden`}
       countLabel="casino's"

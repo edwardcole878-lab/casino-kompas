@@ -31,7 +31,7 @@ function Page() {
         </>
       }
       casinos={newer}
-      rankingTitle="Nieuwste KSA-vergunde casino's"
+      rankingTitle="Nieuwste buitenlandse casino's"
       rankingDescription="Allemaal sinds 2022 gelanceerd, allemaal door ons getest."
       primaryCta="Bekijk Casino"
       faqs={[

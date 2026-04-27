@@ -45,7 +45,7 @@ export const posts: BlogPost[] = [
     updatedAt: "2026-03-30",
     readingTime: "5 min",
     content: [
-      { type: "p", text: "iDEAL is in Nederland de standaard voor online betalingen — ook bij KSA-vergunde casino's. De veiligheid komt niet alleen van iDEAL zelf, maar van de combinatie met je bank en de PSD2-richtlijn." },
+      { type: "p", text: "iDEAL is in Nederland de standaard voor online betalingen — ook bij buitenlandse casino's. De veiligheid komt niet alleen van iDEAL zelf, maar van de combinatie met je bank en de PSD2-richtlijn." },
       { type: "h2", text: "Wat ziet je bank?" },
       { type: "p", text: "Je bank ziet de naam van het casino (of de PSP zoals Mollie of Adyen) en het bedrag. Sinds 2021 is duidelijke labeling verplicht onder de Wet Kansspelen op afstand." },
       { type: "h2", text: "Twee-factor-authenticatie" },
@@ -77,7 +77,7 @@ export const posts: BlogPost[] = [
         "Controleer of de vergunning actief is (niet ingetrokken)",
       ]},
       { type: "h2", text: "Wat als het casino er niet bij staat?" },
-      { type: "p", text: "Geen vergunning = geen Cruks-koppeling, geen verplichte spelersbescherming en geen toegang tot de Geschillencommissie. Speel nooit bij niet-vergunde casino's, ongeacht hoe goed de bonus klinkt." },
+      { type: "p", text: "Geen vergunning = geen klachtenroute, geen verplichte spelersbescherming en geen toegang tot de Geschillencommissie. Speel nooit bij niet-vergunde casino's, ongeacht hoe goed de bonus klinkt." },
     ],
   },
   {
