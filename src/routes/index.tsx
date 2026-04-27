@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Beste Nederlandse online casino's — onze top 10 | Buitenlandse Casino 2026" },
+      { title: "Beste Online Casino's Nederland 2026 | Top 10" },
       { name: "description", content: "Onafhankelijke ranking van Nederlandse online casino's. iDEAL-uitbetaling, bonusvoorwaarden en KSA-naleving — geen commissie-ranking." },
       { property: "og:title", content: "Top 10 NL casino's die onze test overleefden — 2026" },
       { property: "og:description", content: "Nederlandse casino's getest met eigen geld. Dit zijn de casino's die door onze redactie heen kwamen." },
