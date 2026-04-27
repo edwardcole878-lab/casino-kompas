@@ -93,40 +93,11 @@ function RootComponent() {
   };
   return (
     <>
-      <HeadInjector canonical={canonical} jsonLd={orgJsonLd} />
-      <Outlet />
-    </>
-  );
-}
-
-function HeadInjector({ canonical, jsonLd }: { canonical: string; jsonLd: unknown }) {
-  // Inject canonical + og:url + JSON-LD into <head> for every route.
-  if (typeof document !== "undefined") {
-    // Client-side: keep canonical in sync on navigation.
-    const ensure = (selector: string, create: () => HTMLElement) => {
-      let el = document.head.querySelector(selector) as HTMLElement | null;
-      if (!el) { el = create(); document.head.appendChild(el); }
-      return el;
-    };
-    const link = ensure('link[rel="canonical"]', () => {
-      const l = document.createElement("link"); l.setAttribute("rel", "canonical"); return l;
-    }) as HTMLLinkElement;
-    link.href = canonical;
-    const ogUrl = ensure('meta[property="og:url"]', () => {
-      const m = document.createElement("meta"); m.setAttribute("property", "og:url"); return m;
-    }) as HTMLMetaElement;
-    ogUrl.content = canonical;
-    const ld = ensure('script[data-org-jsonld]', () => {
-      const s = document.createElement("script"); s.setAttribute("type", "application/ld+json"); s.setAttribute("data-org-jsonld", "true"); return s;
-    });
-    ld.textContent = JSON.stringify(jsonLd);
-  }
-  return (
-    <>
-      {/* SSR-rendered tags (also help crawlers without JS) */}
+      {/* React 19 hoists these to <head> on both SSR and client */}
       <link rel="canonical" href={canonical} />
       <meta property="og:url" content={canonical} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <Outlet />
     </>
   );
 }
