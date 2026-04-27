@@ -79,6 +79,10 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                 <img
                   src={c.logoUrl ?? c.image}
                   alt={`${c.name} logo`}
+                  width={36}
+                  height={36}
+                  loading="lazy"
+                  decoding="async"
                   className="h-9 w-9 shrink-0 overflow-hidden rounded-lg bg-white object-contain p-0.5 text-[0]"
                 />
               ) : (
@@ -166,6 +170,10 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
                       <img
                         src={c.logoUrl ?? c.image}
                         alt={`${c.name} logo`}
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                        decoding="async"
                         className="h-9 w-9 overflow-hidden rounded-lg bg-white object-contain p-0.5 text-[0]"
                       />
                     ) : (
