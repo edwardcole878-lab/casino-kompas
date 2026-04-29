@@ -99,7 +99,7 @@ function Page() {
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                 <h2 className="text-2xl font-extrabold tracking-tight md:text-[28px]">{casino.name}</h2>
-                <Rating value={casino.rating} />
+                <Rating value={10} />
               </div>
               <p className="mt-1 text-[13px] text-muted-foreground">{casino.tagline}</p>
               <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
