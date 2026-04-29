@@ -1,69 +1,12 @@
-import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import type { Casino } from "@/data/casinos";
 import { CasinoLogo } from "./CasinoLogo";
-import { ArrowUpDown, ArrowDown, ArrowUp, ExternalLink, Gift, Clock, Wallet, Percent } from "lucide-react";
+import { ExternalLink, Gift, Clock, Wallet, Percent } from "lucide-react";
 
-type SortKey = "rank" | "rating" | "bonus" | "wagering" | "payout" | "minDeposit";
-type SortDir = "asc" | "desc";
-
-const minDepositValue = (s: string) => {
-  const m = s.match(/(\d+)/);
-  return m ? parseInt(m[1], 10) : 999;
-};
-
-const payoutMinutes = (s: string): number => {
-  const m = s.match(/(\d+)\s*min/i);
-  if (m) return parseInt(m[1], 10);
-  const h = s.match(/(\d+)\s*uur/i);
-  if (h) return parseInt(h[1], 10) * 60;
-  return 999;
-};
-
-const wageringValue = (s: string): number => {
-  const m = s.match(/(\d+)/);
-  return m ? parseInt(m[1], 10) : 999;
-};
+const TH_CLASS = "text-[11px] font-bold uppercase tracking-wider text-muted-foreground";
 
 export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
-  const [sort, setSort] = useState<{ key: SortKey; dir: SortDir }>({ key: "rank", dir: "asc" });
-
-  const sorted = [...casinos].sort((a, b) => {
-    const dir = sort.dir === "asc" ? 1 : -1;
-    switch (sort.key) {
-      case "rank":
-        return (a.rank - b.rank) * dir;
-      case "rating":
-        return (a.rating - b.rating) * dir;
-      case "bonus":
-        return (a.maxBonus - b.maxBonus) * dir;
-      case "wagering":
-        return (wageringValue(a.wagering) - wageringValue(b.wagering)) * dir;
-      case "payout":
-        return (payoutMinutes(a.payoutTime) - payoutMinutes(b.payoutTime)) * dir;
-      case "minDeposit":
-        return (minDepositValue(a.minDeposit) - minDepositValue(b.minDeposit)) * dir;
-    }
-  });
-
-  const handleSort = (key: SortKey) => {
-    setSort((s) => (s.key === key ? { key, dir: s.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" }));
-  };
-
-  const Header = ({ k, label, className = "" }: { k: SortKey; label: string; className?: string }) => {
-    const active = sort.key === k;
-    const Icon = active ? (sort.dir === "asc" ? ArrowUp : ArrowDown) : ArrowUpDown;
-    return (
-      <button
-        onClick={() => handleSort(k)}
-        className={`inline-flex items-center gap-1 text-left text-[11px] font-bold uppercase tracking-wider transition-colors ${
-          active ? "text-gold" : "text-muted-foreground hover:text-foreground"
-        } ${className}`}
-      >
-        {label} <Icon className="h-3 w-3" />
-      </button>
-    );
-  };
+  const sorted = casinos;
 
   return (
     <div className="rounded-2xl border bg-card shadow-soft">
@@ -147,15 +90,13 @@ export function ComparisonGrid({ casinos }: { casinos: Casino[] }) {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b bg-secondary/40">
-              <th className="px-4 py-3 text-left">
-                <Header k="rank" label="Casino" />
-              </th>
-              <th className="px-3 py-3 text-left"><Header k="rating" label="Score" /></th>
-              <th className="px-3 py-3 text-left"><Header k="bonus" label="Welkomstbonus" /></th>
-              <th className="px-3 py-3 text-left"><Header k="wagering" label="Wagering" /></th>
-              <th className="px-3 py-3 text-left"><Header k="payout" label="iDEAL uitbet." /></th>
-              <th className="px-3 py-3 text-left"><Header k="minDeposit" label="Min. storting" /></th>
-              <th className="px-3 py-3 text-right text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Actie</th>
+              <th className={`px-4 py-3 text-left ${TH_CLASS}`}>Casino</th>
+              <th className={`px-3 py-3 text-left ${TH_CLASS}`}>Score</th>
+              <th className={`px-3 py-3 text-left ${TH_CLASS}`}>Welkomstbonus</th>
+              <th className={`px-3 py-3 text-left ${TH_CLASS}`}>Wagering</th>
+              <th className={`px-3 py-3 text-left ${TH_CLASS}`}>iDEAL uitbet.</th>
+              <th className={`px-3 py-3 text-left ${TH_CLASS}`}>Min. storting</th>
+              <th className={`px-3 py-3 text-right ${TH_CLASS}`}>Actie</th>
             </tr>
           </thead>
           <tbody>
