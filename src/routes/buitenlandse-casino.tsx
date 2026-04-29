@@ -282,21 +282,13 @@ function Page() {
             dan niet — CRUKS bestaat om je te beschermen.
           </p>
 
-          <h2>Voor- en nadelen</h2>
-          <div className="not-prose grid gap-4 md:grid-cols-2">
+          <h2>Voordelen</h2>
+          <div className="not-prose">
             <div className="rounded-lg border border-success/20 bg-success/5 p-4">
               <div className="text-xs font-bold uppercase tracking-wider text-success">Voordelen</div>
               <ul className="mt-2 space-y-1.5 text-sm">
                 {casino.pros.map((p) => (
                   <li key={p} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-success" /><span>{p}</span></li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-lg border border-destructive/20 bg-destructive/5 p-4">
-              <div className="text-xs font-bold uppercase tracking-wider text-destructive">Nadelen</div>
-              <ul className="mt-2 space-y-1.5 text-sm">
-                {casino.cons.map((c) => (
-                  <li key={c} className="flex items-start gap-2"><X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" /><span>{c}</span></li>
                 ))}
               </ul>
             </div>
