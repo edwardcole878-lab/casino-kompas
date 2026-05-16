@@ -95,7 +95,7 @@ export const casinos: Casino[] = [
   {
     slug: "betory",
     rank: 1,
-    name: "Betory Casino",
+    name: "Betory",
     tagline: "Crypto-first casino met de hoogste welkomstbonus",
     rating: 9.2,
     bonusHeadline: "300% tot €3.250 + 225 Free Spins",
@@ -129,7 +129,7 @@ export const casinos: Casino[] = [
   {
     slug: "novajackpot",
     rank: 2,
-    name: "NovaJackpot Casino",
+    name: "NovaJackpot",
     tagline: "250% mega-pakket tot €3.750",
     rating: 8.9,
     bonusHeadline: "250% tot €3.750 + 250 Free Spins",
@@ -162,7 +162,7 @@ export const casinos: Casino[] = [
   {
     slug: "alawin",
     rank: 3,
-    name: "Alawin Casino",
+    name: "Alawin",
     tagline: "300% bonus met sportsbook én casino",
     rating: 8.7,
     bonusHeadline: "300% tot €2.000 + 300 Free Spins",
@@ -195,7 +195,7 @@ export const casinos: Casino[] = [
   {
     slug: "wintari",
     rank: 4,
-    name: "Wintari Casino",
+    name: "Wintari",
     tagline: "200% cashbonus met live casino-focus",
     rating: 8.7,
     bonusHeadline: "200% tot €1.000 + 30 Free Spins",
@@ -228,7 +228,7 @@ export const casinos: Casino[] = [
   {
     slug: "vivaspin",
     rank: 5,
-    name: "VivaSpin Casino",
+    name: "VivaSpin",
     tagline: "Volume-pakket met cashback voor stortspelers",
     rating: 8.7,
     bonusHeadline: "100% tot €500 + Free Spins",
@@ -260,7 +260,7 @@ export const casinos: Casino[] = [
   {
     slug: "oha-casino",
     rank: 6,
-    name: "Oha Casino",
+    name: "Oha",
     tagline: "100% bonus met dagelijkse promoties",
     rating: 8.6,
     bonusHeadline: "100% tot €300 + 20 Free Spins",
@@ -292,7 +292,7 @@ export const casinos: Casino[] = [
   {
     slug: "jasminslots",
     rank: 7,
-    name: "JasminSlots Casino",
+    name: "JasminSlots",
     tagline: "350% bonus en 1.000 free spins",
     rating: 8.6,
     bonusHeadline: "350% tot €2.000 + 1.000 Free Spins",
@@ -325,7 +325,7 @@ export const casinos: Casino[] = [
   {
     slug: "vinyl-casino",
     rank: 8,
-    name: "Vinyl Casino",
+    name: "Vinyl",
     tagline: "Retro muziekthema met crypto checkout",
     rating: 8.6,
     bonusHeadline: "100% tot €500 + 200 Free Spins",
@@ -356,7 +356,7 @@ export const casinos: Casino[] = [
   {
     slug: "spintexas",
     rank: 9,
-    name: "SpinTexas Casino",
+    name: "SpinTexas",
     tagline: "Texas-thema met €2.000 + 1.000 spins",
     rating: 8.5,
     bonusHeadline: "350% tot €2.000 + 1.000 Free Spins",
@@ -389,7 +389,7 @@ export const casinos: Casino[] = [
   {
     slug: "spinight",
     rank: 10,
-    name: "SpiNight Casino",
+    name: "SpiNight",
     tagline: "Nightlife thema met crypto en sportsbook",
     rating: 8.5,
     bonusHeadline: "300% tot €500 + 100 Free Spins",
