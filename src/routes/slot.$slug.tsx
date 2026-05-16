@@ -8,6 +8,7 @@ import { ComparisonGrid } from "@/components/site/ComparisonGrid";
 import { Button } from "@/components/ui/button";
 import { getSlot, casinosForSlot } from "@/data/slots";
 import { providerTerms } from "@/data/taxonomies";
+import type { Provider } from "@/data/casinos";
 import { jsonLdString } from "@/lib/jsonld";
 
 const SITE = "https://buitenlandsecasino.com";
@@ -44,7 +45,7 @@ export const Route = createFileRoute("/slot/$slug")({
 
 function SlotDetail() {
   const { slot: s, casinos } = Route.useLoaderData();
-  const providerTerm = providerTerms[s.provider];
+  const providerTerm = providerTerms[s.provider as Provider];
   const gameJsonLd = {
     "@context": "https://schema.org",
     "@type": "Game",
