@@ -124,7 +124,7 @@ function ReviewPage() {
           )}
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              {casino.badges?.map((b) => <CasinoBadge key={b} variant={b} />)}
+              {casino.badges?.map((b: string) => <CasinoBadge key={b} variant={b as never} />)}
               <span className="text-xs text-muted-foreground">Focus: {angle.focus}</span>
             </div>
             <h1 className="mt-2 text-3xl font-bold leading-tight md:text-5xl">{casino.name} Review 2026</h1>
@@ -187,7 +187,7 @@ function ReviewPage() {
           <div className="rounded-2xl border border-success/30 bg-success/5 p-6">
             <h3 className="text-lg font-bold text-success">Voordelen</h3>
             <ul className="mt-4 space-y-2">
-              {casino.pros.map((p) => (
+              {casino.pros.map((p: string) => (
                 <li key={p} className="flex items-start gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />{p}</li>
               ))}
             </ul>
