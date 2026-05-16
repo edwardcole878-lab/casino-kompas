@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/robots.txt")({
+  // @ts-expect-error - `server` is supported at runtime by the TanStack Start plugin
   server: {
     handlers: {
       GET: () => {

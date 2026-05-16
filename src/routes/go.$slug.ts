@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { getCasino } from "@/data/casinos";
 
 export const Route = createFileRoute("/go/$slug")({
+  // @ts-expect-error - `server` is supported at runtime by the TanStack Start plugin
   server: {
     handlers: {
-      GET: ({ params }) => {
+      GET: ({ params }: { params: { slug: string } }) => {
         const casino = getCasino(params.slug);
         // Prefer the casino's affiliate URL. Fall back to the on-site review
         // when no affiliate link is set yet (placeholder "#" also falls back).
