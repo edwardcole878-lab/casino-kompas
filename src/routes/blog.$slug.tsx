@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
-import { getPost, posts } from "@/data/blog";
+import { getPost, posts, type BlogPost } from "@/data/blog";
 import { jsonLdString } from "@/lib/jsonld";
 import { defaultAuthor, authorJsonLd, publisherJsonLd } from "@/data/authors";
 
@@ -80,11 +80,11 @@ function BlogPostPage() {
         </header>
 
         <div className="prose prose-neutral mt-8 max-w-none leading-relaxed text-foreground/90">
-          {post.content.map((block, i) => {
+          {post.content.map((block: BlogPost["content"][number], i: number) => {
             if (block.type === "h2") return <h2 key={i} className="mt-8 text-2xl font-bold">{block.text}</h2>;
             if (block.type === "ul") return (
               <ul key={i} className="mt-4 list-disc space-y-1 pl-6 text-foreground/80">
-                {block.items?.map((it, j) => <li key={j}>{it}</li>)}
+                {block.items?.map((it: string, j: number) => <li key={j}>{it}</li>)}
               </ul>
             );
             return <p key={i} className="mt-4 text-foreground/80">{block.text}</p>;
