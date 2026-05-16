@@ -9,6 +9,7 @@ import { ArrowRight, Check, Clock, Percent, Wallet } from "lucide-react";
 import { getBonus } from "@/data/bonuses";
 import { getCasino } from "@/data/casinos";
 import { bonusTypeTerms } from "@/data/taxonomies";
+import type { BonusType } from "@/data/casinos";
 import { jsonLdString } from "@/lib/jsonld";
 import { defaultAuthor, publisherJsonLd } from "@/data/authors";
 
@@ -48,7 +49,7 @@ export const Route = createFileRoute("/bonus/$slug")({
 
 function BonusDetail() {
   const { bonus: b, casino } = Route.useLoaderData();
-  const term = bonusTypeTerms[b.type];
+  const term = bonusTypeTerms[b.type as BonusType];
   const offerJsonLd = {
     "@context": "https://schema.org",
     "@type": "Offer",
@@ -100,7 +101,7 @@ function BonusDetail() {
         <section className="mt-10 max-w-3xl">
           <h2 className="text-2xl font-bold">Voorwaarden</h2>
           <ul className="mt-4 space-y-2">
-            {b.terms.map((t, i) => (
+            {b.terms.map((t: string, i: number) => (
               <li key={i} className="flex items-start gap-2 text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{t}</li>
             ))}
           </ul>
