@@ -29,7 +29,7 @@ export const Route = createFileRoute("/review/$slug")({
     if (!c) return { meta: [{ title: "Review niet gevonden" }] };
     return {
       meta: [
-        { title: `${c.name} Review 2026 — ${c.tagline} | Buitenlandse Casino` },
+        { title: `${c.name} Review 2026 | Buitenlandse Casino's` },
         { name: "description", content: `${c.name} review: ${c.bonusHeadline}. ${c.verdict}` },
         { property: "og:title", content: `${c.name} Review — ${c.rating}/10` },
         { property: "og:description", content: c.verdict },
