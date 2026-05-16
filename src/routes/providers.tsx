@@ -9,7 +9,7 @@ const SITE = "https://buitenlandsecasino.com";
 export const Route = createFileRoute("/providers")({
   head: () => ({
     meta: [
-      { title: "Casino Software Providers | NetEnt, Pragmatic, Evolution & meer" },
+      { title: "Casino Software Providers | NetEnt, Pragmatic & meer" },
       { name: "description", content: "Ontdek welke casino's de spellen aanbieden van NetEnt, Pragmatic Play, Evolution, Play'n GO, Hacksaw, Nolimit City en andere top providers." },
       { property: "og:title", content: "Casino Game Providers Nederland 2026" },
       { property: "og:description", content: "Vind casino's per software provider: NetEnt, Pragmatic, Evolution en meer." },

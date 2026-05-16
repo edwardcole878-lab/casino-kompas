@@ -18,8 +18,8 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Beste buitenlandse online casino's voor Nederland — top 10 van 2026 | Buitenlandse Casino's" },
-      { name: "description", content: "Onafhankelijke ranking van buitenlandse online casino's voor Nederlandse spelers. Bonusvoorwaarden, uitbetaalsnelheid en transparantie — geen commissie-ranking." },
+      { title: "Beste buitenlandse online casino's NL — Top 10 2026" },
+      { name: "description", content: "Onafhankelijke ranking van buitenlandse online casino's voor NL-spelers. Bonusvoorwaarden, uitbetaalsnelheid en transparantie — geen commissie-ranking." },
       { property: "og:title", content: "Top 10 buitenlandse casino's voor NL — 2026" },
       { property: "og:description", content: "Buitenlandse casino's getest met eigen geld. Dit zijn de aanbieders die door onze redactie heen kwamen." },
     ],
