@@ -33,6 +33,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Buitenlandse Casino's — Vergelijking voor NL Spelers" },
+      { name: "google-site-verification", content: "uaiThY5R_nKwXue2kBGKZtEPoJ5HcIyd6AS1Esd0ITU" },
       { name: "description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's (Anjouan, Curaçao, MGA) voor Nederlandse spelers. Bonussen en eerlijke reviews." },
       { name: "robots", content: "index,follow" },
       { name: "language", content: "nl-NL" },
