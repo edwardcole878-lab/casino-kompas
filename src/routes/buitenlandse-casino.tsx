@@ -38,6 +38,14 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 
 function Page() {
   const affiliate = "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1";
+  const Shot = ({ src, alt, caption }: { src: string; alt: string; caption: string }) => (
+    <figure className="not-prose my-10 overflow-hidden rounded-2xl border bg-card shadow-card">
+      <img src={src} alt={alt} loading="lazy" decoding="async" className="block h-auto w-full" />
+      <figcaption className="border-t bg-muted/40 px-4 py-2.5 text-center text-[12px] font-medium text-muted-foreground">
+        {caption}
+      </figcaption>
+    </figure>
+  );
   const InlineCta = ({ label }: { label: string }) => (
     <div className="not-prose my-8 rounded-2xl border border-gold/40 bg-gradient-to-br from-card to-accent/40 p-5 text-center shadow-card md:p-6">
       <div className="text-sm font-semibold text-foreground md:text-base">{label}</div>
