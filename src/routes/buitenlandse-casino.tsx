@@ -32,7 +32,23 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 });
 
 function Page() {
-  const affiliate = "https://shakebet.com";
+  const affiliate = "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1";
+  const InlineCta = ({ label }: { label: string }) => (
+    <div className="not-prose my-8 rounded-2xl border border-gold/40 bg-gradient-to-br from-card to-accent/40 p-5 text-center shadow-card md:p-6">
+      <div className="text-sm font-semibold text-foreground md:text-base">{label}</div>
+      <div className="mt-1 text-xs text-muted-foreground">Welkomstbonus tot €7.000 + 350 free spins</div>
+      <Button
+        asChild
+        size="lg"
+        className="gradient-cta cta-glow mt-3 h-12 px-8 text-base font-extrabold text-gold-foreground shadow-gold"
+      >
+        <a href={affiliate} target="_blank" rel="sponsored nofollow noopener">
+          Speel nu bij Shakebet <ArrowRight className="h-5 w-5" />
+        </a>
+      </Button>
+      <div className="mt-2 text-[10px] text-muted-foreground">18+ · Voorwaarden gelden · Speel bewust</div>
+    </div>
+  );
   const pros = [
     "Welkomstbonus tot €7.000 + 350 free spins over de eerste drie stortingen",
     "Meer dan 7.000 spellen van alle topproviders",
