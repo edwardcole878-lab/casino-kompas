@@ -114,6 +114,13 @@ function Page() {
           <div className="grid gap-6 md:grid-cols-[1fr_280px] md:items-center">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                <img
+                  src={shakebetLogo}
+                  alt="Shakebet Casino logo"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 rounded-xl bg-black object-contain p-1.5 shadow-card"
+                />
                 <h2 className="text-2xl font-extrabold tracking-tight md:text-[28px]">Shakebet Casino</h2>
                 <Rating value={9.4} />
               </div>
