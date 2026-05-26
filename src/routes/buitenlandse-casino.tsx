@@ -38,12 +38,20 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 
 function Page() {
   const affiliate = "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1";
-  const Shot = ({ src, alt, caption }: { src: string; alt: string; caption: string }) => (
+  const Shot = ({ src, alt, ctaLabel }: { src: string; alt: string; ctaLabel?: string }) => (
     <figure className="not-prose my-10 overflow-hidden rounded-2xl border bg-card shadow-card">
       <img src={src} alt={alt} loading="lazy" decoding="async" className="block h-auto w-full" />
-      <figcaption className="border-t bg-muted/40 px-4 py-2.5 text-center text-[12px] font-medium text-muted-foreground">
-        {caption}
-      </figcaption>
+      <div className="flex justify-center border-t bg-muted/40 px-4 py-4">
+        <Button
+          asChild
+          size="lg"
+          className="gradient-cta cta-glow h-12 px-8 text-base font-extrabold text-gold-foreground shadow-gold"
+        >
+          <a href={affiliate} target="_blank" rel="sponsored nofollow noopener">
+            {ctaLabel ?? "Speel nu bij Shakebet"} <ArrowRight className="h-5 w-5" />
+          </a>
+        </Button>
+      </div>
     </figure>
   );
   const InlineCta = ({ label }: { label: string }) => (
