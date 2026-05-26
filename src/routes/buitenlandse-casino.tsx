@@ -11,6 +11,10 @@ import {
   Trophy,
 } from "lucide-react";
 import shakebetLogo from "@/assets/shakebet-logo.png";
+import shakebetHomepage from "@/assets/shakebet-homepage.png";
+import shakebetCasinoGames from "@/assets/shakebet-casino-games.png";
+import shakebetPromotions from "@/assets/shakebet-promotions.png";
+import shakebetVip from "@/assets/shakebet-vip.png";
 
 export const Route = createFileRoute("/buitenlandse-casino")({
   head: () => ({
@@ -189,6 +193,36 @@ function Page() {
             </div>
           </div>
         </article>
+
+        {/* Screenshots gallery */}
+        <section className="mt-12">
+          <div className="mb-5">
+            <div className="text-[11px] font-bold uppercase tracking-widest text-gold">Eerste indruk</div>
+            <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Een kijkje in het Shakebet-platform</h2>
+            <p className="mt-1 text-sm text-muted-foreground">Screenshots van de homepagina, casinobibliotheek, promoties en het VIP-programma.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { src: shakebetHomepage, alt: "Shakebet homepage met €7.000 + 350 free spins welkomstbonus", caption: "Homepage — Triple Welcome Offer tot €7.000" },
+              { src: shakebetCasinoGames, alt: "Shakebet casinolobby met populaire slots", caption: "Casino — Hot Picks & New Releases" },
+              { src: shakebetPromotions, alt: "Shakebet promotiepagina met stortingsbonussen", caption: "Promoties — stortingsbonussen & free spins" },
+              { src: shakebetVip, alt: "Shakebet VIP ShakeClub en Weekend Boost", caption: "ShakeClub VIP & Weekend Boost" },
+            ].map((s) => (
+              <figure key={s.caption} className="overflow-hidden rounded-xl border bg-card shadow-card">
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="block h-auto w-full"
+                />
+                <figcaption className="border-t bg-muted/40 px-3 py-2 text-[12px] font-medium text-muted-foreground">
+                  {s.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
         {/* Editorial review */}
         <section className="prose prose-neutral mt-12 max-w-none leading-relaxed text-foreground/90 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:text-muted-foreground [&_strong]:text-foreground [&_li]:text-muted-foreground">
