@@ -38,12 +38,20 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 
 function Page() {
   const affiliate = "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1";
-  const Shot = ({ src, alt, caption }: { src: string; alt: string; caption: string }) => (
+  const Shot = ({ src, alt, ctaLabel }: { src: string; alt: string; ctaLabel?: string }) => (
     <figure className="not-prose my-10 overflow-hidden rounded-2xl border bg-card shadow-card">
       <img src={src} alt={alt} loading="lazy" decoding="async" className="block h-auto w-full" />
-      <figcaption className="border-t bg-muted/40 px-4 py-2.5 text-center text-[12px] font-medium text-muted-foreground">
-        {caption}
-      </figcaption>
+      <div className="flex justify-center border-t bg-muted/40 px-4 py-4">
+        <Button
+          asChild
+          size="lg"
+          className="gradient-cta cta-glow h-12 px-8 text-base font-extrabold text-gold-foreground shadow-gold"
+        >
+          <a href={affiliate} target="_blank" rel="sponsored nofollow noopener">
+            {ctaLabel ?? "Speel nu bij Shakebet"} <ArrowRight className="h-5 w-5" />
+          </a>
+        </Button>
+      </div>
     </figure>
   );
   const InlineCta = ({ label }: { label: string }) => (
@@ -272,7 +280,7 @@ function Page() {
             worden met geldige documenten.
           </p>
 
-          <Shot src={shakebetHomepage} alt="Shakebet homepage met Triple Welcome Offer €7.000 + 350 free spins" caption="Shakebet homepage — Triple Welcome Offer tot €7.000 + 350 free spins" />
+          <Shot src={shakebetHomepage} alt="Shakebet homepage met Triple Welcome Offer €7.000 + 350 free spins" />
           <h2>5. De welkomstbonus in detail: tot €7.000 + 350 free spins</h2>
           <h3>5.1 Opbouw per storting</h3>
           <ul>
@@ -298,7 +306,7 @@ function Page() {
           </p>
           <InlineCta label="Claim je welkomstpakket tot €7.000 + 350 free spins" />
 
-          <Shot src={shakebetCasinoGames} alt="Shakebet casinolobby met Hot Picks en nieuwe slots" caption="Casinolobby — Hot Picks, New Releases en categoriefilters" />
+          <Shot src={shakebetCasinoGames} alt="Shakebet casinolobby met Hot Picks en nieuwe slots" />
           <h2>6. Het spelaanbod: meer dan 7.000 titels</h2>
           <h3>6.1 Online slots</h3>
           <p>
@@ -378,7 +386,7 @@ function Page() {
             kaders en geen wisselkoersrisico bij stablecoins als USDT.
           </p>
 
-          <Shot src={shakebetVip} alt="Shakebet ShakeClub VIP-programma en Weekend Boost" caption="ShakeClub VIP, Weekend Boost en wekelijkse rewards" />
+          <Shot src={shakebetVip} alt="Shakebet ShakeClub VIP-programma en Weekend Boost" />
           <h2>9. Het VIP-programma: tien niveaus</h2>
           <ul>
             <li><strong>Niveau 1–3 (Beginners):</strong> instapcashback 5%, kleine reload-bonussen, snellere verificatie.</li>
@@ -391,7 +399,7 @@ function Page() {
             hun dashboard.
           </p>
 
-          <Shot src={shakebetPromotions} alt="Shakebet promotiepagina met stortingsbonussen en free spins" caption="Promoties — stortingsbonussen, free spins en sportbonus" />
+          <Shot src={shakebetPromotions} alt="Shakebet promotiepagina met stortingsbonussen en free spins" />
           <h2>10. Doorlopende promoties</h2>
           <h3>10.1 Wekelijkse cashback</h3>
           <p>
