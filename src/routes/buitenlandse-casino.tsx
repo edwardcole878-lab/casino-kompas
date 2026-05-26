@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Trophy,
 } from "lucide-react";
+import shakebetLogo from "@/assets/shakebet-logo.png";
 
 export const Route = createFileRoute("/buitenlandse-casino")({
   head: () => ({
@@ -64,6 +65,14 @@ function Page() {
     <main className="min-h-screen bg-background">
       <div className="container mx-auto max-w-4xl px-4 py-8 md:py-12">
         <header className="max-w-3xl">
+          <img
+            src={shakebetLogo}
+            alt="Shakebet Casino logo"
+            width={220}
+            height={220}
+            className="mb-6 h-auto w-40 rounded-2xl bg-black p-3 shadow-card md:w-48"
+            fetchPriority="high"
+          />
           <div className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-gold-foreground">
             <Trophy className="h-3.5 w-3.5" /> Diepgaande review — 2026
           </div>
