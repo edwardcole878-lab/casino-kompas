@@ -267,6 +267,7 @@ function Page() {
             match en 200 free spins de meest aantrekkelijke verhouding. Lees altijd de algemene
             voorwaarden voordat je een bonus claimt.
           </p>
+          <InlineCta label="Claim je welkomstpakket tot €7.000 + 350 free spins" />
 
           <h2>6. Het spelaanbod: meer dan 7.000 titels</h2>
           <h3>6.1 Online slots</h3>
@@ -306,6 +307,7 @@ function Page() {
             Dota 2, LoL, Valorant). Competitieve odds, live-bets, bet builders, cash-out en
             live-streaming voor geselecteerde wedstrijden.
           </p>
+          <InlineCta label="Ontdek 7.000+ spellen en de complete sportsbook" />
 
           <h2>7. Softwareleveranciers</h2>
           <p>
@@ -379,6 +381,7 @@ function Page() {
             Tijdens WK Voetbal, Champions League-finale, Wimbledon, Kerstmis en Nieuwjaar:
             thematische campagnes met versterkte odds, exclusieve free spins en gerichte toernooien.
           </p>
+          <InlineCta label="Activeer wekelijkse cashback en VIP-voordelen" />
 
           <h2>11. Mobiel spelen: naadloos op elk apparaat</h2>
           <p>
@@ -474,6 +477,7 @@ function Page() {
             <li><strong>Cryptobeleggers:</strong> volledige blockchain-ondersteuning en supersnelle uitbetalingen.</li>
             <li><strong>Highrollers en VIP:</strong> tienlaags programma, persoonlijke managers en hoge plafonds.</li>
           </ul>
+          <InlineCta label="Start vandaag bij Shakebet — registratie in 1 minuut" />
 
           <h2>20. Eindoordeel: een premium platform met een duidelijke visie</h2>
           <p>
