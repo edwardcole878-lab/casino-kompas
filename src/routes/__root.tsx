@@ -1,9 +1,15 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState, redirect } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 import { jsonLdString } from "@/lib/jsonld";
 
 const SITE_URL = "https://buitenlandsecasino.com";
+
+// TEMP: lock the entire site to /buitenlandse-casino. All other page routes
+// redirect there. Infra paths (sitemap, robots, manifest, /go/* affiliate
+// redirects, /api/*) are left untouched.
+const ALLOWED_PATH = "/buitenlandse-casino";
+const BYPASS_PREFIXES = ["/go/", "/api/", "/sitemap.xml", "/robots.txt", "/site.webmanifest", "/favicon"];
 
 function NotFoundComponent() {
   return (
@@ -28,6 +34,12 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
+  beforeLoad: ({ location }) => {
+    const p = location.pathname.replace(/\/$/, "") || "/";
+    if (p === ALLOWED_PATH) return;
+    if (BYPASS_PREFIXES.some((pre) => location.pathname.startsWith(pre))) return;
+    throw redirect({ to: ALLOWED_PATH });
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
