@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { CasinoCard } from "@/components/site/CasinoCard";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
@@ -16,6 +16,9 @@ import { ArrowRight, Gift, ShieldCheck as ShieldIcon, PlayCircle, Trophy } from 
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
+  beforeLoad: () => {
+    throw redirect({ to: "/buitenlandse-casino" });
+  },
   head: () => ({
     meta: [
       { title: "Beste buitenlandse online casino's NL — Top 10 2026" },
