@@ -38,6 +38,14 @@ export const Route = createFileRoute("/buitenlandse-casino")({
 
 function Page() {
   const affiliate = "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1";
+  const Shot = ({ src, alt, caption }: { src: string; alt: string; caption: string }) => (
+    <figure className="not-prose my-10 overflow-hidden rounded-2xl border bg-card shadow-card">
+      <img src={src} alt={alt} loading="lazy" decoding="async" className="block h-auto w-full" />
+      <figcaption className="border-t bg-muted/40 px-4 py-2.5 text-center text-[12px] font-medium text-muted-foreground">
+        {caption}
+      </figcaption>
+    </figure>
+  );
   const InlineCta = ({ label }: { label: string }) => (
     <div className="not-prose my-8 rounded-2xl border border-gold/40 bg-gradient-to-br from-card to-accent/40 p-5 text-center shadow-card md:p-6">
       <div className="text-sm font-semibold text-foreground md:text-base">{label}</div>
@@ -194,36 +202,6 @@ function Page() {
           </div>
         </article>
 
-        {/* Screenshots gallery */}
-        <section className="mt-12">
-          <div className="mb-5">
-            <div className="text-[11px] font-bold uppercase tracking-widest text-gold">Eerste indruk</div>
-            <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Een kijkje in het Shakebet-platform</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Screenshots van de homepagina, casinobibliotheek, promoties en het VIP-programma.</p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { src: shakebetHomepage, alt: "Shakebet homepage met €7.000 + 350 free spins welkomstbonus", caption: "Homepage — Triple Welcome Offer tot €7.000" },
-              { src: shakebetCasinoGames, alt: "Shakebet casinolobby met populaire slots", caption: "Casino — Hot Picks & New Releases" },
-              { src: shakebetPromotions, alt: "Shakebet promotiepagina met stortingsbonussen", caption: "Promoties — stortingsbonussen & free spins" },
-              { src: shakebetVip, alt: "Shakebet VIP ShakeClub en Weekend Boost", caption: "ShakeClub VIP & Weekend Boost" },
-            ].map((s) => (
-              <figure key={s.caption} className="overflow-hidden rounded-xl border bg-card shadow-card">
-                <img
-                  src={s.src}
-                  alt={s.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full"
-                />
-                <figcaption className="border-t bg-muted/40 px-3 py-2 text-[12px] font-medium text-muted-foreground">
-                  {s.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
         {/* Editorial review */}
         <section className="prose prose-neutral mt-12 max-w-none leading-relaxed text-foreground/90 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:text-muted-foreground [&_strong]:text-foreground [&_li]:text-muted-foreground">
           <h2>Samenvatting voor de drukbezette lezer</h2>
@@ -294,6 +272,7 @@ function Page() {
             worden met geldige documenten.
           </p>
 
+          <Shot src={shakebetHomepage} alt="Shakebet homepage met Triple Welcome Offer €7.000 + 350 free spins" caption="Shakebet homepage — Triple Welcome Offer tot €7.000 + 350 free spins" />
           <h2>5. De welkomstbonus in detail: tot €7.000 + 350 free spins</h2>
           <h3>5.1 Opbouw per storting</h3>
           <ul>
@@ -319,6 +298,7 @@ function Page() {
           </p>
           <InlineCta label="Claim je welkomstpakket tot €7.000 + 350 free spins" />
 
+          <Shot src={shakebetCasinoGames} alt="Shakebet casinolobby met Hot Picks en nieuwe slots" caption="Casinolobby — Hot Picks, New Releases en categoriefilters" />
           <h2>6. Het spelaanbod: meer dan 7.000 titels</h2>
           <h3>6.1 Online slots</h3>
           <p>
@@ -398,6 +378,7 @@ function Page() {
             kaders en geen wisselkoersrisico bij stablecoins als USDT.
           </p>
 
+          <Shot src={shakebetVip} alt="Shakebet ShakeClub VIP-programma en Weekend Boost" caption="ShakeClub VIP, Weekend Boost en wekelijkse rewards" />
           <h2>9. Het VIP-programma: tien niveaus</h2>
           <ul>
             <li><strong>Niveau 1–3 (Beginners):</strong> instapcashback 5%, kleine reload-bonussen, snellere verificatie.</li>
@@ -410,6 +391,7 @@ function Page() {
             hun dashboard.
           </p>
 
+          <Shot src={shakebetPromotions} alt="Shakebet promotiepagina met stortingsbonussen en free spins" caption="Promoties — stortingsbonussen, free spins en sportbonus" />
           <h2>10. Doorlopende promoties</h2>
           <h3>10.1 Wekelijkse cashback</h3>
           <p>
