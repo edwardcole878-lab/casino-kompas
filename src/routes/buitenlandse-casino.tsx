@@ -280,7 +280,7 @@ function Page() {
             worden met geldige documenten.
           </p>
 
-          <Shot src={shakebetHomepage} alt="Shakebet homepage met Triple Welcome Offer €7.000 + 350 free spins" caption="Shakebet homepage — Triple Welcome Offer tot €7.000 + 350 free spins" />
+          <Shot src={shakebetHomepage} alt="Shakebet homepage met Triple Welcome Offer €7.000 + 350 free spins" />
           <h2>5. De welkomstbonus in detail: tot €7.000 + 350 free spins</h2>
           <h3>5.1 Opbouw per storting</h3>
           <ul>
@@ -306,7 +306,7 @@ function Page() {
           </p>
           <InlineCta label="Claim je welkomstpakket tot €7.000 + 350 free spins" />
 
-          <Shot src={shakebetCasinoGames} alt="Shakebet casinolobby met Hot Picks en nieuwe slots" caption="Casinolobby — Hot Picks, New Releases en categoriefilters" />
+          <Shot src={shakebetCasinoGames} alt="Shakebet casinolobby met Hot Picks en nieuwe slots" />
           <h2>6. Het spelaanbod: meer dan 7.000 titels</h2>
           <h3>6.1 Online slots</h3>
           <p>
@@ -386,7 +386,7 @@ function Page() {
             kaders en geen wisselkoersrisico bij stablecoins als USDT.
           </p>
 
-          <Shot src={shakebetVip} alt="Shakebet ShakeClub VIP-programma en Weekend Boost" caption="ShakeClub VIP, Weekend Boost en wekelijkse rewards" />
+          <Shot src={shakebetVip} alt="Shakebet ShakeClub VIP-programma en Weekend Boost" />
           <h2>9. Het VIP-programma: tien niveaus</h2>
           <ul>
             <li><strong>Niveau 1–3 (Beginners):</strong> instapcashback 5%, kleine reload-bonussen, snellere verificatie.</li>
@@ -399,7 +399,7 @@ function Page() {
             hun dashboard.
           </p>
 
-          <Shot src={shakebetPromotions} alt="Shakebet promotiepagina met stortingsbonussen en free spins" caption="Promoties — stortingsbonussen, free spins en sportbonus" />
+          <Shot src={shakebetPromotions} alt="Shakebet promotiepagina met stortingsbonussen en free spins" />
           <h2>10. Doorlopende promoties</h2>
           <h3>10.1 Wekelijkse cashback</h3>
           <p>
