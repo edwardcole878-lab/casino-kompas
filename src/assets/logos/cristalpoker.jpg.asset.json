@@ -1,11 +1,11 @@
 {
-  "asset_id": "02f69503-f178-4293-968e-fb28830e1f10",
-  "content_type": "image/webp",
-  "created_at": "2026-06-29T17:13:34Z",
+  "version": 1,
+  "asset_id": "1764585e-bd5a-4c3f-a1b2-e1468864a8d9",
+  "project_id": "012a13f8-fde3-4d12-a3dd-1a54da8de2f2",
+  "url": "/__l5e/assets-v1/1764585e-bd5a-4c3f-a1b2-e1468864a8d9/cristalpoker.jpg",
+  "r2_key": "a/v1/012a13f8-fde3-4d12-a3dd-1a54da8de2f2/1764585e-bd5a-4c3f-a1b2-e1468864a8d9/cristalpoker.jpg",
   "original_filename": "cristalpoker.jpg",
-  "project_id": "6acd5682-0d46-4dcc-ad0e-9814f2b11bf2",
-  "r2_key": "a/v1/6acd5682-0d46-4dcc-ad0e-9814f2b11bf2/02f69503-f178-4293-968e-fb28830e1f10/cristalpoker.jpg",
   "size": 2780,
-  "url": "/__l5e/assets-v1/02f69503-f178-4293-968e-fb28830e1f10/cristalpoker.jpg",
-  "version": 1
+  "content_type": "image/webp",
+  "created_at": "2026-07-10T20:25:37Z"
 }
