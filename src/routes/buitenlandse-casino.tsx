@@ -23,7 +23,7 @@ import cristalpokerLogo from "@/assets/logos/cristalpoker.jpg.asset.json";
 import balooLogo from "@/assets/logos/baloo.webp.asset.json";
 import velwinsLogo from "@/assets/logos/velwins.png.asset.json";
 import spinmillsLogo from "@/assets/logos/spinmills.webp.asset.json";
-import shakebetLogo from "@/assets/shakebet-logo.png";
+import shakebetLogo from "@/assets/logos/shakebet.png.asset.json";
 
 type Casino = {
   rank: number;
@@ -135,7 +135,7 @@ const casinos: Casino[] = [
     rank: 6,
     name: "Shakebet",
     slug: "shakebet",
-    logo: shakebetLogo,
+    logo: shakebetLogo.url,
     rating: 4.5,
     bonus: "100% tot €2.000 (pakket tot €7.000)",
     freeSpins: "350 Free Spins",

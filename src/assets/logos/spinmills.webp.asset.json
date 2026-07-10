@@ -1,11 +1,11 @@
 {
-  "asset_id": "2bda78b4-36da-4adc-8fc9-09bca26c9e4c",
-  "content_type": "image/webp",
-  "created_at": "2026-06-29T17:13:43Z",
+  "version": 1,
+  "asset_id": "f5347b51-1757-4aa5-849d-1e6b4bb2d3ab",
+  "project_id": "012a13f8-fde3-4d12-a3dd-1a54da8de2f2",
+  "url": "/__l5e/assets-v1/f5347b51-1757-4aa5-849d-1e6b4bb2d3ab/spinmills.webp",
+  "r2_key": "a/v1/012a13f8-fde3-4d12-a3dd-1a54da8de2f2/f5347b51-1757-4aa5-849d-1e6b4bb2d3ab/spinmills.webp",
   "original_filename": "spinmills.webp",
-  "project_id": "6acd5682-0d46-4dcc-ad0e-9814f2b11bf2",
-  "r2_key": "a/v1/6acd5682-0d46-4dcc-ad0e-9814f2b11bf2/2bda78b4-36da-4adc-8fc9-09bca26c9e4c/spinmills.webp",
   "size": 6792,
-  "url": "/__l5e/assets-v1/2bda78b4-36da-4adc-8fc9-09bca26c9e4c/spinmills.webp",
-  "version": 1
+  "content_type": "image/webp",
+  "created_at": "2026-07-10T20:25:47Z"
 }
