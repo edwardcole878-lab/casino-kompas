@@ -36,6 +36,10 @@
   --color-gold-foreground: var(--gold-foreground);
   --color-trust: var(--trust);
   --color-trust-foreground: var(--trust-foreground);
+  --color-emerald: var(--emerald);
+  --color-emerald-foreground: var(--emerald-foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
 
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
@@ -79,6 +83,14 @@
 
   --trust: oklch(0.55 0.14 240);              /* trust blue */
   --trust-foreground: oklch(0.99 0 0);
+
+  --emerald: oklch(0.72 0.17 160);
+  --emerald-foreground: oklch(0.12 0.02 165);
+  --surface: oklch(0.16 0.03 165);
+  --surface-2: oklch(0.21 0.04 165);
+  --shadow-emerald: 0 12px 40px -12px oklch(0.72 0.17 160 / 0.35);
+  --gradient-hero-dark: radial-gradient(ellipse at top right, oklch(0.45 0.15 160 / 0.25), transparent 55%),
+                        radial-gradient(ellipse at bottom left, oklch(0.55 0.14 85 / 0.15), transparent 55%);
 
   --border: oklch(0.91 0.01 250);
   --input: oklch(0.91 0.01 250);
@@ -139,6 +151,8 @@
 
 @layer utilities {
   .gradient-hero { background-image: var(--gradient-hero); }
+  .bg-hero-gradient { background-image: var(--gradient-hero-dark); }
+  .shadow-emerald { box-shadow: var(--shadow-emerald); }
   .gradient-gold { background-image: var(--gradient-gold); }
   .gradient-card { background-image: var(--gradient-card); }
   .gradient-cta { background-image: var(--gradient-cta); }
