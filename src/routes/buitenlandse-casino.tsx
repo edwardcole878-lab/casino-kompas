@@ -243,25 +243,25 @@ function CasinoRow({ c }: { c: Casino }) {
         <div className="h-8 shrink-0 bg-nl-blue/5" aria-hidden />
       )}
 
-      <div className="grid flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
+      <div className="grid flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,210px)] lg:items-center lg:gap-4 lg:p-3 lg:text-left">
         {/* Rank + logo */}
         <div className="col-span-2 flex items-center justify-center lg:col-span-1">
-          <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-0 lg:h-28 lg:w-32 lg:shrink-0">
+          <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-0 lg:h-20 lg:w-24 lg:shrink-0">
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full scale-110 object-contain" />
           </div>
         </div>
 
         {/* Name, rating, pros */}
         <div className="min-w-0 self-center">
-          <h3 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:text-3xl">{c.name}</h3>
+          <h3 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:text-2xl">{c.name}</h3>
           <div className="mt-1 flex justify-center lg:justify-start">
             <Stars rating={c.rating} />
           </div>
-          <ul className="mt-2 min-h-[54px] space-y-1 lg:min-h-[66px]">
+          <ul className="mt-2 min-h-[54px] space-y-1 lg:mt-1.5 lg:min-h-[52px] lg:space-y-0.5">
             {c.pros.map((p) => (
               <li
                 key={p}
-                className="flex items-start justify-center gap-1 text-[11px] leading-tight text-muted-foreground lg:justify-start lg:text-sm"
+                className="flex items-start justify-center gap-1 text-[11px] leading-tight text-muted-foreground lg:justify-start lg:text-[13px]"
               >
                 <Check size={12} className="mt-[3px] shrink-0 text-nl-orange lg:mt-0.5" />
                 <span>{p}</span>
@@ -272,26 +272,26 @@ function CasinoRow({ c }: { c: Casino }) {
 
         {/* Bonus + facts */}
         <div
-          className={`self-center rounded-lg border px-2.5 py-3 lg:rounded-xl lg:px-5 lg:py-4 ${
+          className={`self-center rounded-lg border px-2.5 py-3 lg:rounded-xl lg:px-3.5 lg:py-2.5 ${
             isTop ? "border-nl-green/45 bg-nl-green/10" : "border-nl-orange/30 bg-nl-orange/5"
           }`}
         >
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
-          <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-4xl">{c.bonus}</div>
-          <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:text-base">+ {c.freeSpins}</div>
+          <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-[28px]">{c.bonus}</div>
+          <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:mt-1 lg:text-sm">+ {c.freeSpins}</div>
         </div>
 
         {/* Payout + CTA */}
         <div className="col-span-2 lg:col-span-1 lg:text-right">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-nl-blue/8 px-3 py-1 text-nl-blue">
             <Zap size={14} className="text-nl-orange" />
-            <span className="font-heading text-lg leading-none tracking-wide lg:text-xl">{c.payoutSpeed}</span>
+            <span className="font-heading text-lg leading-none tracking-wide lg:text-base">{c.payoutSpeed}</span>
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground">uitbetaling</span>
           </div>
           <Button
             asChild
             size="lg"
-            className={`mt-2 h-11 w-full rounded-md font-heading text-lg uppercase tracking-widest text-white shadow-orange lg:mt-3 lg:h-12 lg:text-xl ${
+            className={`mt-2 h-11 w-full rounded-md font-heading text-lg uppercase tracking-widest text-white shadow-orange lg:mt-2 lg:h-10 lg:text-base ${
               isTop ? "bg-nl-green hover:bg-nl-green/90" : "bg-nl-orange hover:bg-nl-orange/90"
             }`}
           >
