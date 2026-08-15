@@ -175,6 +175,13 @@ export function Header() {
                 className="h-10 w-full rounded-md border border-white/15 bg-white/10 pl-10 pr-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-nl-orange/60"
               />
             </div>
+            <Link
+              to="/"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2.5 font-heading text-lg uppercase tracking-wide text-white hover:bg-white/10"
+            >
+              Home
+            </Link>
             {groups.map((g) => {
               const expanded = mobileGroup === g.label;
               return (
