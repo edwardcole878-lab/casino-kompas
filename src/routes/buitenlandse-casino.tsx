@@ -241,7 +241,7 @@ function CasinoRow({ c }: { c: Casino }) {
       <div className="grid gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
         <div className="flex items-center justify-center">
-          <div className={`flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 p-3 lg:h-28 lg:w-32 lg:shrink-0 bg-white`}>
+          <div className="flex h-32 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-2 lg:h-36 lg:w-44 lg:shrink-0">
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
           </div>
         </div>
