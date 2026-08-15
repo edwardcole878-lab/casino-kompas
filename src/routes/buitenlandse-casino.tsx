@@ -239,16 +239,16 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
       )}
 
-      <div className="grid gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
+      <div className="grid grid-cols-2 gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
-        <div className="flex items-center justify-center">
+        <div className="col-span-2 flex items-center justify-center lg:col-span-1">
           <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-0 lg:h-28 lg:w-32 lg:shrink-0">
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full scale-110 object-contain" />
           </div>
         </div>
 
         {/* Name, rating, pros */}
-        <div className="min-w-0">
+        <div className="min-w-0 self-center">
           <h3 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:text-3xl">{c.name}</h3>
           <div className="mt-1 flex justify-center lg:justify-start">
             <Stars rating={c.rating} />
@@ -267,14 +267,14 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
 
         {/* Bonus + facts */}
-        <div className="border-y border-nl-blue/10 py-2 lg:border-y-0 lg:border-x lg:px-6 lg:py-0">
+        <div className="self-center border-l border-nl-blue/10 pl-3 lg:border-l-0 lg:border-x lg:px-6 lg:py-0">
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
           <div className="font-heading text-2xl leading-none tracking-wide text-nl-ink lg:text-3xl">{c.bonus}</div>
           <div className="mt-1 text-xs font-medium text-nl-orange lg:text-sm">+ {c.freeSpins}</div>
         </div>
 
         {/* Payout + CTA */}
-        <div className="lg:text-right">
+        <div className="col-span-2 lg:col-span-1 lg:text-right">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-nl-blue/8 px-3 py-1 text-nl-blue">
             <Zap size={14} className="text-nl-orange" />
             <span className="font-heading text-lg leading-none tracking-wide lg:text-xl">{c.payoutSpeed}</span>
