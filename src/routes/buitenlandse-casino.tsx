@@ -229,12 +229,14 @@ function CasinoRow({ c }: { c: Casino }) {
   const isTop = c.rank === 1;
   return (
     <article
-      className={`relative overflow-hidden rounded-lg border bg-card shadow-row transition-colors ${
-        isTop ? "border-nl-orange/60 ring-1 ring-nl-orange/30" : "border-nl-blue/15 hover:border-nl-blue/35"
+      className={`relative overflow-hidden rounded-lg border bg-card transition-colors ${
+        isTop
+          ? "border-nl-gold/70 shadow-gold ring-2 ring-nl-gold/40"
+          : "border-nl-blue/15 shadow-row hover:border-nl-blue/35"
       }`}
     >
       {isTop && (
-        <div className="flex items-center gap-2 bg-nl-orange px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-white">
+        <div className="flex items-center justify-center gap-2 bg-nl-ink px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-nl-gold lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
       )}
