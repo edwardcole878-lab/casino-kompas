@@ -61,13 +61,12 @@ function Index() {
             </div>
 
             {/* #1 PICK CARD */}
-            <article className="relative overflow-hidden rounded-2xl border-2 border-gold/60 bg-gradient-to-br from-card via-card to-accent/40 p-5 shadow-glow-gold md:p-6">
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/15 blur-3xl" />
-              <div className="relative">
-                <div className="inline-flex items-center gap-1.5 rounded-full gradient-gold px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold-foreground shadow-gold">
-                  <Trophy className="h-3.5 w-3.5" /> #1 van april 2026
-                </div>
-                <div className="mt-4 flex items-center gap-4">
+            <article className="relative overflow-hidden rounded-xl border-2 border-nl-green bg-white shadow-lg">
+              <div className="flex items-center gap-2 bg-nl-green px-4 py-2 font-heading text-sm uppercase tracking-[0.18em] text-white">
+                <Trophy className="h-4 w-4" /> Snelste keuze van 2026
+              </div>
+              <div className="p-5 md:p-6">
+                <div className="flex items-center gap-4">
                   {number1.logo ? (
                     <img
                       src={number1.logo}
@@ -76,36 +75,29 @@ function Index() {
                       height={64}
                       decoding="async"
                       fetchPriority="high"
-                      className="h-16 w-16 overflow-hidden rounded-xl bg-white object-contain p-1 text-[0] shadow-card"
+                      className="h-20 w-24 shrink-0 overflow-hidden rounded-lg border-2 border-nl-blue/15 bg-white object-contain p-1.5 text-[0]"
                     />
                   ) : null}
                   <div className="min-w-0">
-                    <h2 className="text-2xl font-extrabold leading-tight">{number1.name}</h2>
-                    <div className="mt-1 flex items-center gap-2">
-                      <Rating value={number1.rating * 2} />
-                      <span className="text-xs text-muted-foreground">· uitbetaling {number1.payoutSpeed}</span>
+                    <h2 className="text-2xl leading-tight text-nl-blue">{number1.name}</h2>
+                    <div className="mt-1 flex items-center gap-2 text-sm">
+                      <span className="font-heading text-lg text-nl-blue">{number1.rating.toFixed(1)}</span>
+                      <span className="text-muted-foreground">· uitbetaling {number1.payoutSpeed}</span>
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 rounded-xl gradient-bonus border border-gold/40 p-4">
-                  <div className="flex items-start gap-3">
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl gradient-gold text-gold-foreground shadow-gold">
-                      <Gift className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-gold-foreground/70">Welkomstbonus</div>
-                      <div className="font-heading text-2xl leading-none md:text-3xl">{number1.bonus}</div>
-                      <div className="mt-1 text-[12px] font-semibold text-nl-orange">+ {number1.freeSpins}</div>
-                    </div>
-                  </div>
+                <div className="mt-4 rounded-lg border-2 border-nl-green/30 bg-nl-green/10 p-4 text-center">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-nl-blue/60">Welkomstbonus</div>
+                  <div className="font-heading text-3xl leading-none text-nl-blue">{number1.bonus}</div>
+                  <div className="mt-1 text-sm font-semibold text-nl-green">+ {number1.freeSpins}</div>
                 </div>
-                <Button asChild size="lg" className="mt-5 h-14 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90">
+                <Button asChild size="lg" className="mt-5 h-14 w-full rounded-md bg-nl-green font-heading text-xl uppercase tracking-widest text-white hover:bg-nl-green/90">
                   <a href={`/go/${number1.slug}`} rel="sponsored nofollow">
                     Speel nu <ArrowRight className="h-5 w-5" />
                   </a>
                 </Button>
                 <div className="mt-2 text-center text-[11px] text-muted-foreground">
-                  ⚡ Direct toegang · binnen 1 minuut · 18+
+                  Direct toegang · binnen 1 minuut · 18+
                 </div>
               </div>
             </article>
