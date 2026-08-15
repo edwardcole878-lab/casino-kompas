@@ -17,9 +17,9 @@ import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
 import spinmillsLogo from "@/assets/logos/spinmills.new.asset.json";
 import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
-import wildiesLogo from "@/assets/logos/wildies.png";
-import mrpunterLogo from "@/assets/logos/mrpunter.png";
-import spininioLogo from "@/assets/logos/spininio.png";
+import wildiesLogo from "@/assets/logos/wildies.t.asset.json";
+import mrpunterLogo from "@/assets/logos/mrpunter.t.asset.json";
+import spininioLogo from "@/assets/logos/spininio.t.asset.json";
 
 type Casino = {
   rank: number;
@@ -59,7 +59,7 @@ const casinos: Casino[] = [
     rank: 2,
     name: "Wildies",
     slug: "wildies",
-    logo: wildiesLogo,
+    logo: wildiesLogo.url,
     rating: 4.9,
     bonus: "150% tot €1.000",
     freeSpins: "100 Free Spins",
@@ -113,7 +113,7 @@ const casinos: Casino[] = [
     rank: 5,
     name: "MrPunter",
     slug: "mrpunter",
-    logo: mrpunterLogo,
+    logo: mrpunterLogo.url,
     rating: 4.7,
     bonus: "150% tot €750",
     freeSpins: "200 Free Spins",
@@ -185,7 +185,7 @@ const casinos: Casino[] = [
     rank: 9,
     name: "Spininio",
     slug: "spininio",
-    logo: spininioLogo,
+    logo: spininioLogo.url,
     rating: 4.4,
     bonus: "250% tot €1.000",
     freeSpins: "50 Free Spins",
