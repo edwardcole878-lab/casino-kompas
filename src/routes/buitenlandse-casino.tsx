@@ -358,7 +358,7 @@ function LandingPage() {
           betrouwbaarheid en welkomstbonus.
         </p>
 
-        <div className="mt-4 space-y-4 sm:mt-6">
+        <div className="mt-4 grid auto-rows-fr gap-4 sm:mt-6">
           {casinos.map((c) => (
             <CasinoRow key={c.slug} c={c} />
           ))}
