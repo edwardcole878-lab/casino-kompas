@@ -229,10 +229,10 @@ function CasinoRow({ c }: { c: Casino }) {
   const isTop = c.rank === 1;
   return (
     <article
-      className={`relative overflow-hidden rounded-lg border bg-card transition-colors ${
+      className={`relative overflow-hidden rounded-lg border-2 bg-card transition-colors ${
         isTop
-          ? "border-nl-green/70 shadow-row ring-2 ring-nl-green/35"
-          : "border-nl-blue/15 shadow-row hover:border-nl-blue/35"
+          ? "border-nl-green shadow-row ring-2 ring-nl-green/30"
+          : "border-nl-blue/35 shadow-row hover:border-nl-blue/60"
       }`}
     >
       {isTop && (
