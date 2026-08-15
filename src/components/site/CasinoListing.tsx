@@ -5,6 +5,7 @@ import {
   Check,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { listingCasinos, type ListingCasino } from "@/data/listing";
 
@@ -131,6 +132,13 @@ function CasinoRow({ c }: { c: Casino }) {
               Speel nu <ArrowRight size={18} className="ml-1" />
             </AffiliateLink>
           </Button>
+          <Link
+            to="/review/$slug"
+            params={{ slug: c.slug }}
+            className="mt-1.5 block w-full rounded-md border border-nl-blue/30 py-1.5 text-center text-[12px] font-semibold uppercase tracking-widest text-nl-blue transition-colors hover:border-nl-blue hover:bg-nl-blue/5"
+          >
+            Lees review
+          </Link>
         </div>
       </div>
     </article>
