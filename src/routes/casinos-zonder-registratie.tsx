@@ -17,7 +17,7 @@ export const Route = createFileRoute("/casinos-zonder-registratie")({
 function Page() {
   return (
     <CategoryPage
-      breadcrumbs={[{ to: "/buitenlandse-casino", label: "Buitenlandse casino's" }, { label: "Casino's zonder registratie" }]}
+      breadcrumbs={[{ to: "/snelle-uitbetaling-ideal-casinos", label: "Buitenlandse casino's" }, { label: "Casino's zonder registratie" }]}
       h1="Casino's zonder registratie — Pay-N-Play uitgelegd"
       intro={
         <>
@@ -35,7 +35,7 @@ function Page() {
         { q: "Hoe weet ik of een casino betrouwbaar is?", a: "Kijk naar licentiehouder, eigenaar, klachtenroute, betaalmethoden en uitbetaaltrack-record. Onze reviews testen elk van deze punten." },
       ]}
       related={[
-        { to: "/buitenlandse-casino", label: "Alle buitenlandse casino's" },
+        { to: "/snelle-uitbetaling-ideal-casinos", label: "Alle buitenlandse casino's" },
         { to: "/snelle-uitbetaling-casino", label: "Snelle uitbetaling" },
         { to: "/crypto-casino", label: "Crypto casino's" },
         { to: "/redactiebeleid", label: "Onze testmethode" },

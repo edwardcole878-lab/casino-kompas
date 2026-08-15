@@ -17,7 +17,7 @@ export const Route = createFileRoute("/casinos-zonder-limiet")({
 function Page() {
   return (
     <CategoryPage
-      breadcrumbs={[{ to: "/buitenlandse-casino", label: "Buitenlandse casino's" }, { label: "Casino's zonder limiet" }]}
+      breadcrumbs={[{ to: "/snelle-uitbetaling-ideal-casinos", label: "Buitenlandse casino's" }, { label: "Casino's zonder limiet" }]}
       h1="Casino's zonder verplichte stortlimiet — wat betekent dat?"
       intro={
         <>
@@ -35,7 +35,7 @@ function Page() {
         { q: "Hoe weet ik of een casino betrouwbaar is?", a: "Kijk naar licentiehouder, eigenaar, klachtenroute, betaalmethoden en uitbetaaltrack-record. Onze reviews testen elk van deze punten." },
       ]}
       related={[
-        { to: "/buitenlandse-casino", label: "Alle buitenlandse casino's" },
+        { to: "/snelle-uitbetaling-ideal-casinos", label: "Alle buitenlandse casino's" },
         { to: "/snelle-uitbetaling-casino", label: "Snelle uitbetaling" },
         { to: "/crypto-casino", label: "Crypto casino's" },
         { to: "/redactiebeleid", label: "Onze testmethode" },

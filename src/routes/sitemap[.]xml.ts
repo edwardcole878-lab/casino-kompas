@@ -13,7 +13,7 @@ const STATIC_PATHS = [
   "/",
   "/beste-online-casinos",
   "/betrouwbare-online-casinos",
-  "/buitenlandse-casino",
+  "/snelle-uitbetaling-ideal-casinos",
   "/casinos-zonder-cruks",
   "/casinos-zonder-registratie",
   "/casinos-zonder-limiet",
