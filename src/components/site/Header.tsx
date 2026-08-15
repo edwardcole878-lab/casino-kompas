@@ -88,21 +88,6 @@ export function Header() {
       }`}
     >
       <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
-      {/* Layer 1 — Utility bar */}
-      <div className={`hidden md:block border-b border-white/10 transition-all ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-11 opacity-100"}`}>
-        <div className="container mx-auto flex h-11 max-w-[1240px] items-center justify-end gap-6 px-6">
-          <div className="flex items-center gap-4 text-xs font-medium text-white/70">
-            <Link
-              to="/redactiebeleid"
-              className="inline-flex items-center gap-1.5 hover:text-white"
-            >
-              <ShieldCheck className="h-3.5 w-3.5 text-nl-orange" />
-              Onafhankelijk getest · April 2026
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Layer 2 — Main navigation */}
       <div className={`container relative mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
         <nav className={`hidden flex-1 items-center justify-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
