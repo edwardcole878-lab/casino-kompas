@@ -375,10 +375,10 @@ function LandingPage() {
               <img src={trustpilotLogo.url} alt="Trustpilot" className="h-5 w-auto sm:h-6" />
             </span>
           </div>
-          <h1 className="mt-2 max-w-3xl text-center font-heading text-2xl uppercase leading-[0.95] tracking-tight text-white sm:mt-3 sm:text-4xl md:text-5xl lg:text-left">
+          <h1 className="mx-auto mt-2 max-w-3xl text-center font-heading text-2xl uppercase leading-[0.95] tracking-tight text-white sm:mt-3 sm:text-4xl md:text-5xl lg:mx-0 lg:text-left">
             Snelst Uitbetalende <span className="text-nl-orange">iDEAL Casino&apos;s</span> van 2026
           </h1>
-          <p className="mt-2 hidden max-w-2xl text-center text-sm text-white/70 sm:mt-3 sm:block sm:text-base lg:text-left">
+          <p className="mx-auto mt-2 hidden max-w-2xl text-center text-sm text-white/70 sm:mt-3 sm:block sm:text-base lg:mx-0 lg:text-left">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
             voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
           </p>
