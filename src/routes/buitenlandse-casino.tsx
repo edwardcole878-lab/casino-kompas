@@ -231,12 +231,12 @@ function CasinoRow({ c }: { c: Casino }) {
     <article
       className={`relative overflow-hidden rounded-lg border bg-card transition-colors ${
         isTop
-          ? "border-nl-gold/70 shadow-gold ring-2 ring-nl-gold/40"
+          ? "border-nl-green/70 shadow-row ring-2 ring-nl-green/35"
           : "border-nl-blue/15 shadow-row hover:border-nl-blue/35"
       }`}
     >
       {isTop && (
-        <div className="flex items-center justify-center gap-2 bg-nl-ink px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-nl-gold lg:justify-start">
+        <div className="flex items-center justify-center gap-2 bg-nl-green px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-white lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
       )}
@@ -271,7 +271,7 @@ function CasinoRow({ c }: { c: Casino }) {
         {/* Bonus + facts */}
         <div
           className={`self-center rounded-lg border px-2.5 py-3 lg:rounded-xl lg:px-5 lg:py-4 ${
-            isTop ? "border-nl-gold/60 bg-nl-gold/12" : "border-nl-orange/30 bg-nl-orange/5"
+            isTop ? "border-nl-green/45 bg-nl-green/10" : "border-nl-orange/30 bg-nl-orange/5"
           }`}
         >
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
@@ -289,7 +289,9 @@ function CasinoRow({ c }: { c: Casino }) {
           <Button
             asChild
             size="lg"
-            className="mt-2 h-11 w-full rounded-md bg-nl-orange font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90 lg:mt-3 lg:h-12 lg:text-xl"
+            className={`mt-2 h-11 w-full rounded-md font-heading text-lg uppercase tracking-widest text-white shadow-orange lg:mt-3 lg:h-12 lg:text-xl ${
+              isTop ? "bg-nl-green hover:bg-nl-green/90" : "bg-nl-orange hover:bg-nl-orange/90"
+            }`}
           >
             <AffiliateLink href={c.cta} ariaLabel={`Speel nu bij ${c.name}`}>
               Speel nu <ArrowRight size={18} className="ml-1" />
