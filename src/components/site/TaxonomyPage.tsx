@@ -2,7 +2,6 @@ import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { jsonLdString } from "@/lib/jsonld";
 import type { Casino } from "@/data/casinos";
@@ -79,9 +78,8 @@ export function TaxonomyPage({
           ))}
         </article>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={term.faq} />
-          <TrustNotice />
         </div>
       </div>
     </Layout>

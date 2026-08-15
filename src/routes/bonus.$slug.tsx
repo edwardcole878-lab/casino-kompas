@@ -2,7 +2,6 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Clock, Percent, Wallet } from "lucide-react";
@@ -107,12 +106,11 @@ function BonusDetail() {
           </ul>
         </section>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={[
             { q: "Hoe claim ik deze bonus?", a: "Klik op de CTA, registreer een account, verifieer je identiteit en doe een eerste storting. De bonus wordt automatisch toegekend." },
             { q: "Wat gebeurt er als ik de wagering niet haal?", a: "Bonusgeld vervalt na de geldigheidsduur — alleen je eigen storting blijft beschikbaar." },
           ]} />
-          <TrustNotice />
         </div>
       </div>
     </Layout>

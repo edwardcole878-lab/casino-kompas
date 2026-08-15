@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { FAQ } from "@/components/site/FAQ";
 import { jsonLdString } from "@/lib/jsonld";
 import { ArrowRight } from "lucide-react";
@@ -89,9 +88,8 @@ export function TaxonomyHub({
         </section>
 
         {faq && faq.length > 0 && (
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+          <div className="mt-12 grid gap-8 lg:grid-cols-1">
             <FAQ items={faq} />
-            <TrustNotice />
           </div>
         )}
       </div>

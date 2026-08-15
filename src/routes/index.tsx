@@ -3,7 +3,6 @@ import { Layout } from "@/components/site/Layout";
 import { CasinoCard } from "@/components/site/CasinoCard";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { Methodology } from "@/components/site/Methodology";
 import { AuthorByline } from "@/components/site/AuthorByline";
@@ -155,7 +154,7 @@ function Index() {
         </section>
 
         {/* FAQ */}
-        <div className="mt-20 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-20 grid gap-8 lg:grid-cols-1">
           <FAQ
             items={[
               { q: `Welk buitenlands casino is in 2026 het beste voor Nederlandse spelers?`, a: `Op basis van onze tests staat ${number1.name} dit jaar bovenaan dankzij ${number1.bonus} en de combinatie van crypto en iDEAL. De ranking verandert per kwartaal — we hertesten doorlopend.` },
@@ -166,7 +165,6 @@ function Index() {
               { q: "Hoe verifieer ik dat een buitenlands casino betrouwbaar is?", a: "Controleer licentiehouder (Anjouan, Curaçao, MGA), eigenaar, klachtenroute, betaalmethoden en uitbetaaltrack-record. Onze reviews testen elk van deze punten." },
             ]}
           />
-          <TrustNotice />
         </div>
 
         {/* CATEGORY LISTS — types & betaalmethoden */}

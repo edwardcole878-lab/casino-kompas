@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { ShieldCheck } from "lucide-react";
 
 export function Footer() {
   return (
@@ -44,17 +43,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-start gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3 text-sm text-white/60">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-nl-orange text-white text-xs font-bold">18+</span>
-            <ShieldCheck className="h-4 w-4 text-nl-orange" />
-            {/* TODO: verify exact helpline routing — AGOG informatielijn = 0800-22 777 22 (gratis); loketkansspel.nl voor doorverwijzing */}
-            <span>
-              Speel verantwoord — Dit is een vergelijkingswebsite. Hulp bij gokverslaving? Bel{" "}
-              <a className="underline" href="tel:0900-2177721">AGOG via 0900-2177721</a> of kijk op{" "}
-              <a className="underline" href="https://www.loketkansspel.nl" target="_blank" rel="noopener noreferrer">loketkansspel.nl</a>.
-            </span>
-          </div>
+        <div className="mt-10 flex flex-col items-start gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-end">
           <div className="text-right">
             <p className="text-xs font-medium text-white/70">
               Laatst gecontroleerd door redactie: 18 april 2026
