@@ -318,7 +318,7 @@ function LandingPage() {
 
       {/* HERO */}
       <section className="bg-nl-hero">
-        <div className="mx-auto max-w-5xl px-4 py-7 sm:py-9">
+        <div className="mx-auto max-w-5xl px-4 py-4 sm:py-9">
           <div className="inline-flex items-center gap-2 rounded-sm border border-nl-orange/50 bg-nl-orange/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-nl-orange">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-nl-orange/70" />
@@ -326,44 +326,47 @@ function LandingPage() {
             </span>
             Live update 2026
           </div>
-          <h1 className="mt-3 max-w-3xl font-heading text-3xl uppercase leading-[0.95] tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h1 className="mt-2 max-w-3xl font-heading text-2xl uppercase leading-[0.95] tracking-tight text-white sm:mt-3 sm:text-4xl md:text-5xl">
             Snelst Uitbetalende <span className="text-nl-orange">iDEAL Casino&apos;s</span> van 2026
           </h1>
-          <p className="mt-3 max-w-2xl text-sm text-white/70 sm:text-base">
+          <p className="mt-2 hidden max-w-2xl text-sm text-white/70 sm:mt-3 sm:block sm:text-base">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
             voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
+          </p>
+          <p className="mt-2 text-sm text-white/70 sm:hidden">
+            Winst binnen minuten — getest voor Nederlandse spelers.
           </p>
         </div>
       </section>
 
       {/* TRUST BAR */}
       <section aria-label="Voordelen" className="border-b border-nl-blue/10 bg-card">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-3 px-4 py-4 sm:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-4 gap-y-1.5 px-4 py-2.5 sm:gap-x-6 sm:gap-y-3 sm:py-4 sm:grid-cols-4">
           {[
             { icon: Zap, label: "Directe uitbetaling" },
             { icon: Clock, label: "Onder 60 minuten" },
             { icon: CreditCard, label: "iDEAL & crypto" },
             { icon: Shield, label: "Verifieerd getest" },
           ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-2">
-              <Icon size={16} className="shrink-0 text-nl-orange" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-nl-blue">{label}</span>
+            <div key={label} className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+              <Icon size={14} className="shrink-0 text-nl-orange" />
+              <span className="truncate text-[10px] font-semibold uppercase tracking-wide text-nl-blue sm:text-xs sm:tracking-wider">{label}</span>
             </div>
           ))}
         </div>
       </section>
 
       {/* LISTING */}
-      <section id="top6" aria-label="Top 6 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-10">
-        <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
+      <section id="top6" aria-label="Top 6 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
+        <h2 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
           Top 6 buitenlandse casino&apos;s met snelle uitbetaling
         </h2>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        <p className="mt-2 hidden max-w-2xl text-sm text-muted-foreground sm:block">
           De zes beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
           betrouwbaarheid en welkomstbonus.
         </p>
 
-        <div className="mt-6 space-y-4">
+        <div className="mt-4 space-y-4 sm:mt-6">
           {casinos.map((c) => (
             <CasinoRow key={c.slug} c={c} />
           ))}
