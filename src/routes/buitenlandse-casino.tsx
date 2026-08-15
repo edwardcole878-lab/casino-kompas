@@ -239,7 +239,7 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
         <div className="col-span-2 flex items-center justify-center lg:col-span-1">
           <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-0 lg:h-28 lg:w-32 lg:shrink-0">
@@ -253,13 +253,13 @@ function CasinoRow({ c }: { c: Casino }) {
           <div className="mt-1 flex justify-center lg:justify-start">
             <Stars rating={c.rating} />
           </div>
-          <ul className="mt-2 space-y-0.5">
+          <ul className="mt-2 space-y-1">
             {c.pros.map((p) => (
               <li
                 key={p}
-                className="flex items-start justify-center gap-1.5 text-xs text-muted-foreground lg:justify-start lg:text-sm"
+                className="flex items-start justify-center gap-1 text-[11px] leading-tight text-muted-foreground lg:justify-start lg:text-sm"
               >
-                <Check size={14} className="mt-0.5 shrink-0 text-nl-orange" />
+                <Check size={12} className="mt-[3px] shrink-0 text-nl-orange lg:mt-0.5" />
                 <span>{p}</span>
               </li>
             ))}
@@ -267,10 +267,10 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
 
         {/* Bonus + facts */}
-        <div className="self-center border-l border-nl-blue/10 pl-3 lg:border-l-0 lg:border-x lg:px-6 lg:py-0">
+        <div className="self-center rounded-lg border border-nl-orange/30 bg-nl-orange/5 px-2.5 py-3 shadow-[0_2px_0_0_hsl(var(--nl-orange)/0.25)] lg:rounded-xl lg:px-5 lg:py-4">
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
-          <div className="font-heading text-2xl leading-none tracking-wide text-nl-ink lg:text-3xl">{c.bonus}</div>
-          <div className="mt-1 text-xs font-medium text-nl-orange lg:text-sm">+ {c.freeSpins}</div>
+          <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-4xl">{c.bonus}</div>
+          <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:text-base">+ {c.freeSpins}</div>
         </div>
 
         {/* Payout + CTA */}
