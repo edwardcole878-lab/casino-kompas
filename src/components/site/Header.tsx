@@ -22,7 +22,6 @@ import {
   CircleDot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "./Logo";
 
 type NavLink = { to: string; label: string; desc?: string; icon?: React.ComponentType<{ className?: string }> };
 type NavGroup = { label: string; items: NavLink[] };
@@ -106,13 +105,6 @@ export function Header() {
 
       {/* Layer 2 — Main navigation */}
       <div className={`container relative mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
-        <Link
-          to="/"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center"
-        >
-          <Logo condensed={scrolled} />
-        </Link>
-
         <nav className={`hidden items-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
           {groups.map((g) => (
             <div key={g.label} className="group relative">
