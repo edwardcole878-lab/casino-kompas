@@ -12,6 +12,7 @@ import { CasinoLogo } from "@/components/site/CasinoLogo";
 import { Rating } from "@/components/site/Rating";
 import { CategoryLists } from "@/components/site/CategoryLists";
 import { casinos } from "@/data/casinos";
+import { listingCasinos } from "@/components/site/CasinoListing";
 import { ArrowRight, Gift, ShieldCheck as ShieldIcon, PlayCircle, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,32 +30,31 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const top = casinos.slice(0, 10);
-  const number1 = casinos[0];
+  const number1 = listingCasinos[0];
   const filtered = top;
 
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative overflow-hidden border-b bg-gradient-to-b from-background via-background to-secondary/40">
-        <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(700px_300px_at_80%_-100px,oklch(0.82_0.16_85/0.18),transparent),radial-gradient(600px_300px_at_10%_120%,oklch(0.6_0.16_245/0.12),transparent)]" />
+      <section className="relative overflow-hidden bg-nl-hero text-white">
         <div className="container relative mx-auto max-w-[1240px] px-6 pt-10 pb-10 md:pt-14 md:pb-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
             <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-xs font-semibold text-muted-foreground shadow-soft backdrop-blur">
-                <ShieldIcon className="h-3.5 w-3.5 text-trust" />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/80">
+                <ShieldIcon className="h-3.5 w-3.5 text-nl-orange" />
                 Editie april 2026 · onafhankelijk getest
               </div>
-              <h1 className="text-[30px] font-extrabold leading-[1.1] tracking-tight md:text-[42px] lg:text-[46px]">
+              <h1 className="text-[34px] leading-[0.95] text-white md:text-[52px] lg:text-[58px]">
                 Wij testen buitenlandse online casino's voor Nederlandse spelers.
-                <span className="text-gold"> Dit zijn de casino's die onze test overleefden.</span>
+                <span className="text-nl-orange"> Dit zijn de casino's die onze test overleefden.</span>
               </h1>
-              <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+              <p className="mt-4 max-w-xl text-base text-white/70 md:text-lg">
                 Onafhankelijke ranking op basis van uitbetaalsnelheid, bonusvoorwaarden en
-                transparantie — <strong className="text-foreground">geen commissie-ranking</strong>.
+                transparantie — <strong className="text-white">geen commissie-ranking</strong>.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground">
-                <Link to="/redactiebeleid" className="inline-flex items-center gap-1.5 hover:text-foreground">
-                  <PlayCircle className="h-4 w-4 text-trust" /> Hoe wij testen
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-white/70">
+                <Link to="/redactiebeleid" className="inline-flex items-center gap-1.5 hover:text-white">
+                  <PlayCircle className="h-4 w-4 text-nl-orange" /> Hoe wij testen
                 </Link>
                 <span className="inline-flex items-center gap-1.5">🇳🇱 Speciaal voor Nederland</span>
               </div>
@@ -68,9 +68,9 @@ function Index() {
                   <Trophy className="h-3.5 w-3.5" /> #1 van april 2026
                 </div>
                 <div className="mt-4 flex items-center gap-4">
-                  {(number1.logoUrl ?? number1.image) ? (
+                  {number1.logo ? (
                     <img
-                      src={number1.logoUrl ?? number1.image}
+                      src={number1.logo}
                       alt={`${number1.name} logo`}
                       width={64}
                       height={64}
@@ -78,14 +78,12 @@ function Index() {
                       fetchPriority="high"
                       className="h-16 w-16 overflow-hidden rounded-xl bg-white object-contain p-1 text-[0] shadow-card"
                     />
-                  ) : (
-                    <CasinoLogo name={number1.name} brandColor={number1.brandColor} size="lg" />
-                  )}
+                  ) : null}
                   <div className="min-w-0">
                     <h2 className="text-2xl font-extrabold leading-tight">{number1.name}</h2>
                     <div className="mt-1 flex items-center gap-2">
-                      <Rating value={number1.rating} />
-                      <span className="text-xs text-muted-foreground">· {number1.tagline}</span>
+                      <Rating value={number1.rating * 2} />
+                      <span className="text-xs text-muted-foreground">· uitbetaling {number1.payoutSpeed}</span>
                     </div>
                   </div>
                 </div>
@@ -96,14 +94,14 @@ function Index() {
                     </span>
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-widest text-gold-foreground/70">Welkomstbonus</div>
-                      <div className="text-lg font-black leading-tight md:text-xl">{number1.bonusHeadline}</div>
-                      <div className="mt-1 text-[12px] text-foreground/70">Wagering {number1.wagering} · Min. {number1.minDeposit}</div>
+                      <div className="font-heading text-2xl leading-none md:text-3xl">{number1.bonus}</div>
+                      <div className="mt-1 text-[12px] font-semibold text-nl-orange">+ {number1.freeSpins}</div>
                     </div>
                   </div>
                 </div>
-                <Button asChild size="lg" className="mt-5 h-14 w-full gradient-cta cta-glow text-base font-extrabold text-gold-foreground shadow-gold md:text-lg">
+                <Button asChild size="lg" className="mt-5 h-14 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90">
                   <a href={`/go/${number1.slug}`} rel="sponsored nofollow">
-                    {number1.ctaLabel ?? "Speel Nu"} <ArrowRight className="h-5 w-5" />
+                    Speel nu <ArrowRight className="h-5 w-5" />
                   </a>
                 </Button>
                 <div className="mt-2 text-center text-[11px] text-muted-foreground">
@@ -122,8 +120,7 @@ function Index() {
             <div>
               <div className="text-[11px] font-bold uppercase tracking-widest text-gold">Side-by-side vergelijking</div>
               <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Vergelijk de top 10 in één oogopslag</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Klik op een kolomtitel om te sorteren.</p>
-            </div>
+                          </div>
           </div>
           <ComparisonGrid casinos={top} />
         </section>

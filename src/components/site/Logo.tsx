@@ -1,19 +1,14 @@
-import wordmark from "@/assets/wordmark.png";
-
 /**
- * Brand wordmark — "Buitenlandse Casino's".
- * Renders the generated PNG wordmark; condensed mode shrinks it for the sticky header.
+ * Brand wordmark — "Buitenlandse Casino's" in the site heading face.
  */
 export function Logo({ condensed = false }: { condensed?: boolean }) {
   return (
-    <img
-      src={wordmark}
-      alt="Buitenlandse Casino's"
-      width={2064}
-      height={512}
-      decoding="async"
-      fetchPriority="high"
-      className={`${condensed ? "h-6" : "h-8 md:h-9"} w-auto select-none`}
-    />
+    <span
+      className={`select-none font-heading uppercase leading-none tracking-wide text-white ${
+        condensed ? "text-xl" : "text-2xl md:text-3xl"
+      }`}
+    >
+      Buitenlandse <span className="text-nl-orange">Casino&apos;s</span>
+    </span>
   );
 }
