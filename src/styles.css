@@ -42,6 +42,15 @@
   --color-surface-2: var(--surface-2);
 
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-heading: "Bebas Neue", "Barlow", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+
+  /* Dutch flag palette */
+  --color-nl-orange: var(--nl-orange);
+  --color-nl-blue: var(--nl-blue);
+  --color-nl-red: var(--nl-red);
+  --color-nl-sand: var(--nl-sand);
+  --color-nl-ink: var(--nl-ink);
 }
 
 :root {
@@ -106,6 +115,17 @@
   --shadow-lift: 0 20px 40px -16px oklch(0.28 0.09 265 / 0.22), 0 8px 16px -8px oklch(0.28 0.09 265 / 0.12);
   --gradient-cta: linear-gradient(135deg, oklch(0.84 0.15 88), oklch(0.74 0.17 68));
   --gradient-bonus: linear-gradient(135deg, oklch(0.96 0.06 85), oklch(0.92 0.1 80));
+
+  /* Dutch flag palette — orange / navy blue / red on off-white */
+  --nl-orange: oklch(0.7 0.19 48);
+  --nl-blue: oklch(0.36 0.13 265);
+  --nl-red: oklch(0.52 0.2 27);
+  --nl-sand: oklch(0.97 0.012 80);
+  --nl-ink: oklch(0.19 0.03 265);
+  --gradient-nl: linear-gradient(90deg, var(--nl-red) 0 33.33%, oklch(1 0 0) 33.33% 66.66%, var(--nl-blue) 66.66% 100%);
+  --gradient-nl-hero: linear-gradient(160deg, oklch(0.34 0.12 265) 0%, oklch(0.24 0.09 265) 55%, oklch(0.19 0.05 265) 100%);
+  --shadow-row: 0 2px 0 0 oklch(0.36 0.13 265 / 0.08), 0 14px 30px -20px oklch(0.36 0.13 265 / 0.5);
+  --shadow-orange: 0 12px 28px -12px oklch(0.7 0.19 48 / 0.6);
 }
 
 .dark {
@@ -168,4 +188,8 @@
   .container-page { width: 100%; margin-inline: auto; max-width: 1240px; padding-inline: 24px; }
   .cta-glow { transition: box-shadow .25s ease, transform .2s ease, opacity .2s ease; }
   .cta-glow:hover { box-shadow: 0 14px 38px oklch(0.78 0.16 75 / 0.45); transform: translateY(-1px); }
+  .bg-nl-flag { background-image: var(--gradient-nl); }
+  .bg-nl-hero { background-image: var(--gradient-nl-hero); }
+  .shadow-row { box-shadow: var(--shadow-row); }
+  .shadow-orange { box-shadow: var(--shadow-orange); }
 }
