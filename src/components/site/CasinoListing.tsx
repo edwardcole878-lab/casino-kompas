@@ -12,8 +12,7 @@ export type Casino = ListingCasino;
 const casinos = listingCasinos;
 
 
-
-export const listingCasinos = casinos;
+export { listingCasinos };
 
 function Stars({ rating }: { rating: number }) {
   const full = Math.floor(rating);
