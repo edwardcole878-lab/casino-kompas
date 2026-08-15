@@ -8,10 +8,11 @@ import {
   Clock,
   AlertTriangle,
   CreditCard,
+  Check,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -221,33 +222,28 @@ export const Route = createFileRoute("/buitenlandse-casino")({
   component: LandingPage,
 });
 
+
 function Stars({ rating }: { rating: number }) {
   const full = Math.floor(rating);
   const half = rating - full >= 0.5;
   return (
-    <div className="flex items-center gap-1" aria-label={`${rating} van 5 sterren`}>
+    <div className="flex items-center gap-0.5" aria-label={`${rating} van 5 sterren`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          size={14}
+          size={13}
           className={
             i < full
-              ? "fill-gold text-gold"
+              ? "fill-nl-orange text-nl-orange"
               : i === full && half
-                ? "fill-gold/50 text-gold"
-                : "text-muted-foreground/40"
+                ? "fill-nl-orange/50 text-nl-orange"
+                : "text-nl-blue/25"
           }
         />
       ))}
-      <span className="ml-1 text-sm font-semibold text-foreground">{rating.toFixed(1)}</span>
-    </div>
-  );
-}
-
-function CasinoLogo({ name, src }: { name: string; src: string }) {
-  return (
-    <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-border">
-      <img src={src} alt={`${name} logo`} loading="lazy" className="h-full w-full object-contain" />
+      <span className="ml-1.5 font-heading text-lg leading-none tracking-wide text-nl-blue">
+        {rating.toFixed(1)}
+      </span>
     </div>
   );
 }
@@ -270,251 +266,307 @@ function AffiliateLink({
   );
 }
 
-function LandingPage() {
+function CasinoRow({ c }: { c: Casino }) {
+  const isTop = c.rank === 1;
   return (
-    <div className="dark relative min-h-screen overflow-hidden bg-background text-foreground">
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-emerald/20 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[120px]" />
-      </div>
+    <article
+      className={`relative overflow-hidden rounded-lg border bg-card shadow-row transition-colors ${
+        isTop ? "border-nl-orange/60 ring-1 ring-nl-orange/30" : "border-nl-blue/15 hover:border-nl-blue/35"
+      }`}
+    >
+      {isTop && (
+        <div className="flex items-center gap-2 bg-nl-orange px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-white">
+          <Trophy size={14} /> Snelste keuze van 2026
+        </div>
+      )}
 
-      <div className="relative z-10">
-        <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-6xl items-center justify-end px-4 py-3">
-            <Badge variant="outline" className="border-gold/40 bg-gold/10 text-gold">
-              18+ | Speel bewust
-            </Badge>
+      <div className="grid gap-5 p-4 sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6">
+        {/* Rank + logo */}
+        <div className="flex items-center gap-4">
+          <span
+            className={`font-heading text-5xl leading-none tracking-tight lg:text-6xl ${
+              isTop ? "text-nl-orange" : "text-nl-blue/25"
+            }`}
+          >
+            {c.rank}
+          </span>
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-nl-ink">
+            <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
           </div>
-        </header>
+        </div>
 
-        <section className="relative overflow-hidden bg-hero-gradient">
-          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10 md:py-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald/75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald" />
-                </span>
-                Live Update 2026
-              </div>
-              <h1 className="font-display text-balance text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl">
-                Buitenlandse Casino's <span className="bg-gradient-to-r from-emerald to-gold bg-clip-text text-transparent">Snelle Uitbetaling</span> 2026
-              </h1>
-              <p className="mt-4 text-balance text-base text-muted-foreground sm:text-lg">
-                Ontvang je winst binnen minuten. Wij testen en vergelijken de snelste buitenlandse online casino's voor Nederlandse spelers.
-              </p>
-              <div className="mt-5">
-                <Button asChild size="sm" className="bg-gold text-gold-foreground shadow-gold hover:bg-gold/90">
-                  <a href="#top6">Bekijk de Top 6</a>
-                </Button>
-              </div>
-            </div>
+        {/* Name, rating, pros */}
+        <div className="min-w-0">
+          <h3 className="font-heading text-3xl uppercase leading-none tracking-wide text-nl-blue">{c.name}</h3>
+          <div className="mt-1.5">
+            <Stars rating={c.rating} />
           </div>
-        </section>
-
-        <section aria-label="Voordelen" className="border-y border-border/60 bg-surface/50 backdrop-blur">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-2 px-4 py-3 sm:grid-cols-4">
-            {[
-              { icon: Zap, label: "Directe uitbetaling" },
-              { icon: Clock, label: "Onder 30 minuten" },
-              { icon: CreditCard, label: "iDEAL & crypto" },
-              { icon: Shield, label: "Verifieerd getest" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 text-left">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald/15 text-emerald">
-                  <Icon size={14} />
-                </div>
-                <span className="text-xs font-medium text-foreground">{label}</span>
-              </div>
+          <ul className="mt-3 space-y-1">
+            {c.pros.map((p) => (
+              <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Check size={15} className="mt-0.5 shrink-0 text-nl-orange" />
+                <span>{p}</span>
+              </li>
             ))}
-          </div>
-        </section>
+          </ul>
+        </div>
 
-        <section id="top6" aria-label="Top 6 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10 pb-16">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Top 6 buitenlandse casino's met snelle uitbetaling
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            De zes beste buitenlandse online casino's voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid, betrouwbaarheid en welkomstbonus.
-          </p>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {casinos.map((c) => (
-              <article
-                key={c.slug}
-                className="group relative flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-emerald/40 hover:bg-white/[0.05]"
-              >
-                {c.rank === 1 && (
-                  <div className="absolute -top-3 -right-3 z-20 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-gold-foreground shadow-gold">
-                    ★ Snelste keuze
-                  </div>
-                )}
-
-                <div className="flex items-start justify-between">
-                  <CasinoLogo name={c.name} src={c.logo} />
-                  <div className="text-right">
-                    <div className="flex items-center justify-end gap-1 text-emerald">
-                      <Zap size={16} className="fill-emerald/20" />
-                      <span className="text-lg font-bold leading-none">{c.payoutSpeed}</span>
-                    </div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">uitbetaling</div>
-                  </div>
-                </div>
-
-                <div className="mt-5">
-                  <h3 className="font-display text-2xl font-bold tracking-tight text-white">{c.name}</h3>
-                  <Stars rating={c.rating} />
-                </div>
-
-                <div className="mt-5 space-y-1.5">
-                  {c.pros.map((p) => (
-                    <div key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald" />
-                      <span>{p}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-gold/20 bg-gold/5 p-4">
-                  <div className="text-[10px] uppercase tracking-wider text-gold/80">Welkomstbonus</div>
-                  <div className="font-display text-2xl font-bold tracking-tight text-gold">{c.bonus}</div>
-                  <div className="text-xs text-foreground/80">+ {c.freeSpins}</div>
-                </div>
-
-                <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                  <span>Min. storting: <span className="text-foreground">{c.minDeposit}</span></span>
-                  <span>Licentie: <span className="text-foreground">{c.license}</span></span>
-                </div>
-
-                <div className="mt-5">
-                  <Button asChild size="lg" className="w-full bg-gold text-gold-foreground shadow-gold hover:bg-gold/90">
-                    <AffiliateLink href={c.cta} ariaLabel={`Speel nu bij ${c.name}`}>
-                      Speel nu
-                    </AffiliateLink>
-                  </Button>
-                  <p className="mt-2 text-center text-[10px] text-muted-foreground">
-                    Nieuwe spelers · 18+ · Voorwaarden van toepassing
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="border-t border-border/60 bg-surface/40">
-          <div className="mx-auto max-w-6xl px-4 py-14">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Hoe wij beoordelen</h2>
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              Elk casino in onze lijst wordt getest op echte uitbetalingssnelheid. We storten, spelen en laten ons geld overmaken om de beloofde tijden te verifiëren.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { icon: Clock, title: "Uitbetalingssnelheid", desc: "Van opname-aanvraag tot geld op je rekening." },
-                { icon: Shield, title: "Veiligheid & licentie", desc: "Geldige offshore licentie en beveiligde transacties." },
-                { icon: Zap, title: "Bonusvoorwaarden", desc: "Eerlijke voorwaarden zonder verborgen limieten." },
-                { icon: CreditCard, title: "Betaalmethoden", desc: "iDEAL, crypto, e-wallets en Trustly beschikbaar." },
-              ].map(({ icon: Icon, title, desc }) => (
-                <Card key={title} className="border-border/60 bg-white/[0.03] backdrop-blur">
-                  <CardContent className="p-6">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald/15 text-emerald">
-                      <Icon size={20} />
-                    </div>
-                    <h3 className="mt-4 font-display text-lg font-bold tracking-tight text-white">{title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+        {/* Bonus + facts */}
+        <div className="lg:border-x lg:border-nl-blue/10 lg:px-6">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
+          <div className="font-heading text-3xl leading-none tracking-wide text-nl-ink">{c.bonus}</div>
+          <div className="mt-1 text-sm font-medium text-nl-orange">+ {c.freeSpins}</div>
+          <dl className="mt-3 space-y-1 text-xs text-muted-foreground">
+            <div className="flex gap-1.5">
+              <dt className="shrink-0">Min. storting:</dt>
+              <dd className="font-semibold text-nl-ink">{c.minDeposit}</dd>
             </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-3xl px-4 py-16">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Wat is een buitenlands online casino met snelle uitbetaling?
-          </h2>
-          <div className="mt-6 space-y-4 text-sm text-muted-foreground">
-            <p>
-              Een <strong className="text-foreground">buitenlands online casino met snelle uitbetaling</strong> verwerkt je opname-aanvraag direct of binnen enkele minuten. In plaats van dagen te wachten, staat je geld vaak binnen 5 tot 30 minuten op je rekening. Dit wordt mogelijk gemaakt door moderne betaalmethoden zoals iDEAL, crypto en e-wallets.
-            </p>
-            <p>
-              De casino's op deze pagina richten zich op Nederlandse spelers onder een buitenlandse licentie (Anjouan, Curaçao, MGA). Ze bieden snellere verificatie, lagere drempels en hogere bonussen dan traditionele Nederlandse aanbieders. Let wel: ze vallen niet onder KSA-toezicht en niet onder CRUKS.
-            </p>
-            <p>
-              Onze testpanel heeft elke aanbieder daadwerkelijk uitbetaald. De getoonde uitbetalingstijden zijn gebaseerd op praktijktests met de meest gebruikte betaalmethoden. Kies het casino dat het beste past bij jouw voorkeur voor snelheid, bonus en spelaanbod.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-border/60 bg-surface/40">
-          <div className="mx-auto max-w-3xl px-4 py-16">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Veelgestelde vragen</h2>
-            <Accordion type="single" collapsible className="mt-6">
-              {faqs.map((f, i) => (
-                <AccordionItem key={f.q} value={`item-${i}`} className="border-border/60">
-                  <AccordionTrigger className="text-left text-sm font-semibold text-foreground hover:text-gold">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm text-muted-foreground">{f.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-
-        <footer className="border-t border-border bg-background">
-          <div className="mx-auto max-w-6xl space-y-6 px-4 py-12">
-            <div className="flex flex-col items-start gap-4 rounded-2xl border border-destructive/30 bg-destructive/5 p-5 sm:flex-row sm:items-center">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-destructive/20 text-destructive">
-                <AlertTriangle size={22} />
-              </div>
-              <div className="text-sm">
-                <p className="font-semibold text-foreground">Gokken kan verslavend zijn. Speel bewust. 18+.</p>
-                <p className="mt-1 text-muted-foreground">
-                  Deze casino's bezitten géén Nederlandse KSA-vergunning en vallen niet onder CRUKS. Je speelt bij een buitenlandse aanbieder zonder Nederlandse spelersbescherming.
-                </p>
-              </div>
-              <div className="flex shrink-0 items-center gap-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-foreground/80 text-sm font-bold">18+</div>
-                <span className="text-sm font-medium text-foreground">Stop op tijd</span>
-              </div>
+            <div className="flex gap-1.5">
+              <dt className="shrink-0">Licentie:</dt>
+              <dd className="font-semibold text-nl-ink">{c.license}</dd>
             </div>
+          </dl>
+        </div>
 
-            <div className="grid gap-6 text-sm text-muted-foreground sm:grid-cols-3">
-              <div>
-                <h3 className="mb-2 font-semibold text-foreground">Hulp & informatie</h3>
-                <ul className="space-y-1.5">
-                  <li><a href="https://www.speelbewust.nl" rel="noopener" target="_blank" className="hover:text-gold">Speelbewust.nl</a></li>
-                  <li><a href="https://www.loketkansspel.nl" rel="noopener" target="_blank" className="hover:text-gold">Loket Kansspel</a></li>
-                  <li><a href="https://www.agog.nl" rel="noopener" target="_blank" className="hover:text-gold">AGOG</a></li>
-                </ul>
-              </div>
-              <div className="sm:col-span-2">
-                <h3 className="mb-2 font-semibold text-foreground">Affiliate disclosure</h3>
-                <p>
-                  Wij kunnen een vergoeding ontvangen van de genoemde casino's. Dit beïnvloedt onze rangschikking niet. Onze beoordelingen zijn gebaseerd op onafhankelijk onderzoek en daadwerkelijke uitbetalingstesten.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-              <p>© 2026 Buitenlandse Casino's — Alle rechten voorbehouden.</p>
-              <p className="flex items-center gap-2">
-                <Wallet size={14} className="text-gold" />
-                Onafhankelijk vergeleken voor Nederlandse spelers.
-              </p>
-            </div>
+        {/* Payout + CTA */}
+        <div className="lg:text-right">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-nl-blue/8 px-3 py-1 text-nl-blue">
+            <Zap size={14} className="text-nl-orange" />
+            <span className="font-heading text-xl leading-none tracking-wide">{c.payoutSpeed}</span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">uitbetaling</span>
           </div>
-        </footer>
-
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-          <Button asChild size="lg" className="w-full bg-gold text-gold-foreground shadow-gold hover:bg-gold/90">
-            <AffiliateLink href={casinos[0].cta} ariaLabel={`Speel nu bij de snelste uitbetaling ${casinos[0].name}`}>
-              <Trophy size={18} className="mr-2" /> #1 {casinos[0].name} · Snelle uitbetaling
+          <Button
+            asChild
+            size="lg"
+            className="mt-3 h-12 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
+          >
+            <AffiliateLink href={c.cta} ariaLabel={`Speel nu bij ${c.name}`}>
+              Speel nu <ArrowRight size={18} className="ml-1" />
             </AffiliateLink>
           </Button>
+          <p className="mt-2 text-[10px] text-muted-foreground lg:text-right">
+            Nieuwe spelers · 18+ · Voorwaarden van toepassing
+          </p>
         </div>
-        <div className="h-20 md:hidden" aria-hidden />
       </div>
+    </article>
+  );
+}
+
+function LandingPage() {
+  return (
+    <div className="min-h-screen bg-nl-sand font-body text-nl-ink">
+      <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
+
+      <header className="sticky top-0 z-40 border-b border-nl-blue/10 bg-nl-sand/90 backdrop-blur">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-2.5">
+          <span className="font-heading text-2xl uppercase tracking-widest text-nl-blue">
+            Buitenlandse Casino&apos;s
+          </span>
+          <Badge variant="outline" className="border-nl-red/40 bg-nl-red/10 font-semibold text-nl-red">
+            18+ | Speel bewust
+          </Badge>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="bg-nl-hero">
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+          <div className="inline-flex items-center gap-2 rounded-sm border border-nl-orange/50 bg-nl-orange/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-nl-orange">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-nl-orange/70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-nl-orange" />
+            </span>
+            Live update 2026
+          </div>
+          <h1 className="mt-4 max-w-3xl font-heading text-5xl uppercase leading-[0.92] tracking-tight text-white sm:text-6xl md:text-7xl">
+            Buitenlandse casino&apos;s met <span className="text-nl-orange">snelle uitbetaling</span> 2026
+          </h1>
+          <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+            Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
+            voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-md bg-nl-orange px-7 font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
+            >
+              <a href="#top6">Bekijk de lijst</a>
+            </Button>
+            <span className="text-xs uppercase tracking-widest text-white/50">6 casino&apos;s · getest &amp; uitbetaald</span>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section aria-label="Voordelen" className="border-b border-nl-blue/10 bg-card">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-3 px-4 py-4 sm:grid-cols-4">
+          {[
+            { icon: Zap, label: "Directe uitbetaling" },
+            { icon: Clock, label: "Onder 30 minuten" },
+            { icon: CreditCard, label: "iDEAL & crypto" },
+            { icon: Shield, label: "Verifieerd getest" },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-2">
+              <Icon size={16} className="shrink-0 text-nl-orange" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-nl-blue">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* LISTING */}
+      <section id="top6" aria-label="Top 6 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-10">
+        <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
+          Top 6 buitenlandse casino&apos;s met snelle uitbetaling
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+          De zes beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
+          betrouwbaarheid en welkomstbonus.
+        </p>
+
+        <div className="mt-6 space-y-4">
+          {casinos.map((c) => (
+            <CasinoRow key={c.slug} c={c} />
+          ))}
+        </div>
+      </section>
+
+      {/* HOW WE RATE */}
+      <section className="border-y border-nl-blue/10 bg-card">
+        <div className="mx-auto max-w-5xl px-4 py-12">
+          <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">Hoe wij beoordelen</h2>
+          <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
+            Elk casino in onze lijst wordt getest op echte uitbetalingssnelheid. We storten, spelen en laten ons geld
+            overmaken om de beloofde tijden te verifiëren.
+          </p>
+          <ol className="mt-6 divide-y divide-nl-blue/10 border-y border-nl-blue/10">
+            {[
+              { icon: Clock, title: "Uitbetalingssnelheid", desc: "Van opname-aanvraag tot geld op je rekening." },
+              { icon: Shield, title: "Veiligheid & licentie", desc: "Geldige offshore licentie en beveiligde transacties." },
+              { icon: Zap, title: "Bonusvoorwaarden", desc: "Eerlijke voorwaarden zonder verborgen limieten." },
+              { icon: CreditCard, title: "Betaalmethoden", desc: "iDEAL, crypto, e-wallets en Trustly beschikbaar." },
+            ].map(({ icon: Icon, title, desc }, i) => (
+              <li key={title} className="flex items-center gap-4 py-4">
+                <span className="font-heading text-3xl leading-none text-nl-orange">{`0${i + 1}`}</span>
+                <Icon size={18} className="shrink-0 text-nl-blue" />
+                <div>
+                  <h3 className="font-heading text-xl uppercase tracking-wide text-nl-blue">{title}</h3>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* EDITORIAL */}
+      <section className="mx-auto max-w-3xl px-4 py-12">
+        <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">
+          Wat is een buitenlands online casino met snelle uitbetaling?
+        </h2>
+        <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
+          <p>
+            Een <strong className="text-nl-ink">buitenlands online casino met snelle uitbetaling</strong> verwerkt je
+            opname-aanvraag direct of binnen enkele minuten. In plaats van dagen te wachten, staat je geld vaak binnen 5
+            tot 30 minuten op je rekening. Dit wordt mogelijk gemaakt door moderne betaalmethoden zoals iDEAL, crypto en
+            e-wallets.
+          </p>
+          <p>
+            De casino&apos;s op deze pagina richten zich op Nederlandse spelers onder een buitenlandse licentie (Anjouan,
+            Curaçao, MGA). Ze bieden snellere verificatie, lagere drempels en hogere bonussen dan traditionele
+            Nederlandse aanbieders. Let wel: ze vallen niet onder KSA-toezicht en niet onder CRUKS.
+          </p>
+          <p>
+            Onze testpanel heeft elke aanbieder daadwerkelijk uitbetaald. De getoonde uitbetalingstijden zijn gebaseerd
+            op praktijktests met de meest gebruikte betaalmethoden. Kies het casino dat het beste past bij jouw voorkeur
+            voor snelheid, bonus en spelaanbod.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-nl-blue/10 bg-card">
+        <div className="mx-auto max-w-3xl px-4 py-12">
+          <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">Veelgestelde vragen</h2>
+          <Accordion type="single" collapsible className="mt-4">
+            {faqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`item-${i}`} className="border-nl-blue/10">
+                <AccordionTrigger className="text-left text-sm font-semibold text-nl-ink hover:text-nl-orange">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">{f.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-nl-ink text-white/70">
+        <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
+        <div className="mx-auto max-w-5xl space-y-6 px-4 py-10">
+          <div className="flex flex-col items-start gap-4 rounded-md border border-nl-red/40 bg-nl-red/10 p-5 sm:flex-row sm:items-center">
+            <AlertTriangle size={22} className="shrink-0 text-nl-red" />
+            <div className="text-sm">
+              <p className="font-heading text-xl uppercase tracking-wide text-white">
+                Gokken kan verslavend zijn. Speel bewust. 18+.
+              </p>
+              <p className="mt-1">
+                Deze casino&apos;s bezitten géén Nederlandse KSA-vergunning en vallen niet onder CRUKS. Je speelt bij een
+                buitenlandse aanbieder zonder Nederlandse spelersbescherming.
+              </p>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white/70 font-heading text-lg text-white">
+                18+
+              </div>
+              <span className="text-sm font-semibold text-white">Stop op tijd</span>
+            </div>
+          </div>
+
+          <div className="grid gap-6 text-sm sm:grid-cols-3">
+            <div>
+              <h3 className="mb-2 font-heading text-lg uppercase tracking-wide text-white">Hulp &amp; informatie</h3>
+              <ul className="space-y-1.5">
+                <li><a href="https://www.speelbewust.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">Speelbewust.nl</a></li>
+                <li><a href="https://www.loketkansspel.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">Loket Kansspel</a></li>
+                <li><a href="https://www.agog.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">AGOG</a></li>
+              </ul>
+            </div>
+            <div className="sm:col-span-2">
+              <h3 className="mb-2 font-heading text-lg uppercase tracking-wide text-white">Affiliate disclosure</h3>
+              <p>
+                Wij kunnen een vergoeding ontvangen van de genoemde casino&apos;s. Dit beïnvloedt onze rangschikking
+                niet. Onze beoordelingen zijn gebaseerd op onafhankelijk onderzoek en daadwerkelijke uitbetalingstesten.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-6 text-xs sm:flex-row">
+            <p>© 2026 Buitenlandse Casino&apos;s — Alle rechten voorbehouden.</p>
+            <p className="flex items-center gap-2">
+              <Wallet size={14} className="text-nl-orange" />
+              Onafhankelijk vergeleken voor Nederlandse spelers.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* MOBILE STICKY CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-nl-blue/15 bg-card/95 p-3 backdrop-blur md:hidden">
+        <Button
+          asChild
+          size="lg"
+          className="h-12 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
+        >
+          <AffiliateLink href={casinos[0].cta} ariaLabel={`Speel nu bij ${casinos[0].name}`}>
+            <Trophy size={18} className="mr-2" /> #1 {casinos[0].name} · Speel nu
+          </AffiliateLink>
+        </Button>
+      </div>
+      <div className="h-20 md:hidden" aria-hidden />
     </div>
   );
 }
