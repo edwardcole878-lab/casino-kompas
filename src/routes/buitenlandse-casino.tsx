@@ -10,7 +10,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import winheroLogo from "@/assets/logos/winhero.webp.asset.json";
 import cristalpokerLogo from "@/assets/logos/cristalpoker.jpg.asset.json";
 import balooLogo from "@/assets/logos/baloo.webp.asset.json";
