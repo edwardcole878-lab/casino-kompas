@@ -14,7 +14,7 @@ import winheroLogo from "@/assets/logos/winhero.t.asset.json";
 import cristalpokerLogo from "@/assets/logos/cristalpoker.t.asset.json";
 import balooLogo from "@/assets/logos/baloo.t.asset.json";
 import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
-import spinmillsLogo from "@/assets/logos/spinmills.t.asset.json";
+import spinmillsLogo from "@/assets/logos/spinmills.new.asset.json";
 import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
 
 type Casino = {
@@ -110,7 +110,6 @@ const casinos: Casino[] = [
     name: "Spinmills",
     slug: "spinmills",
     logo: spinmillsLogo.url,
-    darkTile: true,
     rating: 4.6,
     bonus: "400% tot €2.200",
     freeSpins: "350 Free Spins",
@@ -242,7 +241,7 @@ function CasinoRow({ c }: { c: Casino }) {
       <div className="grid gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
         <div className="flex items-center justify-center">
-          <div className={`flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 p-3 lg:h-28 lg:w-32 lg:shrink-0 ${(c as { darkTile?: boolean }).darkTile ? "bg-nl-ink" : "bg-white"}`}>
+          <div className={`flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 p-3 lg:h-28 lg:w-32 lg:shrink-0 bg-white`}>
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
           </div>
         </div>
