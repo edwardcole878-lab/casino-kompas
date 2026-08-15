@@ -229,12 +229,14 @@ function CasinoRow({ c }: { c: Casino }) {
   const isTop = c.rank === 1;
   return (
     <article
-      className={`relative overflow-hidden rounded-lg border bg-card shadow-row transition-colors ${
-        isTop ? "border-nl-orange/60 ring-1 ring-nl-orange/30" : "border-nl-blue/15 hover:border-nl-blue/35"
+      className={`relative overflow-hidden rounded-lg border bg-card transition-colors ${
+        isTop
+          ? "border-nl-gold/70 shadow-gold ring-2 ring-nl-gold/40"
+          : "border-nl-blue/15 shadow-row hover:border-nl-blue/35"
       }`}
     >
       {isTop && (
-        <div className="flex items-center gap-2 bg-nl-orange px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-white">
+        <div className="flex items-center justify-center gap-2 bg-nl-ink px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-nl-gold lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
       )}
@@ -267,7 +269,11 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
 
         {/* Bonus + facts */}
-        <div className="self-center rounded-lg border border-nl-orange/30 bg-nl-orange/5 px-2.5 py-3 lg:rounded-xl lg:px-5 lg:py-4">
+        <div
+          className={`self-center rounded-lg border px-2.5 py-3 lg:rounded-xl lg:px-5 lg:py-4 ${
+            isTop ? "border-nl-gold/60 bg-nl-gold/12" : "border-nl-orange/30 bg-nl-orange/5"
+          }`}
+        >
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
           <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-4xl">{c.bonus}</div>
           <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:text-base">+ {c.freeSpins}</div>
