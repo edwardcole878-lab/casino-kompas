@@ -333,16 +333,6 @@ function LandingPage() {
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
             voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="h-10 rounded-md bg-nl-orange px-6 font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
-            >
-              <a href="#top6">Bekijk de lijst</a>
-            </Button>
-            <span className="text-xs uppercase tracking-widest text-white/50">6 casino&apos;s · getest &amp; uitbetaald</span>
-          </div>
         </div>
       </section>
 
