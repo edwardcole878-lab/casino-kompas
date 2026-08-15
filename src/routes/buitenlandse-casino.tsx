@@ -201,7 +201,7 @@ const casinos: Casino[] = [
   },
 ];
 
-const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 6";
+const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 9";
 const PAGE_DESC =
   "Ontdek buitenlandse online casino's met de snelste uitbetalingen voor Nederlandse spelers. Vergelijk directe opnames, bonussen en betaalmethoden. Geüpdatet voor 2026.";
 
@@ -406,9 +406,9 @@ function LandingPage() {
       </section>
 
       {/* LISTING */}
-      <section id="top6" aria-label="Top 6 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
+      <section id="top6" aria-label="Top 9 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
         <h2 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
-          Top 6 buitenlandse casino&apos;s met snelle uitbetaling
+          Top 9 buitenlandse casino&apos;s met snelle uitbetaling
         </h2>
         <p className="mt-2 hidden max-w-2xl text-sm text-muted-foreground sm:block">
           De zes beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
