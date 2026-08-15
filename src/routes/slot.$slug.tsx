@@ -2,7 +2,6 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { ComparisonGrid } from "@/components/site/ComparisonGrid";
 import { Button } from "@/components/ui/button";
@@ -91,12 +90,11 @@ function SlotDetail() {
           )}
         </section>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={[
             { q: `Wat is de RTP van ${s.name}?`, a: `${s.rtp}% — gemeten over miljoenen spins. De korte termijn varieert sterk.` },
             { q: `Is ${s.name} geschikt voor beginners?`, a: s.volatility === "Laag" || s.volatility === "Medium" ? "Ja, lagere volatiliteit betekent regelmatigere kleine winsten." : "Minder geschikt — hoge volatiliteit vraagt om een groter budget." },
           ]} />
-          <TrustNotice />
         </div>
       </div>
     </Layout>

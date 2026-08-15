@@ -4,7 +4,6 @@ import { ComparisonTable } from "./ComparisonTable";
 import { FAQ, type FAQItem } from "./FAQ";
 import { RelatedLinks } from "./RelatedLinks";
 import { PageMeta } from "./PageMeta";
-import { TrustNotice } from "./TrustNotice";
 import type { Casino } from "@/data/casinos";
 
 export type CategoryPageProps = {
@@ -64,9 +63,8 @@ export function CategoryPage({
 
         {extraSection && <section className="mt-12">{extraSection}</section>}
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={faqs} />
-          <TrustNotice />
         </div>
 
         <div className="mt-12">

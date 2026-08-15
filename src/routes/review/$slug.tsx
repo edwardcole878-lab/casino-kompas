@@ -3,7 +3,6 @@ import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FAQ } from "@/components/site/FAQ";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { PageMeta } from "@/components/site/PageMeta";
 import { CasinoLogo } from "@/components/site/CasinoLogo";
 import { Rating } from "@/components/site/Rating";
@@ -226,7 +225,6 @@ function ReviewPage() {
         </section>
 
         {/* Trust */}
-        <div className="mt-10"><TrustNotice /></div>
 
         {/* FAQ */}
         <div className="mt-10">

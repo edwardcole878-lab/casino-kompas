@@ -3,7 +3,6 @@ import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { Button } from "@/components/ui/button";
 import { Gift, Clock, Percent, Wallet, ArrowRight, Tag } from "lucide-react";
 import { allBonusesSorted, type Bonus } from "@/data/bonuses";
@@ -115,14 +114,13 @@ function BonussenIndex() {
           {sorted.map((b) => <BonusRow key={b.slug} b={b} />)}
         </section>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={[
             { q: "Welke bonus is het beste?", a: "Niet de hoogste — let op wagering, max-inzet, geldigheidsduur en welke spellen meetellen. Een bescheiden bonus met 25x wagering is vaak meer waard dan €1.000 met 50x." },
             { q: "Kan ik meerdere bonussen tegelijk claimen?", a: "Doorgaans niet — welkomstbonussen zijn per persoon eenmalig per casino. Reload-bonussen kun je daarna apart claimen." },
             { q: "Wat is een no-deposit bonus?", a: "Gratis speelgeld of free spins zonder dat je hoeft te storten — alleen registratie + KYC vereist." },
             { q: "Tellen alle spellen mee voor wagering?", a: "Nee. Slots tellen meestal 100%, live casino vaak slechts 10–20% of helemaal niet. Lees de T&C." },
           ]} />
-          <TrustNotice />
         </div>
       </div>
     </Layout>

@@ -3,7 +3,6 @@ import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageMeta } from "@/components/site/PageMeta";
 import { FAQ } from "@/components/site/FAQ";
-import { TrustNotice } from "@/components/site/TrustNotice";
 import { Dices } from "lucide-react";
 import { slots } from "@/data/slots";
 import { jsonLdString } from "@/lib/jsonld";
@@ -67,12 +66,11 @@ function SlotsIndex() {
           ))}
         </section>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_320px]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-1">
           <FAQ items={[
             { q: "Wat is RTP?", a: "Return To Player — het percentage van alle inzetten dat een slot op lange termijn uitkeert. 96% is gemiddeld; 97%+ is goed." },
             { q: "Wat betekent volatiliteit?", a: "Hoe vaak en hoe groot de uitbetalingen zijn. Lage volatiliteit = vaak kleine winsten; hoge volatiliteit = zelden, maar potentieel groot." },
           ]} />
-          <TrustNotice />
         </div>
       </div>
     </Layout>
