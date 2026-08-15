@@ -270,16 +270,6 @@ function CasinoRow({ c }: { c: Casino }) {
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
           <div className="font-heading text-2xl leading-none tracking-wide text-nl-ink lg:text-3xl">{c.bonus}</div>
           <div className="mt-1 text-xs font-medium text-nl-orange lg:text-sm">+ {c.freeSpins}</div>
-          <dl className="mt-2 flex flex-wrap justify-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground lg:block lg:space-y-1">
-            <div className="flex gap-1.5">
-              <dt className="shrink-0">Min. storting:</dt>
-              <dd className="font-semibold text-nl-ink">{c.minDeposit}</dd>
-            </div>
-            <div className="flex gap-1.5">
-              <dt className="shrink-0">Licentie:</dt>
-              <dd className="font-semibold text-nl-ink">{c.license}</dd>
-            </div>
-          </dl>
         </div>
 
         {/* Payout + CTA */}
@@ -298,9 +288,6 @@ function CasinoRow({ c }: { c: Casino }) {
               Speel nu <ArrowRight size={18} className="ml-1" />
             </AffiliateLink>
           </Button>
-          <p className="mt-1.5 text-[10px] text-muted-foreground lg:mt-2 lg:text-right">
-            Nieuwe spelers · 18+ · Voorwaarden van toepassing
-          </p>
         </div>
       </div>
     </article>
