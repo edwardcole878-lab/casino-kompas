@@ -105,7 +105,13 @@ export function Header() {
 
       {/* Layer 2 — Main navigation */}
       <div className={`container relative mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 md:px-6 transition-all ${scrolled ? "h-14" : "h-16 md:h-[68px]"}`}>
-        <nav className={`hidden items-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
+        <nav className={`hidden flex-1 items-center justify-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
+          <Link
+            to="/"
+            className="rounded-md px-3 py-2 font-heading text-lg uppercase tracking-wide text-white/85 transition-colors hover:bg-white/10 hover:text-white"
+          >
+            Home
+          </Link>
           {groups.map((g) => (
             <div key={g.label} className="group relative">
               <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-heading text-lg uppercase tracking-wide text-white/85 transition-colors hover:bg-white/10 hover:text-white">
