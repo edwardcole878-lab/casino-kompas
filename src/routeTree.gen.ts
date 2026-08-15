@@ -36,6 +36,7 @@ import { Route as CasinosZonderLimietRouteImport } from './routes/casinos-zonder
 import { Route as CasinosZonderCruksRouteImport } from './routes/casinos-zonder-cruks'
 import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
 import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
+import { Route as BuitenlandseCasinoRouteImport } from './routes/buitenlandse-casino'
 import { Route as BonussenRouteImport } from './routes/bonussen'
 import { Route as BonusTypesRouteImport } from './routes/bonus-types'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -192,6 +193,11 @@ const CasinoBonussenRoute = CasinoBonussenRouteImport.update({
   path: '/casino-bonussen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuitenlandseCasinoRoute = BuitenlandseCasinoRouteImport.update({
+  id: '/buitenlandse-casino',
+  path: '/buitenlandse-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BonussenRoute = BonussenRouteImport.update({
   id: '/bonussen',
   path: '/bonussen',
@@ -293,6 +299,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
@@ -340,6 +347,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
@@ -388,6 +396,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/bonus-types': typeof BonusTypesRoute
   '/bonussen': typeof BonussenRoute
+  '/buitenlandse-casino': typeof BuitenlandseCasinoRoute
   '/casino-bonussen': typeof CasinoBonussenRoute
   '/casino-spellen': typeof CasinoSpellenRoute
   '/casinos-zonder-cruks': typeof CasinosZonderCruksRoute
@@ -437,6 +446,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/bonus-types'
     | '/bonussen'
+    | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
@@ -484,6 +494,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/bonus-types'
     | '/bonussen'
+    | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
@@ -531,6 +542,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/bonus-types'
     | '/bonussen'
+    | '/buitenlandse-casino'
     | '/casino-bonussen'
     | '/casino-spellen'
     | '/casinos-zonder-cruks'
@@ -579,6 +591,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   BonusTypesRoute: typeof BonusTypesRoute
   BonussenRoute: typeof BonussenRoute
+  BuitenlandseCasinoRoute: typeof BuitenlandseCasinoRoute
   CasinoBonussenRoute: typeof CasinoBonussenRoute
   CasinoSpellenRoute: typeof CasinoSpellenRoute
   CasinosZonderCruksRoute: typeof CasinosZonderCruksRoute
@@ -808,6 +821,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasinoBonussenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/buitenlandse-casino': {
+      id: '/buitenlandse-casino'
+      path: '/buitenlandse-casino'
+      fullPath: '/buitenlandse-casino'
+      preLoaderRoute: typeof BuitenlandseCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bonussen': {
       id: '/bonussen'
       path: '/bonussen'
@@ -956,6 +976,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   BonusTypesRoute: BonusTypesRoute,
   BonussenRoute: BonussenRoute,
+  BuitenlandseCasinoRoute: BuitenlandseCasinoRoute,
   CasinoBonussenRoute: CasinoBonussenRoute,
   CasinoSpellenRoute: CasinoSpellenRoute,
   CasinosZonderCruksRoute: CasinosZonderCruksRoute,
