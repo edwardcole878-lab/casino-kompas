@@ -10,12 +10,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import winheroLogo from "@/assets/logos/winhero.webp.asset.json";
-import cristalpokerLogo from "@/assets/logos/cristalpoker.jpg.asset.json";
-import balooLogo from "@/assets/logos/baloo.webp.asset.json";
-import velwinsLogo from "@/assets/logos/velwins.png.asset.json";
-import spinmillsLogo from "@/assets/logos/spinmills.webp.asset.json";
-import shakebetLogo from "@/assets/logos/shakebet.png.asset.json";
+import winheroLogo from "@/assets/logos/winhero.t.asset.json";
+import cristalpokerLogo from "@/assets/logos/cristalpoker.t.asset.json";
+import balooLogo from "@/assets/logos/baloo.t.asset.json";
+import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
+import spinmillsLogo from "@/assets/logos/spinmills.t.asset.json";
+import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
 
 type Casino = {
   rank: number;
@@ -241,7 +241,7 @@ function CasinoRow({ c }: { c: Casino }) {
       <div className="grid gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
         <div className="flex items-center justify-center">
-          <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-nl-ink p-2 lg:h-28 lg:w-28 lg:shrink-0">
+          <div className="flex h-20 w-full items-center justify-center overflow-hidden p-1 lg:h-24 lg:w-32 lg:shrink-0">
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
           </div>
         </div>
