@@ -37,7 +37,7 @@ function Page() {
         { q: "Heb ik een aparte app nodig?", a: "Niet altijd — een goede mobile site werkt prima. Maar een native app is doorgaans sneller, ondersteunt biometrische login en heeft betere notificaties." },
         { q: "Werkt iDEAL goed in casino-apps?", a: "Bij goede apps perfect: deeplink naar je banking-app en weer terug, alles zonder accounts opnieuw invoeren. Bij slechte implementaties moet je extra inloggegevens noteren." },
         { q: "Verbruikt mobiel spelen veel data?", a: "Slots gemiddeld 10-50MB per uur. Live casino kan oplopen tot 500MB per uur door video-streams. Op WiFi spelen scheelt." },
-        { q: "Kan ik via 4G/5G live casino spelen?", a: "Ja, mits je bereik stabiel is. Live Arena en Delta Casino schaalden tijdens onze test goed terug naar lagere kwaliteit bij verminderde verbinding." },
+        { q: "Kan ik via 4G/5G live casino spelen?", a: "Ja, mits je bereik stabiel is. De geteste casino's schaalden tijdens onze test goed terug naar lagere kwaliteit bij verminderde verbinding." },
         { q: "Werken de apps op oudere telefoons?", a: "De besten ondersteunen iOS 13+ en Android 9+. Zeer oude toestellen kunnen problemen geven met live casino streams." },
       ]}
       related={[

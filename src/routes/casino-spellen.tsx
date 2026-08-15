@@ -36,7 +36,7 @@ function Page() {
       primaryCta="Bekijk Casino"
       faqs={[
         { q: "Hoeveel slots heeft een 'goed' casino tegenwoordig?", a: "Boven de 1.000 slots is gangbaar; topcasino's zitten op 1.500-2.000+. Maar variëteit van providers (NetEnt, Pragmatic, Play'n GO, Hacksaw) is belangrijker dan absolute aantallen." },
-        { q: "Kan ik live casino spelen met een Nederlandse dealer?", a: "Ja — bij Live Arena en enkele anderen. Dat is een typisch NL-marktproduct; in andere landen veelal ondergesneeuwd door Engelstalige tafels." },
+        { q: "Kan ik live casino spelen met een Nederlandse dealer?", a: "Ja — bij enkele van de casino's in onze lijst. Dat is een typisch NL-marktproduct; in andere landen veelal ondergesneeuwd door Engelstalige tafels." },
         { q: "Wat is de RTP van casinospellen?", a: "RTP (Return To Player) is het theoretische uitkeringspercentage over miljoenen spins. Slots zitten meestal tussen 92-97%. Hogere RTP is op de lange termijn gunstiger voor de speler." },
         { q: "Mag ik gratis demo-modus spelen?", a: "Bij de meeste KSA-casino's ja, voor slots. Voor live casino en sommige tafelspellen niet, omdat dealers ingehuurd moeten worden." },
         { q: "Welke spellen tellen voor wagering?", a: "Slots tellen meestal 100%, tafelspellen 5-20%, live casino vaak 10% of niets. Check altijd de bonusvoorwaarden." },
