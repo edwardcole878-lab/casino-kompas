@@ -3,50 +3,51 @@ import { ShieldCheck } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t bg-secondary/40 pb-24 md:pb-0">
+    <footer className="mt-24 bg-nl-ink text-white/70 pb-24 md:pb-0">
+      <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
       <div className="container mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <div className="text-lg font-bold">Buitenlandse <span className="text-gold">Casino's</span></div>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <div className="font-heading text-2xl uppercase tracking-wide text-white">Buitenlandse <span className="text-nl-orange">Casino&apos;s</span></div>
+            <p className="mt-3 text-sm text-white/60">
               Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's, gericht op Nederlandse spelers.
             </p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold">Casino's</h4>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/beste-online-casinos" className="hover:text-foreground">Beste online casino's</Link></li>
-              <li><Link to="/snelle-uitbetaling-ideal-casinos" className="hover:text-foreground">Buitenlandse casino's</Link></li>
-              <li><Link to="/casinos-zonder-cruks" className="hover:text-foreground">Casino's zonder Cruks</Link></li>
-              <li><Link to="/nieuwe-online-casinos" className="hover:text-foreground">Nieuwe casino's</Link></li>
-              <li><Link to="/betrouwbare-online-casinos" className="hover:text-foreground">Betrouwbare casino's</Link></li>
+            <h4 className="font-heading text-lg uppercase tracking-wide text-white">Casino's</h4>
+            <ul className="mt-3 space-y-2 text-sm text-white/60">
+              <li><Link to="/beste-online-casinos" className="hover:text-nl-orange">Beste online casino's</Link></li>
+              <li><Link to="/snelle-uitbetaling-ideal-casinos" className="hover:text-nl-orange">Buitenlandse casino's</Link></li>
+              <li><Link to="/casinos-zonder-cruks" className="hover:text-nl-orange">Casino's zonder Cruks</Link></li>
+              <li><Link to="/nieuwe-online-casinos" className="hover:text-nl-orange">Nieuwe casino's</Link></li>
+              <li><Link to="/betrouwbare-online-casinos" className="hover:text-nl-orange">Betrouwbare casino's</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold">Bonussen & Betalingen</h4>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/welkomstbonus-casino" className="hover:text-foreground">Welkomstbonus</Link></li>
-              <li><Link to="/no-deposit-bonus" className="hover:text-foreground">No deposit bonus</Link></li>
-              <li><Link to="/free-spins-casino" className="hover:text-foreground">Free spins</Link></li>
-              <li><Link to="/ideal-casinos" className="hover:text-foreground">iDEAL casino's</Link></li>
-              <li><Link to="/snelle-uitbetaling-casino" className="hover:text-foreground">Snelle uitbetaling</Link></li>
+            <h4 className="font-heading text-lg uppercase tracking-wide text-white">Bonussen & Betalingen</h4>
+            <ul className="mt-3 space-y-2 text-sm text-white/60">
+              <li><Link to="/welkomstbonus-casino" className="hover:text-nl-orange">Welkomstbonus</Link></li>
+              <li><Link to="/no-deposit-bonus" className="hover:text-nl-orange">No deposit bonus</Link></li>
+              <li><Link to="/free-spins-casino" className="hover:text-nl-orange">Free spins</Link></li>
+              <li><Link to="/ideal-casinos" className="hover:text-nl-orange">iDEAL casino's</Link></li>
+              <li><Link to="/snelle-uitbetaling-casino" className="hover:text-nl-orange">Snelle uitbetaling</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold">Over ons</h4>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/over-ons" className="hover:text-foreground">Over ons</Link></li>
-              <li><Link to="/auteur/$slug" params={{ slug: "mark-de-vries" }} className="hover:text-foreground">Onze redactie</Link></li>
-              <li><Link to="/redactiebeleid" className="hover:text-foreground">Redactiebeleid</Link></li>
-              <li><Link to="/verantwoord-spelen" className="hover:text-foreground">Verantwoord spelen</Link></li>
-              <li><Link to="/blog" className="hover:text-foreground">Blog</Link></li>
+            <h4 className="font-heading text-lg uppercase tracking-wide text-white">Over ons</h4>
+            <ul className="mt-3 space-y-2 text-sm text-white/60">
+              <li><Link to="/over-ons" className="hover:text-nl-orange">Over ons</Link></li>
+              <li><Link to="/auteur/$slug" params={{ slug: "mark-de-vries" }} className="hover:text-nl-orange">Onze redactie</Link></li>
+              <li><Link to="/redactiebeleid" className="hover:text-nl-orange">Redactiebeleid</Link></li>
+              <li><Link to="/verantwoord-spelen" className="hover:text-nl-orange">Verantwoord spelen</Link></li>
+              <li><Link to="/blog" className="hover:text-nl-orange">Blog</Link></li>
             </ul>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-start gap-4 border-t pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-trust text-trust-foreground text-xs font-bold">18+</span>
-            <ShieldCheck className="h-4 w-4 text-trust" />
+        <div className="mt-10 flex flex-col items-start gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3 text-sm text-white/60">
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-nl-orange text-white text-xs font-bold">18+</span>
+            <ShieldCheck className="h-4 w-4 text-nl-orange" />
             {/* TODO: verify exact helpline routing — AGOG informatielijn = 0800-22 777 22 (gratis); loketkansspel.nl voor doorverwijzing */}
             <span>
               Speel verantwoord — Dit is een vergelijkingswebsite. Hulp bij gokverslaving? Bel{" "}
@@ -55,10 +56,10 @@ export function Footer() {
             </span>
           </div>
           <div className="text-right">
-            <p className="text-xs font-medium text-foreground/70">
+            <p className="text-xs font-medium text-white/70">
               Laatst gecontroleerd door redactie: 18 april 2026
             </p>
-            <p className="mt-0.5 text-xs text-muted-foreground">
+            <p className="mt-0.5 text-xs text-white/50">
               © {new Date().getFullYear()} Buitenlandse Casino's. Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's.
             </p>
           </div>
