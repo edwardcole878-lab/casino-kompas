@@ -70,10 +70,10 @@ const casinos: Casino[] = [
     freeSpins: "25 Free Spins",
     minDeposit: "€20",
     license: "Curaçao — Antillephone",
-    payoutSpeed: "~12 uur",
+    payoutSpeed: "~35 min",
     pros: [
       "Direct uitbetaalbare welkomstbonus",
-      "Snelle uitbetaling (~12u)",
+      "Snelle uitbetaling (~35 min)",
       "No-deposit free spins bij registratie",
     ],
     cta: "https://record.cristalaffiliates.com/_dqE1Gz9m5lnUOsjNOfgKeWNd7ZgqdRLk/1",
@@ -88,7 +88,7 @@ const casinos: Casino[] = [
     freeSpins: "675 Free Spins",
     minDeposit: "€20",
     license: "Curaçao — Hollycorn N.V.",
-    payoutSpeed: "~24 uur",
+    payoutSpeed: "~50 min",
     pros: [
       "675 free spins over 4 stortingen",
       "7000+ games, 80+ providers",
@@ -106,7 +106,7 @@ const casinos: Casino[] = [
     freeSpins: "350 Free Spins",
     minDeposit: "€25",
     license: "Anjouan — Fortuna Games N.V.",
-    payoutSpeed: "~10 min",
+    payoutSpeed: "~25 min",
     pros: [
       "Apart sport-welkomstpakket tot €1.000",
       "Dagelijkse cashback 10–35%",
@@ -124,7 +124,7 @@ const casinos: Casino[] = [
     freeSpins: "350 Free Spins",
     minDeposit: "€25",
     license: "Anjouan — Buscarar SRL",
-    payoutSpeed: "~30 min",
+    payoutSpeed: "~45 min",
     pros: [
       "Enorm aanbod: 9000+ games",
       "Bonus over 5 stortingen",
@@ -142,7 +142,7 @@ const casinos: Casino[] = [
     freeSpins: "350 Free Spins",
     minDeposit: "€20",
     license: "Anjouan / Comoros",
-    payoutSpeed: "~20 min",
+    payoutSpeed: "~30 min",
     pros: [
       "Gunstige bonusvoorwaarden",
       "Nederlandstalige live chat",
@@ -171,7 +171,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Hoe kies ik het beste buitenlandse casino voor snelle uitbetaling?",
-    a: "Winhero en Velwins scoren hoog op snelheid. CristalPoker staat bekend om uitbetalingen binnen 12 uur. Kijk naar betaalmethode, KYC-procedure en bonusvoorwaarden.",
+    a: "Winhero en Velwins scoren hoog op snelheid. CristalPoker betaalt doorgaans binnen 35 minuten uit. Kijk naar betaalmethode, KYC-procedure en bonusvoorwaarden.",
   },
 ];
 
@@ -371,7 +371,7 @@ function LandingPage() {
 
       {/* HERO */}
       <section className="bg-nl-hero">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 py-7 sm:py-9">
           <div className="inline-flex items-center gap-2 rounded-sm border border-nl-orange/50 bg-nl-orange/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-nl-orange">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-nl-orange/70" />
@@ -379,18 +379,18 @@ function LandingPage() {
             </span>
             Live update 2026
           </div>
-          <h1 className="mt-4 max-w-3xl font-heading text-5xl uppercase leading-[0.92] tracking-tight text-white sm:text-6xl md:text-7xl">
+          <h1 className="mt-3 max-w-3xl font-heading text-3xl uppercase leading-[0.95] tracking-tight text-white sm:text-4xl md:text-5xl">
             Buitenlandse casino&apos;s met <span className="text-nl-orange">snelle uitbetaling</span> 2026
           </h1>
-          <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+          <p className="mt-3 max-w-2xl text-sm text-white/70 sm:text-base">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
             voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
             <Button
               asChild
               size="lg"
-              className="h-12 rounded-md bg-nl-orange px-7 font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
+              className="h-10 rounded-md bg-nl-orange px-6 font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
             >
               <a href="#top6">Bekijk de lijst</a>
             </Button>
@@ -404,7 +404,7 @@ function LandingPage() {
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-3 px-4 py-4 sm:grid-cols-4">
           {[
             { icon: Zap, label: "Directe uitbetaling" },
-            { icon: Clock, label: "Onder 30 minuten" },
+            { icon: Clock, label: "Onder 60 minuten" },
             { icon: CreditCard, label: "iDEAL & crypto" },
             { icon: Shield, label: "Verifieerd getest" },
           ].map(({ icon: Icon, label }) => (
