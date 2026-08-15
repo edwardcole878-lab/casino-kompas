@@ -56,69 +56,9 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  /* Brand: deep navy + gold accent — premium, trustworthy NL casino feel */
-  --background: oklch(0.99 0.005 250);
-  --foreground: oklch(0.18 0.04 260);
-
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 260);
-
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 260);
-
-  --primary: oklch(0.28 0.09 265);            /* deep navy */
-  --primary-foreground: oklch(0.985 0.005 250);
-
-  --secondary: oklch(0.96 0.01 250);
-  --secondary-foreground: oklch(0.22 0.06 265);
-
-  --muted: oklch(0.965 0.008 250);
-  --muted-foreground: oklch(0.5 0.02 260);
-
-  --accent: oklch(0.95 0.03 80);
-  --accent-foreground: oklch(0.28 0.09 265);
-
-  --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-
-  --success: oklch(0.62 0.16 150);
-  --success-foreground: oklch(0.99 0 0);
-
-  --warning: oklch(0.78 0.15 70);
-  --warning-foreground: oklch(0.2 0.05 60);
-
-  --gold: oklch(0.78 0.14 80);                /* casino gold */
-  --gold-foreground: oklch(0.2 0.05 60);
-
-  --trust: oklch(0.55 0.14 240);              /* trust blue */
-  --trust-foreground: oklch(0.99 0 0);
-
-  --emerald: oklch(0.72 0.17 160);
-  --emerald-foreground: oklch(0.12 0.02 165);
-  --surface: oklch(0.16 0.03 165);
-  --surface-2: oklch(0.21 0.04 165);
-  --shadow-emerald: 0 12px 40px -12px oklch(0.72 0.17 160 / 0.35);
-  --gradient-hero-dark: radial-gradient(ellipse at top right, oklch(0.45 0.15 160 / 0.25), transparent 55%),
-                        radial-gradient(ellipse at bottom left, oklch(0.55 0.14 85 / 0.15), transparent 55%);
-
-  --border: oklch(0.91 0.01 250);
-  --input: oklch(0.91 0.01 250);
-  --ring: oklch(0.55 0.1 265);
-
-  --gradient-hero: linear-gradient(135deg, oklch(0.22 0.08 265), oklch(0.32 0.1 270) 60%, oklch(0.42 0.12 280));
-  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 85), oklch(0.72 0.16 70));
-  --gradient-card: linear-gradient(180deg, oklch(1 0 0), oklch(0.985 0.005 250));
-
-  --shadow-elegant: 0 10px 30px -10px oklch(0.28 0.09 265 / 0.18);
-  --shadow-gold: 0 10px 30px -10px oklch(0.78 0.14 80 / 0.45);
-  --shadow-card: 0 1px 3px oklch(0.28 0.09 265 / 0.06), 0 4px 16px -4px oklch(0.28 0.09 265 / 0.08);
-  --shadow-lift: 0 20px 40px -16px oklch(0.28 0.09 265 / 0.22), 0 8px 16px -8px oklch(0.28 0.09 265 / 0.12);
-  --gradient-cta: linear-gradient(135deg, oklch(0.84 0.15 88), oklch(0.74 0.17 68));
-  --gradient-bonus: linear-gradient(135deg, oklch(0.96 0.06 85), oklch(0.92 0.1 80));
-
-  /* Dutch flag palette — orange / navy blue / red on off-white */
+  /* Brand: Dutch flag system — navy + orange on cool sand, green for #1 */
   --nl-orange: oklch(0.7 0.19 48);
   --nl-blue: oklch(0.36 0.13 265);
   --nl-red: oklch(0.52 0.2 27);
@@ -126,10 +66,70 @@
   --nl-ink: oklch(0.19 0.03 265);
   --nl-gold: oklch(0.8 0.14 85);
   --nl-green: oklch(0.58 0.15 155);
+
+  --background: var(--nl-sand);
+  --foreground: var(--nl-ink);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--nl-ink);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--nl-ink);
+
+  --primary: var(--nl-blue);
+  --primary-foreground: oklch(0.99 0 0);
+
+  --secondary: oklch(0.93 0.014 255);
+  --secondary-foreground: var(--nl-blue);
+
+  --muted: oklch(0.94 0.012 255);
+  --muted-foreground: oklch(0.5 0.03 265);
+
+  --accent: oklch(0.94 0.05 55);
+  --accent-foreground: var(--nl-blue);
+
+  --destructive: var(--nl-red);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: var(--nl-green);
+  --success-foreground: oklch(0.99 0 0);
+
+  --warning: var(--nl-orange);
+  --warning-foreground: oklch(0.19 0.03 265);
+
+  /* legacy "gold" tokens now map to the orange accent so every existing
+     gold CTA/badge across the site picks up the new visual automatically */
+  --gold: var(--nl-orange);
+  --gold-foreground: oklch(0.99 0 0);
+
+  --trust: var(--nl-blue);
+  --trust-foreground: oklch(0.99 0 0);
+
+  --emerald: var(--nl-green);
+  --emerald-foreground: oklch(0.99 0 0);
+  --surface: oklch(0.24 0.09 265);
+  --surface-2: oklch(0.3 0.11 265);
+  --shadow-emerald: 0 12px 28px -12px oklch(0.58 0.15 155 / 0.45);
+  --gradient-hero-dark: var(--gradient-nl-hero);
+
+  --border: oklch(0.36 0.13 265 / 0.22);
+  --input: oklch(0.36 0.13 265 / 0.22);
+  --ring: var(--nl-orange);
+
   --gradient-nl: linear-gradient(90deg, var(--nl-red) 0 33.33%, oklch(1 0 0) 33.33% 66.66%, var(--nl-blue) 66.66% 100%);
   --gradient-nl-hero: linear-gradient(160deg, oklch(0.34 0.12 265) 0%, oklch(0.24 0.09 265) 55%, oklch(0.19 0.05 265) 100%);
+  --gradient-hero: var(--gradient-nl-hero);
+  --gradient-gold: linear-gradient(135deg, oklch(0.74 0.19 55), oklch(0.66 0.2 42));
+  --gradient-cta: linear-gradient(135deg, oklch(0.74 0.19 55), oklch(0.66 0.2 42));
+  --gradient-bonus: linear-gradient(135deg, oklch(0.96 0.045 60), oklch(0.93 0.07 52));
+  --gradient-card: linear-gradient(180deg, oklch(1 0 0), oklch(0.985 0.006 255));
+
   --shadow-row: 0 2px 0 0 oklch(0.36 0.13 265 / 0.08), 0 14px 30px -20px oklch(0.36 0.13 265 / 0.5);
   --shadow-orange: 0 12px 28px -12px oklch(0.7 0.19 48 / 0.6);
+  --shadow-elegant: var(--shadow-row);
+  --shadow-gold: var(--shadow-orange);
+  --shadow-card: var(--shadow-row);
+  --shadow-lift: 0 20px 36px -18px oklch(0.36 0.13 265 / 0.55);
 }
 
 .dark {
@@ -167,10 +167,16 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { letter-spacing: -0.02em; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.98;
+    color: var(--nl-blue);
+  }
 }
 
 @layer utilities {
@@ -187,8 +193,8 @@
   .shadow-lift { box-shadow: var(--shadow-lift); }
   .hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
   .hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
-  .shadow-soft { box-shadow: 0 8px 30px oklch(0.18 0.04 260 / 0.06); }
-  .shadow-glow-gold { box-shadow: 0 12px 40px oklch(0.82 0.16 85 / 0.18); }
+  .shadow-soft { box-shadow: var(--shadow-row); }
+  .shadow-glow-gold { box-shadow: var(--shadow-orange); }
   .container-page { width: 100%; margin-inline: auto; max-width: 1240px; padding-inline: 24px; }
   .cta-glow { transition: box-shadow .25s ease, transform .2s ease, opacity .2s ease; }
   .cta-glow:hover { box-shadow: 0 14px 38px oklch(0.78 0.16 75 / 0.45); transform: translateY(-1px); }
