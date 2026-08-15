@@ -39,10 +39,6 @@ function Index() {
         <div className="container relative mx-auto max-w-[1240px] px-6 pt-10 pb-10 md:pt-14 md:pb-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
             <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/80">
-                <ShieldIcon className="h-3.5 w-3.5 text-nl-orange" />
-                Editie april 2026 · onafhankelijk getest
-              </div>
               <h1 className="text-[34px] leading-[0.95] text-white md:text-[52px] lg:text-[58px]">
                 Wij testen buitenlandse online casino's voor Nederlandse spelers.
                 <span className="text-nl-orange"> Dit zijn de casino's die onze test overleefden.</span>
@@ -51,12 +47,6 @@ function Index() {
                 Onafhankelijke ranking op basis van uitbetaalsnelheid, bonusvoorwaarden en
                 transparantie — <strong className="text-white">geen commissie-ranking</strong>.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-white/70">
-                <Link to="/redactiebeleid" className="inline-flex items-center gap-1.5 hover:text-white">
-                  <PlayCircle className="h-4 w-4 text-nl-orange" /> Hoe wij testen
-                </Link>
-                <span className="inline-flex items-center gap-1.5">Speciaal voor Nederland</span>
-              </div>
             </div>
 
             {/* #1 PICK CARD */}
@@ -107,12 +97,6 @@ function Index() {
       <div className="container mx-auto max-w-[1240px] px-6 pb-16 md:pb-24">
         {/* COMPARISON TABLE */}
         <section className="mt-12 md:mt-16">
-          <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <div className="text-[11px] font-bold uppercase tracking-widest text-gold">Side-by-side vergelijking</div>
-              <h2 className="mt-1 text-2xl font-extrabold md:text-3xl">Vergelijk de top 10 in één oogopslag</h2>
-                          </div>
-          </div>
           <ComparisonGrid casinos={top} />
         </section>
 
