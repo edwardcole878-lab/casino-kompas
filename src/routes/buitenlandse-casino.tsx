@@ -229,19 +229,21 @@ function CasinoRow({ c }: { c: Casino }) {
   const isTop = c.rank === 1;
   return (
     <article
-      className={`relative overflow-hidden rounded-lg border-2 bg-card transition-colors ${
+      className={`relative flex h-full flex-col overflow-hidden rounded-lg border-2 bg-card transition-colors ${
         isTop
           ? "border-nl-green shadow-row ring-2 ring-nl-green/30"
           : "border-nl-blue/35 shadow-row hover:border-nl-blue/60"
       }`}
     >
-      {isTop && (
-        <div className="flex items-center justify-center gap-2 bg-nl-green px-4 py-1.5 font-heading text-sm uppercase tracking-[0.2em] text-white lg:justify-start">
+      {isTop ? (
+        <div className="flex h-8 shrink-0 items-center justify-center gap-2 bg-nl-green px-4 font-heading text-sm uppercase tracking-[0.2em] text-white lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
+      ) : (
+        <div className="h-8 shrink-0 bg-nl-blue/5" aria-hidden />
       )}
 
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
+      <div className="grid flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
         <div className="col-span-2 flex items-center justify-center lg:col-span-1">
           <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-0 lg:h-28 lg:w-32 lg:shrink-0">
@@ -255,7 +257,7 @@ function CasinoRow({ c }: { c: Casino }) {
           <div className="mt-1 flex justify-center lg:justify-start">
             <Stars rating={c.rating} />
           </div>
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2 min-h-[54px] space-y-1 lg:min-h-[66px]">
             {c.pros.map((p) => (
               <li
                 key={p}
@@ -356,7 +358,7 @@ function LandingPage() {
           betrouwbaarheid en welkomstbonus.
         </p>
 
-        <div className="mt-4 space-y-4 sm:mt-6">
+        <div className="mt-4 grid auto-rows-fr gap-4 sm:mt-6">
           {casinos.map((c) => (
             <CasinoRow key={c.slug} c={c} />
           ))}
