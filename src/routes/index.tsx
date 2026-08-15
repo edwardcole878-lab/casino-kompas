@@ -166,7 +166,7 @@ function Index() {
         <div className="mt-20 grid gap-8 lg:grid-cols-[1fr_320px]">
           <FAQ
             items={[
-              { q: `Welk buitenlands casino is in 2026 het beste voor Nederlandse spelers?`, a: `Op basis van onze tests staat ${number1.name} dit jaar bovenaan dankzij ${number1.bonusHeadline} en de combinatie van crypto en iDEAL. De ranking verandert per kwartaal — we hertesten doorlopend.` },
+              { q: `Welk buitenlands casino is in 2026 het beste voor Nederlandse spelers?`, a: `Op basis van onze tests staat ${number1.name} dit jaar bovenaan dankzij ${number1.bonus} en de combinatie van crypto en iDEAL. De ranking verandert per kwartaal — we hertesten doorlopend.` },
               { q: "Is spelen bij een buitenlands casino legaal in Nederland?", a: "Voor de speler is het niet strafbaar. De aanbieder mag zonder KSA-vergunning geen Nederlandse spelers actief werven. Spelen gebeurt op eigen verantwoordelijkheid." },
               { q: "Wat is het verschil met een KSA-casino?", a: "KSA-casino's vallen onder Nederlands toezicht (Cruks, stortlimieten, kansspelbelasting). Buitenlandse casino's hanteren hun eigen regime — vaak hogere bonussen en snellere uitbetalingen, maar minder spelersbescherming." },
               { q: "Wat als ik in CRUKS sta?", a: "Speel dan niet bij deze casino's. CRUKS bestaat om je te beschermen — buitenlandse casino's vallen buiten dat register." },
@@ -210,9 +210,8 @@ function Index() {
       <StickyMobileCTA
         slug={number1.slug}
         name={number1.name}
-        brandColor={number1.brandColor}
-        image={number1.logoUrl ?? number1.image}
-        bonus={number1.bonusHeadline}
+        image={number1.logo}
+        bonus={number1.bonus}
         label="Speel Nu →"
       />
     </Layout>
