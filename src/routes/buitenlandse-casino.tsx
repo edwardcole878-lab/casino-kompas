@@ -15,6 +15,7 @@ import cristalpokerLogo from "@/assets/logos/cristalpoker.t.asset.json";
 import balooLogo from "@/assets/logos/baloo.t.asset.json";
 import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
 import spinmillsLogo from "@/assets/logos/spinmills.new.asset.json";
+import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
 
 type Casino = {
