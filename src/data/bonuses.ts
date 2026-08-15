@@ -30,8 +30,6 @@ export type Bonus = {
   lastUpdated: string;
 };
 
-const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
 /** One welcome bonus per casino, derived from the canonical casino listing. */
 export const bonuses: Bonus[] = casinos.map((c) => ({
   slug: `${c.slug}-welkomstbonus`,
@@ -54,8 +52,6 @@ export const bonuses: Bonus[] = casinos.map((c) => ({
   ],
   lastUpdated: c.lastTested,
 }));
-
-void slugify;
 
 export const getBonus = (slug: string) => bonuses.find((b) => b.slug === slug);
 export const bonusesByCasino = (casinoSlug: string) =>
