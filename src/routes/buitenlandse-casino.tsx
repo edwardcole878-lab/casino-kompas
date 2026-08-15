@@ -302,12 +302,10 @@ function LandingPage() {
       {/* HERO */}
       <section className="bg-nl-hero">
         <div className="mx-auto max-w-5xl px-4 py-4 sm:py-9">
-          <div className="inline-flex items-center gap-2 rounded-sm border border-nl-orange/50 bg-nl-orange/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-nl-orange">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-nl-orange/70" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-nl-orange" />
+          <div className="flex justify-center">
+            <span className="inline-flex items-center rounded-sm bg-white px-3 py-1.5">
+              <img src={trustpilotLogo.url} alt="Trustpilot" className="h-5 w-auto sm:h-6" />
             </span>
-            Live update 2026
           </div>
           <h1 className="mt-2 max-w-3xl font-heading text-2xl uppercase leading-[0.95] tracking-tight text-white sm:mt-3 sm:text-4xl md:text-5xl">
             Snelst Uitbetalende <span className="text-nl-orange">iDEAL Casino&apos;s</span> van 2026
