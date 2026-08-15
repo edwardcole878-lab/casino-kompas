@@ -253,8 +253,8 @@ function CasinoRow({ c }: { c: Casino }) {
 
         {/* Name, rating, pros */}
         <div className="min-w-0 self-center">
-          <h3 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:text-2xl">{c.name}</h3>
-          <div className="mt-1 flex justify-center lg:justify-start">
+          <h3 className="hidden font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:block lg:text-2xl">{c.name}</h3>
+          <div className="flex justify-center lg:mt-1 lg:justify-start">
             <Stars rating={c.rating} />
           </div>
           <ul className="mt-2 min-h-[54px] space-y-1 lg:mt-1.5 lg:min-h-[52px] lg:space-y-0.5">
