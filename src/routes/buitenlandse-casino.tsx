@@ -327,7 +327,7 @@ function LandingPage() {
             Live update 2026
           </div>
           <h1 className="mt-3 max-w-3xl font-heading text-3xl uppercase leading-[0.95] tracking-tight text-white sm:text-4xl md:text-5xl">
-            Buitenlandse casino&apos;s met <span className="text-nl-orange">snelle uitbetaling</span> 2026
+            Snelst Uitbetalende <span className="text-nl-orange">iDEAL Casino&apos;s</span> van 2026
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-white/70 sm:text-base">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
