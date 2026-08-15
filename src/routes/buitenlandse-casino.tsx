@@ -238,31 +238,34 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
       )}
 
-      <div className="grid gap-5 p-4 sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6">
+      <div className="grid gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,240px)] lg:items-center lg:gap-6 lg:text-left">
         {/* Rank + logo */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-center gap-3 lg:gap-4">
           <span
-            className={`font-heading text-5xl leading-none tracking-tight lg:text-6xl ${
+            className={`font-heading text-4xl leading-none tracking-tight lg:text-6xl ${
               isTop ? "text-nl-orange" : "text-nl-blue/25"
             }`}
           >
             {c.rank}
           </span>
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-nl-ink">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-nl-ink lg:h-24 lg:w-24">
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
           </div>
         </div>
 
         {/* Name, rating, pros */}
         <div className="min-w-0">
-          <h3 className="font-heading text-3xl uppercase leading-none tracking-wide text-nl-blue">{c.name}</h3>
-          <div className="mt-1.5">
+          <h3 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:text-3xl">{c.name}</h3>
+          <div className="mt-1 flex justify-center lg:justify-start">
             <Stars rating={c.rating} />
           </div>
-          <ul className="mt-3 space-y-1">
+          <ul className="mt-2 space-y-0.5">
             {c.pros.map((p) => (
-              <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <Check size={15} className="mt-0.5 shrink-0 text-nl-orange" />
+              <li
+                key={p}
+                className="flex items-start justify-center gap-1.5 text-xs text-muted-foreground lg:justify-start lg:text-sm"
+              >
+                <Check size={14} className="mt-0.5 shrink-0 text-nl-orange" />
                 <span>{p}</span>
               </li>
             ))}
@@ -270,11 +273,11 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
 
         {/* Bonus + facts */}
-        <div className="lg:border-x lg:border-nl-blue/10 lg:px-6">
+        <div className="border-y border-nl-blue/10 py-2 lg:border-y-0 lg:border-x lg:px-6 lg:py-0">
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
-          <div className="font-heading text-3xl leading-none tracking-wide text-nl-ink">{c.bonus}</div>
-          <div className="mt-1 text-sm font-medium text-nl-orange">+ {c.freeSpins}</div>
-          <dl className="mt-3 space-y-1 text-xs text-muted-foreground">
+          <div className="font-heading text-2xl leading-none tracking-wide text-nl-ink lg:text-3xl">{c.bonus}</div>
+          <div className="mt-1 text-xs font-medium text-nl-orange lg:text-sm">+ {c.freeSpins}</div>
+          <dl className="mt-2 flex flex-wrap justify-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground lg:block lg:space-y-1">
             <div className="flex gap-1.5">
               <dt className="shrink-0">Min. storting:</dt>
               <dd className="font-semibold text-nl-ink">{c.minDeposit}</dd>
@@ -290,19 +293,19 @@ function CasinoRow({ c }: { c: Casino }) {
         <div className="lg:text-right">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-nl-blue/8 px-3 py-1 text-nl-blue">
             <Zap size={14} className="text-nl-orange" />
-            <span className="font-heading text-xl leading-none tracking-wide">{c.payoutSpeed}</span>
+            <span className="font-heading text-lg leading-none tracking-wide lg:text-xl">{c.payoutSpeed}</span>
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground">uitbetaling</span>
           </div>
           <Button
             asChild
             size="lg"
-            className="mt-3 h-12 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
+            className="mt-2 h-11 w-full rounded-md bg-nl-orange font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90 lg:mt-3 lg:h-12 lg:text-xl"
           >
             <AffiliateLink href={c.cta} ariaLabel={`Speel nu bij ${c.name}`}>
               Speel nu <ArrowRight size={18} className="ml-1" />
             </AffiliateLink>
           </Button>
-          <p className="mt-2 text-[10px] text-muted-foreground lg:text-right">
+          <p className="mt-1.5 text-[10px] text-muted-foreground lg:mt-2 lg:text-right">
             Nieuwe spelers · 18+ · Voorwaarden van toepassing
           </p>
         </div>
