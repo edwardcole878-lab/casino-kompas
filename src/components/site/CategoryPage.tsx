@@ -35,17 +35,24 @@ export function CategoryPage({
 }: CategoryPageProps) {
   return (
     <Layout>
-      <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
-        <Breadcrumbs items={breadcrumbs} />
-        <header className="mt-6 max-w-3xl">
-          <h1 className="text-3xl font-bold leading-tight md:text-5xl">{h1}</h1>
-          <div className="mt-3"><PageMeta /></div>
-          <div className="prose prose-neutral mt-6 max-w-none text-muted-foreground leading-relaxed [&_strong]:text-foreground">
-            {intro}
+      <section className="bg-nl-hero text-white">
+        <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
+          <div className="[&_a]:text-white/70 [&_a:hover]:text-white [&_span]:text-white/50">
+            <Breadcrumbs items={breadcrumbs} />
           </div>
-        </header>
+          <header className="mt-5 max-w-3xl">
+            <h1 className="text-3xl leading-[0.95] text-white md:text-5xl">{h1}</h1>
+            <div className="mt-3 text-white/60 [&_*]:text-white/60"><PageMeta /></div>
+          </header>
+        </div>
+      </section>
 
-        <section className="mt-12">
+      <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
+        <div className="prose prose-neutral max-w-3xl text-muted-foreground leading-relaxed [&_strong]:text-foreground">
+          {intro}
+        </div>
+
+        <section className="mt-10">
           <div className="mb-5 flex items-end justify-between">
             <div>
               <h2 className="text-2xl font-bold md:text-3xl">{rankingTitle}</h2>
