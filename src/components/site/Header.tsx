@@ -84,20 +84,20 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70 transition-shadow ${
-        scrolled ? "shadow-soft" : ""
+      className={`sticky top-0 z-40 bg-nl-hero text-white transition-shadow ${
+        scrolled ? "shadow-row" : ""
       }`}
-      style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
+      <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
       {/* Layer 1 — Utility bar */}
-      <div className={`hidden md:block border-b transition-all ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-11 opacity-100"}`} style={{ borderColor: "rgba(0,0,0,0.05)" }}>
+      <div className={`hidden md:block border-b border-white/10 transition-all ${scrolled ? "h-0 overflow-hidden opacity-0" : "h-11 opacity-100"}`}>
         <div className="container mx-auto flex h-11 max-w-[1240px] items-center justify-end gap-6 px-6">
-          <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
+          <div className="flex items-center gap-4 text-xs font-medium text-white/70">
             <Link
               to="/redactiebeleid"
-              className="inline-flex items-center gap-1.5 hover:text-foreground"
+              className="inline-flex items-center gap-1.5 hover:text-white"
             >
-              <ShieldCheck className="h-3.5 w-3.5 text-trust" />
+              <ShieldCheck className="h-3.5 w-3.5 text-nl-orange" />
               Onafhankelijk getest · April 2026
             </Link>
           </div>
@@ -116,7 +116,7 @@ export function Header() {
         <nav className={`hidden items-center gap-1 md:flex ${scrolled ? "md:hidden" : ""}`}>
           {groups.map((g) => (
             <div key={g.label} className="group relative">
-              <button className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-accent hover:text-foreground">
+              <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-heading text-lg uppercase tracking-wide text-white/85 transition-colors hover:bg-white/10 hover:text-white">
                 {g.label} <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
               </button>
               {/* Mega menu */}
@@ -151,7 +151,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button
             asChild
-            className="hidden md:inline-flex h-11 gradient-cta cta-glow rounded-xl px-5 text-sm font-extrabold text-gold-foreground shadow-gold"
+            className="hidden md:inline-flex h-11 rounded-md bg-nl-orange px-5 font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
           >
             <Link to="/beste-online-casinos">
               Vergelijk Casino's <ArrowRight className="h-4 w-4" />
@@ -159,7 +159,7 @@ export function Header() {
           </Button>
           <button
             aria-label="Menu"
-            className="md:hidden rounded-md p-2 hover:bg-accent"
+            className="md:hidden rounded-md p-2 text-white hover:bg-white/10"
             onClick={() => setOpen((o) => !o)}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -167,14 +167,14 @@ export function Header() {
         </div>
       </div>
       {open && (
-        <div className="border-t md:hidden">
+        <div className="border-t border-white/10 bg-nl-ink md:hidden">
           <nav className="container mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
             <div className="relative mb-2">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="search"
                 placeholder="Zoek casino of bonus…"
-                className="h-10 w-full rounded-xl border bg-card pl-10 pr-3 text-sm shadow-soft outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20"
+                className="h-10 w-full rounded-md border border-white/15 bg-white/10 pl-10 pr-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-nl-orange/60"
               />
             </div>
             {groups.map((g) => {
@@ -183,19 +183,19 @@ export function Header() {
                 <div key={g.label} className="rounded-lg">
                   <button
                     onClick={() => setMobileGroup(expanded ? null : g.label)}
-                    className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-semibold hover:bg-accent"
+                    className="flex w-full items-center justify-between rounded-md px-3 py-2.5 font-heading text-lg uppercase tracking-wide text-white hover:bg-white/10"
                   >
                     {g.label}
                     <ChevronDown className={`h-4 w-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
                   </button>
                   {expanded && (
-                    <div className="ml-2 border-l pl-2">
+                    <div className="ml-2 border-l border-white/15 pl-2">
                       {g.items.map((it) => (
                         <Link
                           key={it.to}
                           to={it.to}
                           onClick={() => setOpen(false)}
-                          className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                          className="block rounded-md px-3 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white"
                         >
                           {it.label}
                         </Link>
@@ -207,7 +207,7 @@ export function Header() {
             })}
             <Button
               asChild
-              className="mt-2 h-11 w-full gradient-cta cta-glow rounded-xl text-sm font-extrabold text-gold-foreground shadow-gold"
+              className="mt-2 h-11 w-full rounded-md bg-nl-orange font-heading text-lg uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
             >
               <Link to="/beste-online-casinos" onClick={() => setOpen(false)}>
                 Vergelijk Casino's <ArrowRight className="h-4 w-4" />
