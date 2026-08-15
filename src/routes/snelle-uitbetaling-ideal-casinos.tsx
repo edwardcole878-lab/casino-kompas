@@ -217,7 +217,7 @@ export const Route = createFileRoute("/snelle-uitbetaling-ideal-casinos")({
         "@type": "ListItem",
         position: c.rank,
         name: c.name,
-        url: c.cta,
+        url: `https://buitenlandsecasino.com/go/${c.slug}`,
         description: `${c.bonus} + ${c.freeSpins}. Uitbetaling ${c.payoutSpeed}. Min. storting ${c.minDeposit}.`,
       })),
     };
@@ -352,7 +352,7 @@ function CasinoRow({ c }: { c: Casino }) {
               isTop ? "bg-nl-green hover:bg-nl-green/90" : "bg-nl-orange hover:bg-nl-orange/90"
             }`}
           >
-            <AffiliateLink href={c.cta} ariaLabel={`Speel nu bij ${c.name}`}>
+            <AffiliateLink href={`/go/${c.slug}`} ariaLabel={`Speel nu bij ${c.name}`}>
               Speel nu <ArrowRight size={18} className="ml-1" />
             </AffiliateLink>
           </Button>
@@ -438,7 +438,7 @@ function LandingPage() {
           size="lg"
           className="h-12 w-full rounded-md bg-nl-orange font-heading text-xl uppercase tracking-widest text-white shadow-orange hover:bg-nl-orange/90"
         >
-          <AffiliateLink href={casinos[0].cta} ariaLabel={`Speel nu bij ${casinos[0].name}`}>
+          <AffiliateLink href={`/go/${casinos[0].slug}`} ariaLabel={`Speel nu bij ${casinos[0].name}`}>
             <Trophy size={18} className="mr-2" /> #1 {casinos[0].name} · Speel nu
           </AffiliateLink>
         </Button>
