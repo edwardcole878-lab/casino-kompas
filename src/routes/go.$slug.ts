@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { getCasino } from "@/data/casinos";
 
 export const Route = createFileRoute("/go/$slug")({
-  // @ts-expect-error - `server` is supported at runtime by the TanStack Start plugin
   server: {
     handlers: {
       GET: ({ params }: { params: { slug: string } }) => {
