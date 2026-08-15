@@ -10,7 +10,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import winheroLogo from "@/assets/logos/winhero.webp.asset.json";
 import cristalpokerLogo from "@/assets/logos/cristalpoker.jpg.asset.json";
 import balooLogo from "@/assets/logos/baloo.webp.asset.json";
@@ -316,17 +315,6 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-nl-sand font-body text-nl-ink">
       <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
-
-      <header className="sticky top-0 z-40 border-b border-nl-blue/10 bg-nl-sand/90 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-2.5">
-          <span className="font-heading text-2xl uppercase tracking-widest text-nl-blue">
-            Buitenlandse Casino&apos;s
-          </span>
-          <Badge variant="outline" className="border-nl-red/40 bg-nl-red/10 font-semibold text-nl-red">
-            18+ | Speel bewust
-          </Badge>
-        </div>
-      </header>
 
       {/* HERO */}
       <section className="bg-nl-hero">
