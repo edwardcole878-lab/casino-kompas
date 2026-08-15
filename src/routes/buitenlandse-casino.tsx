@@ -433,126 +433,14 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* HOW WE RATE */}
-      <section className="border-y border-nl-blue/10 bg-card">
-        <div className="mx-auto max-w-5xl px-4 py-12">
-          <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">Hoe wij beoordelen</h2>
-          <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-            Elk casino in onze lijst wordt getest op echte uitbetalingssnelheid. We storten, spelen en laten ons geld
-            overmaken om de beloofde tijden te verifiëren.
-          </p>
-          <ol className="mt-6 divide-y divide-nl-blue/10 border-y border-nl-blue/10">
-            {[
-              { icon: Clock, title: "Uitbetalingssnelheid", desc: "Van opname-aanvraag tot geld op je rekening." },
-              { icon: Shield, title: "Veiligheid & licentie", desc: "Geldige offshore licentie en beveiligde transacties." },
-              { icon: Zap, title: "Bonusvoorwaarden", desc: "Eerlijke voorwaarden zonder verborgen limieten." },
-              { icon: CreditCard, title: "Betaalmethoden", desc: "iDEAL, crypto, e-wallets en Trustly beschikbaar." },
-            ].map(({ icon: Icon, title, desc }, i) => (
-              <li key={title} className="flex items-center gap-4 py-4">
-                <span className="font-heading text-3xl leading-none text-nl-orange">{`0${i + 1}`}</span>
-                <Icon size={18} className="shrink-0 text-nl-blue" />
-                <div>
-                  <h3 className="font-heading text-xl uppercase tracking-wide text-nl-blue">{title}</h3>
-                  <p className="text-sm text-muted-foreground">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* EDITORIAL */}
-      <section className="mx-auto max-w-3xl px-4 py-12">
-        <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">
-          Wat is een buitenlands online casino met snelle uitbetaling?
-        </h2>
-        <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-          <p>
-            Een <strong className="text-nl-ink">buitenlands online casino met snelle uitbetaling</strong> verwerkt je
-            opname-aanvraag direct of binnen enkele minuten. In plaats van dagen te wachten, staat je geld vaak binnen 5
-            tot 30 minuten op je rekening. Dit wordt mogelijk gemaakt door moderne betaalmethoden zoals iDEAL, crypto en
-            e-wallets.
-          </p>
-          <p>
-            De casino&apos;s op deze pagina richten zich op Nederlandse spelers onder een buitenlandse licentie (Anjouan,
-            Curaçao, MGA). Ze bieden snellere verificatie, lagere drempels en hogere bonussen dan traditionele
-            Nederlandse aanbieders. Let wel: ze vallen niet onder KSA-toezicht en niet onder CRUKS.
-          </p>
-          <p>
-            Onze testpanel heeft elke aanbieder daadwerkelijk uitbetaald. De getoonde uitbetalingstijden zijn gebaseerd
-            op praktijktests met de meest gebruikte betaalmethoden. Kies het casino dat het beste past bij jouw voorkeur
-            voor snelheid, bonus en spelaanbod.
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="border-t border-nl-blue/10 bg-card">
-        <div className="mx-auto max-w-3xl px-4 py-12">
-          <h2 className="font-heading text-4xl uppercase leading-none tracking-wide text-nl-blue">Veelgestelde vragen</h2>
-          <Accordion type="single" collapsible className="mt-4">
-            {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`item-${i}`} className="border-nl-blue/10">
-                <AccordionTrigger className="text-left text-sm font-semibold text-nl-ink hover:text-nl-orange">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="bg-nl-ink text-white/70">
         <div className="h-1.5 w-full bg-nl-flag" aria-hidden />
-        <div className="mx-auto max-w-5xl space-y-6 px-4 py-10">
-          <div className="flex flex-col items-start gap-4 rounded-md border border-nl-red/40 bg-nl-red/10 p-5 sm:flex-row sm:items-center">
-            <AlertTriangle size={22} className="shrink-0 text-nl-red" />
-            <div className="text-sm">
-              <p className="font-heading text-xl uppercase tracking-wide text-white">
-                Gokken kan verslavend zijn. Speel bewust. 18+.
-              </p>
-              <p className="mt-1">
-                Deze casino&apos;s bezitten géén Nederlandse KSA-vergunning en vallen niet onder CRUKS. Je speelt bij een
-                buitenlandse aanbieder zonder Nederlandse spelersbescherming.
-              </p>
-            </div>
-            <div className="flex shrink-0 items-center gap-2">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white/70 font-heading text-lg text-white">
-                18+
-              </div>
-              <span className="text-sm font-semibold text-white">Stop op tijd</span>
-            </div>
-          </div>
-
-          <div className="grid gap-6 text-sm sm:grid-cols-3">
-            <div>
-              <h3 className="mb-2 font-heading text-lg uppercase tracking-wide text-white">Hulp &amp; informatie</h3>
-              <ul className="space-y-1.5">
-                <li><a href="https://www.speelbewust.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">Speelbewust.nl</a></li>
-                <li><a href="https://www.loketkansspel.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">Loket Kansspel</a></li>
-                <li><a href="https://www.agog.nl" rel="noopener" target="_blank" className="hover:text-nl-orange">AGOG</a></li>
-              </ul>
-            </div>
-            <div className="sm:col-span-2">
-              <h3 className="mb-2 font-heading text-lg uppercase tracking-wide text-white">Affiliate disclosure</h3>
-              <p>
-                Wij kunnen een vergoeding ontvangen van de genoemde casino&apos;s. Dit beïnvloedt onze rangschikking
-                niet. Onze beoordelingen zijn gebaseerd op onafhankelijk onderzoek en daadwerkelijke uitbetalingstesten.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-6 text-xs sm:flex-row">
-            <p>© 2026 Buitenlandse Casino&apos;s — Alle rechten voorbehouden.</p>
-            <p className="flex items-center gap-2">
-              <Wallet size={14} className="text-nl-orange" />
-              Onafhankelijk vergeleken voor Nederlandse spelers.
-            </p>
-          </div>
+        <div className="mx-auto max-w-5xl px-4 py-6 text-center text-xs">
+          <p>© 2026 Buitenlandse Casino&apos;s — Alle rechten voorbehouden.</p>
         </div>
       </footer>
+
 
       {/* MOBILE STICKY CTA */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-nl-blue/15 bg-card/95 p-3 backdrop-blur md:hidden">
