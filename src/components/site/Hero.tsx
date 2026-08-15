@@ -42,8 +42,6 @@ export function Hero({
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/80">
           <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-gold" /> Alleen buitenlandse casino's</span>
-          <span className="inline-flex items-center gap-2"><TrendingUp className="h-4 w-4 text-gold" /> Onafhankelijk getest</span>
-          <span className="inline-flex items-center gap-2">🇳🇱 Speciaal voor Nederland</span>
           {meta && <span className="text-white/60">{meta}</span>}
         </div>
       </div>
