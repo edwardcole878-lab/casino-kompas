@@ -267,7 +267,7 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
 
         {/* Bonus + facts */}
-        <div className="self-center rounded-lg border border-nl-orange/30 bg-nl-orange/5 px-2.5 py-3 shadow-[0_2px_0_0_hsl(var(--nl-orange)/0.25)] lg:rounded-xl lg:px-5 lg:py-4">
+        <div className="self-center rounded-lg border border-nl-orange/30 bg-nl-orange/5 px-2.5 py-3 lg:rounded-xl lg:px-5 lg:py-4">
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
           <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-4xl">{c.bonus}</div>
           <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:text-base">+ {c.freeSpins}</div>
