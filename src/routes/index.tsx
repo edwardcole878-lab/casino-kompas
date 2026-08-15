@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   beforeLoad: () => {
-    throw redirect({ to: "/buitenlandse-casino" });
+    throw redirect({ to: "/snelle-uitbetaling-ideal-casinos" });
   },
   head: () => ({
     meta: [
@@ -196,7 +196,7 @@ function Index() {
                   { to: "/casinos-zonder-cruks", label: "Casino's Zonder CRUKS" },
                   { to: "/casinos-zonder-limiet", label: "Casino's Zonder Limiet" },
                   { to: "/snelle-uitbetaling-casino", label: "Snelle Uitbetaling Casino's" },
-                  { to: "/buitenlandse-casino", label: "Buitenlandse Casino's" },
+                  { to: "/snelle-uitbetaling-ideal-casinos", label: "Buitenlandse Casino's" },
                 ],
               },
               {

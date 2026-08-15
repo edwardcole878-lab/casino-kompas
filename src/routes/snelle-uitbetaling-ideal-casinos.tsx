@@ -205,7 +205,7 @@ const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 9";
 const PAGE_DESC =
   "Ontdek buitenlandse online casino's met de snelste uitbetalingen voor Nederlandse spelers. Vergelijk directe opnames, bonussen en betaalmethoden. Geüpdatet voor 2026.";
 
-export const Route = createFileRoute("/buitenlandse-casino")({
+export const Route = createFileRoute("/snelle-uitbetaling-ideal-casinos")({
   head: () => {
     const itemList = {
       "@context": "https://schema.org",

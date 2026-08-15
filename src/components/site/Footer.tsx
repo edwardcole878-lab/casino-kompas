@@ -16,7 +16,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold">Casino's</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li><Link to="/beste-online-casinos" className="hover:text-foreground">Beste online casino's</Link></li>
-              <li><Link to="/buitenlandse-casino" className="hover:text-foreground">Buitenlandse casino's</Link></li>
+              <li><Link to="/snelle-uitbetaling-ideal-casinos" className="hover:text-foreground">Buitenlandse casino's</Link></li>
               <li><Link to="/casinos-zonder-cruks" className="hover:text-foreground">Casino's zonder Cruks</Link></li>
               <li><Link to="/nieuwe-online-casinos" className="hover:text-foreground">Nieuwe casino's</Link></li>
               <li><Link to="/betrouwbare-online-casinos" className="hover:text-foreground">Betrouwbare casino's</Link></li>

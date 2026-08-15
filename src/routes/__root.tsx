@@ -5,10 +5,10 @@ import { jsonLdString } from "@/lib/jsonld";
 
 const SITE_URL = "https://buitenlandsecasino.com";
 
-// TEMP: lock the entire site to /buitenlandse-casino. All other page routes
+// TEMP: lock the entire site to /snelle-uitbetaling-ideal-casinos. All other page routes
 // redirect there. Infra paths (sitemap, robots, manifest, /go/* affiliate
 // redirects, /api/*) are left untouched.
-const ALLOWED_PATH = "/buitenlandse-casino";
+const ALLOWED_PATH = "/snelle-uitbetaling-ideal-casinos";
 const BYPASS_PREFIXES = ["/go/", "/api/", "/sitemap.xml", "/robots.txt", "/site.webmanifest", "/favicon"];
 
 function NotFoundComponent() {
