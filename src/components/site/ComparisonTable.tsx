@@ -1,20 +1,10 @@
+import { CasinoListing } from "./CasinoListing";
 import type { Casino } from "@/data/casinos";
-import { CasinoCard } from "./CasinoCard";
 
-export function ComparisonTable({
-  casinos,
-  primaryCta = "Speel Nu",
-  featureFirst = true,
-}: {
-  casinos: Casino[];
-  primaryCta?: string;
-  featureFirst?: boolean;
-}) {
-  return (
-    <div className="space-y-5">
-      {casinos.map((c, i) => (
-        <CasinoCard key={c.slug} casino={c} cta={primaryCta} featured={featureFirst && i === 0} />
-      ))}
-    </div>
-  );
+/**
+ * Site-wide canonical listing. Every page shows the exact same casino list,
+ * in the same order, with the same design.
+ */
+export function ComparisonTable(_props: { casinos?: Casino[]; primaryCta?: string; count?: number; title?: string; [key: string]: unknown }) {
+  return <CasinoListing />;
 }

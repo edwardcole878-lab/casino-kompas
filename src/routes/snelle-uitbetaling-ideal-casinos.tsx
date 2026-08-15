@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Shield, Zap, Clock, CreditCard, Trophy, ArrowRight } from "lucide-react";
+import { Shield, Zap, Clock, CreditCard, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import { CasinoListing, listingCasinos as casinos } from "@/components/site/CasinoListing";
