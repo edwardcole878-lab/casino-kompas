@@ -51,6 +51,7 @@
   --color-nl-red: var(--nl-red);
   --color-nl-sand: var(--nl-sand);
   --color-nl-ink: var(--nl-ink);
+  --color-nl-gold: var(--nl-gold);
 }
 
 :root {
@@ -122,6 +123,7 @@
   --nl-red: oklch(0.52 0.2 27);
   --nl-sand: oklch(0.97 0.012 80);
   --nl-ink: oklch(0.19 0.03 265);
+  --nl-gold: oklch(0.8 0.14 85);
   --gradient-nl: linear-gradient(90deg, var(--nl-red) 0 33.33%, oklch(1 0 0) 33.33% 66.66%, var(--nl-blue) 66.66% 100%);
   --gradient-nl-hero: linear-gradient(160deg, oklch(0.34 0.12 265) 0%, oklch(0.24 0.09 265) 55%, oklch(0.19 0.05 265) 100%);
   --shadow-row: 0 2px 0 0 oklch(0.36 0.13 265 / 0.08), 0 14px 30px -20px oklch(0.36 0.13 265 / 0.5);
