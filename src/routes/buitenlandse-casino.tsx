@@ -17,6 +17,9 @@ import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
 import spinmillsLogo from "@/assets/logos/spinmills.new.asset.json";
 import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
+import wildiesLogo from "@/assets/logos/wildies.png";
+import mrpunterLogo from "@/assets/logos/mrpunter.png";
+import spininioLogo from "@/assets/logos/spininio.png";
 
 type Casino = {
   rank: number;
@@ -54,6 +57,24 @@ const casinos: Casino[] = [
   },
   {
     rank: 2,
+    name: "Wildies",
+    slug: "wildies",
+    logo: wildiesLogo,
+    rating: 4.9,
+    bonus: "150% tot €1.000",
+    freeSpins: "100 Free Spins",
+    minDeposit: "€20",
+    license: "Curaçao",
+    payoutSpeed: "~30 min",
+    pros: [
+      "Pakket tot €3.250 + 150 FS",
+      "Casino én sportsbook in één",
+      "Snelle iDEAL-opnames",
+    ],
+    cta: "https://wildies1.com/api/v3/offer/155?aff_sub=TrustPilot&aff_sub2={clickid}&affiliate_id=132&url_id=532",
+  },
+  {
+    rank: 3,
     name: "CristalPoker",
     slug: "cristalpoker",
     logo: cristalpokerLogo.url,
@@ -71,7 +92,7 @@ const casinos: Casino[] = [
     cta: "https://record.cristalaffiliates.com/_dqE1Gz9m5lnUOsjNOfgKeWNd7ZgqdRLk/1",
   },
   {
-    rank: 3,
+    rank: 4,
     name: "Baloo",
     slug: "baloo",
     logo: balooLogo.url,
@@ -89,7 +110,25 @@ const casinos: Casino[] = [
     cta: "https://gobooplay.com/txe84kaq5",
   },
   {
-    rank: 4,
+    rank: 5,
+    name: "MrPunter",
+    slug: "mrpunter",
+    logo: mrpunterLogo,
+    rating: 4.7,
+    bonus: "150% tot €750",
+    freeSpins: "200 Free Spins",
+    minDeposit: "€20",
+    license: "Curaçao",
+    payoutSpeed: "~40 min",
+    pros: [
+      "200 free spins bij eerste storting",
+      "Wekelijkse reload-bonussen",
+      "Groot slots- én live casino-aanbod",
+    ],
+    cta: "https://mrp.kronvax.com/?mid=381739_2214567",
+  },
+  {
+    rank: 6,
     name: "Velwins",
     slug: "velwins",
     logo: velwinsLogo.url,
@@ -107,7 +146,7 @@ const casinos: Casino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLBIopaNv7uDWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 5,
+    rank: 7,
     name: "Spinmills",
     slug: "spinmills",
     logo: spinmillsLogo.url,
@@ -125,7 +164,7 @@ const casinos: Casino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLiFUAaTMnmeGNd7ZgqdRLk/1/?pg=2",
   },
   {
-    rank: 6,
+    rank: 8,
     name: "Shakebet",
     slug: "shakebet",
     logo: shakebetLogo.url,
@@ -141,6 +180,24 @@ const casinos: Casino[] = [
       "Free spins op Book of Dead",
     ],
     cta: "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1",
+  },
+  {
+    rank: 9,
+    name: "Spininio",
+    slug: "spininio",
+    logo: spininioLogo,
+    rating: 4.4,
+    bonus: "250% tot €1.000",
+    freeSpins: "50 Free Spins",
+    minDeposit: "€10",
+    license: "Curaçao",
+    payoutSpeed: "~55 min",
+    pros: [
+      "Hoge matchbonus vanaf €10",
+      "Maandelijkse free spins reload",
+      "Toernooien en Spin & Win-acties",
+    ],
+    cta: "https://go.spininio.online/visit/?bta=35494&nci=7816",
   },
 ];
 
