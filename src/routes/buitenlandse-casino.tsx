@@ -4,21 +4,13 @@ import {
   Zap,
   Star,
   Trophy,
-  Wallet,
   Clock,
-  AlertTriangle,
   CreditCard,
   Check,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import winheroLogo from "@/assets/logos/winhero.webp.asset.json";
 import cristalpokerLogo from "@/assets/logos/cristalpoker.jpg.asset.json";
 import balooLogo from "@/assets/logos/baloo.webp.asset.json";
@@ -152,29 +144,6 @@ const casinos: Casino[] = [
   },
 ];
 
-const faqs: { q: string; a: string }[] = [
-  {
-    q: "Wat is een buitenlands online casino met snelle uitbetaling?",
-    a: "Een offshore casino dat je opname binnen enkele minuten tot een paar uur verwerkt. Snelle uitbetalingen hangen samen met de betaalmethode (iDEAL, crypto, e-wallets) en een efficiënte KYC-procedure.",
-  },
-  {
-    q: "Hoe snel kan ik mijn geld opnemen?",
-    a: "De snelste buitenlandse casino's op onze lijst betalen binnen 5 tot 30 minuten uit, vooral bij crypto en e-wallets. iDEAL-uitbetalingen duren meestal 15 minuten tot 24 uur.",
-  },
-  {
-    q: "Zijn deze casino's legaal in Nederland?",
-    a: "Deze casino's hebben géén KSA-vergunning en vallen niet onder CRUKS. Als speler word je niet vervolgd, maar je mist de bescherming van het Nederlandse systeem. Speel altijd bewust en binnen je grenzen.",
-  },
-  {
-    q: "Welke betaalmethode is het snelst?",
-    a: "Crypto en e-wallets zijn doorgaans het snelst. iDEAL is snel voor storten, maar uitbetalingen duren meestal iets langer dan crypto.",
-  },
-  {
-    q: "Hoe kies ik het beste buitenlandse casino voor snelle uitbetaling?",
-    a: "Winhero en Velwins scoren hoog op snelheid. CristalPoker betaalt doorgaans binnen 35 minuten uit. Kijk naar betaalmethode, KYC-procedure en bonusvoorwaarden.",
-  },
-];
-
 const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 6";
 const PAGE_DESC =
   "Ontdek buitenlandse online casino's met de snelste uitbetalingen voor Nederlandse spelers. Vergelijk directe opnames, bonussen en betaalmethoden. Geüpdatet voor 2026.";
@@ -195,15 +164,6 @@ export const Route = createFileRoute("/buitenlandse-casino")({
         description: `${c.bonus} + ${c.freeSpins}. Uitbetaling ${c.payoutSpeed}. Min. storting ${c.minDeposit}.`,
       })),
     };
-    const faqPage = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    };
     return {
       meta: [
         { title: PAGE_TITLE },
@@ -215,7 +175,6 @@ export const Route = createFileRoute("/buitenlandse-casino")({
       ],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(itemList) },
-        { type: "application/ld+json", children: JSON.stringify(faqPage) },
       ],
     };
   },
