@@ -102,25 +102,21 @@ export function Header() {
               <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-heading text-lg uppercase tracking-wide text-white/85 transition-colors hover:bg-white/10 hover:text-white">
                 {g.label} <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
               </button>
-              {/* Mega menu */}
-              <div className="invisible absolute left-0 top-full z-50 w-[420px] translate-y-1 pt-2 opacity-0 transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="rounded-2xl border bg-popover p-3 shadow-lift">
-                  <div className="grid grid-cols-2 gap-2">
+              {/* Dropdown */}
+              <div className="invisible absolute left-1/2 top-full z-50 w-[260px] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="overflow-hidden rounded-lg border-2 border-nl-ink bg-nl-hero shadow-lift">
+                  <div className="h-1 w-full bg-nl-orange" aria-hidden />
+                  <div className="p-1.5">
                     {g.items.map((it) => {
                       const Icon = it.icon ?? Sparkles;
                       return (
                         <Link
                           key={it.to}
                           to={it.to}
-                          className="group/card flex items-start gap-3 rounded-xl border border-transparent p-3 transition-all hover:-translate-y-0.5 hover:border-border hover:bg-accent hover:shadow-soft"
+                          className="flex items-center gap-2.5 rounded-md px-3 py-2 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                         >
-                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-gold/20 to-gold/5 text-gold-foreground">
-                            <Icon className="h-4 w-4 text-foreground/80" />
-                          </span>
-                          <div className="min-w-0">
-                            <div className="text-sm font-bold text-foreground">{it.label}</div>
-                            {it.desc && <div className="mt-0.5 text-xs text-muted-foreground">{it.desc}</div>}
-                          </div>
+                          <Icon className="h-4 w-4 shrink-0 text-nl-orange" />
+                          <span className="truncate font-heading text-base uppercase tracking-wide">{it.label}</span>
                         </Link>
                       );
                     })}
