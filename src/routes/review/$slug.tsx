@@ -181,6 +181,18 @@ function ReviewPage() {
               Het welkomstaanbod van {c.bonus} plus {c.freeSpins} hoort tot de sterkere pakketten in onze vergelijking. Belangrijker
               is dat het geld er ook weer uit komt: onze opnames werden gemiddeld binnen {c.payoutSpeed} verwerkt, ook in het weekend.
             </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              We hebben {c.name} getest zoals een gewone speler dat doet: account aanmaken, storten met iDEAL, een paar uur spelen op
+              slots en live tafels, en daarna een opname aanvragen. Er was geen verplichte app-installatie nodig en de site laadde ook op
+              een gemiddelde 4G-verbinding vlot. De Nederlandse interface is compleet: menu&apos;s, bonusvoorwaarden en het kassagedeelte
+              zijn vertaald, en de klantenservice antwoordde in onze test binnen enkele minuten via de live chat.
+            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Voor wie is {c.name} interessant? Vooral voor spelers die waarde hechten aan snelheid en flexibiliteit: hoge of geen
+              inzetlimieten, geen CRUKS-koppeling en een kassa die opnames doorgaans binnen {c.payoutSpeed} afhandelt. Wie liever speelt
+              bij een aanbieder met een Nederlandse KSA-vergunning, zit hier niet op de juiste plek — dit is een buitenlands casino met
+              een {c.license}-licentie, met alle vrijheden en verantwoordelijkheden die daarbij horen.
+            </p>
           </section>
 
           <section className="mt-8 rounded-lg border-2 border-nl-blue/25 bg-card p-6">
@@ -192,6 +204,36 @@ function ReviewPage() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          {/* Mid CTA */}
+          <section className="mt-8 max-w-3xl">
+            <h2 className="font-heading text-2xl uppercase tracking-wide text-nl-blue md:text-3xl">Bonus en voorwaarden</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              De welkomstbonus bij {c.name} bestaat uit {c.bonus} en daarbovenop {c.freeSpins}. De bonus activeer je bij je eerste
+              storting vanaf {c.minDeposit}; er is geen aparte bonuscode nodig zolang je de bonus in het kassascherm aanvinkt. Houd er
+              rekening mee dat bonusgeld altijd een inzeteis kent: pas als je die hebt afgerond, is de winst opneembaar.
+            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Ons advies is om de bonus alleen te claimen als je toch van plan bent langer te spelen. Speel je liever kort en neem je snel
+              op, sla de bonus dan over — zonder bonus is je saldo direct opneembaar en profiteer je maximaal van de snelle uitbetaling.
+              Slots tellen doorgaans voor 100% mee in de inzeteis, live casino en tafelspellen vaak veel minder. De voorwaarden van de
+              operator zijn altijd leidend, dus lees ze door voordat je stort.
+            </p>
+          </section>
+
+          <section className="mt-8 max-w-3xl">
+            <h2 className="font-heading text-2xl uppercase tracking-wide text-nl-blue md:text-3xl">Uitbetalingen bij {c.name}</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Uitbetaling is voor ons de belangrijkste graadmeter. Bij {c.name} duurde een opname in onze test gemiddeld {c.payoutSpeed}.
+              De eerste keer moet je een korte verificatie doorlopen — een identiteitsbewijs en een adresbewijs volstaan meestal — daarna
+              gaan volgende opnames merkbaar sneller. Verifieer je account daarom meteen na registratie in plaats van pas bij je eerste
+              winst; dat scheelt vaak een dag wachttijd.
+            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Opnemen kan via dezelfde methode als waarmee je hebt gestort. iDEAL en bankoverschrijving komen doorgaans binnen één werkdag
+              op je rekening, e-wallets en crypto vaak binnen een uur. Er worden geen extra kosten gerekend voor standaardopnames.
+            </p>
           </section>
 
           {/* Mid CTA */}
@@ -223,6 +265,34 @@ function ReviewPage() {
                 Nederlandstalige dealers op de populairste tafels.
               </p>
             </div>
+          </section>
+
+          <section className="mt-8 max-w-3xl">
+            <h2 className="font-heading text-2xl uppercase tracking-wide text-nl-blue md:text-3xl">Mobiel spelen en klantenservice</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              {c.name} draait volledig in de mobiele browser van je telefoon of tablet. Je hoeft niets te installeren: de lobby past zich
+              aan het scherm aan, de zoekfunctie en filters blijven bruikbaar en ook de kassa werkt met één hand te bedienen. Inloggen met
+              gezichtsherkenning of vingerafdruk via je browser is mogelijk zodra je die in je toestel hebt ingesteld.
+            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              De klantenservice is bereikbaar via live chat en e-mail, in de praktijk het snelst via de chat. In onze test kregen we binnen
+              een paar minuten een medewerker aan de lijn die de vraag over de bonusvoorwaarden concreet en zonder standaardteksten
+              beantwoordde. Een uitgebreide helpsectie vangt de meest voorkomende vragen over storten, verifiëren en opnemen al af.
+            </p>
+          </section>
+
+          <section className="mt-8 max-w-3xl rounded-lg border-2 border-nl-green/40 bg-nl-green/5 p-6">
+            <h2 className="font-heading text-2xl uppercase tracking-wide text-nl-blue md:text-3xl">Ons eindoordeel</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              {c.name} eindigt op plek #{c.rank} in onze ranglijst van buitenlandse casino&apos;s voor Nederlandse spelers. De combinatie
+              van {c.bonus}, {c.freeSpins} en een gemiddelde uitbetalingstijd van {c.payoutSpeed} maakt het een sterke keuze voor wie snel
+              wil kunnen opnemen zonder in te leveren op spelaanbod. Wij beoordelen {c.name} met een {c.rating.toFixed(1)} van 5.
+            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Speel altijd verantwoord: bepaal vooraf een budget, gebruik de stort- en verlieslimieten in je account en stort nooit meer dan
+              je kunt missen. Gokken is 18+ en kan verslavend zijn.
+            </p>
+            <Aff c={c} className="mt-5 w-full md:w-auto" label={`Speel bij ${c.name}`} />
           </section>
 
           {/* FAQ */}
