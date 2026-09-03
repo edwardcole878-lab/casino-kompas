@@ -115,7 +115,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.cristalaffiliates.com/_dqE1Gz9m5lnUOsjNOfgKeWNd7ZgqdRLk/1",
   },
   {
-    rank: 4,
+    rank: 5,
     name: "Baloo",
     slug: "baloo",
     logo: balooLogo.url,
@@ -133,7 +133,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://gobooplay.com/txe84kaq5",
   },
   {
-    rank: 5,
+    rank: 6,
     name: "MrPunter",
     slug: "mrpunter",
     logo: mrpunterLogo.url,
@@ -151,7 +151,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://mrp.kronvax.com/?mid=381739_2214567",
   },
   {
-    rank: 6,
+    rank: 7,
     name: "Velwins",
     slug: "velwins",
     logo: velwinsLogo.url,
@@ -169,7 +169,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLBIopaNv7uDWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 7,
+    rank: 8,
     name: "Spinmills",
     slug: "spinmills",
     logo: spinmillsLogo.url,
@@ -187,7 +187,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLiFUAaTMnmeGNd7ZgqdRLk/1/?pg=2",
   },
   {
-    rank: 8,
+    rank: 9,
     name: "Shakebet",
     slug: "shakebet",
     logo: shakebetLogo.url,
@@ -205,7 +205,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 9,
+    rank: 10,
     name: "Spininio",
     slug: "spininio",
     logo: spininioLogo.url,
