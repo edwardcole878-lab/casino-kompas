@@ -78,7 +78,7 @@ function LandingPage() {
           </h1>
           <p className="mx-auto mt-2 hidden max-w-2xl text-center text-sm text-white/70 sm:mt-3 sm:block sm:text-base lg:mx-0 lg:text-left">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
-            voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
+            voor Nederlandse spelers — één duidelijke lijst.
           </p>
           <p className="mt-2 text-center text-sm text-white/70 sm:hidden">
             Winst binnen minuten — getest voor Nederlandse spelers.
