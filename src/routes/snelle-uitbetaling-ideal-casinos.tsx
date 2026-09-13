@@ -104,12 +104,12 @@ function LandingPage() {
       </section>
 
       {/* LISTING */}
-      <section id="top6" aria-label="Top 9 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
+      <section id="top6" aria-label="Buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
         <h2 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
-          Top 9 buitenlandse casino&apos;s met snelle uitbetaling
+          Buitenlandse casino&apos;s met snelle uitbetaling
         </h2>
         <p className="mt-2 hidden max-w-2xl text-sm text-muted-foreground sm:block">
-          De zes beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
+          De beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
           betrouwbaarheid en welkomstbonus.
         </p>
 
