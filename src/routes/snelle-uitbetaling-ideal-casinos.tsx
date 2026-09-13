@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import { CasinoListing, listingCasinos as casinos } from "@/components/site/CasinoListing";
 
-const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 9";
+const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026";
 const PAGE_DESC =
   "Ontdek buitenlandse online casino's met de snelste uitbetalingen voor Nederlandse spelers. Vergelijk directe opnames, bonussen en betaalmethoden. Geüpdatet voor 2026.";
 
