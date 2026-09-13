@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import { CasinoListing, listingCasinos as casinos } from "@/components/site/CasinoListing";
 
-const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026 — Top 9";
+const PAGE_TITLE = "Buitenlandse Casino's Snelle Uitbetaling 2026";
 const PAGE_DESC =
   "Ontdek buitenlandse online casino's met de snelste uitbetalingen voor Nederlandse spelers. Vergelijk directe opnames, bonussen en betaalmethoden. Geüpdatet voor 2026.";
 
@@ -78,7 +78,7 @@ function LandingPage() {
           </h1>
           <p className="mx-auto mt-2 hidden max-w-2xl text-center text-sm text-white/70 sm:mt-3 sm:block sm:text-base lg:mx-0 lg:text-left">
             Ontvang je winst binnen minuten. Wij testen en rangschikken de snelste buitenlandse online casino&apos;s
-            voor Nederlandse spelers — één duidelijke lijst, van 1 tot 6.
+            voor Nederlandse spelers — één duidelijke lijst.
           </p>
           <p className="mt-2 text-center text-sm text-white/70 sm:hidden">
             Winst binnen minuten — getest voor Nederlandse spelers.
@@ -104,12 +104,12 @@ function LandingPage() {
       </section>
 
       {/* LISTING */}
-      <section id="top6" aria-label="Top 9 buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
+      <section id="top6" aria-label="Buitenlandse casino's met snelle uitbetaling" className="mx-auto max-w-5xl scroll-mt-16 px-4 py-5 sm:py-10">
         <h2 className="font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue sm:text-5xl">
-          Top 9 buitenlandse casino&apos;s met snelle uitbetaling
+          Buitenlandse casino&apos;s met snelle uitbetaling
         </h2>
         <p className="mt-2 hidden max-w-2xl text-sm text-muted-foreground sm:block">
-          De zes beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
+          De beste buitenlandse online casino&apos;s voor Nederlandse spelers, gerangschikt op uitbetalingssnelheid,
           betrouwbaarheid en welkomstbonus.
         </p>
 
