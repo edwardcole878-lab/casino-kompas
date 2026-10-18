@@ -1,5 +1,4 @@
 import winheroLogo from "@/assets/logos/winhero.t.asset.json";
-import cristalpokerLogo from "@/assets/logos/cristalpoker.t.asset.json";
 import balooLogo from "@/assets/logos/baloo.t.asset.json";
 import velwinsLogo from "@/assets/logos/velwins.t.asset.json";
 import spinmillsLogo from "@/assets/logos/spinmills.new.asset.json";
@@ -116,24 +115,6 @@ export const listingCasinos: ListingCasino[] = [
   },
   {
     rank: 6,
-    name: "CristalPoker",
-    slug: "cristalpoker",
-    logo: cristalpokerLogo.url,
-    rating: 4.8,
-    bonus: "100% tot €500",
-    freeSpins: "25 Free Spins",
-    minDeposit: "€20",
-    license: "Curaçao — Antillephone",
-    payoutSpeed: "~35 min",
-    pros: [
-      "Direct uitbetaalbare welkomstbonus",
-      "Snelle uitbetaling (~35 min)",
-      "No-deposit free spins bij registratie",
-    ],
-    cta: "https://record.cristalaffiliates.com/_dqE1Gz9m5lnUOsjNOfgKeWNd7ZgqdRLk/1",
-  },
-  {
-    rank: 7,
     name: "MrPunter",
     slug: "mrpunter",
     logo: mrpunterLogo.url,
@@ -151,7 +132,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://mrp.kronvax.com/?mid=381739_2214567",
   },
   {
-    rank: 8,
+    rank: 7,
     name: "Velwins",
     slug: "velwins",
     logo: velwinsLogo.url,
@@ -169,7 +150,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLBIopaNv7uDWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 9,
+    rank: 8,
     name: "Spinmills",
     slug: "spinmills",
     logo: spinmillsLogo.url,
@@ -187,7 +168,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLiFUAaTMnmeGNd7ZgqdRLk/1/?pg=2",
   },
   {
-    rank: 10,
+    rank: 9,
     name: "Shakebet",
     slug: "shakebet",
     logo: shakebetLogo.url,
@@ -205,7 +186,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 11,
+    rank: 10,
     name: "Spininio",
     slug: "spininio",
     logo: spininioLogo.url,

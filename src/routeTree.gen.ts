@@ -9,213 +9,66 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WelkomstbonusCasinoRouteImport } from './routes/welkomstbonus-casino'
-import { Route as VerantwoordSpelenRouteImport } from './routes/verantwoord-spelen'
-import { Route as SnelleUitbetalingIdealCasinosRouteImport } from './routes/snelle-uitbetaling-ideal-casinos'
-import { Route as SnelleUitbetalingCasinoRouteImport } from './routes/snelle-uitbetaling-casino'
-import { Route as SlotsRouteImport } from './routes/slots'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
-import { Route as RouletteOnlineRouteImport } from './routes/roulette-online'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as RedactiebeleidRouteImport } from './routes/redactiebeleid'
-import { Route as ProvidersRouteImport } from './routes/providers'
-import { Route as PaypalCasinoRouteImport } from './routes/paypal-casino'
-import { Route as OverOnsRouteImport } from './routes/over-ons'
-import { Route as OnlineSlotsRouteImport } from './routes/online-slots'
-import { Route as NoDepositBonusRouteImport } from './routes/no-deposit-bonus'
-import { Route as NieuweOnlineCasinosRouteImport } from './routes/nieuwe-online-casinos'
-import { Route as MobieleCasinosRouteImport } from './routes/mobiele-casinos'
-import { Route as LiveCasinoRouteImport } from './routes/live-casino'
-import { Route as LicentiesRouteImport } from './routes/licenties'
-import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
-import { Route as FreeSpinsCasinoRouteImport } from './routes/free-spins-casino'
-import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
-import { Route as CasinosZonderRegistratieRouteImport } from './routes/casinos-zonder-registratie'
-import { Route as CasinosZonderLimietRouteImport } from './routes/casinos-zonder-limiet'
-import { Route as CasinosZonderCruksRouteImport } from './routes/casinos-zonder-cruks'
-import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
-import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
-import { Route as BuitenlandseCasinoRouteImport } from './routes/buitenlandse-casino'
-import { Route as BonussenRouteImport } from './routes/bonussen'
-import { Route as BonusTypesRouteImport } from './routes/bonus-types'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
-import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
-import { Route as BetaalmethodenRouteImport } from './routes/betaalmethoden'
-import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SlotSlugRouteImport } from './routes/slot.$slug'
-import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
-import { Route as ProviderSlugRouteImport } from './routes/provider.$slug'
-import { Route as LicentieSlugRouteImport } from './routes/licentie.$slug'
-import { Route as GoSlugRouteImport } from './routes/go.$slug'
-import { Route as BonusSlugRouteImport } from './routes/bonus.$slug'
-import { Route as BonusTypeSlugRouteImport } from './routes/bonus-type.$slug'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as BetaalmethodeSlugRouteImport } from './routes/betaalmethode.$slug'
+import { Route as BesteOnlineCasinosRouteImport } from './routes/beste-online-casinos'
+import { Route as BetaalmethodenRouteImport } from './routes/betaalmethoden'
+import { Route as BetrouwbareOnlineCasinosRouteImport } from './routes/betrouwbare-online-casinos'
+import { Route as BlackjackOnlineRouteImport } from './routes/blackjack-online'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BonusTypesRouteImport } from './routes/bonus-types'
+import { Route as BonussenRouteImport } from './routes/bonussen'
+import { Route as BuitenlandseCasinoRouteImport } from './routes/buitenlandse-casino'
+import { Route as CasinoBonussenRouteImport } from './routes/casino-bonussen'
+import { Route as CasinoSpellenRouteImport } from './routes/casino-spellen'
+import { Route as CasinosZonderCruksRouteImport } from './routes/casinos-zonder-cruks'
+import { Route as CasinosZonderLimietRouteImport } from './routes/casinos-zonder-limiet'
+import { Route as CasinosZonderRegistratieRouteImport } from './routes/casinos-zonder-registratie'
+import { Route as CryptoCasinoRouteImport } from './routes/crypto-casino'
+import { Route as FreeSpinsCasinoRouteImport } from './routes/free-spins-casino'
+import { Route as IdealCasinosRouteImport } from './routes/ideal-casinos'
+import { Route as LicentiesRouteImport } from './routes/licenties'
+import { Route as LiveCasinoRouteImport } from './routes/live-casino'
+import { Route as MobieleCasinosRouteImport } from './routes/mobiele-casinos'
+import { Route as NieuweOnlineCasinosRouteImport } from './routes/nieuwe-online-casinos'
+import { Route as NoDepositBonusRouteImport } from './routes/no-deposit-bonus'
+import { Route as OnlineSlotsRouteImport } from './routes/online-slots'
+import { Route as OverOnsRouteImport } from './routes/over-ons'
+import { Route as PaypalCasinoRouteImport } from './routes/paypal-casino'
+import { Route as ProvidersRouteImport } from './routes/providers'
+import { Route as RedactiebeleidRouteImport } from './routes/redactiebeleid'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as RouletteOnlineRouteImport } from './routes/roulette-online'
+import { Route as SiteDotwebmanifestRouteImport } from './routes/site[.]webmanifest'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SlotsRouteImport } from './routes/slots'
+import { Route as SnelleUitbetalingCasinoRouteImport } from './routes/snelle-uitbetaling-casino'
+import { Route as SnelleUitbetalingIdealCasinosRouteImport } from './routes/snelle-uitbetaling-ideal-casinos'
+import { Route as VerantwoordSpelenRouteImport } from './routes/verantwoord-spelen'
+import { Route as WelkomstbonusCasinoRouteImport } from './routes/welkomstbonus-casino'
 import { Route as AuteurSlugRouteImport } from './routes/auteur.$slug'
+import { Route as BetaalmethodeSlugRouteImport } from './routes/betaalmethode.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BonusTypeSlugRouteImport } from './routes/bonus-type.$slug'
+import { Route as BonusSlugRouteImport } from './routes/bonus.$slug'
+import { Route as GoSlugRouteImport } from './routes/go.$slug'
+import { Route as LicentieSlugRouteImport } from './routes/licentie.$slug'
+import { Route as ProviderSlugRouteImport } from './routes/provider.$slug'
+import { Route as ReviewSlugRouteImport } from './routes/review/$slug'
+import { Route as SlotSlugRouteImport } from './routes/slot.$slug'
 
-const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
-  id: '/welkomstbonus-casino',
-  path: '/welkomstbonus-casino',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VerantwoordSpelenRoute = VerantwoordSpelenRouteImport.update({
-  id: '/verantwoord-spelen',
-  path: '/verantwoord-spelen',
+const BesteOnlineCasinosRoute = BesteOnlineCasinosRouteImport.update({
+  id: '/beste-online-casinos',
+  path: '/beste-online-casinos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SnelleUitbetalingIdealCasinosRoute =
-  SnelleUitbetalingIdealCasinosRouteImport.update({
-    id: '/snelle-uitbetaling-ideal-casinos',
-    path: '/snelle-uitbetaling-ideal-casinos',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SnelleUitbetalingCasinoRoute = SnelleUitbetalingCasinoRouteImport.update({
-  id: '/snelle-uitbetaling-casino',
-  path: '/snelle-uitbetaling-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SlotsRoute = SlotsRouteImport.update({
-  id: '/slots',
-  path: '/slots',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SiteDotwebmanifestRoute = SiteDotwebmanifestRouteImport.update({
-  id: '/site.webmanifest',
-  path: '/site.webmanifest',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RouletteOnlineRoute = RouletteOnlineRouteImport.update({
-  id: '/roulette-online',
-  path: '/roulette-online',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RedactiebeleidRoute = RedactiebeleidRouteImport.update({
-  id: '/redactiebeleid',
-  path: '/redactiebeleid',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProvidersRoute = ProvidersRouteImport.update({
-  id: '/providers',
-  path: '/providers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PaypalCasinoRoute = PaypalCasinoRouteImport.update({
-  id: '/paypal-casino',
-  path: '/paypal-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OverOnsRoute = OverOnsRouteImport.update({
-  id: '/over-ons',
-  path: '/over-ons',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OnlineSlotsRoute = OnlineSlotsRouteImport.update({
-  id: '/online-slots',
-  path: '/online-slots',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NoDepositBonusRoute = NoDepositBonusRouteImport.update({
-  id: '/no-deposit-bonus',
-  path: '/no-deposit-bonus',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NieuweOnlineCasinosRoute = NieuweOnlineCasinosRouteImport.update({
-  id: '/nieuwe-online-casinos',
-  path: '/nieuwe-online-casinos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MobieleCasinosRoute = MobieleCasinosRouteImport.update({
-  id: '/mobiele-casinos',
-  path: '/mobiele-casinos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LiveCasinoRoute = LiveCasinoRouteImport.update({
-  id: '/live-casino',
-  path: '/live-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LicentiesRoute = LicentiesRouteImport.update({
-  id: '/licenties',
-  path: '/licenties',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IdealCasinosRoute = IdealCasinosRouteImport.update({
-  id: '/ideal-casinos',
-  path: '/ideal-casinos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FreeSpinsCasinoRoute = FreeSpinsCasinoRouteImport.update({
-  id: '/free-spins-casino',
-  path: '/free-spins-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CryptoCasinoRoute = CryptoCasinoRouteImport.update({
-  id: '/crypto-casino',
-  path: '/crypto-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CasinosZonderRegistratieRoute =
-  CasinosZonderRegistratieRouteImport.update({
-    id: '/casinos-zonder-registratie',
-    path: '/casinos-zonder-registratie',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CasinosZonderLimietRoute = CasinosZonderLimietRouteImport.update({
-  id: '/casinos-zonder-limiet',
-  path: '/casinos-zonder-limiet',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CasinosZonderCruksRoute = CasinosZonderCruksRouteImport.update({
-  id: '/casinos-zonder-cruks',
-  path: '/casinos-zonder-cruks',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CasinoSpellenRoute = CasinoSpellenRouteImport.update({
-  id: '/casino-spellen',
-  path: '/casino-spellen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CasinoBonussenRoute = CasinoBonussenRouteImport.update({
-  id: '/casino-bonussen',
-  path: '/casino-bonussen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BuitenlandseCasinoRoute = BuitenlandseCasinoRouteImport.update({
-  id: '/buitenlandse-casino',
-  path: '/buitenlandse-casino',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BonussenRoute = BonussenRouteImport.update({
-  id: '/bonussen',
-  path: '/bonussen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BonusTypesRoute = BonusTypesRouteImport.update({
-  id: '/bonus-types',
-  path: '/bonus-types',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlackjackOnlineRoute = BlackjackOnlineRouteImport.update({
-  id: '/blackjack-online',
-  path: '/blackjack-online',
+const BetaalmethodenRoute = BetaalmethodenRouteImport.update({
+  id: '/betaalmethoden',
+  path: '/betaalmethoden',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BetrouwbareOnlineCasinosRoute =
@@ -224,54 +77,176 @@ const BetrouwbareOnlineCasinosRoute =
     path: '/betrouwbare-online-casinos',
     getParentRoute: () => rootRouteImport,
   } as any)
-const BetaalmethodenRoute = BetaalmethodenRouteImport.update({
-  id: '/betaalmethoden',
-  path: '/betaalmethoden',
+const BlackjackOnlineRoute = BlackjackOnlineRouteImport.update({
+  id: '/blackjack-online',
+  path: '/blackjack-online',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BesteOnlineCasinosRoute = BesteOnlineCasinosRouteImport.update({
-  id: '/beste-online-casinos',
-  path: '/beste-online-casinos',
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BonusTypesRoute = BonusTypesRouteImport.update({
+  id: '/bonus-types',
+  path: '/bonus-types',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SlotSlugRoute = SlotSlugRouteImport.update({
-  id: '/slot/$slug',
-  path: '/slot/$slug',
+const BonussenRoute = BonussenRouteImport.update({
+  id: '/bonussen',
+  path: '/bonussen',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReviewSlugRoute = ReviewSlugRouteImport.update({
-  id: '/review/$slug',
-  path: '/review/$slug',
+const BuitenlandseCasinoRoute = BuitenlandseCasinoRouteImport.update({
+  id: '/buitenlandse-casino',
+  path: '/buitenlandse-casino',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProviderSlugRoute = ProviderSlugRouteImport.update({
-  id: '/provider/$slug',
-  path: '/provider/$slug',
+const CasinoBonussenRoute = CasinoBonussenRouteImport.update({
+  id: '/casino-bonussen',
+  path: '/casino-bonussen',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LicentieSlugRoute = LicentieSlugRouteImport.update({
-  id: '/licentie/$slug',
-  path: '/licentie/$slug',
+const CasinoSpellenRoute = CasinoSpellenRouteImport.update({
+  id: '/casino-spellen',
+  path: '/casino-spellen',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GoSlugRoute = GoSlugRouteImport.update({
-  id: '/go/$slug',
-  path: '/go/$slug',
+const CasinosZonderCruksRoute = CasinosZonderCruksRouteImport.update({
+  id: '/casinos-zonder-cruks',
+  path: '/casinos-zonder-cruks',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BonusSlugRoute = BonusSlugRouteImport.update({
-  id: '/bonus/$slug',
-  path: '/bonus/$slug',
+const CasinosZonderLimietRoute = CasinosZonderLimietRouteImport.update({
+  id: '/casinos-zonder-limiet',
+  path: '/casinos-zonder-limiet',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BonusTypeSlugRoute = BonusTypeSlugRouteImport.update({
-  id: '/bonus-type/$slug',
-  path: '/bonus-type/$slug',
+const CasinosZonderRegistratieRoute =
+  CasinosZonderRegistratieRouteImport.update({
+    id: '/casinos-zonder-registratie',
+    path: '/casinos-zonder-registratie',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CryptoCasinoRoute = CryptoCasinoRouteImport.update({
+  id: '/crypto-casino',
+  path: '/crypto-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreeSpinsCasinoRoute = FreeSpinsCasinoRouteImport.update({
+  id: '/free-spins-casino',
+  path: '/free-spins-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IdealCasinosRoute = IdealCasinosRouteImport.update({
+  id: '/ideal-casinos',
+  path: '/ideal-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicentiesRoute = LicentiesRouteImport.update({
+  id: '/licenties',
+  path: '/licenties',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveCasinoRoute = LiveCasinoRouteImport.update({
+  id: '/live-casino',
+  path: '/live-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MobieleCasinosRoute = MobieleCasinosRouteImport.update({
+  id: '/mobiele-casinos',
+  path: '/mobiele-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NieuweOnlineCasinosRoute = NieuweOnlineCasinosRouteImport.update({
+  id: '/nieuwe-online-casinos',
+  path: '/nieuwe-online-casinos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoDepositBonusRoute = NoDepositBonusRouteImport.update({
+  id: '/no-deposit-bonus',
+  path: '/no-deposit-bonus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnlineSlotsRoute = OnlineSlotsRouteImport.update({
+  id: '/online-slots',
+  path: '/online-slots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OverOnsRoute = OverOnsRouteImport.update({
+  id: '/over-ons',
+  path: '/over-ons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaypalCasinoRoute = PaypalCasinoRouteImport.update({
+  id: '/paypal-casino',
+  path: '/paypal-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProvidersRoute = ProvidersRouteImport.update({
+  id: '/providers',
+  path: '/providers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RedactiebeleidRoute = RedactiebeleidRouteImport.update({
+  id: '/redactiebeleid',
+  path: '/redactiebeleid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RouletteOnlineRoute = RouletteOnlineRouteImport.update({
+  id: '/roulette-online',
+  path: '/roulette-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteDotwebmanifestRoute = SiteDotwebmanifestRouteImport.update({
+  id: '/site.webmanifest',
+  path: '/site.webmanifest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlotsRoute = SlotsRouteImport.update({
+  id: '/slots',
+  path: '/slots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SnelleUitbetalingCasinoRoute = SnelleUitbetalingCasinoRouteImport.update({
+  id: '/snelle-uitbetaling-casino',
+  path: '/snelle-uitbetaling-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SnelleUitbetalingIdealCasinosRoute =
+  SnelleUitbetalingIdealCasinosRouteImport.update({
+    id: '/snelle-uitbetaling-ideal-casinos',
+    path: '/snelle-uitbetaling-ideal-casinos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VerantwoordSpelenRoute = VerantwoordSpelenRouteImport.update({
+  id: '/verantwoord-spelen',
+  path: '/verantwoord-spelen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WelkomstbonusCasinoRoute = WelkomstbonusCasinoRouteImport.update({
+  id: '/welkomstbonus-casino',
+  path: '/welkomstbonus-casino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuteurSlugRoute = AuteurSlugRouteImport.update({
+  id: '/auteur/$slug',
+  path: '/auteur/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BetaalmethodeSlugRoute = BetaalmethodeSlugRouteImport.update({
+  id: '/betaalmethode/$slug',
+  path: '/betaalmethode/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -279,14 +254,39 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
-const BetaalmethodeSlugRoute = BetaalmethodeSlugRouteImport.update({
-  id: '/betaalmethode/$slug',
-  path: '/betaalmethode/$slug',
+const BonusTypeSlugRoute = BonusTypeSlugRouteImport.update({
+  id: '/bonus-type/$slug',
+  path: '/bonus-type/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuteurSlugRoute = AuteurSlugRouteImport.update({
-  id: '/auteur/$slug',
-  path: '/auteur/$slug',
+const BonusSlugRoute = BonusSlugRouteImport.update({
+  id: '/bonus/$slug',
+  path: '/bonus/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoSlugRoute = GoSlugRouteImport.update({
+  id: '/go/$slug',
+  path: '/go/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicentieSlugRoute = LicentieSlugRouteImport.update({
+  id: '/licentie/$slug',
+  path: '/licentie/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProviderSlugRoute = ProviderSlugRouteImport.update({
+  id: '/provider/$slug',
+  path: '/provider/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewSlugRoute = ReviewSlugRouteImport.update({
+  id: '/review/$slug',
+  path: '/review/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlotSlugRoute = SlotSlugRouteImport.update({
+  id: '/slot/$slug',
+  path: '/slot/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -632,242 +632,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/welkomstbonus-casino': {
-      id: '/welkomstbonus-casino'
-      path: '/welkomstbonus-casino'
-      fullPath: '/welkomstbonus-casino'
-      preLoaderRoute: typeof WelkomstbonusCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/verantwoord-spelen': {
-      id: '/verantwoord-spelen'
-      path: '/verantwoord-spelen'
-      fullPath: '/verantwoord-spelen'
-      preLoaderRoute: typeof VerantwoordSpelenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/snelle-uitbetaling-ideal-casinos': {
-      id: '/snelle-uitbetaling-ideal-casinos'
-      path: '/snelle-uitbetaling-ideal-casinos'
-      fullPath: '/snelle-uitbetaling-ideal-casinos'
-      preLoaderRoute: typeof SnelleUitbetalingIdealCasinosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/snelle-uitbetaling-casino': {
-      id: '/snelle-uitbetaling-casino'
-      path: '/snelle-uitbetaling-casino'
-      fullPath: '/snelle-uitbetaling-casino'
-      preLoaderRoute: typeof SnelleUitbetalingCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/slots': {
-      id: '/slots'
-      path: '/slots'
-      fullPath: '/slots'
-      preLoaderRoute: typeof SlotsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/site.webmanifest': {
-      id: '/site.webmanifest'
-      path: '/site.webmanifest'
-      fullPath: '/site.webmanifest'
-      preLoaderRoute: typeof SiteDotwebmanifestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/roulette-online': {
-      id: '/roulette-online'
-      path: '/roulette-online'
-      fullPath: '/roulette-online'
-      preLoaderRoute: typeof RouletteOnlineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/redactiebeleid': {
-      id: '/redactiebeleid'
-      path: '/redactiebeleid'
-      fullPath: '/redactiebeleid'
-      preLoaderRoute: typeof RedactiebeleidRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/providers': {
-      id: '/providers'
-      path: '/providers'
-      fullPath: '/providers'
-      preLoaderRoute: typeof ProvidersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/paypal-casino': {
-      id: '/paypal-casino'
-      path: '/paypal-casino'
-      fullPath: '/paypal-casino'
-      preLoaderRoute: typeof PaypalCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/over-ons': {
-      id: '/over-ons'
-      path: '/over-ons'
-      fullPath: '/over-ons'
-      preLoaderRoute: typeof OverOnsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/online-slots': {
-      id: '/online-slots'
-      path: '/online-slots'
-      fullPath: '/online-slots'
-      preLoaderRoute: typeof OnlineSlotsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/no-deposit-bonus': {
-      id: '/no-deposit-bonus'
-      path: '/no-deposit-bonus'
-      fullPath: '/no-deposit-bonus'
-      preLoaderRoute: typeof NoDepositBonusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nieuwe-online-casinos': {
-      id: '/nieuwe-online-casinos'
-      path: '/nieuwe-online-casinos'
-      fullPath: '/nieuwe-online-casinos'
-      preLoaderRoute: typeof NieuweOnlineCasinosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mobiele-casinos': {
-      id: '/mobiele-casinos'
-      path: '/mobiele-casinos'
-      fullPath: '/mobiele-casinos'
-      preLoaderRoute: typeof MobieleCasinosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/live-casino': {
-      id: '/live-casino'
-      path: '/live-casino'
-      fullPath: '/live-casino'
-      preLoaderRoute: typeof LiveCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/licenties': {
-      id: '/licenties'
-      path: '/licenties'
-      fullPath: '/licenties'
-      preLoaderRoute: typeof LicentiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ideal-casinos': {
-      id: '/ideal-casinos'
-      path: '/ideal-casinos'
-      fullPath: '/ideal-casinos'
-      preLoaderRoute: typeof IdealCasinosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/free-spins-casino': {
-      id: '/free-spins-casino'
-      path: '/free-spins-casino'
-      fullPath: '/free-spins-casino'
-      preLoaderRoute: typeof FreeSpinsCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/crypto-casino': {
-      id: '/crypto-casino'
-      path: '/crypto-casino'
-      fullPath: '/crypto-casino'
-      preLoaderRoute: typeof CryptoCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/casinos-zonder-registratie': {
-      id: '/casinos-zonder-registratie'
-      path: '/casinos-zonder-registratie'
-      fullPath: '/casinos-zonder-registratie'
-      preLoaderRoute: typeof CasinosZonderRegistratieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/casinos-zonder-limiet': {
-      id: '/casinos-zonder-limiet'
-      path: '/casinos-zonder-limiet'
-      fullPath: '/casinos-zonder-limiet'
-      preLoaderRoute: typeof CasinosZonderLimietRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/casinos-zonder-cruks': {
-      id: '/casinos-zonder-cruks'
-      path: '/casinos-zonder-cruks'
-      fullPath: '/casinos-zonder-cruks'
-      preLoaderRoute: typeof CasinosZonderCruksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/casino-spellen': {
-      id: '/casino-spellen'
-      path: '/casino-spellen'
-      fullPath: '/casino-spellen'
-      preLoaderRoute: typeof CasinoSpellenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/casino-bonussen': {
-      id: '/casino-bonussen'
-      path: '/casino-bonussen'
-      fullPath: '/casino-bonussen'
-      preLoaderRoute: typeof CasinoBonussenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/buitenlandse-casino': {
-      id: '/buitenlandse-casino'
-      path: '/buitenlandse-casino'
-      fullPath: '/buitenlandse-casino'
-      preLoaderRoute: typeof BuitenlandseCasinoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bonussen': {
-      id: '/bonussen'
-      path: '/bonussen'
-      fullPath: '/bonussen'
-      preLoaderRoute: typeof BonussenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bonus-types': {
-      id: '/bonus-types'
-      path: '/bonus-types'
-      fullPath: '/bonus-types'
-      preLoaderRoute: typeof BonusTypesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blackjack-online': {
-      id: '/blackjack-online'
-      path: '/blackjack-online'
-      fullPath: '/blackjack-online'
-      preLoaderRoute: typeof BlackjackOnlineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/betrouwbare-online-casinos': {
-      id: '/betrouwbare-online-casinos'
-      path: '/betrouwbare-online-casinos'
-      fullPath: '/betrouwbare-online-casinos'
-      preLoaderRoute: typeof BetrouwbareOnlineCasinosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/betaalmethoden': {
-      id: '/betaalmethoden'
-      path: '/betaalmethoden'
-      fullPath: '/betaalmethoden'
-      preLoaderRoute: typeof BetaalmethodenRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/beste-online-casinos': {
@@ -877,60 +646,256 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BesteOnlineCasinosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/betaalmethoden': {
+      id: '/betaalmethoden'
+      path: '/betaalmethoden'
+      fullPath: '/betaalmethoden'
+      preLoaderRoute: typeof BetaalmethodenRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/slot/$slug': {
-      id: '/slot/$slug'
-      path: '/slot/$slug'
-      fullPath: '/slot/$slug'
-      preLoaderRoute: typeof SlotSlugRouteImport
+    '/betrouwbare-online-casinos': {
+      id: '/betrouwbare-online-casinos'
+      path: '/betrouwbare-online-casinos'
+      fullPath: '/betrouwbare-online-casinos'
+      preLoaderRoute: typeof BetrouwbareOnlineCasinosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/review/$slug': {
-      id: '/review/$slug'
-      path: '/review/$slug'
-      fullPath: '/review/$slug'
-      preLoaderRoute: typeof ReviewSlugRouteImport
+    '/blackjack-online': {
+      id: '/blackjack-online'
+      path: '/blackjack-online'
+      fullPath: '/blackjack-online'
+      preLoaderRoute: typeof BlackjackOnlineRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/provider/$slug': {
-      id: '/provider/$slug'
-      path: '/provider/$slug'
-      fullPath: '/provider/$slug'
-      preLoaderRoute: typeof ProviderSlugRouteImport
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/licentie/$slug': {
-      id: '/licentie/$slug'
-      path: '/licentie/$slug'
-      fullPath: '/licentie/$slug'
-      preLoaderRoute: typeof LicentieSlugRouteImport
+    '/bonus-types': {
+      id: '/bonus-types'
+      path: '/bonus-types'
+      fullPath: '/bonus-types'
+      preLoaderRoute: typeof BonusTypesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/go/$slug': {
-      id: '/go/$slug'
-      path: '/go/$slug'
-      fullPath: '/go/$slug'
-      preLoaderRoute: typeof GoSlugRouteImport
+    '/bonussen': {
+      id: '/bonussen'
+      path: '/bonussen'
+      fullPath: '/bonussen'
+      preLoaderRoute: typeof BonussenRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bonus/$slug': {
-      id: '/bonus/$slug'
-      path: '/bonus/$slug'
-      fullPath: '/bonus/$slug'
-      preLoaderRoute: typeof BonusSlugRouteImport
+    '/buitenlandse-casino': {
+      id: '/buitenlandse-casino'
+      path: '/buitenlandse-casino'
+      fullPath: '/buitenlandse-casino'
+      preLoaderRoute: typeof BuitenlandseCasinoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bonus-type/$slug': {
-      id: '/bonus-type/$slug'
-      path: '/bonus-type/$slug'
-      fullPath: '/bonus-type/$slug'
-      preLoaderRoute: typeof BonusTypeSlugRouteImport
+    '/casino-bonussen': {
+      id: '/casino-bonussen'
+      path: '/casino-bonussen'
+      fullPath: '/casino-bonussen'
+      preLoaderRoute: typeof CasinoBonussenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casino-spellen': {
+      id: '/casino-spellen'
+      path: '/casino-spellen'
+      fullPath: '/casino-spellen'
+      preLoaderRoute: typeof CasinoSpellenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casinos-zonder-cruks': {
+      id: '/casinos-zonder-cruks'
+      path: '/casinos-zonder-cruks'
+      fullPath: '/casinos-zonder-cruks'
+      preLoaderRoute: typeof CasinosZonderCruksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casinos-zonder-limiet': {
+      id: '/casinos-zonder-limiet'
+      path: '/casinos-zonder-limiet'
+      fullPath: '/casinos-zonder-limiet'
+      preLoaderRoute: typeof CasinosZonderLimietRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casinos-zonder-registratie': {
+      id: '/casinos-zonder-registratie'
+      path: '/casinos-zonder-registratie'
+      fullPath: '/casinos-zonder-registratie'
+      preLoaderRoute: typeof CasinosZonderRegistratieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crypto-casino': {
+      id: '/crypto-casino'
+      path: '/crypto-casino'
+      fullPath: '/crypto-casino'
+      preLoaderRoute: typeof CryptoCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-spins-casino': {
+      id: '/free-spins-casino'
+      path: '/free-spins-casino'
+      fullPath: '/free-spins-casino'
+      preLoaderRoute: typeof FreeSpinsCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ideal-casinos': {
+      id: '/ideal-casinos'
+      path: '/ideal-casinos'
+      fullPath: '/ideal-casinos'
+      preLoaderRoute: typeof IdealCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licenties': {
+      id: '/licenties'
+      path: '/licenties'
+      fullPath: '/licenties'
+      preLoaderRoute: typeof LicentiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-casino': {
+      id: '/live-casino'
+      path: '/live-casino'
+      fullPath: '/live-casino'
+      preLoaderRoute: typeof LiveCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobiele-casinos': {
+      id: '/mobiele-casinos'
+      path: '/mobiele-casinos'
+      fullPath: '/mobiele-casinos'
+      preLoaderRoute: typeof MobieleCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nieuwe-online-casinos': {
+      id: '/nieuwe-online-casinos'
+      path: '/nieuwe-online-casinos'
+      fullPath: '/nieuwe-online-casinos'
+      preLoaderRoute: typeof NieuweOnlineCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/no-deposit-bonus': {
+      id: '/no-deposit-bonus'
+      path: '/no-deposit-bonus'
+      fullPath: '/no-deposit-bonus'
+      preLoaderRoute: typeof NoDepositBonusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online-slots': {
+      id: '/online-slots'
+      path: '/online-slots'
+      fullPath: '/online-slots'
+      preLoaderRoute: typeof OnlineSlotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/over-ons': {
+      id: '/over-ons'
+      path: '/over-ons'
+      fullPath: '/over-ons'
+      preLoaderRoute: typeof OverOnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paypal-casino': {
+      id: '/paypal-casino'
+      path: '/paypal-casino'
+      fullPath: '/paypal-casino'
+      preLoaderRoute: typeof PaypalCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/providers': {
+      id: '/providers'
+      path: '/providers'
+      fullPath: '/providers'
+      preLoaderRoute: typeof ProvidersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/redactiebeleid': {
+      id: '/redactiebeleid'
+      path: '/redactiebeleid'
+      fullPath: '/redactiebeleid'
+      preLoaderRoute: typeof RedactiebeleidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roulette-online': {
+      id: '/roulette-online'
+      path: '/roulette-online'
+      fullPath: '/roulette-online'
+      preLoaderRoute: typeof RouletteOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site.webmanifest': {
+      id: '/site.webmanifest'
+      path: '/site.webmanifest'
+      fullPath: '/site.webmanifest'
+      preLoaderRoute: typeof SiteDotwebmanifestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/slots': {
+      id: '/slots'
+      path: '/slots'
+      fullPath: '/slots'
+      preLoaderRoute: typeof SlotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/snelle-uitbetaling-casino': {
+      id: '/snelle-uitbetaling-casino'
+      path: '/snelle-uitbetaling-casino'
+      fullPath: '/snelle-uitbetaling-casino'
+      preLoaderRoute: typeof SnelleUitbetalingCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/snelle-uitbetaling-ideal-casinos': {
+      id: '/snelle-uitbetaling-ideal-casinos'
+      path: '/snelle-uitbetaling-ideal-casinos'
+      fullPath: '/snelle-uitbetaling-ideal-casinos'
+      preLoaderRoute: typeof SnelleUitbetalingIdealCasinosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verantwoord-spelen': {
+      id: '/verantwoord-spelen'
+      path: '/verantwoord-spelen'
+      fullPath: '/verantwoord-spelen'
+      preLoaderRoute: typeof VerantwoordSpelenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/welkomstbonus-casino': {
+      id: '/welkomstbonus-casino'
+      path: '/welkomstbonus-casino'
+      fullPath: '/welkomstbonus-casino'
+      preLoaderRoute: typeof WelkomstbonusCasinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auteur/$slug': {
+      id: '/auteur/$slug'
+      path: '/auteur/$slug'
+      fullPath: '/auteur/$slug'
+      preLoaderRoute: typeof AuteurSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/betaalmethode/$slug': {
+      id: '/betaalmethode/$slug'
+      path: '/betaalmethode/$slug'
+      fullPath: '/betaalmethode/$slug'
+      preLoaderRoute: typeof BetaalmethodeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -940,18 +905,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
-    '/betaalmethode/$slug': {
-      id: '/betaalmethode/$slug'
-      path: '/betaalmethode/$slug'
-      fullPath: '/betaalmethode/$slug'
-      preLoaderRoute: typeof BetaalmethodeSlugRouteImport
+    '/bonus-type/$slug': {
+      id: '/bonus-type/$slug'
+      path: '/bonus-type/$slug'
+      fullPath: '/bonus-type/$slug'
+      preLoaderRoute: typeof BonusTypeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auteur/$slug': {
-      id: '/auteur/$slug'
-      path: '/auteur/$slug'
-      fullPath: '/auteur/$slug'
-      preLoaderRoute: typeof AuteurSlugRouteImport
+    '/bonus/$slug': {
+      id: '/bonus/$slug'
+      path: '/bonus/$slug'
+      fullPath: '/bonus/$slug'
+      preLoaderRoute: typeof BonusSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/go/$slug': {
+      id: '/go/$slug'
+      path: '/go/$slug'
+      fullPath: '/go/$slug'
+      preLoaderRoute: typeof GoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licentie/$slug': {
+      id: '/licentie/$slug'
+      path: '/licentie/$slug'
+      fullPath: '/licentie/$slug'
+      preLoaderRoute: typeof LicentieSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/provider/$slug': {
+      id: '/provider/$slug'
+      path: '/provider/$slug'
+      fullPath: '/provider/$slug'
+      preLoaderRoute: typeof ProviderSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review/$slug': {
+      id: '/review/$slug'
+      path: '/review/$slug'
+      fullPath: '/review/$slug'
+      preLoaderRoute: typeof ReviewSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/slot/$slug': {
+      id: '/slot/$slug'
+      path: '/slot/$slug'
+      fullPath: '/slot/$slug'
+      preLoaderRoute: typeof SlotSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
