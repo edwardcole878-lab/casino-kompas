@@ -25,6 +25,24 @@ export type ListingCasino = {
 export const listingCasinos: ListingCasino[] = [
   {
     rank: 1,
+    name: "Wildies",
+    slug: "wildies",
+    logo: wildiesLogo.url,
+    rating: 4.9,
+    bonus: "150% tot €1.000",
+    freeSpins: "100 Free Spins",
+    minDeposit: "€20",
+    license: "Curaçao",
+    payoutSpeed: "~30 min",
+    pros: [
+      "Pakket tot €3.250 + extra spins",
+      "Casino én sportsbook in één",
+      "Snelle iDEAL-opnames",
+    ],
+    cta: "https://wildies1.com/api/v3/offer/155?aff_sub=TrustPilot&aff_sub2={clickid}&affiliate_id=132&url_id=532",
+  },
+  {
+    rank: 2,
     name: "Winhero",
     slug: "winhero",
     logo: winheroLogo.url,
@@ -42,7 +60,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://goplaywithstars.com/tfaffuzzb",
   },
   {
-    rank: 2,
+    rank: 3,
     name: "Baloo",
     slug: "baloo",
     logo: balooLogo.url,
@@ -58,24 +76,6 @@ export const listingCasinos: ListingCasino[] = [
       "Cashback & rakeback tot 20%, eigen apps",
     ],
     cta: "https://gobooplay.com/txe84kaq5",
-  },
-  {
-    rank: 3,
-    name: "Wildies",
-    slug: "wildies",
-    logo: wildiesLogo.url,
-    rating: 4.9,
-    bonus: "150% tot €1.000",
-    freeSpins: "100 Free Spins",
-    minDeposit: "€20",
-    license: "Curaçao",
-    payoutSpeed: "~30 min",
-    pros: [
-      "Pakket tot €3.250 + extra spins",
-      "Casino én sportsbook in één",
-      "Snelle iDEAL-opnames",
-    ],
-    cta: "https://wildies1.com/api/v3/offer/155?aff_sub=TrustPilot&aff_sub2={clickid}&affiliate_id=132&url_id=532",
   },
   {
     rank: 4,
