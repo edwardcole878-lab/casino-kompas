@@ -50,7 +50,7 @@ function Index() {
             </div>
 
             {/* #1 PICK CARD */}
-            <article className="relative overflow-hidden rounded-xl border-2 border-nl-green bg-white shadow-lg">
+            <article className="relative hidden overflow-hidden rounded-xl border-2 border-nl-green bg-white shadow-lg lg:block">
               <div className="flex items-center gap-2 bg-nl-green px-4 py-2 font-heading text-sm uppercase tracking-[0.18em] text-white">
                 <Trophy className="h-4 w-4" /> Snelste keuze van 2026
               </div>
