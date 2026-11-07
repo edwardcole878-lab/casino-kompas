@@ -62,21 +62,64 @@ function CasinoRow({ c }: { c: Casino }) {
   const isTop = c.rank === 1;
   return (
     <article
-      className={`relative flex h-full flex-col overflow-hidden rounded-lg border-2 bg-card transition-colors ${
+      className={`relative flex h-full flex-col overflow-hidden rounded-lg border-2 bg-card transition-colors ${isTop ? "casino-spotlight" : ""} ${
         isTop
           ? "border-nl-green shadow-row ring-2 ring-nl-green/30"
           : "border-nl-blue/35 shadow-row hover:border-nl-blue/60"
       }`}
     >
+      {isTop && (
+        <div className="casino-spotlight-mobile flex h-full flex-col gap-4 p-4 font-body lg:hidden">
+          <div className="flex items-center justify-center gap-2 text-spotlight-accent">
+            <Zap size={22} className="fill-current" />
+            <span className="text-base font-bold">Snelste keuze van 2026</span>
+          </div>
+          <div className="flex h-24 items-center justify-center overflow-hidden rounded-md bg-spotlight-logo px-3">
+            <img src={c.logo} alt={`${c.name} logo`} loading="eager" fetchPriority="high" className="w-full shrink-0 object-contain" />
+          </div>
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+            <div className="min-w-0">
+              <div className="text-[11px] font-semibold uppercase">Welkomstbonus</div>
+              <div className="mt-1 text-[26px] font-extrabold leading-tight">{c.bonus}</div>
+              <div className="mt-1 text-xl font-bold leading-tight text-spotlight-accent">+ {c.freeSpins}</div>
+            </div>
+            <div className="border-l border-spotlight-foreground/35 pl-3 text-center">
+              <div className="flex items-center justify-center gap-1">
+                <Zap size={20} className="shrink-0 fill-current text-spotlight-accent" />
+                <span className="whitespace-nowrap text-xl font-bold">{c.payoutSpeed}</span>
+              </div>
+              <div className="mt-1 text-[10px] uppercase">Uitbetaling</div>
+            </div>
+          </div>
+          <ul className="space-y-2">
+            {c.pros.slice(1).map((pro) => (
+              <li key={pro} className="flex items-start gap-2 text-sm leading-snug">
+                <Check size={18} className="shrink-0 text-spotlight-accent" />
+                <span>{pro}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-auto">
+            <Button asChild size="lg" className="h-12 w-full rounded-md bg-spotlight-accent font-body text-xl font-bold text-spotlight-accent-foreground shadow-none hover:bg-spotlight-accent/90">
+              <AffiliateLink href={`/go/${c.slug}`} ariaLabel={`Speel nu bij ${c.name}`}>
+                Speel nu <ArrowRight size={20} />
+              </AffiliateLink>
+            </Button>
+            <Link to="/review/$slug" params={{ slug: c.slug }} className="mt-3 block text-center text-sm font-semibold underline underline-offset-4">
+              Lees review
+            </Link>
+          </div>
+        </div>
+      )}
       {isTop ? (
-        <div className="flex h-8 shrink-0 items-center justify-center gap-2 bg-nl-green px-4 font-heading text-sm uppercase tracking-[0.2em] text-white lg:justify-start">
+        <div className="hidden h-8 shrink-0 items-center justify-center gap-2 bg-nl-green px-4 font-heading text-sm uppercase tracking-[0.2em] text-white lg:flex lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
       ) : (
         <div className="h-8 shrink-0 bg-nl-blue/5" aria-hidden />
       )}
 
-      <div className="grid flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,210px)] lg:items-center lg:gap-4 lg:p-3 lg:text-left">
+      <div className={`${isTop ? "hidden lg:grid" : "grid"} flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,210px)] lg:items-center lg:gap-4 lg:p-3 lg:text-left`}>
         {/* Rank + logo */}
         <div className="col-span-2 flex items-center justify-center lg:col-span-1">
           <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-1.5 lg:h-20 lg:w-24 lg:shrink-0">
