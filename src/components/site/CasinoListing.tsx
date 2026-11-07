@@ -74,8 +74,8 @@ function CasinoRow({ c }: { c: Casino }) {
             <Zap size={22} className="fill-current" />
             <span className="text-base font-bold">Snelste keuze van 2026</span>
           </div>
-          <div className="flex h-24 items-center justify-center rounded-md bg-spotlight-logo px-5 py-3">
-            <img src={c.logo} alt={`${c.name} logo`} loading="eager" fetchPriority="high" className="max-h-full max-w-full object-contain" />
+          <div className="flex h-24 items-center justify-center overflow-hidden rounded-md bg-spotlight-logo px-3">
+            <img src={c.logo} alt={`${c.name} logo`} loading="eager" fetchPriority="high" className="w-full shrink-0 object-contain" />
           </div>
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
             <div className="min-w-0">
