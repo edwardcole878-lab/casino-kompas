@@ -1,19 +1,19 @@
-/// <reference types="bun" />
-import { describe, expect, test } from 'bun:test';
+import { describe, test } from 'node:test';
+import { strict as assert } from 'node:assert';
 import { casinoSlugFromHref, clickSourcePath } from './casino-clicks';
 
 describe('casino click attribution', () => {
   test('attributes the Winhero casino button, not its review link', () => {
-    expect(casinoSlugFromHref('/go/winhero', 'https://buitenlandsecasino.com')).toBe('winhero');
-    expect(casinoSlugFromHref('/review/winhero', 'https://buitenlandsecasino.com')).toBeNull();
+    assert.equal(casinoSlugFromHref('/go/winhero', 'https://buitenlandsecasino.com'), 'winhero');
+    assert.equal(casinoSlugFromHref('/review/winhero', 'https://buitenlandsecasino.com'), null);
   });
   test('rejects unknown casinos and other website origins', () => {
-    expect(casinoSlugFromHref('/go/not-a-casino', 'https://buitenlandsecasino.com')).toBeNull();
-    expect(casinoSlugFromHref('https://example.com/go/winhero', 'https://buitenlandsecasino.com')).toBeNull();
+    assert.equal(casinoSlugFromHref('/go/not-a-casino', 'https://buitenlandsecasino.com'), null);
+    assert.equal(casinoSlugFromHref('https://example.com/go/winhero', 'https://buitenlandsecasino.com'), null);
   });
   test('retains the source page with a bounded size', () => {
-    expect(clickSourcePath('/snelle-uitbetaling-ideal-casinos')).toBe('/snelle-uitbetaling-ideal-casinos');
-    expect(clickSourcePath('/' + 'a'.repeat(300)).length).toBe(250);
-    expect(clickSourcePath('invalid')).toBe('/');
+    assert.equal(clickSourcePath('/snelle-uitbetaling-ideal-casinos'), '/snelle-uitbetaling-ideal-casinos');
+    assert.equal(clickSourcePath('/' + 'a'.repeat(300)).length, 250);
+    assert.equal(clickSourcePath('invalid'), '/');
   });
 });
