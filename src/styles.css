@@ -214,12 +214,10 @@
   .shadow-orange { box-shadow: var(--shadow-orange); }
 }
 
-@media (width < 64rem) {
-  .casino-spotlight {
-    background-color: var(--spotlight);
-    color: var(--spotlight-foreground);
-    border-color: var(--spotlight);
-    box-shadow: var(--shadow-row);
-    --tw-ring-shadow: 0 0 transparent;
-  }
+.casino-spotlight {
+  background-color: var(--spotlight);
+  color: var(--spotlight-foreground);
+  border-color: var(--spotlight);
+  box-shadow: var(--shadow-row);
+  --tw-ring-shadow: 0 0 transparent;
 }
