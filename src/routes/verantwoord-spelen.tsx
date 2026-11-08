@@ -11,6 +11,8 @@ export const Route = createFileRoute("/verantwoord-spelen")({
       { name: "description", content: "Speel je teveel? Cruks, limieten en hulpinstanties. Alles over verantwoord gokken in Nederland." },
       { property: "og:title", content: "Verantwoord Spelen — Buitenlandse Casino's" },
       { property: "og:description", content: "Hulp bij gokproblemen voor Nederlandse spelers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

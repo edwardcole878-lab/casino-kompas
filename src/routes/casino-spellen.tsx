@@ -9,6 +9,8 @@ export const Route = createFileRoute("/casino-spellen")({
       { name: "description", content: "Welk casino heeft de beste slots? Waar speel je live blackjack met Nederlandse dealer? Compleet overzicht van casino-spellen per categorie." },
       { property: "og:title", content: "Beste Casinospellen — Vergelijking 2026" },
       { property: "og:description", content: "Alles over slots, live casino, blackjack en roulette bij Nederlandse online casino's." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

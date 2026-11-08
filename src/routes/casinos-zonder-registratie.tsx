@@ -9,6 +9,8 @@ export const Route = createFileRoute("/casinos-zonder-registratie")({
       { name: "description", content: "Wat zijn casino's zonder registratie? Hoe werkt Pay-N-Play en welke buitenlandse aanbieders bieden iets vergelijkbaars voor Nederlandse spelers?" },
       { property: "og:title", content: "Casino's zonder registratie — 2026" },
       { property: "og:description", content: "Wat zijn casino's zonder registratie? Hoe werkt Pay-N-Play en welke buitenlandse aanbieders bieden iets vergelijkbaars voor Nederlandse spelers?" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

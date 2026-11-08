@@ -10,6 +10,8 @@ export const Route = createFileRoute("/redactiebeleid")({
       { name: "description", content: "Onze testmethode, weging en redactionele onafhankelijkheid uitgelegd. Transparant over commerciële relaties en offshore-licenties." },
       { property: "og:title", content: "Redactiebeleid — Buitenlandse Casino's" },
       { property: "og:description", content: "Hoe wij offshore casino's testen en rangschikken." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

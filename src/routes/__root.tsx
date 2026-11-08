@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } f
 
 import appCss from "../styles.css?url";
 import { jsonLdString } from "@/lib/jsonld";
+import { CasinoClickTracker } from "@/components/site/CasinoClickTracker";
 
 const SITE_URL = "https://buitenlandsecasino.com";
 
@@ -51,12 +52,6 @@ export const Route = createRootRoute({
       { name: "twitter:title", content: "Buitenlandse Casino's — Offshore Casino's voor NL Spelers" },
       { property: "og:description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's, gericht op Nederlandse spelers." },
       { name: "twitter:description", content: "Onafhankelijk vergelijkingsplatform voor buitenlandse online casino's, gericht op Nederlandse spelers." },
-      // Default OG/Twitter image — leaf routes can override og:image when they have a more specific visual
-      { property: "og:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Buitenlandse Casino's — Nederlands vergelijkingsplatform voor offshore casino's" },
-      { name: "twitter:image", content: "https://buitenlandsecasino.com/og-default.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -127,6 +122,7 @@ function RootComponent() {
       <meta property="og:url" content={canonical} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(orgJsonLd) }} />
       <Outlet />
+      <CasinoClickTracker />
     </>
   );
 }

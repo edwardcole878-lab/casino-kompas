@@ -9,6 +9,8 @@ export const Route = createFileRoute("/live-casino")({
       { name: "description", content: "Live blackjack, roulette en gameshows met echte dealers. Inclusief Nederlandstalige tafels en Evolution-aanbod." },
       { property: "og:title", content: "Live Casino Nederland 2026 — Spelen met Live Dealer" },
       { property: "og:description", content: "Live blackjack, roulette en gameshows met echte dealers. Inclusief Nederlandstalige tafels en Evolution-aanbod." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

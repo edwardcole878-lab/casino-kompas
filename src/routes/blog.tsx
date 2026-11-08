@@ -11,6 +11,8 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: "Artikelen over online casino's, bonustips, strategie voor blackjack en roulette, en het laatste KSA-nieuws voor Nederlandse spelers." },
       { property: "og:title", content: "Casino Blog Nederland 2026" },
       { property: "og:description", content: "Tips, strategie en nieuws over online casino's in Nederland." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: BlogIndex,

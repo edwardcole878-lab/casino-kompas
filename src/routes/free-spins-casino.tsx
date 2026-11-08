@@ -9,6 +9,8 @@ export const Route = createFileRoute("/free-spins-casino")({
       { name: "description", content: "Casino's met de meeste en eerlijkste free spins. Per slot en per provider — inclusief winst-cap en wagering." },
       { property: "og:title", content: "Beste Free Spins Casino's Nederland" },
       { property: "og:description", content: "Gratis spins op slots — vergeleken op netto-waarde." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

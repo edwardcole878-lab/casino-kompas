@@ -9,6 +9,8 @@ export const Route = createFileRoute("/roulette-online")({
       { name: "description", content: "Speel Europese, Franse en live roulette bij Nederlandse casino's. Inclusief uitleg over inzettypes en odds." },
       { property: "og:title", content: "Roulette Online Nederland — Europees, Frans & Live 2026" },
       { property: "og:description", content: "Speel Europese, Franse en live roulette bij Nederlandse casino's. Inclusief uitleg over inzettypes en odds." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

@@ -9,6 +9,8 @@ export const Route = createFileRoute("/snelle-uitbetaling-casino")({
       { name: "description", content: "Casino's met de snelste uitbetalingen voor Nederlandse spelers. Getest in het weekend, op kantooruren en 's avonds." },
       { property: "og:title", content: "Snelle Uitbetaling Casino — Cashout Binnen 1 Uur 2026" },
       { property: "og:description", content: "Casino's met de snelste uitbetalingen voor Nederlandse spelers. Getest in het weekend, op kantooruren en 's avonds." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

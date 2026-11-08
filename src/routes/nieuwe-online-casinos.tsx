@@ -9,6 +9,8 @@ export const Route = createFileRoute("/nieuwe-online-casinos")({
       { name: "description", content: "Verse KSA-vergunningen en pas gelanceerde casino's. Nieuwe spelers, frisse bonussen — maar ook nieuwe risico's. Wij testen ze als eerste." },
       { property: "og:title", content: "Nieuwe Online Casino's 2026" },
       { property: "og:description", content: "De nieuwste online casino's met KSA-licentie in Nederland." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

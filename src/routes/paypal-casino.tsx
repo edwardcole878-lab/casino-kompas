@@ -9,6 +9,8 @@ export const Route = createFileRoute("/paypal-casino")({
       { name: "description", content: "Casino's die PayPal accepteren — een handig alternatief voor wie niet via iDEAL wil storten. Veiligheid en snelheid vergeleken." },
       { property: "og:title", content: "PayPal Casino — Online Casino's met PayPal Nederland" },
       { property: "og:description", content: "Casino's die PayPal accepteren — een handig alternatief voor wie niet via iDEAL wil storten. Veiligheid en snelheid vergeleken." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

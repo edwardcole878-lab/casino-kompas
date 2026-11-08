@@ -12,6 +12,7 @@ export const Route = createFileRoute("/betaalmethoden")({
       { name: "description", content: "Vind het beste online casino per betaalmethode: iDEAL, Trustly, Bancontact, PayPal, Visa, Mastercard, Crypto en meer. KSA-vergund." },
       { property: "og:title", content: "Casino Betaalmethoden Nederland 2026" },
       { property: "og:description", content: "Vergelijk casino's per betaalmethode: iDEAL, Trustly, Crypto en meer." },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
   }),

@@ -22,6 +22,7 @@ export const Route = createFileRoute("/provider/$slug")({
         { name: "description", content: t.intro.slice(0, 155) },
         { property: "og:title", content: `${t.name} casino's 2026` },
         { property: "og:description", content: t.intro.slice(0, 155) },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:type", content: "website" },
       ],
     };

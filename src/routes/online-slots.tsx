@@ -9,6 +9,8 @@ export const Route = createFileRoute("/online-slots")({
       { name: "description", content: "Casino's met de grootste slot-bibliotheken: NetEnt, Pragmatic Play, Play'n GO, Hacksaw en meer. Megaways, jackpots en klassieke slots." },
       { property: "og:title", content: "Online Slots Nederland — Beste Slot Casino's 2026" },
       { property: "og:description", content: "Casino's met de grootste slot-bibliotheken: NetEnt, Pragmatic Play, Play'n GO, Hacksaw en meer. Megaways, jackpots en klassieke slots." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

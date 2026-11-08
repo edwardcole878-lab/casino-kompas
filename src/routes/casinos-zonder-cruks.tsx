@@ -9,6 +9,8 @@ export const Route = createFileRoute("/casinos-zonder-cruks")({
       { name: "description", content: "Buitenlandse online casino's zonder Cruks-koppeling. Lees waarom dit bestaat, voor wie het wel/niet geschikt is, en welke aanbieders Nederlandse spelers accepteren." },
       { property: "og:title", content: "Casino's zonder Cruks — 2026" },
       { property: "og:description", content: "Buitenlandse online casino's zonder Cruks-koppeling. Lees waarom dit bestaat, voor wie het wel/niet geschikt is, en welke aanbieders Nederlandse spelers accepteren." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

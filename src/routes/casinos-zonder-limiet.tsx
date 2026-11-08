@@ -9,6 +9,8 @@ export const Route = createFileRoute("/casinos-zonder-limiet")({
       { name: "description", content: "Sinds 2024 vragen KSA-vergunde casino's verplicht een stortlimiet vooraf. Buitenlandse casino's hanteren een ander regime. Lees wat dit betekent." },
       { property: "og:title", content: "Casino's zonder limiet — 2026" },
       { property: "og:description", content: "Sinds 2024 vragen KSA-vergunde casino's verplicht een stortlimiet vooraf. Buitenlandse casino's hanteren een ander regime. Lees wat dit betekent." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

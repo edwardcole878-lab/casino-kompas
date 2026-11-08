@@ -9,6 +9,8 @@ export const Route = createFileRoute("/beste-online-casinos")({
       { name: "description", content: "Onze redactie heeft buitenlandse casino's getest. Ontdek welke het beste presteren op bonus, uitbetaling, support en spelaanbod." },
       { property: "og:title", content: "Beste Online Casino's Nederland 2026" },
       { property: "og:description", content: "Top 10 Nederlandse online casino's uitgebreid getest en vergeleken." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

@@ -12,6 +12,7 @@ export const Route = createFileRoute("/licenties")({
       { name: "description", content: "Welke licentie biedt de beste bescherming? Vergelijk KSA, MGA, Curaçao, UKGC en Gibraltar — en zie welke casino's onder welke autoriteit vallen." },
       { property: "og:title", content: "Casino Licenties Vergelijken 2026" },
       { property: "og:description", content: "Alles over KSA, MGA, Curaçao en andere casino-licenties." },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
   }),
