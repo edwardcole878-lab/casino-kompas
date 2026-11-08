@@ -25,7 +25,7 @@ export type ListingCasino = {
   source?: { name: string; url: string; ratingName: string; ratingUrl: string; wagering: string; payments: "Crypto"[] };
 };
 
-export const listingCasinos: ListingCasino[] = [
+export const listingCasinos: ListingCasino[] = ([
   {
     rank: 1,
     name: "Winhero",
@@ -236,4 +236,4 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://betorytrackers.com/dzqshr42m",
     source: { name: "LCB", url: "https://lcb.org/casinos/betory", ratingName: "LCB", ratingUrl: "https://lcb.org/casinos/betory", wagering: "40x bonus", payments: ["Crypto"] },
   },
-].sort((a, b) => a.rank - b.rank);
+] satisfies ListingCasino[]).sort((a, b) => a.rank - b.rank);
