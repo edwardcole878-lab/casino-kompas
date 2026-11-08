@@ -139,6 +139,7 @@ function CasinoRow({ c }: { c: Casino }) {
           <div className="flex justify-center lg:mt-1 lg:justify-start">
             <Stars rating={c.rating} spotlight={isTop} />
           </div>
+          {c.source && <a href={c.source.ratingUrl} target="_blank" rel="noopener noreferrer" className="mt-1 block text-xs text-muted-foreground underline">Score: {c.source.ratingName}</a>}
           <ul className="mt-2 min-h-[54px] space-y-1 lg:mt-1.5 lg:min-h-[52px] lg:space-y-0.5">
             {c.pros.map((p) => (
               <li

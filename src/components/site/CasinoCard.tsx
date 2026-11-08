@@ -45,9 +45,9 @@ export function CasinoCard({
         #{casino.rank}{isFeatured ? " Beste Keuze" : ""}
       </div>
       {/* Last tested — top right */}
-      <div className="absolute right-3 top-2 inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
+      {casino.lastTested && <div className="absolute right-3 top-2 inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
         <CalendarCheck className="h-3 w-3" /> Laatst getest: {dateNL(casino.lastTested)}
-      </div>
+      </div>}
 
       <div className={`grid gap-4 md:gap-6 md:items-center ${isFeatured ? "md:grid-cols-[auto_1fr_280px]" : "md:grid-cols-[auto_1fr_220px]"}`}>
         <div className="flex items-center gap-4">

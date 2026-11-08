@@ -18,9 +18,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Beste buitenlandse online casino's NL — Top 10 2026" },
+      { title: "Beste buitenlandse online casino's NL — Ranking 2026" },
       { name: "description", content: "Onafhankelijke ranking van buitenlandse online casino's voor NL-spelers. Bonusvoorwaarden, uitbetaalsnelheid en transparantie — geen commissie-ranking." },
-      { property: "og:title", content: "Top 10 buitenlandse casino's voor NL — 2026" },
+      { property: "og:title", content: "Buitenlandse casino's voor NL — Ranking 2026" },
       { property: "og:description", content: "Buitenlandse casino's getest met eigen geld. Dit zijn de aanbieders die door onze redactie heen kwamen." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const top = casinos.slice(0, 10);
+  const top = casinos;
   const number1 = listingCasinos[0];
   const filtered = top;
 
@@ -123,7 +123,7 @@ function Index() {
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gold">De volledige ranking</div>
-              <h2 className="mt-1 text-3xl font-extrabold md:text-4xl">Top 10 online casino's Nederland</h2>
+              <h2 className="mt-1 text-3xl font-extrabold md:text-4xl">Online casino's Nederland — volledige ranking</h2>
               <p className="mt-2 text-muted-foreground">Onze volledige ranking, getest met eigen geld.</p>
             </div>
           </div>
