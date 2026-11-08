@@ -14,7 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      casino_click_events: {
+        Row: {
+          casino_slug: string
+          created_at: string
+          id: string
+          source_path: string
+        }
+        Insert: {
+          casino_slug: string
+          created_at?: string
+          id: string
+          source_path: string
+        }
+        Update: {
+          casino_slug?: string
+          created_at?: string
+          id?: string
+          source_path?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
