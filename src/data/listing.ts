@@ -6,8 +6,8 @@ import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
 import wildiesLogo from "@/assets/logos/wildies.t.asset.json";
 import mrpunterLogo from "@/assets/logos/mrpunter.t.asset.json";
 import spininioLogo from "@/assets/logos/spininio.t.asset.json";
-import nixbetLogo from "@/assets/logos/nixbet.asset.json";
-import betoryLogo from "@/assets/logos/betory.asset.json";
+import nixbetLogo from "@/assets/logos/nixbet-white.jpg";
+import betoryLogo from "@/assets/logos/betory-white.jpg";
 
 export type ListingCasino = {
   rank: number;
@@ -210,7 +210,7 @@ export const listingCasinos: ListingCasino[] = ([
     rank: 6,
     name: "NixBet",
     slug: "nixbet",
-    logo: nixbetLogo.url,
+    logo: nixbetLogo,
     rating: 3.2,
     bonus: "200% tot €1.000",
     freeSpins: "150 Free Spins",
@@ -225,7 +225,7 @@ export const listingCasinos: ListingCasino[] = ([
     rank: 12,
     name: "Betory",
     slug: "betory",
-    logo: betoryLogo.url,
+    logo: betoryLogo,
     rating: 2.6,
     bonus: "150% tot €750",
     freeSpins: "100% tot €1.000 bij 2e storting",
