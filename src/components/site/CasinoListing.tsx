@@ -15,7 +15,7 @@ const casinos = listingCasinos;
 
 export { listingCasinos };
 
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, spotlight = false }: { rating: number; spotlight?: boolean }) {
   const full = Math.floor(rating);
   const half = rating - full >= 0.5;
   return (
@@ -26,14 +26,20 @@ function Stars({ rating }: { rating: number }) {
           size={13}
           className={
             i < full
-              ? "fill-nl-orange text-nl-orange"
+              ? spotlight
+                ? "fill-spotlight-accent text-spotlight-accent"
+                : "fill-nl-orange text-nl-orange"
               : i === full && half
-                ? "fill-nl-orange/50 text-nl-orange"
-                : "text-nl-blue/25"
+                ? spotlight
+                  ? "fill-spotlight-accent/50 text-spotlight-accent"
+                  : "fill-nl-orange/50 text-nl-orange"
+                : spotlight
+                  ? "text-spotlight-foreground/25"
+                  : "text-nl-blue/25"
           }
         />
       ))}
-      <span className="ml-1.5 font-heading text-lg leading-none tracking-wide text-nl-blue">
+      <span className={`ml-1.5 font-heading text-lg leading-none tracking-wide ${spotlight ? "text-spotlight-foreground" : "text-nl-blue"}`}>
         {rating.toFixed(1)}
       </span>
     </div>
@@ -112,7 +118,7 @@ function CasinoRow({ c }: { c: Casino }) {
         </div>
       )}
       {isTop ? (
-        <div className="hidden h-8 shrink-0 items-center justify-center gap-2 bg-nl-green px-4 font-heading text-sm uppercase tracking-[0.2em] text-white lg:flex lg:justify-start">
+        <div className="hidden h-8 shrink-0 items-center justify-center gap-2 bg-spotlight-accent px-4 font-heading text-sm uppercase tracking-[0.2em] text-spotlight-accent-foreground lg:flex lg:justify-start">
           <Trophy size={14} /> Snelste keuze van 2026
         </div>
       ) : (
@@ -122,24 +128,24 @@ function CasinoRow({ c }: { c: Casino }) {
       <div className={`${isTop ? "hidden lg:grid" : "grid"} flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3 p-3 text-center sm:p-5 lg:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,210px)] lg:items-center lg:gap-4 lg:p-3 lg:text-left`}>
         {/* Rank + logo */}
         <div className="col-span-2 flex items-center justify-center lg:col-span-1">
-          <div className="flex h-24 w-full items-center justify-center overflow-hidden rounded-md border border-nl-blue/10 bg-white p-1.5 lg:h-20 lg:w-24 lg:shrink-0">
+          <div className={`flex h-24 w-full items-center justify-center overflow-hidden rounded-md border p-1.5 lg:shrink-0 ${isTop ? "border-spotlight-accent/30 bg-spotlight-logo lg:h-24 lg:w-28" : "border-nl-blue/10 bg-white lg:h-20 lg:w-24"}`}>
             <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
           </div>
         </div>
 
         {/* Name, rating, pros */}
         <div className="min-w-0 self-center">
-          <h3 className="hidden font-heading text-2xl uppercase leading-none tracking-wide text-nl-blue lg:block lg:text-2xl">{c.name}</h3>
+          <h3 className={`hidden font-heading text-2xl uppercase leading-none tracking-wide lg:block lg:text-2xl ${isTop ? "text-spotlight-foreground" : "text-nl-blue"}`}>{c.name}</h3>
           <div className="flex justify-center lg:mt-1 lg:justify-start">
-            <Stars rating={c.rating} />
+            <Stars rating={c.rating} spotlight={isTop} />
           </div>
           <ul className="mt-2 min-h-[54px] space-y-1 lg:mt-1.5 lg:min-h-[52px] lg:space-y-0.5">
             {c.pros.map((p) => (
               <li
                 key={p}
-                className="flex items-start justify-center gap-1 text-[11px] leading-tight text-muted-foreground lg:justify-start lg:text-[13px]"
+                className={`flex items-start justify-center gap-1 text-[11px] leading-tight lg:justify-start lg:text-[13px] ${isTop ? "text-spotlight-foreground/85" : "text-muted-foreground"}`}
               >
-                <Check size={12} className="mt-[3px] shrink-0 text-nl-orange lg:mt-0.5" />
+                <Check size={12} className={`mt-[3px] shrink-0 lg:mt-0.5 ${isTop ? "text-spotlight-accent" : "text-nl-orange"}`} />
                 <span>{p}</span>
               </li>
             ))}
@@ -149,26 +155,26 @@ function CasinoRow({ c }: { c: Casino }) {
         {/* Bonus + facts */}
         <div
           className={`self-center rounded-lg border px-2.5 py-3 lg:rounded-xl lg:px-3.5 lg:py-2.5 ${
-            isTop ? "border-nl-green/45 bg-nl-green/10" : "border-nl-orange/30 bg-nl-orange/5"
+            isTop ? "border-spotlight-accent/45 bg-spotlight-accent/10" : "border-nl-orange/30 bg-nl-orange/5"
           }`}
         >
-          <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-nl-red">Welkomstbonus</div>
-          <div className="mt-1 font-heading text-[28px] leading-[0.95] tracking-wide text-nl-ink lg:text-[28px]">{c.bonus}</div>
-          <div className="mt-1.5 text-[13px] font-semibold text-nl-orange lg:mt-1 lg:text-sm">+ {c.freeSpins}</div>
+          <div className={`text-[10px] font-semibold uppercase tracking-[0.18em] ${isTop ? "text-spotlight-accent" : "text-nl-red"}`}>Welkomstbonus</div>
+          <div className={`mt-1 font-heading text-[28px] leading-[0.95] tracking-wide lg:text-[28px] ${isTop ? "text-spotlight-foreground" : "text-nl-ink"}`}>{c.bonus}</div>
+          <div className={`mt-1.5 text-[13px] font-semibold lg:mt-1 lg:text-sm ${isTop ? "text-spotlight-accent" : "text-nl-orange"}`}>+ {c.freeSpins}</div>
         </div>
 
         {/* Payout + CTA */}
         <div className="col-span-2 lg:col-span-1 lg:text-right">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-nl-blue/8 px-3 py-1 text-nl-blue">
-            <Zap size={14} className="text-nl-orange" />
+          <div className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 ${isTop ? "bg-spotlight-foreground/10 text-spotlight-foreground" : "bg-nl-blue/8 text-nl-blue"}`}>
+            <Zap size={14} className={isTop ? "text-spotlight-accent" : "text-nl-orange"} />
             <span className="font-heading text-lg leading-none tracking-wide lg:text-base">{c.payoutSpeed}</span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">uitbetaling</span>
+            <span className={`text-[10px] uppercase tracking-widest ${isTop ? "text-spotlight-foreground/70" : "text-muted-foreground"}`}>uitbetaling</span>
           </div>
           <Button
             asChild
             size="lg"
-            className={`mt-2 h-11 w-full rounded-md font-heading text-lg uppercase tracking-widest text-white shadow-orange lg:mt-2 lg:h-10 lg:text-base ${
-              isTop ? "bg-nl-green hover:bg-nl-green/90" : "bg-nl-orange hover:bg-nl-orange/90"
+            className={`mt-2 h-11 w-full rounded-md font-heading text-lg uppercase tracking-widest lg:mt-2 lg:h-10 lg:text-base ${
+              isTop ? "bg-spotlight-accent text-spotlight-accent-foreground shadow-none hover:bg-spotlight-accent/90" : "bg-nl-orange text-white shadow-orange hover:bg-nl-orange/90"
             }`}
           >
             <AffiliateLink href={`/go/${c.slug}`} ariaLabel={`Speel nu bij ${c.name}`}>
@@ -178,7 +184,7 @@ function CasinoRow({ c }: { c: Casino }) {
           <Link
             to="/review/$slug"
             params={{ slug: c.slug }}
-            className="mt-1.5 block w-full rounded-md border border-nl-blue/30 py-1.5 text-center text-[12px] font-semibold uppercase tracking-widest text-nl-blue transition-colors hover:border-nl-blue hover:bg-nl-blue/5"
+            className={`mt-1.5 block w-full rounded-md border py-1.5 text-center text-[12px] font-semibold uppercase tracking-widest transition-colors ${isTop ? "border-spotlight-accent/50 text-spotlight-accent hover:border-spotlight-accent hover:bg-spotlight-accent/10" : "border-nl-blue/30 text-nl-blue hover:border-nl-blue hover:bg-nl-blue/5"}`}
           >
             Lees review
           </Link>
