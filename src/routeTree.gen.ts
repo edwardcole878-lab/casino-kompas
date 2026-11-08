@@ -32,7 +32,6 @@ import { Route as MobieleCasinosRouteImport } from './routes/mobiele-casinos'
 import { Route as NieuweOnlineCasinosRouteImport } from './routes/nieuwe-online-casinos'
 import { Route as NoDepositBonusRouteImport } from './routes/no-deposit-bonus'
 import { Route as OnlineSlotsRouteImport } from './routes/online-slots'
-import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as PaypalCasinoRouteImport } from './routes/paypal-casino'
 import { Route as ProvidersRouteImport } from './routes/providers'
 import { Route as RedactiebeleidRouteImport } from './routes/redactiebeleid'
@@ -173,11 +172,6 @@ const OnlineSlotsRoute = OnlineSlotsRouteImport.update({
   path: '/online-slots',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OverOnsRoute = OverOnsRouteImport.update({
-  id: '/over-ons',
-  path: '/over-ons',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PaypalCasinoRoute = PaypalCasinoRouteImport.update({
   id: '/paypal-casino',
   path: '/paypal-casino',
@@ -314,7 +308,6 @@ export interface FileRoutesByFullPath {
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
   '/online-slots': typeof OnlineSlotsRoute
-  '/over-ons': typeof OverOnsRoute
   '/paypal-casino': typeof PaypalCasinoRoute
   '/providers': typeof ProvidersRoute
   '/redactiebeleid': typeof RedactiebeleidRoute
@@ -362,7 +355,6 @@ export interface FileRoutesByTo {
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
   '/online-slots': typeof OnlineSlotsRoute
-  '/over-ons': typeof OverOnsRoute
   '/paypal-casino': typeof PaypalCasinoRoute
   '/providers': typeof ProvidersRoute
   '/redactiebeleid': typeof RedactiebeleidRoute
@@ -411,7 +403,6 @@ export interface FileRoutesById {
   '/nieuwe-online-casinos': typeof NieuweOnlineCasinosRoute
   '/no-deposit-bonus': typeof NoDepositBonusRoute
   '/online-slots': typeof OnlineSlotsRoute
-  '/over-ons': typeof OverOnsRoute
   '/paypal-casino': typeof PaypalCasinoRoute
   '/providers': typeof ProvidersRoute
   '/redactiebeleid': typeof RedactiebeleidRoute
@@ -461,7 +452,6 @@ export interface FileRouteTypes {
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
     | '/online-slots'
-    | '/over-ons'
     | '/paypal-casino'
     | '/providers'
     | '/redactiebeleid'
@@ -509,7 +499,6 @@ export interface FileRouteTypes {
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
     | '/online-slots'
-    | '/over-ons'
     | '/paypal-casino'
     | '/providers'
     | '/redactiebeleid'
@@ -557,7 +546,6 @@ export interface FileRouteTypes {
     | '/nieuwe-online-casinos'
     | '/no-deposit-bonus'
     | '/online-slots'
-    | '/over-ons'
     | '/paypal-casino'
     | '/providers'
     | '/redactiebeleid'
@@ -606,7 +594,6 @@ export interface RootRouteChildren {
   NieuweOnlineCasinosRoute: typeof NieuweOnlineCasinosRoute
   NoDepositBonusRoute: typeof NoDepositBonusRoute
   OnlineSlotsRoute: typeof OnlineSlotsRoute
-  OverOnsRoute: typeof OverOnsRoute
   PaypalCasinoRoute: typeof PaypalCasinoRoute
   ProvidersRoute: typeof ProvidersRoute
   RedactiebeleidRoute: typeof RedactiebeleidRoute
@@ -791,13 +778,6 @@ declare module '@tanstack/react-router' {
       path: '/online-slots'
       fullPath: '/online-slots'
       preLoaderRoute: typeof OnlineSlotsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/over-ons': {
-      id: '/over-ons'
-      path: '/over-ons'
-      fullPath: '/over-ons'
-      preLoaderRoute: typeof OverOnsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/paypal-casino': {
@@ -991,7 +971,6 @@ const rootRouteChildren: RootRouteChildren = {
   NieuweOnlineCasinosRoute: NieuweOnlineCasinosRoute,
   NoDepositBonusRoute: NoDepositBonusRoute,
   OnlineSlotsRoute: OnlineSlotsRoute,
-  OverOnsRoute: OverOnsRoute,
   PaypalCasinoRoute: PaypalCasinoRoute,
   ProvidersRoute: ProvidersRoute,
   RedactiebeleidRoute: RedactiebeleidRoute,
