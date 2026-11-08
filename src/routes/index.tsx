@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const top = casinos.slice(0, 10);
+  const top = casinos;
   const number1 = listingCasinos[0];
   const filtered = top;
 
