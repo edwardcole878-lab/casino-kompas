@@ -33,9 +33,8 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-heading text-lg uppercase tracking-wide text-white">Over ons</h4>
+            <h4 className="font-heading text-lg uppercase tracking-wide text-white">Informatie</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/60">
-              <li><Link to="/over-ons" className="hover:text-nl-orange">Over ons</Link></li>
               <li><Link to="/auteur/$slug" params={{ slug: "mark-de-vries" }} className="hover:text-nl-orange">Onze redactie</Link></li>
               <li><Link to="/redactiebeleid" className="hover:text-nl-orange">Redactiebeleid</Link></li>
               <li><Link to="/verantwoord-spelen" className="hover:text-nl-orange">Verantwoord spelen</Link></li>

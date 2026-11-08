@@ -45,9 +45,8 @@
 - [Software providers](/providers): Casino's per game-provider.
 - [Licenties](/licenties): Casino's per licentie-autoriteit.
 
-## Over ons
+## Informatie
 
-- [Over ons](/over-ons): Wie we zijn en wat we doen.
 - [Redactiebeleid](/redactiebeleid): Hoe wij testen en reviewen.
 - [Verantwoord spelen](/verantwoord-spelen): Informatie en hulpbronnen.
 - [Blog](/blog): Nieuws, gidsen en analyses.

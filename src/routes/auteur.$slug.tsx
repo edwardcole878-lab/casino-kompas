@@ -27,6 +27,7 @@ export const Route = createFileRoute("/auteur/$slug")({
         { property: "og:title", content: `${a.name} — Auteur` },
         { property: "og:description", content: a.bio },
         { property: "og:type", content: "profile" },
+        { name: "twitter:card", content: "summary" },
       ],
     };
   },
@@ -34,7 +35,7 @@ export const Route = createFileRoute("/auteur/$slug")({
     <Layout>
       <div className="container mx-auto max-w-3xl px-4 py-20 text-center">
         <h1 className="text-3xl font-bold">Auteur niet gevonden</h1>
-        <Link to="/over-ons" className="mt-4 inline-block text-trust underline">Naar Over ons</Link>
+        <Link to="/" className="mt-4 inline-block text-trust underline">Naar Home</Link>
       </div>
     </Layout>
   ),
@@ -53,7 +54,7 @@ function AuthorPage() {
     <Layout>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(ld) }} />
       <div className="container mx-auto max-w-4xl px-4 py-8 md:py-12">
-        <Breadcrumbs items={[{ to: "/over-ons", label: "Over ons" }, { label: author.name }]} />
+        <Breadcrumbs items={[{ label: author.name }]} />
 
         <header className="mt-6 grid gap-6 md:grid-cols-[auto_1fr] md:items-start">
           <span className="grid h-32 w-32 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold/30 to-trust/20 text-foreground shadow-card">
