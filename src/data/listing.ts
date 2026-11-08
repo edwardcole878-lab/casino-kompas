@@ -6,6 +6,8 @@ import shakebetLogo from "@/assets/logos/shakebet.t.asset.json";
 import wildiesLogo from "@/assets/logos/wildies.t.asset.json";
 import mrpunterLogo from "@/assets/logos/mrpunter.t.asset.json";
 import spininioLogo from "@/assets/logos/spininio.t.asset.json";
+import nixbetLogo from "@/assets/logos/nixbet.asset.json";
+import betoryLogo from "@/assets/logos/betory.asset.json";
 
 export type ListingCasino = {
   rank: number;
@@ -20,9 +22,10 @@ export type ListingCasino = {
   payoutSpeed: string;
   pros: string[];
   cta: string;
+  source?: { name: string; url: string; ratingName: string; ratingUrl: string; wagering: string; payments: "Crypto"[] };
 };
 
-export const listingCasinos: ListingCasino[] = [
+export const listingCasinos: ListingCasino[] = ([
   {
     rank: 1,
     name: "Winhero",
@@ -60,7 +63,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://wildies1.com/api/v3/offer/155?aff_sub=TrustPilot&aff_sub2={clickid}&affiliate_id=132&url_id=532",
   },
   {
-    rank: 3,
+    rank: 7,
     name: "Baloo",
     slug: "baloo",
     logo: balooLogo.url,
@@ -78,7 +81,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://gobooplay.com/txe84kaq5",
   },
   {
-    rank: 4,
+    rank: 3,
     name: "Rivo",
     slug: "rivo",
     logo: "/logos/rivo.png",
@@ -96,7 +99,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://go.afftrackio.com/visit/?bta=36512&nci=5386",
   },
   {
-    rank: 5,
+    rank: 4,
     name: "Seven",
     slug: "seven",
     logo: "/logos/seven.png",
@@ -114,7 +117,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://go.afftrackio.com/visit/?bta=36512&nci=5375",
   },
   {
-    rank: 6,
+    rank: 8,
     name: "MrPunter",
     slug: "mrpunter",
     logo: mrpunterLogo.url,
@@ -132,7 +135,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://mrp.kronvax.com/?mid=381739_2214567",
   },
   {
-    rank: 7,
+    rank: 9,
     name: "Velwins",
     slug: "velwins",
     logo: velwinsLogo.url,
@@ -150,7 +153,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLBIopaNv7uDWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 8,
+    rank: 10,
     name: "Spinmills",
     slug: "spinmills",
     logo: spinmillsLogo.url,
@@ -168,7 +171,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.hexaffiliates.io/_hChiLzFJeCLiFUAaTMnmeGNd7ZgqdRLk/1/?pg=2",
   },
   {
-    rank: 9,
+    rank: 11,
     name: "Shakebet",
     slug: "shakebet",
     logo: shakebetLogo.url,
@@ -186,7 +189,7 @@ export const listingCasinos: ListingCasino[] = [
     cta: "https://record.shakepartners.com/_4QIgC6d2ZO5hg6WO2I1rgWNd7ZgqdRLk/1/?pg=1",
   },
   {
-    rank: 10,
+    rank: 5,
     name: "Spininio",
     slug: "spininio",
     logo: spininioLogo.url,
@@ -203,4 +206,34 @@ export const listingCasinos: ListingCasino[] = [
     ],
     cta: "https://go.spininio.online/visit/?bta=35494&nci=7816",
   },
-];
+  {
+    rank: 6,
+    name: "NixBet",
+    slug: "nixbet",
+    logo: nixbetLogo.url,
+    rating: 3.2,
+    bonus: "200% tot €1.000",
+    freeSpins: "150 Free Spins",
+    minDeposit: "€25 voor de welkomstbonus",
+    license: "Costa Rica (volgens Turbico)",
+    payoutSpeed: "Tot 72 uur",
+    pros: ["Welkomstpakket over 3 stortingen", "Meer dan 4.000 casinospellen", "Casino, sportsbook en crypto"],
+    cta: "https://trackingnixbet.com/drnjwxnmi",
+    source: { name: "Turbico", url: "https://www.turbico.com/en/casino-reviews/nixbet/", ratingName: "Bookmakers.bet", ratingUrl: "https://www.bookmakers.bet/review/nix-bet/", wagering: "40x", payments: ["Crypto"] },
+  },
+  {
+    rank: 12,
+    name: "Betory",
+    slug: "betory",
+    logo: betoryLogo.url,
+    rating: 2.6,
+    bonus: "150% tot €750",
+    freeSpins: "100% tot €1.000 bij 2e storting",
+    minDeposit: "€30 voor de welkomstbonus",
+    license: "Niet vermeld in de bron",
+    payoutSpeed: "Tot 7 werkdagen of langer",
+    pros: ["150% bonus op de eerste storting", "Welkomstpakket over 3 stortingen", "Slots, live casino en crypto"],
+    cta: "https://betorytrackers.com/dzqshr42m",
+    source: { name: "LCB", url: "https://lcb.org/casinos/betory", ratingName: "LCB", ratingUrl: "https://lcb.org/casinos/betory", wagering: "40x bonus", payments: ["Crypto"] },
+  },
+] satisfies ListingCasino[]).sort((a, b) => a.rank - b.rank);

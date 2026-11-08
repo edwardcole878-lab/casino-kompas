@@ -25,3 +25,12 @@ Uploaded logos have asset pointers under src/assets/logos/{nixbet,spinogrino,car
 - Spinogrino and Carlospin are excluded at the user's request; no further confirmation is needed for them.
 - New casinos lack other verified listing facts (rating, payout speed, minimum deposit and licence). Do not fabricate these solely to fill required fields.
 - Homepage has a secondary legacy list truncated at 10; remove truncation when additions are implemented. No current listing/order changes have been applied.
+
+## Implemented source-backed additions
+
+- NixBet and Betory added; Spinogrino and Carlospin remain excluded. Canonical order uses the active order above.
+- Turbico retrieved again: summary 200% to €1,000 + 150 spins; detail package 75% to €200 + 50 spins, 50% to €300 + 30 spins, 75% to €500 + 70 spins. Minimum qualifying bonus deposit €25, 40x wagering, seven-day validity. Source summary/detail discrepancy is disclosed on its new review. Published withdrawal time up to 72 hours; Costa Rica is attributed to Turbico, not asserted as register-verified.
+- NixBet rating 6.4/10 from Bookmakers.bet, normalized to 3.2/5 and attributed separately.
+- Betory LCB live page https://lcb.org/casinos/betory retrieved: first deposit 150% to €750; second 100% to €1,000; third 50% to €1,500. Minimum qualifying bonus deposit €30, 40x bonus wagering, seven-day validity. No first-deposit free spins listed. Current LCB score 2.6/5 (not the stale search result 3/5).
+- Betory LCB cashout section: KYC 24 hours, pending within two business days, processing up to seven business days or more if needed. No verified licence copied; source does not list it. Crypto payment methods only derived into taxonomy.
+- New reviews use source-backed text, not the legacy template's own-testing claims. Existing casinos' claims remain unchanged.

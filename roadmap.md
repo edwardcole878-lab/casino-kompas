@@ -8,5 +8,5 @@
 
 - [x] Skip Spinogrino and Carlospin additions as requested by the user.
 - [x] Upload the four supplied logos and retain source findings and supplied links.
-- [ ] Add NixBet and Betory and apply the requested order excluding Spinogrino and Carlospin; blocked on missing verified listing facts.
-- [ ] Verify order, links, reviews and logo rendering after the additions are ready.
+- [x] Source NixBet and Betory listing details from other websites, add both and apply the requested order excluding Spinogrino and Carlospin.
+- [x] Verify order, links, reviews and logo rendering; six tests passed and phone/desktop browser checks passed.

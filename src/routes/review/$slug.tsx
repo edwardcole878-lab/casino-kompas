@@ -8,6 +8,7 @@ import trustpilotLogo from "@/assets/trustpilot.webp.asset.json";
 import { listingCasinos, type ListingCasino } from "@/data/listing";
 import { jsonLdString } from "@/lib/jsonld";
 import { defaultAuthor, authorJsonLd, publisherJsonLd } from "@/data/authors";
+import { SourcedCasinoReview } from "@/components/site/SourcedCasinoReview";
 
 const SITE = "https://buitenlandsecasino.com";
 
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/review/$slug")({
     const c = loaderData?.casino;
     if (!c) return { meta: [{ title: "Review niet gevonden" }, { name: "robots", content: "noindex" }] };
     const title = `${c.name} Review 2026 — bonus, uitbetaling & ervaring`;
-    const desc = `${c.name} review: ${c.bonus} + ${c.freeSpins}. Uitbetaling gemiddeld ${c.payoutSpeed}. Onze test voor Nederlandse spelers.`;
+    const desc = c.source ? `${c.name} review: ${c.bonus} + ${c.freeSpins}. Bonusvoorwaarden en gepubliceerde casinogegevens volgens ${c.source.name}.` : `${c.name} review: ${c.bonus} + ${c.freeSpins}. Uitbetaling gemiddeld ${c.payoutSpeed}. Onze test voor Nederlandse spelers.`;
     return {
       meta: [
         { title },
@@ -85,6 +86,8 @@ function ReviewPage() {
   const { casino: c } = Route.useLoaderData();
   const others = listingCasinos.filter((o) => o.slug !== c.slug).slice(0, 3);
   const isTop = c.rank === 1;
+
+  if (c.source) return <SourcedCasinoReview casino={c} />;
 
   const reviewJsonLd = {
     "@context": "https://schema.org",
