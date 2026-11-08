@@ -1,9 +1,10 @@
 # Tasks
 
 - [x] Delete About us page and remove its navigation and sitemap entries; verified the URL returns 404.
-- [ ] Diagnose Google indexing and fix confirmed technical issues without changing excluded content.
-- [ ] Add durable casino-button click tracking and verify recorded clicks.
-- [ ] Check dependencies, navigation, review links, redirects and usability; fix confirmed nonvisual issues.
+- [x] Diagnose homepage/main listing indexing and sitemap; add missing technical metadata without changing excluded content.
+- [x] Add durable casino-button click tracking; verified real click storage and removed the test event.
+- [x] Check dependencies, navigation, review links, redirects and usability; apply compatible direct-dependency fixes.
+- [ ] Investigate all six Google exclusion reasons; blocked on the user's Search Console exclusion report and property selection for further actions.
 
 - [ ] Source remaining exact Spinogrino offer; blocked on a reliable published source or affiliate promotion screenshot.
 - [ ] Confirm Carlospin accepts new Dutch players; blocked on current affiliate-manager confirmation after a source reports restrictions.
