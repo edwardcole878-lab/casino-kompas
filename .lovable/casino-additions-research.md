@@ -2,6 +2,8 @@
 
 Requested order: Winhero, Wildies, Rivo, Seven, Spininio, NixBet, Spinogrino, Carlospin, Baloo, MrPunter, Velwins, Spinmills, Shakebet, Betory.
 
+User subsequently requested skipping Spinogrino and Carlospin. Active additions: NixBet and Betory. Active order: Winhero, Wildies, Rivo, Seven, Spininio, NixBet, Baloo, MrPunter, Velwins, Spinmills, Shakebet, Betory.
+
 ## Supplied destinations
 
 - NixBet: https://trackingnixbet.com/drnjwxnmi
@@ -20,7 +22,6 @@ Uploaded logos have asset pointers under src/assets/logos/{nixbet,spinogrino,car
 
 ## Blockers
 
-- Need a concrete published Spinogrino welcome-offer source or affiliate promotion screenshot from the user.
-- Need current Carlospin Netherlands acceptance confirmation from the affiliate manager.
+- Spinogrino and Carlospin are excluded at the user's request; no further confirmation is needed for them.
 - New casinos lack other verified listing facts (rating, payout speed, minimum deposit and licence). Do not fabricate these solely to fill required fields.
 - Homepage has a secondary legacy list truncated at 10; remove truncation when additions are implemented. No current listing/order changes have been applied.
