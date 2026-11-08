@@ -9,6 +9,8 @@ export const Route = createFileRoute("/casino-bonussen")({
       { name: "description", content: "Vergelijk casino bonussen voor Nederlandse spelers. Welkomstbonus, free spins, no deposit en cashback — inclusief uitleg over doorzetvereisten." },
       { property: "og:title", content: "Beste Casino Bonussen Nederland 2026" },
       { property: "og:description", content: "Welkomstbonussen, free spins en no deposit deals vergeleken." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

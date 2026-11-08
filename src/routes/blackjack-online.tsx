@@ -9,6 +9,8 @@ export const Route = createFileRoute("/blackjack-online")({
       { name: "description", content: "Waar speel je het beste blackjack online in Nederland? Live tafels, side bets en strategie-uitleg." },
       { property: "og:title", content: "Blackjack Online Nederland — Beste Casino's & Tips 2026" },
       { property: "og:description", content: "Waar speel je het beste blackjack online in Nederland? Live tafels, side bets en strategie-uitleg." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

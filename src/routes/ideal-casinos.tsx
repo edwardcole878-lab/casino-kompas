@@ -9,6 +9,8 @@ export const Route = createFileRoute("/ideal-casinos")({
       { name: "description", content: "Alle Nederlandse online casino's die iDEAL accepteren. Snelle stortingen, vertrouwde betaalmethode en directe verwerking." },
       { property: "og:title", content: "Beste iDEAL Casino's Nederland 2026" },
       { property: "og:description", content: "Casino's met snelle iDEAL stortingen en uitbetalingen voor NL-spelers." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

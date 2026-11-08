@@ -9,6 +9,8 @@ export const Route = createFileRoute("/welkomstbonus-casino")({
       { name: "description", content: "De grootste én eerlijkste welkomstbonussen voor Nederlandse spelers. Match deposits, free spins en lage doorzetvereisten." },
       { property: "og:title", content: "Beste Casino Welkomstbonus 2026" },
       { property: "og:description", content: "Welkomstbonussen vergeleken op netto-waarde en wagering." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

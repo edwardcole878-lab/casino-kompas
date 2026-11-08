@@ -9,6 +9,8 @@ export const Route = createFileRoute("/no-deposit-bonus")({
       { name: "description", content: "Casino's die je een bonus geven zónder dat je hoeft te storten. Eerlijk overzicht inclusief de kleine lettertjes." },
       { property: "og:title", content: "No Deposit Bonus Casino's Nederland" },
       { property: "og:description", content: "Spelen zonder storten — wat krijg je écht?" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

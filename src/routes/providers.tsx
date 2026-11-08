@@ -13,6 +13,7 @@ export const Route = createFileRoute("/providers")({
       { name: "description", content: "Ontdek welke casino's de spellen aanbieden van NetEnt, Pragmatic Play, Evolution, Play'n GO, Hacksaw, Nolimit City en andere top providers." },
       { property: "og:title", content: "Casino Game Providers Nederland 2026" },
       { property: "og:description", content: "Vind casino's per software provider: NetEnt, Pragmatic, Evolution en meer." },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
   }),

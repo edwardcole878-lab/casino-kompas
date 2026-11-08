@@ -9,6 +9,8 @@ export const Route = createFileRoute("/crypto-casino")({
       { name: "description", content: "buitenlandse casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
       { property: "og:title", content: "Crypto Casino — Bitcoin & Crypto Casino's Nederland 2026" },
       { property: "og:description", content: "buitenlandse casino's die naast iDEAL ook Bitcoin, Ethereum of stablecoins accepteren. Snelle uitbetalingen en provably fair." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

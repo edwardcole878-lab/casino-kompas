@@ -9,6 +9,8 @@ export const Route = createFileRoute("/mobiele-casinos")({
       { name: "description", content: "Speel onderweg: getest op iOS en Android. App-kwaliteit, mobiele iDEAL en touch-geoptimaliseerde slots." },
       { property: "og:title", content: "Beste Mobiele Casino's Nederland 2026" },
       { property: "og:description", content: "Mobiele casino-apps en mobile-first sites uitgebreid getest." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

@@ -9,6 +9,8 @@ export const Route = createFileRoute("/betrouwbare-online-casinos")({
       { name: "description", content: "Veiligheid eerst: alle casino's met KSA-licentie, bewezen uitbetalingen, klachtenroute en duidelijke spelersbescherming." },
       { property: "og:title", content: "Betrouwbare Online Casino's Nederland" },
       { property: "og:description", content: "Casino's geselecteerd op licentie, veiligheid en spelersbescherming." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Page,

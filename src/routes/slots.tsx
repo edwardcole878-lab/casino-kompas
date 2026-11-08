@@ -16,6 +16,7 @@ export const Route = createFileRoute("/slots")({
       { name: "description", content: "Vergelijk de populairste slots: RTP, volatiliteit, max-win en bij welke KSA-casino's je ze kunt spelen." },
       { property: "og:title", content: "Beste online slots Nederland 2026" },
       { property: "og:description", content: "Vergelijk RTP, volatiliteit en max-win van de populairste slots." },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
   }),

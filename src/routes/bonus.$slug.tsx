@@ -30,6 +30,7 @@ export const Route = createFileRoute("/bonus/$slug")({
         { name: "description", content: b.description.slice(0, 155) },
         { property: "og:title", content: b.headline },
         { property: "og:description", content: b.description.slice(0, 155) },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:type", content: "article" },
         { name: "author", content: defaultAuthor.name },
       ],

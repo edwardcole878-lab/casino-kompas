@@ -13,6 +13,7 @@ export const Route = createFileRoute("/bonus-types")({
       { name: "description", content: "Welke bonus past bij jou? Vergelijk welkomstbonus, no-deposit, free spins, cashback, reload en VIP-programma's bij KSA-casino's." },
       { property: "og:title", content: "Casino Bonus Types Nederland 2026" },
       { property: "og:description", content: "Vergelijk alle types casino bonussen op één pagina." },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
   }),

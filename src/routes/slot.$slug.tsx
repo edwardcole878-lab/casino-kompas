@@ -27,6 +27,7 @@ export const Route = createFileRoute("/slot/$slug")({
         { name: "description", content: `${s.tagline}. RTP ${s.rtp}%, ${s.volatility} volatiliteit, max win ${s.maxWin}.`.slice(0, 155) },
         { property: "og:title", content: `${s.name} (${s.provider}) — slot review` },
         { property: "og:description", content: s.tagline },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:type", content: "article" },
       ],
     };
