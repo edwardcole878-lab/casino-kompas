@@ -17,7 +17,6 @@ const STATIC_PATHS = [
   "/casinos-zonder-cruks",
   "/casinos-zonder-registratie",
   "/casinos-zonder-limiet",
-  "/over-ons",
   "/casino-bonussen",
   "/bonussen",
   "/slots",
