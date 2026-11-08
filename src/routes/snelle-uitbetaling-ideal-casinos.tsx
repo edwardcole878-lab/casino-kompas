@@ -30,6 +30,8 @@ export const Route = createFileRoute("/snelle-uitbetaling-ideal-casinos")({
         { name: "description", content: PAGE_DESC },
         { property: "og:title", content: PAGE_TITLE },
         { property: "og:description", content: PAGE_DESC },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: PAGE_TITLE },
         { name: "twitter:description", content: PAGE_DESC },
       ],

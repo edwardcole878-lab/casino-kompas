@@ -22,6 +22,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Onafhankelijke ranking van buitenlandse online casino's voor NL-spelers. Bonusvoorwaarden, uitbetaalsnelheid en transparantie — geen commissie-ranking." },
       { property: "og:title", content: "Top 10 buitenlandse casino's voor NL — 2026" },
       { property: "og:description", content: "Buitenlandse casino's getest met eigen geld. Dit zijn de aanbieders die door onze redactie heen kwamen." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
