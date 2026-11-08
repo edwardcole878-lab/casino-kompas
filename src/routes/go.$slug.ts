@@ -23,7 +23,7 @@ export const Route = createFileRoute("/go/$slug")({
         const affiliate = casino?.affiliateUrl;
         const hasAffiliate = !!affiliate && affiliate !== "#";
         const target = hasAffiliate
-          ? affiliate!
+          ? affiliate
           : casino
             ? `/review/${casino.slug}`
             : "/";
